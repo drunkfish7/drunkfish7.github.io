@@ -137,7 +137,7 @@
 <p><img src="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/docker_env.png" alt="docker_env"></p>
 <p>等待容器运行，打开容器详情，待安装完成，出现安装完成提示后，在浏览器中打开 http(s)://群晖 ip:4000，可以看到 Hexo 生成的网站。 访问http(s)://群晖 ip:4000/admin，可以看到文章后台管理页面。</p>
 <p><img src="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/hexo_admin.png" alt="hexo_admin"></p>
-<h3 id="连接-Github-Pages"><a href="#连接-Github-Pages" class="headerlink" title="连接 Github Pages"></a>连接 Github Pages</h3><p>安装完成在日志或终端机中复制生成的 SSH Key（或查看 .ssh/id_rsa.pub 这个文件）。之后打开 Github，打开个人设置，找到「SSH and gpg keys」，新建一个密钥，将密钥粘贴。</p>
+<h3 id="连接-Github-Pages"><a href="#连接-Github-Pages" class="headerlink" title="连接 Github Pages"></a>连接 Github Pages</h3><p>安装完成在日志或终端机中复制生成的 SSH Key（或查看 .ssh/id_rsa.pub 这个文件）。之后打开 Github，打开个人设置，找到「SSH and GPG keys」，新建一个密钥，将密钥粘贴。</p>
 <p><img src="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/github_key.png" alt="github_key"></p>
 <p>在容器终端中输入 <code>ssh -T git@github.com</code>，若可以看到自己的 Github 用户名，证明连接成功。</p>
 <p><img src="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/key_test.png" alt="key_test"></p>
@@ -152,15 +152,16 @@
 </ol>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:&lt;username&gt;/d&lt;username&gt;.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line"></span><br><span class="line"><span class="attr">admin:</span></span><br><span class="line">  <span class="attr">deployCommand:</span> <span class="string">'./hexo-deploy.sh'</span></span><br></pre></td></tr></table></figure>
 
-<p>配置完成可以 <code>hexo d</code> 重新生成页面，Command+Shift+r 或 Ctrl+F5 强制刷新页面，点击[deploy]部署至 Github Pages，若未报错说明插件配置成功，打开 https://<username>github.io 可以看到 Hexo 生成的页面。</p>
+<p>配置完成可以 <code>hexo d</code> 重新生成页面，Command+Shift+r 或 Ctrl+F5 强制刷新页面，点击[deploy]部署至 Github Pages，若未报错说明插件配置成功，打开 https://<username>.github.io 可以看到 Hexo 生成的页面。</p>
 <p>注意：注意 yml 文件格式规范，名称后面有空格。</p>
 <ol start="4">
 <li>设置密码</li>
 </ol>
 <p>插件支持设置密码，相应页面设置密码即可。</p>
 <ol start="5">
-<li>设置外网访问<br>为了可以随时随地发布博客，需要设置暴露 4000 端口便于外网访问。家用群晖外网访问简单的办法有：1、公网 IP + 路由器映射端口；2、利用群晖自带 DDNS。</li>
+<li>设置外网访问</li>
 </ol>
+<p>为了可以随时随地发布博客，需要设置暴露 4000 端口便于外网访问。家用群晖外网访问简单的办法有：1、公网 IP + 路由器映射端口；2、利用群晖自带 DDNS。</p>
 <h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><h3 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h3><p>购买域名可以去 <a href="https://www.domcomp.com" target="_blank" rel="noopener">domcomp</a> 先比较下价格，另外也可以到 <a href="https://domains.google" target="_blank" rel="noopener">Google Domains</a> 购买。</p>
 <h3 id="域名商设置"><a href="#域名商设置" class="headerlink" title="域名商设置"></a>域名商设置</h3><p>不同域名商设置不完全相同，小弟是从 <a href="https://www.gandi.net" target="_blank" rel="noopener">gandi.net</a> 买的，新增一条 ALIAS 的 DNS 记录即可。</p>
 <p><img src="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/domain_alias.png" alt="domain_alias"></p>
@@ -169,7 +170,8 @@
 <p>设置完成之后可能要过几分钟才能可以使 DNS 生效，另外可以使用命令 dig <your domain> +nostats +nocomments +nocmd 验证是否绑定成功。</p>
 <p>遇到问题可以咨询域名服务商和查阅 Github Pages 域名相关<a href="https://help.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site" target="_blank" rel="noopener">官方文档</a></p>
 <h2 id="配置相关"><a href="#配置相关" class="headerlink" title="配置相关"></a>配置相关</h2><p>Hexo 的设置可以在 _config.yml 这个文件下修改，下面贴一下主要的配置项：</p>
-<h3 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h3><p>小弟发现 <a href="https://github.com/xzhih/hexo-theme-casper" target="_blank" rel="noopener">casper</a> 主题不错，安装配置可移步<a href="https://zhih.me/hexo-casper-usage/" target="_blank" rel="noopener">作者</a>博客。<br>几个注意的点：</p>
+<h3 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h3><p>小弟发现 <a href="https://github.com/xzhih/hexo-theme-casper" target="_blank" rel="noopener">casper</a> 主题不错，安装配置可移步<a href="https://zhih.me/hexo-casper-usage/" target="_blank" rel="noopener">作者</a>博客。</p>
+<p>几个注意的点：</p>
 <ol>
 <li>注册 leancloud 可以用<a href="https://console.leancloud.app/login.html#/signin" target="_blank" rel="noopener">国际版</a>地址注册。免实名认证（需提供国内手机号）</li>
 <li>在 Google Analysis 设置中点击[新增账户]可以新增一个账户，找到追踪 ID 填入即可。</li>
