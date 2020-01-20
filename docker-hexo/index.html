@@ -22,8 +22,8 @@
 	
 
 	
-	<link rel="shortcut icon" href="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/favicon.ico">
-	<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/favicon.ico">
+	<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/favicon.ico">
+	<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/favicon.ico">
 	
 
 	
@@ -168,23 +168,23 @@
 <p><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 是 <a href="https://zespia.tw/" target="_blank" rel="noopener">tommy351</a> 开发的静态网页生成工具，基于 node.js、支持 Markdown，可托管至 <a href="https://pages.github.com/" target="_blank" rel="noopener">Github Page</a>。</p>
 <p>群晖外网访问及备份非常方便，小弟尝试用群晖搭建 Hexo，将生成的静态页面部署至 Github Pages，折腾如下：</p>
 <h2 id="GitHub-创建-Github-Pages"><a href="#GitHub-创建-Github-Pages" class="headerlink" title="GitHub 创建 Github Pages"></a>GitHub 创建 Github Pages</h2><p>登录 <a href="https://github.com/" target="_blank" rel="noopener">Github</a> ，在任意页面右上角点击「＋」，选择「新建仓库」。</p>
-<p><img alt="github_new" class="post-img b-lazy" data-img="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/github_new.png" data-index="0" data-src="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/github_new.png"></p>
+<p><img alt="github_new" class="post-img b-lazy" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/github_new.png" data-index="0" data-src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/github_new.png"></p>
 <p>之后填入名称，包括 Github 用户名及后缀 .github.io，等待建好仓库。</p>
-<p><img alt="github_repo" class="post-img b-lazy" data-img="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/github_repo.png" data-index="1" data-src="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/github_repo.png"></p>
+<p><img alt="github_repo" class="post-img b-lazy" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/github_repo.png" data-index="1" data-src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/github_repo.png"></p>
 <p>浏览器访问地址 https://<username>.github.io 就可以看到新建的网页。此时已经建好了一个博客，这个博客基于 <a href="https://www.jekyll.com.cn/" target="_blank" rel="noopener">Jekyll</a> ，我们要搭建 Hexo 还要继续。</username></p>
 <p>注意：个人主页前缀要和 GitHub 用户名一致，只能有一个，若要建立多个，可建立项目主页，具体参见<a href="https://help.github.com/en/github/working-with-github-pages/about-github-pages" target="_blank" rel="noopener">官方文档</a>。</p>
 <h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><h3 id="Docker-安装-Hexo"><a href="#Docker-安装-Hexo" class="headerlink" title="Docker 安装 Hexo"></a>Docker 安装 Hexo</h3><p>打开群晖 Docker（未安装可在「套件中心」搜索 docker 下载安装）， 在注册表中搜索「spurin」，找到映像 「spurin/hexo」并下载。这个 Docker 已经集成 <a href="https://github.com/jaredly/hexo-admin" target="_blank" rel="noopener">Hexo Admin Plugin</a>（一个 Hexo 文章后台管理插件）和连接 Github Pages 服务，可以方便我们快速搭建 Hexo 。</p>
-<p><img alt="docker_reg" class="post-img b-lazy" data-img="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/docker_reg.png" data-index="2" data-src="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/docker_reg.png"></p>
+<p><img alt="docker_hexo_reg" class="post-img b-lazy" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_hexo_reg.png" data-index="2" data-src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_hexo_reg.png"></p>
 <p>待下载完成后点击[启动]，选择[高级设置]，在「高级设置」中可以选择是否自动启动、是否建立桌面快捷方式（随个人偏好）。同时在「卷」在路径中添加文件夹，此文件夹为放置 Hexo 文件的文件夹，路径为 /app 。在「网络」中可以选「与宿主使用相同网络」，也可以到「端口设置」中自定义端口号。Hexo 会使用 4000 端口号。</p>
-<p><img alt="docker_dir" class="post-img b-lazy" data-img="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/docker_dir.png" data-index="3" data-src="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/docker_dir.png"></p>
+<p><img alt="docker_hexo_dir" class="post-img b-lazy" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_hexo_dir.png" data-index="3" data-src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_hexo_dir.png"></p>
 <p>在「环境」中可以填入自己的 Github 用户名及邮箱，以便生成有效的 SSH Key。</p>
-<p><img alt="docker_env" class="post-img b-lazy" data-img="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/docker_env.png" data-index="4" data-src="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/docker_env.png"></p>
+<p><img alt="docker_hexo_env" class="post-img b-lazy" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_hexo_env.png" data-index="4" data-src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_hexo_env.png"></p>
 <p>等待容器运行，打开容器详情，待安装完成，出现安装完成提示后，在浏览器中打开 http(s)://群晖 ip:4000，可以看到 Hexo 生成的网站。 访问http(s)://群晖 ip:4000/admin，可以看到文章后台管理页面。</p>
-<p><img alt="hexo_admin" class="post-img b-lazy" data-img="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/hexo_admin.png" data-index="5" data-src="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/hexo_admin.png"></p>
+<p><img alt="hexo_admin" class="post-img b-lazy" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/hexo_admin.png" data-index="5" data-src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/hexo_admin.png"></p>
 <h3 id="连接-Github-Pages"><a href="#连接-Github-Pages" class="headerlink" title="连接 Github Pages"></a>连接 Github Pages</h3><p>安装完成在日志或终端机中复制生成的 SSH Key（或查看 .ssh 路径下的 id_rsa.pub 这个文件）。之后打开 Github，打开个人设置，找到「SSH and GPG keys」，新建一个密钥，将密钥粘贴。</p>
-<p><img alt="github_key" class="post-img b-lazy" data-img="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/github_key.png" data-index="6" data-src="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/github_key.png"></p>
+<p><img alt="github_key" class="post-img b-lazy" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/github_key.png" data-index="6" data-src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/github_key.png"></p>
 <p>在容器终端中输入 <code>ssh -T git@github.com</code>，若可以看到自己的 Github 用户名，证明连接成功。</p>
-<p><img alt="key_test" class="post-img b-lazy" data-img="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/key_test.png" data-index="7" data-src="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/key_test.png"></p>
+<p><img alt="key_test" class="post-img b-lazy" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/key_test.png" data-index="7" data-src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/key_test.png"></p>
 <h3 id="配置-Hexo-Admin-插件"><a href="#配置-Hexo-Admin-插件" class="headerlink" title="配置 Hexo Admin 插件"></a>配置 Hexo Admin 插件</h3><p>Hexo Admin 这个插件已经年久失修，最近一次更新是几年前了，小弟使用时踩了不少坑，下面只示范正确的步骤：</p>
 <ol>
 <li>安装 hexo-deployer-git 插件，在容器终端输入命令 <code>npm install hexo-deployer-git --save</code></li>
@@ -208,9 +208,9 @@
 <p>为了可以随时随地发布博客，需要设置暴露 4000 端口便于外网访问。家用群晖外网访问简单的办法有：1、公网 IP + 路由器映射端口；2、利用群晖自带 DDNS。</p>
 <h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><h3 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h3><p>购买域名可以去 <a href="https://www.domcomp.com" target="_blank" rel="noopener">domcomp</a> 先比较下价格，另外也可以到 <a href="https://domains.google" target="_blank" rel="noopener">Google Domains</a> 购买。</p>
 <h3 id="域名商设置"><a href="#域名商设置" class="headerlink" title="域名商设置"></a>域名商设置</h3><p>不同域名商设置不完全相同，小弟是从 <a href="https://www.gandi.net" target="_blank" rel="noopener">gandi.net</a> 买的，新增一条 ALIAS 的 DNS 记录即可。</p>
-<p><img alt="domain_alias" class="post-img b-lazy" data-img="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/domain_alias.png" data-index="8" data-src="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/domain_alias.png"></p>
+<p><img alt="domain_alias" class="post-img b-lazy" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/domain_alias.png" data-index="8" data-src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/domain_alias.png"></p>
 <h3 id="Github-Pages-设定"><a href="#Github-Pages-设定" class="headerlink" title="Github Pages 设定"></a>Github Pages 设定</h3><p>Github Pages 设定很简单，在仓库设置中直接填入域名即可，另外建议勾选「强制 https」，这样访问域名就可以看到安心的绿色小锁。</p>
-<p><img alt="page_domain" class="post-img b-lazy" data-img="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/page_domain.png" data-index="9" data-src="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/page_domain.png"></p>
+<p><img alt="page_domain" class="post-img b-lazy" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/page_domain.png" data-index="9" data-src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/page_domain.png"></p>
 <p>设置完成之后可能要过几分钟才能可以使 DNS 生效，另外可以使用命令 dig <your domain> +nostats +nocomments +nocmd 验证是否绑定成功。</your></p>
 <p>遇到问题可以咨询域名服务商和查阅 Github Pages 域名相关<a href="https://help.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site" target="_blank" rel="noopener">官方文档</a></p>
 <h2 id="配置相关"><a href="#配置相关" class="headerlink" title="配置相关"></a>配置相关</h2><p>Hexo 的设置可以在 _config.yml 这个文件下修改，下面贴一下主要的配置项：</p>
@@ -230,11 +230,12 @@
 <figure class="highlight md"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title:               # 文章标题</span><br><span class="line">date:                # 文章日期</span><br><span class="line">tags:                # 文章标签</span><br><span class="line">cover_img:           # 在文章摘要上显示</span><br><span class="line">feature_img:         # 在文章详细页面上置顶</span><br><span class="line">---</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="书写工具"><a href="#书写工具" class="headerlink" title="书写工具"></a>书写工具</h3><p>可以直接打开 http(s)://群晖 ip:4000 在线用 <a href="https://markdown.tw/" target="_blank" rel="noopener">Markdown</a> 撰写文章，支持实时保存、预览，另外可以使用任意支持 Markdown 的书写工具书写，如 <a href="http://typora.io" target="_blank" rel="noopener">Typora</a>（支持实时预览、实用小功能）。</p>
-<p>小弟推荐使用图床管理图片（这样做 md 文件可以免配置本地图片路径，且备份时只需要备份一个 md 文件就可以了），图床推荐放在 Github 仓库，稳定、够用（<a href="https://help.github.com/cn/github/managing-large-files/what-is-my-disk-quota" target="_blank" rel="noopener">最大容量</a> 可到100G），推荐使用图床工具上传，如 <a href="https://blog.svend.cc/upic/" target="_blank" rel="noopener">uPic</a>(支持拖拽上传、上传完成后自动复制文件链接等等)、<a href="https://github.com/Molunerfinn/PicGo" target="_blank" rel="noopener">PicGo</a> (多平台、支持<a href="https://github.com/PicGo/Awesome-PicGo" target="_blank" rel="noopener">插件</a>)</p>
+<p>小弟推荐使用图床管理图片（这样做 md 文件可以免配置本地图片路径，且备份时只需要备份一个 md 文件就可以了），图床推荐放在 Github 仓库，稳定、够用（具体参见<a href="https://help.github.com/cn/github/managing-large-files/what-is-my-disk-quota" target="_blank" rel="noopener">容量限制</a> 可到100G），推荐使用图床工具上传，如 <a href="https://blog.svend.cc/upic/" target="_blank" rel="noopener">uPic</a>(支持拖拽上传、上传完成后自动复制文件链接等等)、<a href="https://github.com/Molunerfinn/PicGo" target="_blank" rel="noopener">PicGo</a> (多平台、支持<a href="https://github.com/PicGo/Awesome-PicGo" target="_blank" rel="noopener">插件</a>)，建议勾选 <a href="https://www.jsdelivr.com/" target="_blank" rel="noopener">jsDelivr</a> 优化国内访问。</p>
 <p>另外，使用图床务若图片无法显示可以在文章页面属性下方插入以下代码：</p>
 <figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag"><<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"referrer"</span> <span class="attr">content</span>=<span class="string">"no-referrer"</span> /></span></span><br></pre></td></tr></tbody></table></figure>
 
-<p>发布文章有两种：<br>1.本地写好 md 文件，上传至 /source/posts 路径下，之后在容器终端运行 hexo g && hexo d；2、通过访问 http(s)://群晖 ip:4000 ，在线写，写完点击[deploy]。</p>
+<p>发布文章有两种：<br>1.本地写好 md 文件，上传至 /source/posts 路径下，之后在容器终端运行 hexo g && hexo d；<br>2.通过访问 http(s)://群晖 ip:4000 ，在线写，写完点击[deploy]。</p>
+<p>书写小建议：<br>1.文件命名建议英文命名，关键词之间用「-」隔开;<br>2.Markdown 模块间用一空行隔开。</p>
 <p>至此我们的博客就搭建好了，是不是很酷。</p>
 
                 </article>
@@ -313,7 +314,7 @@
     <div class="search-form">
         
         <div class="search-overlay-logo">
-        	<img src="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/favicon.ico" alt="小鱼干">
+        	<img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/favicon.ico" alt="小鱼干">
         </div>
         
         <input id="local-search-input" class="search-input" type="text" name="search" placeholder="Search ...">

@@ -22,8 +22,8 @@
 	
 
 	
-	<link rel="shortcut icon" href="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/favicon.ico">
-	<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/favicon.ico">
+	<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/favicon.ico">
+	<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/favicon.ico">
 	
 
 	
@@ -163,9 +163,7 @@
             
             <div class="post-full-content">
                 <article id="photoswipe" class="markdown-body">
-                    <meta name="referrer" content="no-referrer">
-
-<p><img alt="awtrix" class="post-img b-lazy" data-img="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/awtrix.jpg" data-index="0" data-src="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/awtrix.jpg"></p>
+                    <p><img alt="awtrix" class="post-img b-lazy" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/awtrix.jpg" data-index="0" data-src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/awtrix.jpg"></p>
 <p>小弟以前听说过 <a href="https://lametric.com/" target="_blank" rel="noopener">LaMetric TIME</a>，觉得很酷，像桌面版的 Apple Watch，可以显示一些固定信息（如时间、天气等等），还可以显示通知，过滤信息。但是囊中羞涩，只能远观。直到发现这位大大的<a href="https://www.youtube.com/playlist?list=PLmxTR4AYd_9T3Lw7PR9u_UrtplM1Dqp77" target="_blank" rel="noopener">视频</a>，详细记录了替代品的完整制作过程，小弟根据步骤也做了一个，期间踩了一些坑，以下是过程：</p>
 <h2 id="购买配件"><a href="#购买配件" class="headerlink" title="购买配件"></a>购买配件</h2><p>像素钟的名字是 <a href="https://blueforcer.de/awtrix-2-0/" target="_blank" rel="noopener">Awtrix</a>，在<a href="https://awtrix.github.io/AWTRIX2.0-Docs_Beta/#/en-en/hardware" target="_blank" rel="noopener">测试版文档</a>（目前仅德语）及<a href="https://docs.blueforcer.de/#/v2/" target="_blank" rel="noopener">旧版文档</a>中可以找到需要的电路元件，主要有以下：</p>
 <p>基本元件：</p>
@@ -192,19 +190,19 @@
 <p>4.A3 纸<br>起到增强显示效果的作用，A4 纸不够长。</p>
 <h2 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h2><p>Awtrix 分服务器端与控制端，其中服务器端小弟选择用群晖 Docker 运行，也可以用树莓派（新的外壳可以直接放入树莓派），甚至是 Android 手机。</p>
 <p>下面是 Docker 的步骤，在注册表中搜索「whyet」，下载映像。映像下载好运行映像，小弟没搞清楚配置文件的路径，所以没有设置，另外 Awtrix 会占用 7000 端口号，可以根据自己实际情况调整。</p>
-<p><img alt="docker_awtrix" class="post-img b-lazy" data-img="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/docker_awtrix.png" data-index="1" data-src="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/docker_awtrix.png"></p>
+<p><img alt="docker_awtrix" class="post-img b-lazy" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_awtrix.png" data-index="1" data-src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_awtrix.png"></p>
 <p>容器运行后，可以在日志后终端中看到安装情况，待 jar 文件下载完成，在浏览器中打开 http(s)://群晖 ip:7000，就可以进入 Awtrix 服务器端，因为还没有控制端，所以会有未连接的提示。</p>
-<p><img alt="awtrix_manager" class="post-img b-lazy" data-img="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/awtrix_manager.png" data-index="2" data-src="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/awtrix_manager.png"></p>
+<p><img alt="awtrix_manager" class="post-img b-lazy" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/awtrix_manager.png" data-index="2" data-src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/awtrix_manager.png"></p>
 <p>另外，服务端适配了移动端，可以手机端进行控制。由于是运行在群晖中，依旧可以通过配置端口映射实现外网访问。</p>
 <h2 id="控制端"><a href="#控制端" class="headerlink" title="控制端"></a>控制端</h2><h3 id="刷入固件"><a href="#刷入固件" class="headerlink" title="刷入固件"></a>刷入固件</h3><p>1.控制端刷入固件非常容易，首先要下载相应模块的驱动，若是 D1 mini，请前往<a href="https://wiki.wemos.cc/downloads" target="_blank" rel="noopener">这里</a>下载，若是 NodeMCU 请前往<a href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers" target="_blank" rel="noopener">这里</a> 下载。</p>
 <p>2.下载安装 <a href="https://github.com/marcelstoer/nodemcu-pyflasher/releases" target="_blank" rel="noopener">NodeMCU PyFlasher</a> 及控制端<a href="https://blueforcer.de/awtrix/beta/firmware.bin" target="_blank" rel="noopener">固件</a>，将模块用 MicroUSB 数据线连接至电脑 USB 口，选择好端口及固件路径，点击[刷入]。</p>
-<p><img alt="awtrix_flash" class="post-img b-lazy" data-img="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/awtrix_flash.png" data-index="3" data-src="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/awtrix_flash.png"></p>
+<p><img alt="awtrix_flash" class="post-img b-lazy" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/awtrix_flash.png" data-index="3" data-src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/awtrix_flash.png"></p>
 <p>刷入成功可以看到 Awtrix 的 AP，连入这个 WiFi（密码是 awtrixxx），之后填入 WiFi 信息（名称、密码）及服务端 IP （即群晖 IP）即可（无需端口号）。</p>
 <h3 id="连接电路元件及组装"><a href="#连接电路元件及组装" class="headerlink" title="连接电路元件及组装"></a>连接电路元件及组装</h3><p>1.连接按照官方的<a href="https://awtrix.github.io/AWTRIX2.0-Docs_Beta/#/en-en/hardware?id=basis-variante" target="_blank" rel="noopener">电路图</a>连接即可，连接成功默认显示「时间」 App。</p>
 <p>注意：正负极不要接反。</p>
 <p>2.显示部分按照亚克力板、纸（裁成亚克力板大小）、光栅、像素灯从外到底的顺序，用双面胶粘住。若打印了外壳，可以将元件套入外壳中。</p>
 <p>3.连接好后，按几次 D1 mini 的[reset]键，待屏幕出现图像启动即可。</p>
-<p><img alt="awtrix_display" class="post-img b-lazy" data-img="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/awtrix_display.png" data-index="4" data-src="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/awtrix_display.png"></p>
+<p><img alt="awtrix_display" class="post-img b-lazy" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/awtrix_display.png" data-index="4" data-src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/awtrix_display.png"></p>
 <h3 id="App-推荐"><a href="#App-推荐" class="headerlink" title="App 推荐"></a>App 推荐</h3><p>Awtrix 支持多个 App，以下是几个 App 介绍：</p>
 <p>Time：默认自带，可以在设置中调整时区，可以选择日期、时间 12/24 制、是否显示星期指示格式。</p>
 <p>OpenWeather：需到 <a href="https://home.openweathermap.org/" target="_blank" rel="noopener">OpenWeather</a> 注册填入 APIKey。填入之后位置 ID，可以在<a href="https://openweathermap.org/city" target="_blank" rel="noopener">这里</a>。 </p>
@@ -292,7 +290,7 @@
     <div class="search-form">
         
         <div class="search-overlay-logo">
-        	<img src="https://raw.githubusercontent.com/drunkfish7/pic/master/uPic/favicon.ico" alt="小鱼干">
+        	<img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/favicon.ico" alt="小鱼干">
         </div>
         
         <input id="local-search-input" class="search-input" type="text" name="search" placeholder="Search ...">
