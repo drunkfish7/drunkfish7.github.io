@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="">
+
+
+
+
+
+
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="preconnect" href="//www.googletagmanager.com">
+	<link rel="preconnect" href="//zz.bdstatic.com">
+	<link rel="preconnect" href="//sp0.baidu.com">
+	<link rel="preconnect" href="//www.google-analytics.com">
+	<link rel="preconnect" href="//cdn1.lncld.net">
+	<link rel="preconnect" href="//unpkg.com">
+	<link rel="preconnect" href="//app-router.leancloud.cn">
+	<link rel="preconnect" href="//9qpuwspm.api.lncld.net">
+	<link rel="preconnect" href="//gravatar.loli.net">
+
+	<title>群晖搭建静态博客 | 莊菲什</title>
+
+	<meta name="HandheldFriendly" content="True" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+	<meta name="generator" content="hexo">
+	<meta name="author" content="drunkfish">
+	<meta name="description" content="">
+
+	
+
+	
+	<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/favicon_256px.ico">
+	<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/favicon_256px.ico"/>
+	
+
+	
+	<meta name="theme-color" content="#3c484e">
+	<meta name="msapplication-TileColor" content="#3c484e">
+	
+
+	
+
+	
+	<link rel="alternate" href="/atom.xml" title="莊菲什">
+	
+
+	<meta property="og:site_name" content="莊菲什">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="群晖搭建静态博客 | 莊菲什">
+	<meta property="og:description" content="">
+	<meta property="og:url" content="http://yoursite.com/hexo/">
+
+	
+	<meta property="article:published_time" content="2019-11-30T00:11:00+08:00"/> 
+	<meta property="article:author" content="drunkfish">
+	<meta property="article:published_first" content="莊菲什, /hexo/" />
+	
+
+	
+	
+	
+<link rel="stylesheet" href="/css/allinonecss.min.css">
+
+
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156013706-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-156013706-1');
+	</script>
+	
+	
+	
+<link rel="alternate" href="/atom.xml" title="莊菲什" type="application/atom+xml">
+</head>
+<body class="post-template">
+	<div class="site-wrapper">
+		
+
+
+
+
+<header class="site-header post-site-header outer">
+    <div class="inner">
+        
+<nav class="site-nav"> 
+    <div class="site-nav-left">
+        <ul class="nav">
+            <li>
+                
+                <a href="/" title="Home">HOME</a>
+                
+            </li>
+            
+            
+            <li>
+                <a href="/about" title="ABOUT">ABOUT</a>
+            </li>
+            
+            
+        </ul> 
+    </div>
+    
+    <div class="search-button-area">
+        <a href="#search" class="search-button">Search ...</a>
+    </div>
+     
+    <div class="site-nav-right">
+        
+        <a href="#search" class="search-button">Search ...</a>
+         
+        
+<div class="social-links" >
+    
+    <a class="social-link" title="weibo" href="https://weibo.com/drunkfish9" target="_blank" rel="noopener">
+        <svg viewBox="0 0 1141 1024" xmlns="http://www.w3.org/2000/svg"><path d="M916.48 518.144q27.648 21.504 38.912 51.712t9.216 62.976-14.336 65.536-31.744 59.392q-34.816 48.128-78.848 81.92t-91.136 56.32-94.72 35.328-89.6 18.944-75.264 7.68-51.712 1.536-49.152-2.56-68.096-10.24-78.336-21.504-79.872-36.352-74.24-55.296-59.904-78.848q-16.384-29.696-22.016-63.488t-5.632-86.016q0-22.528 7.68-51.2t27.136-63.488 53.248-75.776 86.016-90.112q51.2-48.128 105.984-85.504t117.248-57.856q28.672-10.24 63.488-11.264t57.344 11.264q10.24 11.264 19.456 23.04t12.288 29.184q3.072 14.336 0.512 27.648t-5.632 26.624-5.12 25.6 2.048 22.528q17.408 2.048 33.792-1.536t31.744-9.216 31.232-11.776 33.28-9.216q27.648-5.12 54.784-4.608t49.152 7.68 36.352 22.016 17.408 38.4q2.048 14.336-2.048 26.624t-8.704 23.04-7.168 22.016 1.536 23.552q3.072 7.168 14.848 13.312t27.136 12.288 32.256 13.312 29.184 16.384zM658.432 836.608q26.624-16.384 53.76-45.056t44.032-64 18.944-75.776-20.48-81.408q-19.456-33.792-47.616-57.344t-62.976-37.376-74.24-19.968-80.384-6.144q-78.848 0-139.776 16.384t-105.472 43.008-72.192 60.416-38.912 68.608q-11.264 33.792-6.656 67.072t20.992 62.976 42.496 53.248 57.856 37.888q58.368 25.6 119.296 32.256t116.224 0.512 100.864-21.504 74.24-33.792zM524.288 513.024q20.48 8.192 38.912 18.432t32.768 27.648q10.24 12.288 17.92 30.72t10.752 39.424 1.536 42.496-9.728 38.912q-8.192 18.432-19.968 37.376t-28.672 35.328-40.448 29.184-57.344 18.944q-61.44 11.264-117.76-11.264t-88.064-74.752q-12.288-39.936-13.312-70.656t16.384-66.56q13.312-27.648 40.448-51.712t62.464-38.912 75.264-17.408 78.848 12.8zM361.472 764.928q37.888 3.072 57.856-18.432t21.504-48.128-15.36-47.616-52.736-16.896q-27.648 3.072-43.008 23.552t-17.408 43.52 9.728 42.496 39.424 21.504zM780.288 6.144q74.752 0 139.776 19.968t113.664 57.856 76.288 92.16 27.648 122.88q0 33.792-16.384 50.688t-35.328 17.408-35.328-14.336-16.384-45.568q0-40.96-22.528-77.824t-59.392-64.512-84.48-43.52-96.768-15.872q-31.744 0-47.104-15.36t-14.336-34.304 18.944-34.304 51.712-15.36zM780.288 169.984q95.232 0 144.384 48.64t49.152 146.944q0 30.72-10.24 43.52t-22.528 11.264-22.528-14.848-10.24-35.84q0-60.416-34.816-96.256t-93.184-35.84q-19.456 0-28.672-10.752t-9.216-23.04 9.728-23.04 28.16-10.752z" /></svg>
+    </a>
+    
+    
+    <a class="social-link" title="github" href="https://drunkfish.me/atom.xml" target="_blank" rel="noopener">
+        <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="RSSicon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 256 256" style="enable-background:new 0 0 256 256;" xml:space="preserve">
+<title>RSS feed icon</title>
+<circle cx="64" cy="192" r="32"/>
+<path d="M32,128c53,0,96,43,96,96h32c0-70.7-57.3-128-128-128V128z"/>
+<path d="M32,64c88.4,0,160,71.6,160,160h32c0-106-86-192-192-192V64z"/>
+</svg>
+
+    </a>
+    
+    
+    
+    <a class="social-link" title="twitter" href="https://twitter.com/drunkfish999" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+    </a>
+    
+    
+    
+    
+</div>
+    </div>
+</nav>
+    </div>
+</header>
+
+
+<div id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+        <header class="post-full-header">
+            <div class="post-full-meta">
+                <time  class="post-full-meta-date" datetime="2019-11-30T00:00:00.000Z">
+                    2019-11-30
+                </time>
+                
+                <span class="date-divider">/</span>
+                
+                
+            </div>
+            <h1 class="post-full-title">群晖搭建静态博客</h1>
+        </header>
+        <div class="post-full no-image">
+            
+            <div class="post-full-content">
+                <article id="photoswipe" class="markdown-body">
+                    <p>小弟想写一个博客，了解到主流有动态博客 <a href="https://wordpress.org" target="_blank" rel="noopener">WordPress</a>、<a href="Ghosthttps://ghost.org">Ghost</a>，静态的有 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>、<a href="https://jekyllcn.com" target="_blank" rel="noopener">Jekyll</a>、<a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> 等等，小弟的博客只是展示富文本，功能比较简单，尝试使用 Hexo。</p>
+<p><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 是台湾大学生 <a href="https://zespia.tw/" target="_blank" rel="noopener">tommy351</a> 开发的静态网页博客系统，基于 Node.js，可以将 Markdown 生成静态网页。相较于动态博客，Hexo 可托管至 <a href="https://pages.github.com/" target="_blank" rel="noopener">Github Page</a>，免购买与配置服务器，不用担心忘记续费服务器。另外和其他静态博客相比，Hexo 插件比较丰富。</p>
+<p>Hexo 需运行在有 Node.js 及 Git 的环境，换一个电脑写就得重新安装一遍，手机及平板上写更不可能。而群晖 Docker 可以搭建各类环境、支持外网访问，还具备天然的备份功能，感觉在群晖上安装可以实现全终端写博客，以下是小弟的尝试：</p>
+<h2 id="GitHub-创建-Github-Pages"><a href="#GitHub-创建-Github-Pages" class="headerlink" title="GitHub 创建 Github Pages"></a>GitHub 创建 Github Pages</h2><p>首先建立 GitHub Pages，<a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a> 是 GitHub 提供的一个網頁寄存服務，我们的博客就放在这个地方。登录 <a href="https://github.com/" target="_blank" rel="noopener">Github</a>（没有 Github 账号先注册一个），在任意页面右上角点击「＋」，选择「新建仓库」。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/github_new.png" alt="github_new"></p>
+<p>之后填入名称，包括「Github 用户名」及后缀「.github.io」，等待建好仓库。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/github_repo.png" alt="github_repo"></p>
+<p>浏览器访问地址 <code>https://&lt;username&gt;.github.io</code> 就可以看到新建的网页。此时已经建好了一个博客，这个博客基于 <a href="https://www.jekyll.com.cn/" target="_blank" rel="noopener">Jekyll</a> ，我们要搭建 Hexo 还要继续。</p>
+<p>注意：个人主页前缀要和 GitHub 用户名一致，只能有一个，若要建立多个，可建立项目主页，具体参见<a href="https://help.github.com/en/github/working-with-github-pages/about-github-pages" target="_blank" rel="noopener">官方文档</a>。</p>
+<h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><h3 id="Docker-安装-Hexo"><a href="#Docker-安装-Hexo" class="headerlink" title="Docker 安装 Hexo"></a>Docker 安装 Hexo</h3><p>之后安装 Hexo，打开群晖 Docker（未安装可在「套件中心」搜索 「docker」下载安装，图标是小鲸鱼顶集装箱）， 在「注册表」标签中搜索「spurin」，找到映像 「spurin/hexo」并下载。这个 Docker 已经集成 <a href="https://github.com/jaredly/hexo-admin" target="_blank" rel="noopener">Hexo Admin Plugin</a>（一个 Hexo 文章后台管理插件）和连接 Github Pages 服务，可以方便我们快速搭建 Hexo 。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_hexo_reg.png" alt="docker_hexo_reg"></p>
+<p>待下载完成后在「映像」标签中双击刚刚下载的映像「spurin/hexo」，点击[高级设置]按钮，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_hexo_image.png" alt="docker_hexo_image"></p>
+<p>在「高级设置」中可以选择是否自动启动、是否建立桌面快捷方式（随个人偏好）。在「卷」标签页中的路径中添加文件夹，此文件夹为放置 Hexo 文件的文件夹，路径为 <code>/app</code> 。在「网络」标签页中可以选「与宿主使用相同网络」，也可以到「端口设置」中自定义端口号。端口号随个人偏好，Hexo 会使用 4000 端口号。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_hexo_dir.png" alt="docker_hexo_dir"></p>
+<p>在「环境」中可以填入自己的 Github 用户名及邮箱，以便生成有效的 SSH Key。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_hexo_env.png" alt="docker_hexo_env"></p>
+<p>点击[应用]按钮，之后点击[下一步]按钮，确认信息填写正确，建立容器，可以勾选「完成向导后运行容器」。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_hexo_image_done.png" alt="docker_hexo_image_done"></p>
+<p>等待容器安装并启动，在「容器」标签页中确保容器启动并正常运行，可以右击容器，选择「细节」，在日志中查看安装详情，等待安装完成。在浏览器中打开 <code>http://群晖 ip:4000</code>，可以看到 Hexo 生成的网站。访问 <code>http://群晖 ip:4000/admin</code>，可以看到文章后台管理页面。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/hexo_admin.png" alt="hexo_admin"></p>
+<h3 id="连接-Github-Pages"><a href="#连接-Github-Pages" class="headerlink" title="连接 Github Pages"></a>连接 Github Pages</h3><p>下一步是连接 Github Pages，打开放置 Hexo 文件的文件夹，找到<code>/.ssh</code> 路径下的 id_rsa.pub 文件，用文本编辑器打开，复制 SSH Key，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/hexo_ssh_key.png" alt="hexo_ssh_key"></p>
+<p>打开 Github 个人设置，找到「SSH and GPG keys」，新建一个密钥，将密钥粘贴。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/github_key.png" alt="github_key"></p>
+<p>在「容器」标签页中找到「spurin/hexo」，右击选择「详情」，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_hexo_container.png" alt="docker_hexo_container"></p>
+<p>在「终端机」选项卡中输入 <code>ssh -T git@github.com</code>，若可以看到自己的 Github 用户名，证明连接成功。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/key_test.png" alt="key_test"></p>
+<h3 id="配置-Hexo-Admin-插件"><a href="#配置-Hexo-Admin-插件" class="headerlink" title="配置 Hexo Admin 插件"></a>配置 Hexo Admin 插件</h3><p>Hexo Admin 这个插件已经年久失修，最近一次更新是几年前了，小弟使用时踩了不少坑，下面只示范正确的步骤：</p>
+<ol>
+<li>安装 hexo-deployer-git 插件，在容器终端输入命令 <code>npm install hexo-deployer-git --save</code></li>
+<li>在自定义的 Hexo 路径下新建脚本文件 hexo-deploy.sh，内容如下：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>配置文件 _config.yml 下添加以下：</li>
+</ol>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:&lt;username&gt;/d&lt;username&gt;.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line"></span><br><span class="line"><span class="attr">admin:</span></span><br><span class="line">  <span class="attr">deployCommand:</span> <span class="string">'./hexo-deploy.sh'</span></span><br></pre></td></tr></table></figure>
+
+<p>点击[deploy]按钮可以生成页面并部署至 Github Pages，若未报错说明插件配置成功，打开 <code>https://&lt;username&gt;.github.io</code> 可以看到 Hexo 生成的页面。</p>
+<p>注意：注意 yml 文件格式规范，名称后面有空格。</p>
+<ol start="4">
+<li>设置密码</li>
+</ol>
+<p>插件支持设置密码，相应页面设置密码即可。</p>
+<ol start="5">
+<li>设置外网访问</li>
+</ol>
+<p>为了可以随时随地发布博客，需要配置群晖外网访问。群晖外网访问可以利用群晖自带 DDNS，设置路由器映射端口，注意要有公网 IP（可以联系运营商开通）。</p>
+<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><h3 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h3><p>如果 IP 地址对应现实生活中的经纬度，域名就相当于我们的地址门牌号，域名可以是有意义的字词，帮助我们快速访问要访问的地址。</p>
+<p>购买域名可以去 <a href="https://www.domcomp.com" target="_blank" rel="noopener">domcomp</a> 先比较下价格再购买。若不想花钱，也可以在 <a href="https://www.freenom.com" target="_blank" rel="noopener">Freenom</a> 申请免费域名。</p>
+<h3 id="域名商设置"><a href="#域名商设置" class="headerlink" title="域名商设置"></a>域名商设置</h3><p>有了域名之后需要将域名解析到虚拟主机（这里是 Github Page 的服务器）上，小弟的域名 drunkfish.me 是从 <a href="https://www.gandi.net" target="_blank" rel="noopener">Gandi.net</a> 买的，新增一条「@」的 ALIAS 记录即可。不同域名商域名解析设置不同，若遇到困难可以联系域名提供商客服。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/domain_alias.png" alt="domain_alias"></p>
+<h3 id="Github-Pages-设定"><a href="#Github-Pages-设定" class="headerlink" title="Github Pages 设定"></a>Github Pages 设定</h3><p>Github Pages 设定很简单，在仓库设置中直接填入域名即可，另外建议勾选「强制 https」，这样访问域名就可以看到安心的绿色小锁。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/page_domain.png" alt="page_domain"></p>
+<p>设置完成之后可能要过几分钟才能可以使 DNS 生效，另外可以在系统终端机使用命令<code>dig &lt;your domain&gt; +nostats +nocomments +nocmd</code>验证是否绑定成功。</p>
+<p>遇到问题可以咨询域名服务商和查阅 Github Pages 域名相关<a href="https://help.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site" target="_blank" rel="noopener">官方文档</a></p>
+<h2 id="配置相关"><a href="#配置相关" class="headerlink" title="配置相关"></a>配置相关</h2><p>Hexo 的设置可以在 _config.yml 这个文件下修改，下面贴一下主要的配置项：</p>
+<h3 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h3><p>小弟发现 <a href="https://github.com/xzhih/hexo-theme-casper" target="_blank" rel="noopener">casper</a> 主题不错，安装配置可移步<a href="https://zhih.me/hexo-casper-usage/" target="_blank" rel="noopener">作者</a>博客。</p>
+<p>几个注意的点：</p>
+<ol>
+<li><p>注册 <a href="https://leancloud.app" target="_blank" rel="noopener">LeanCloud</a> 可以用<a href="https://console.leancloud.app/login.html#/signin" target="_blank" rel="noopener">国际版</a>地址注册，免实名认证（需提供国内手机号）；</p>
+</li>
+<li><p>在 Google Analytics 设置中点击[新增账户]可以新增一个账户，找到追踪 ID 填入即可，另外 Google Analytics 有手机端 App 可以使用。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/hexo_ga_app.png" alt="hexo_ga_app"></p>
+</li>
+</ol>
+<h3 id="增加-RSS-支持"><a href="#增加-RSS-支持" class="headerlink" title="增加 RSS 支持"></a>增加 RSS 支持</h3><p>增加 RSS 支持需要安装 <a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="noopener">hexo-generator-feed</a> 插件。</p>
+<p>首先在容器终端中输入命令 <code>npm install hexo-generator-feed</code></p>
+<p>之后在 Hexo 配置文件 _config.yml 文件中增加以下配置即可：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">feed:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">atom</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">atom.xml</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">20</span></span><br><span class="line">  <span class="attr">hub:</span></span><br><span class="line">  <span class="attr">content:</span></span><br><span class="line">  <span class="attr">content_limit:</span> <span class="number">140</span></span><br><span class="line">  <span class="attr">content_limit_delim:</span> <span class="string">' '</span></span><br><span class="line">  <span class="attr">order_by:</span> <span class="string">-date</span></span><br><span class="line">  <span class="attr">icon:</span> <span class="string">icon.png</span></span><br><span class="line">  <span class="attr">autodiscovery:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">template:</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="文章命名自定义"><a href="#文章命名自定义" class="headerlink" title="文章命名自定义"></a>文章命名自定义</h3><p>Hexo 默认文章链接以文章日期命名，想修改文章链接可以参考<a href="https://hexo.io/docs/permalinks.html" target="_blank" rel="noopener">官方文档</a>。</p>
+<h2 id="撰写文章"><a href="#撰写文章" class="headerlink" title="撰写文章"></a>撰写文章</h2><h3 id="页面属性"><a href="#页面属性" class="headerlink" title="页面属性"></a>页面属性</h3><p>md 文件会存放在 /source/posts 这个路径下，生成的页面在路径 /public，每篇文章可以加入页面属性：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title:               # 文章标题</span><br><span class="line">date:                # 文章日期</span><br><span class="line">tags:                # 文章标签</span><br><span class="line">cover_img:           # 在文章摘要上显示</span><br><span class="line">feature_img:         # 在文章详细页面上置顶</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>文章用 Markdown 书写，语法参考<a href="https://markdown.tw/" target="_blank" rel="noopener">这个</a>，另外可以参考这个顺口溜：</p>
+<blockquote>
+<p>井号代表是标题，一个六个随你意，<br>星号表示要强调，一斜二粗三合体，<br>加减都可设列表，后面空格别忘记，<br>「&gt;」表示要引用，回车一行算另起，<br>还有中小俩括号，超级链接很容易。</p>
+</blockquote>
+<h3 id="书写工具"><a href="#书写工具" class="headerlink" title="书写工具"></a>书写工具</h3><p>可以直接打开 <code>http://群晖 ip:4000</code> 在线用 Markdown 撰写文章，支持实时保存、预览，另外可以使用任意支持 Markdown 的书写工具书写，如 <a href="http://typora.io" target="_blank" rel="noopener">Typora</a>（支持实时预览、实用小功能）。</p>
+<p>小弟推荐使用图床管理图片（这样做 md 文件可以免配置本地图片路径，且备份时只需要备份一个 md 文件就可以了），图床推荐放在 Github 仓库，稳定、够用（具体参见<a href="https://help.github.com/cn/github/managing-large-files/what-is-my-disk-quota" target="_blank" rel="noopener">容量限制</a>可到100G），推荐使用图床工具上传，如 <a href="https://blog.svend.cc/upic/" target="_blank" rel="noopener">uPic</a>(支持拖拽上传、上传完成后自动复制文件链接等等)、<a href="https://github.com/Molunerfinn/PicGo" target="_blank" rel="noopener">PicGo</a> (多平台、支持<a href="https://github.com/PicGo/Awesome-PicGo" target="_blank" rel="noopener">插件</a>)，建议勾选 <a href="https://www.jsdelivr.com/" target="_blank" rel="noopener">jsDelivr</a> 优化国内访问。</p>
+<p>发布文章有两种：<br>1.本地写好 md 文件，上传至 <code>/source/posts</code> 路径下，之后在容器终端运行 <code>hexo g &amp;&amp; hexo d</code>；<br>2.通过访问 <code>http(s)://群晖 ip:4000</code> ，在线写，写完点击[deploy]按钮。</p>
+<p>书写小建议：<br>1.文件命名建议英文命名，关键词之间用「-」隔开;<br>2.从「##」二级标题开始标；<br>3.Markdown 模块间用一空行隔开；<br>4.写作前排版参考<a href="https://github.com/sparanoid/chinese-copywriting-guidelines" target="_blank" rel="noopener">中文文案排版指北</a>；<br>5.若图片体积太大建议用图片压缩工具压缩。</p>
+<p>至此我们的博客就搭建好了，是不是很酷。</p>
+
+                </article>
+                <ul class="tags-postTags">
+                    
+                    <li>
+                        <a href="/tags/docker/" rel="tag"># docker</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+    <nav id="gobottom" class="pagination">
+        
+        <a class="prev-post" title="Terminal 这样美化很酷" href="/terminal/">
+            ← Terminal 这样美化很酷
+        </a>
+        
+        <span class="prev-next-post">·</span>
+        
+    </nav>
+
+    
+    <div class="inner">
+        <div id="comment"></div>
+    </div>
+    
+</div>
+
+<div class="toc-bar">
+    <div class="toc-btn-bar">
+        <a href="#site-main" class="toc-btn">
+            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M793.024 710.272a32 32 0 1 0 45.952-44.544l-310.304-320a32 32 0 0 0-46.4 0.48l-297.696 320a32 32 0 0 0 46.848 43.584l274.752-295.328 286.848 295.808z" /></svg>
+        </a>
+        <div class="toc-btn toc-switch">
+            <svg class="toc-open" class="" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M779.776 480h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M779.776 672h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M256 288a32 32 0 1 0 0 64 32 32 0 0 0 0-64M392.576 352h387.2a32 32 0 0 0 0-64h-387.2a32 32 0 0 0 0 64M256 480a32 32 0 1 0 0 64 32 32 0 0 0 0-64M256 672a32 32 0 1 0 0 64 32 32 0 0 0 0-64" /></svg>
+            <svg class="toc-close hide" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M512 960c-247.039484 0-448-200.960516-448-448S264.960516 64 512 64 960 264.960516 960 512 759.039484 960 512 960zM512 128.287273c-211.584464 0-383.712727 172.128262-383.712727 383.712727 0 211.551781 172.128262 383.712727 383.712727 383.712727 211.551781 0 383.712727-172.159226 383.712727-383.712727C895.712727 300.415536 723.551781 128.287273 512 128.287273z" /><path d="M557.05545 513.376159l138.367639-136.864185c12.576374-12.416396 12.672705-32.671738 0.25631-45.248112s-32.704421-12.672705-45.248112-0.25631l-138.560301 137.024163-136.447897-136.864185c-12.512727-12.512727-32.735385-12.576374-45.248112-0.063647-12.512727 12.480043-12.54369 32.735385-0.063647 45.248112l136.255235 136.671523-137.376804 135.904314c-12.576374 12.447359-12.672705 32.671738-0.25631 45.248112 6.271845 6.335493 14.496116 9.504099 22.751351 9.504099 8.12794 0 16.25588-3.103239 22.496761-9.247789l137.567746-136.064292 138.687596 139.136568c6.240882 6.271845 14.432469 9.407768 22.65674 9.407768 8.191587 0 16.352211-3.135923 22.591372-9.34412 12.512727-12.480043 12.54369-32.704421 0.063647-45.248112L557.05545 513.376159z" /></svg>
+        </div>
+        <a href="#gobottom" class="toc-btn">
+            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M231.424 346.208a32 32 0 0 0-46.848 43.584l297.696 320a32 32 0 0 0 46.4 0.48l310.304-320a32 32 0 1 0-45.952-44.544l-286.848 295.808-274.752-295.36z" /></svg>
+        </a>
+    </div>
+    <div class="toc-main">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#GitHub-创建-Github-Pages"><span class="toc-text">GitHub 创建 Github Pages</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-Hexo"><span class="toc-text">安装 Hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker-安装-Hexo"><span class="toc-text">Docker 安装 Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连接-Github-Pages"><span class="toc-text">连接 Github Pages</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置-Hexo-Admin-插件"><span class="toc-text">配置 Hexo Admin 插件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#绑定域名"><span class="toc-text">绑定域名</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#购买域名"><span class="toc-text">购买域名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#域名商设置"><span class="toc-text">域名商设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Github-Pages-设定"><span class="toc-text">Github Pages 设定</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置相关"><span class="toc-text">配置相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置主题"><span class="toc-text">配置主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#增加-RSS-支持"><span class="toc-text">增加 RSS 支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文章命名自定义"><span class="toc-text">文章命名自定义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#撰写文章"><span class="toc-text">撰写文章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#页面属性"><span class="toc-text">页面属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#书写工具"><span class="toc-text">书写工具</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+
+
+
+
+
+	</div>
+	
+
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+            
+            
+        </div>
+    </div>
+</aside>
+
+	
+
+
+
+
+<div id="search" class="search-overlay">
+    <div class="search-form">
+        
+        <div class="search-overlay-logo">
+        	<img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/favicon_256px.ico" alt="莊菲什">
+        </div>
+        
+        <input id="local-search-input" class="search-input" type="text" name="search" placeholder="Search ...">
+        <a class="search-overlay-close" href="#"></a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+<footer class="site-footer outer">
+	<div class="site-footer-content inner">
+		<div class="copyright">
+			<a href="/" title="莊菲什">莊菲什 &copy; 2020</a>
+			
+				
+			        <span hidden="true" id="/hexo/" class="leancloud-visitors" data-flag-title="群晖搭建静态博客">
+			            <span>阅读量 </span>
+			            <span class="leancloud-visitors-count">0</span>
+			        </span>
+	    		
+    		
+		</div>
+		<nav class="site-footer-nav">
+			
+			<a href="https://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+			<a href="https://github.com/xzhih/hexo-theme-casper" title="Casper" target="_blank" rel="noopener">Casper</a>
+		</nav>
+	</div>
+</footer>
+	
+
+
+<script>
+    if(window.navigator && navigator.serviceWorker) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            for(let registration of registrations) {
+                registration.unregister()
+            }
+        })
+    }
+</script>
+
+
+<script id="scriptLoad" src="/js/allinone.min.js" async></script>
+
+
+<script>
+    document.getElementById('scriptLoad').addEventListener('load', function () {
+        
+        
+
+        
+        
+
+        
+        
+        
+            searchFunc("/");
+        
+        
+    })
+</script>
+
+
+
+
+
+
+<script id="valineScript" src='//unpkg.com/valine/dist/Valine.min.js' async></script>
+<script>
+    document.getElementById('valineScript').addEventListener("load", function() {
+        new Valine({
+            el: '#comment' ,
+            verify: false,
+            notify: true,
+            appId: 'KaLeKV30O7K4JhSXpYQpglJ7-MdYXbMMI',
+            appKey: 'z7kF0mNJaUFYzbjJWdzwPDq8',
+            placeholder: '留下您的评论',
+            pageSize: 10,
+            avatar: 'hide',
+            visitor: true
+        })
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

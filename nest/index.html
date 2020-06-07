@@ -20,7 +20,7 @@
 	<link rel="preconnect" href="//9qpuwspm.api.lncld.net">
 	<link rel="preconnect" href="//gravatar.loli.net">
 
-	<title>DIY 超酷的像素钟 | 莊菲什</title>
+	<title>这个甜甜圈很酷——Nest Mini——Google Home Mini 指南 | 莊菲什</title>
 
 	<meta name="HandheldFriendly" content="True" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
@@ -48,14 +48,14 @@
 
 	<meta property="og:site_name" content="莊菲什">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="DIY 超酷的像素钟 | 莊菲什">
+	<meta property="og:title" content="这个甜甜圈很酷——Nest Mini——Google Home Mini 指南 | 莊菲什">
 	<meta property="og:description" content="">
-	<meta property="og:url" content="http://yoursite.com/awtrix/">
+	<meta property="og:url" content="http://yoursite.com/nest/">
 
 	
-	<meta property="article:published_time" content="2020-01-21T00:01:00+08:00"/> 
+	<meta property="article:published_time" content="2020-03-07T00:03:00+08:00"/> 
 	<meta property="article:author" content="drunkfish">
-	<meta property="article:published_first" content="莊菲什, /awtrix/" />
+	<meta property="article:published_first" content="莊菲什, /nest/" />
 	
 
 	
@@ -155,69 +155,61 @@
     <div class="inner">
         <header class="post-full-header">
             <div class="post-full-meta">
-                <time  class="post-full-meta-date" datetime="2020-01-21T00:00:00.000Z">
-                    2020-01-21
+                <time  class="post-full-meta-date" datetime="2020-03-07T00:00:00.000Z">
+                    2020-03-7
                 </time>
                 
                 <span class="date-divider">/</span>
                 
                 
             </div>
-            <h1 class="post-full-title">DIY 超酷的像素钟</h1>
+            <h1 class="post-full-title">这个甜甜圈很酷——Nest Mini——Google Home Mini 指南</h1>
         </header>
         <div class="post-full no-image">
             
             <div class="post-full-content">
                 <article id="photoswipe" class="markdown-body">
-                    <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/awtrix_display.png" alt="awtrix_display"></p>
-<p>小弟以前听说过 <a href="https://lametric.com/" target="_blank" rel="noopener">LaMetric TIME</a>，觉得很酷，像桌面版的 Apple Watch，可以显示一些固定信息（如时间、天气等等），还可以显示通知，过滤信息。但是囊中羞涩，只能远观。直到发现这位大大的<a href="https://www.youtube.com/playlist?list=PLmxTR4AYd_9T3Lw7PR9u_UrtplM1Dqp77" target="_blank" rel="noopener">视频</a>，详细记录了替代品的完整制作过程，小弟根据步骤也做了一个，期间踩了一些坑，以下是过程：</p>
-<h2 id="购买配件"><a href="#购买配件" class="headerlink" title="购买配件"></a>购买配件</h2><p>像素钟的名字是 <a href="https://blueforcer.de/awtrix-2-0/" target="_blank" rel="noopener">Awtrix</a>，在<a href="https://awtrixdocs.blueforcer.de/#/en-en/README" target="_blank" rel="noopener">这里</a>中可以找到需要的电路元件，主要有以下：</p>
-<p>基本元件：</p>
-<ul>
-<li>Wemos D1 mini（也可以用 NodeMCU 等 Esp8266 模块，免焊接）</li>
-<li>8x32 WS2812B 全彩软像素屏</li>
-<li>杜邦线若干（建议公对母、公对公、母对母都备一些，方便延长线）</li>
-<li>MicroUSB 数据线</li>
-</ul>
-<p>可选配件：</p>
-<ul>
-<li>DC 直流电源插头</li>
-<li>5v 4A电源</li>
-<li>1000uF 10V 电容</li>
-<li>LDR GL5528 光敏电阻</li>
-<li>1000Ω 电阻</li>
-<li>APDS-9960 手势模块</li>
-<li>MicroSD 卡模块</li>
-</ul>
-<p>（以上元件都可以在淘宝买到，直接搜索关键词即可，若选择 Wemos D1 mini，可能还需要一个电烙铁进行焊接）。</p>
-<p>其他配件：<br>1.3D 打印光栅<br>默认像素灯是圆形，加入光栅可以将圆形变成方形，显示效果更好，建议打印。打印文件可以在 <a href="https://www.thingiverse.com/thing:2791276" target="_blank" rel="noopener">Thingiverse</a> 下载，小弟是在<a href="http://www.mohou.com/" target="_blank" rel="noopener">魔猴网</a>打印的，加运费大概 60-70 元。</p>
-<p>2.外壳（可选）<br>可选外壳，非必选，打印成本较高，另外作者推出了 Awtrix Pro，外壳和之前的不一样。</p>
-<p>3.亚克力蒙版<br>可以增强显示效果，淘宝搜索「亚克力定制」即可，颜色选「黑茶色」，尺寸可以选 95×340×2mm。</p>
-<p>4.A3 纸<br>起到增强显示效果的作用，A4 纸不够长。</p>
-<h2 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h2><p>Awtrix 分服务器端与控制端，其中服务器端小弟选择用群晖 Docker 运行，也可以用树莓派（新的外壳可以直接放入树莓派），甚至是 Android 手机。</p>
-<p>下面是 Docker 的步骤，在注册表中搜索「whyet」，下载映像。映像下载好运行映像，小弟没搞清楚配置文件的路径，所以没有设置，另外 Awtrix 会占用 7000 端口号，可以根据自己实际情况调整。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_awtrix.png" alt="docker_awtrix"></p>
-<p>容器运行后，可以在日志后终端中看到安装情况，待 jar 文件下载完成，在浏览器中打开 <code>http(s)://群晖 IP:7000</code>，就可以进入 Awtrix 服务器端，因为还没有控制端，所以会有未连接的提示。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/awtrix_manager.png" alt="awtrix_manager"></p>
-<p>另外，服务端适配了移动端，可以手机端进行控制。由于是运行在群晖中，依旧可以通过配置端口映射实现外网访问。</p>
-<h2 id="控制端"><a href="#控制端" class="headerlink" title="控制端"></a>控制端</h2><h3 id="刷入固件"><a href="#刷入固件" class="headerlink" title="刷入固件"></a>刷入固件</h3><p>1.控制端刷入固件非常容易，首先要下载相应模块的驱动，若是 D1 mini，请前往<a href="https://wiki.wemos.cc/downloads" target="_blank" rel="noopener">这里</a>下载，若是 NodeMCU 请前往<a href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers" target="_blank" rel="noopener">这里</a> 下载。</p>
-<p>2.下载安装 <a href="https://github.com/marcelstoer/nodemcu-pyflasher/releases" target="_blank" rel="noopener">NodeMCU PyFlasher</a> 及控制端<a href="https://blueforcer.de/awtrix/beta/firmware.bin" target="_blank" rel="noopener">固件</a>，将模块用 MicroUSB 数据线连接至电脑 USB 口，选择好端口及固件路径，点击[刷入]。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/awtrix_flash.png" alt="awtrix_flash"></p>
-<p>刷入成功可以看到 Awtrix 的 AP，连入这个 WiFi（密码是 awtrixxx），之后填入 WiFi 信息（名称、密码）及服务端 IP （即群晖 IP）即可（无需端口号）。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/awtrix_wifi.png" alt="awtrix_wifi"></p>
-<h3 id="连接电路元件及组装"><a href="#连接电路元件及组装" class="headerlink" title="连接电路元件及组装"></a>连接电路元件及组装</h3><p>1.连接按照官方的<a href="https://awtrix.github.io/AWTRIX2.0-Docs_Beta/#/en-en/hardware?id=basis-variante" target="_blank" rel="noopener">电路图</a>连接即可，连接成功默认显示「时间」 App。</p>
-<p>注意：正负极不要接反。</p>
-<p>2.显示部分按照亚克力板、纸（裁成亚克力板大小）、光栅、像素灯从外到底的顺序，用双面胶粘住。若打印了外壳，可以将元件套入外壳中。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/awtrix_wire_mini.JPG" alt="awtrix_wire"></p>
-<p>3.连接好后，按几次 D1 mini 的[reset]键，待屏幕出现图像启动即可。</p>
-<h3 id="App-推荐"><a href="#App-推荐" class="headerlink" title="App 推荐"></a>App 推荐</h3><p>Awtrix 支持多个 App，以下是几个 App 介绍：</p>
-<p>Time：默认自带，可以在设置中调整时区，可以选择日期、时间 12/24 制、是否显示星期指示格式。</p>
-<p>OpenWeather：需到 <a href="https://home.openweathermap.org/" target="_blank" rel="noopener">OpenWeather</a> 注册填入 APIKey。填入之后位置 ID，可以在<a href="https://openweathermap.org/city" target="_blank" rel="noopener">这里</a>。 </p>
-<p>Animations：可以显示随机动画，很有趣，无需配置。</p>
-<p>Moon：可以显示当日月相，无需配置。</p>
-<p>PM：可以显示地区 PM2.5 值，需要填入位置监测点位置 ID。</p>
-<p>Matrix：显示矩阵动画。</p>
-<p>Spotify：登录 Spotify 账号即可，每次切换歌曲可以显示歌名（目前仅支持英文）。</p>
+                    <p>Google Nest Mini （旧款是 Google Home Mini，小弟同款）是 Google 出的小型音箱，小弟觉得够酷够实用，以下是一些使用建议：</p>
+<h2 id="基本设置"><a href="#基本设置" class="headerlink" title="基本设置"></a>基本设置</h2><p>使用前可以先注册好 Google 账号，建议使用 Gmail App 或 Google App 注册，免输手机号。注意配置好路由器，可以连外网，Google Nest Mini 所有功能均需外网环境下使用。手机安装好名为「Google Home」的 App，Android 系统非原生系统可能安装 Google 框架，iOS 系统需非中国区账号。</p>
+<p>Google Nest Mini ，支持英文、中文。英文可以更换语音角色，还有名人录制的声音，小弟觉得 Google Assistant 的英文声音很自然（目前感觉是最自然的），听起来有活力。另外，可以添加中文，中文支持的指令比英文少，且感不够自然、不支持「连续对话」，建议还是使用英文。比较酷的一点是，Google  Nest Mini 支持自动识别中英文，问英文，回答是英文，问中文，回答是中文。</p>
+<p>Google Nest Mini 唤醒软硬件都做了优化，唤醒异常灵敏。唤醒词是「Hey Google」或「OK Google」，另外「Hey googoo」「Hey noddle」「OK goodle」「Hey d00doo」这些也可以唤醒。另外，Google Nest Mini 支持超酷的连续对话，无需一直说唤醒词。</p>
+<p>Google Nest Mini 支持 Routines，可以将一系列命令集合成一个命令，方便日常操作。</p>
+<p>Google Nest Mini 支持各种 action，详细可以到[这里]( <a href="https://assistant.google.com/explore）或" target="_blank" rel="noopener">https://assistant.google.com/explore）或</a> Google Assistant 应用中查看。</p>
+<h2 id="作为音箱"><a href="#作为音箱" class="headerlink" title="作为音箱"></a>作为音箱</h2><p>小弟认为  Nest Mini  作为音箱已经值回票价，外观漂亮，音质比手机或电脑自带的好一点，更酷的是可以直接用语音控制，如</p>
+<p>“Hey Google, pause the music.”</p>
+<p> “Hey Google, continue to play.”</p>
+<p>“Hey Google, turn it up.”</p>
+<p>“Hey Google, louder.” </p>
+<p>“Hey Google, stop.”</p>
+<p>等等。 </p>
+<p>Nest Mini 可以绑定 Spotify、YouTube Music 等平台账号，之后可以直接语音控制。</p>
+<p>“Hey Google, play relaxing music on Spotify.”</p>
+<p>“Hey Google, play my ‘Discover Weekly’ playlist on Spotify.”</p>
+<p>等等。</p>
+<p>或者可以利用 Chromecast 播放音乐（各种支持 Chromecast 的 App、Chrome 浏览器等等 ），国内的音乐应用可以通过连接蓝牙播放。</p>
+<h2 id="实体-Google"><a href="#实体-Google" class="headerlink" title="实体  Google"></a>实体  Google</h2><p>Google Nest Mini 像实体的 Google ，简单的问题可以直接用语音获得答案。日常的询问，如日常天气、现在的时间、设定定时器、设定闹钟都可以，如</p>
+<p> “Hey Google, what’s the weather like?”</p>
+<p> “Hey Google, what’s the forecast for today?”</p>
+<p> “Hey Google, set a timer for [time].”</p>
+<p>“Hey Google, cancel my timer.”</p>
+<p>“Hey Google, what time is it?”</p>
+<p>“Hey Google, set an alarm for [time].” </p>
+<p>Google Nest Mini 天气、提醒、闹钟</p>
+<p>或者听新闻（需要先在 App 内选新闻来源），中文新闻有「东森新闻」、「TVBS 新闻」、「公视新闻  PTS News」，如</p>
+<p>“Hey Google, give me some news.” </p>
+<p>或者问一些百科问题，如</p>
+<p>“Hey Google, how to spell [word]?” </p>
+<p>“Hey Google, how do you say [word or phrase] in [language]?” </p>
+<p>“Hey Google, why the sky blue?” </p>
+<p>“Hey Google, who is Steve Jobs?” </p>
+<p>等等。</p>
+<h2 id="小朋友的好伙伴"><a href="#小朋友的好伙伴" class="headerlink" title="小朋友的好伙伴"></a>小朋友的好伙伴</h2><p>Google Nest Mini 是小朋友的好伙伴，对世界充满好奇心的小朋友的问题 Google 总会耐心解答，如</p>
+<p>“Hey Google, tell me a joke.”</p>
+<p>“Hey Google, sing a song.”</p>
+<p>“Hey Google, what does the cat say?”</p>
+<p>“Hey Google, play a game.”</p>
+<p>等等。</p>
+<h2 id="控制其他设备"><a href="#控制其他设备" class="headerlink" title="控制其他设备"></a>控制其他设备</h2><p>Google Nest Mini 可以很方便地控制其他硬件，可以直接购买支持 Google Assistant 的设备，也可以自己搭建接入。</p>
 
                 </article>
                 <ul class="tags-postTags">
@@ -230,14 +222,14 @@
     
     <nav id="gobottom" class="pagination">
         
-        <a class="prev-post" title="Apple Watch" href="/watch/">
-            ← Apple Watch
+        <a class="prev-post" title="这样用 Kindle 有点不一样" href="/kindle/">
+            ← 这样用 Kindle 有点不一样
         </a>
         
         <span class="prev-next-post">·</span>
         
-        <a class="next-post" title="群晖虚拟机安装软路由" href="/openwrt/">
-            群晖虚拟机安装软路由 →
+        <a class="next-post" title="Android TV 应用推荐——以 Mibox 为例" href="/tv/">
+            Android TV 应用推荐——以 Mibox 为例 →
         </a>
         
     </nav>
@@ -263,7 +255,7 @@
         </a>
     </div>
     <div class="toc-main">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#购买配件"><span class="toc-text">购买配件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器端"><span class="toc-text">服务器端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#控制端"><span class="toc-text">控制端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#刷入固件"><span class="toc-text">刷入固件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连接电路元件及组装"><span class="toc-text">连接电路元件及组装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#App-推荐"><span class="toc-text">App 推荐</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本设置"><span class="toc-text">基本设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#作为音箱"><span class="toc-text">作为音箱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实体-Google"><span class="toc-text">实体  Google</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小朋友的好伙伴"><span class="toc-text">小朋友的好伙伴</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#控制其他设备"><span class="toc-text">控制其他设备</span></a></li></ol>
     </div>
 </div>
 
@@ -310,7 +302,7 @@
 			<a href="/" title="莊菲什">莊菲什 &copy; 2020</a>
 			
 				
-			        <span hidden="true" id="/awtrix/" class="leancloud-visitors" data-flag-title="DIY 超酷的像素钟">
+			        <span hidden="true" id="/nest/" class="leancloud-visitors" data-flag-title="这个甜甜圈很酷——Nest Mini——Google Home Mini 指南">
 			            <span>阅读量 </span>
 			            <span class="leancloud-visitors-count">0</span>
 			        </span>

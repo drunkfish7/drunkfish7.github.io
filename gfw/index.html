@@ -20,7 +20,7 @@
 	<link rel="preconnect" href="//9qpuwspm.api.lncld.net">
 	<link rel="preconnect" href="//gravatar.loli.net">
 
-	<title>DIY 超酷的像素钟 | 莊菲什</title>
+	<title>搭建 V2ray 连接互联网 | 莊菲什</title>
 
 	<meta name="HandheldFriendly" content="True" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
@@ -48,14 +48,14 @@
 
 	<meta property="og:site_name" content="莊菲什">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="DIY 超酷的像素钟 | 莊菲什">
+	<meta property="og:title" content="搭建 V2ray 连接互联网 | 莊菲什">
 	<meta property="og:description" content="">
-	<meta property="og:url" content="http://yoursite.com/awtrix/">
+	<meta property="og:url" content="http://yoursite.com/gfw/">
 
 	
-	<meta property="article:published_time" content="2020-01-21T00:01:00+08:00"/> 
+	<meta property="article:published_time" content="2020-02-01T00:02:00+08:00"/> 
 	<meta property="article:author" content="drunkfish">
-	<meta property="article:published_first" content="莊菲什, /awtrix/" />
+	<meta property="article:published_first" content="莊菲什, /gfw/" />
 	
 
 	
@@ -155,69 +155,47 @@
     <div class="inner">
         <header class="post-full-header">
             <div class="post-full-meta">
-                <time  class="post-full-meta-date" datetime="2020-01-21T00:00:00.000Z">
-                    2020-01-21
+                <time  class="post-full-meta-date" datetime="2020-02-01T00:00:00.000Z">
+                    2020-02-1
                 </time>
                 
                 <span class="date-divider">/</span>
                 
                 
             </div>
-            <h1 class="post-full-title">DIY 超酷的像素钟</h1>
+            <h1 class="post-full-title">搭建 V2ray 连接互联网</h1>
         </header>
         <div class="post-full no-image">
             
             <div class="post-full-content">
                 <article id="photoswipe" class="markdown-body">
-                    <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/awtrix_display.png" alt="awtrix_display"></p>
-<p>小弟以前听说过 <a href="https://lametric.com/" target="_blank" rel="noopener">LaMetric TIME</a>，觉得很酷，像桌面版的 Apple Watch，可以显示一些固定信息（如时间、天气等等），还可以显示通知，过滤信息。但是囊中羞涩，只能远观。直到发现这位大大的<a href="https://www.youtube.com/playlist?list=PLmxTR4AYd_9T3Lw7PR9u_UrtplM1Dqp77" target="_blank" rel="noopener">视频</a>，详细记录了替代品的完整制作过程，小弟根据步骤也做了一个，期间踩了一些坑，以下是过程：</p>
-<h2 id="购买配件"><a href="#购买配件" class="headerlink" title="购买配件"></a>购买配件</h2><p>像素钟的名字是 <a href="https://blueforcer.de/awtrix-2-0/" target="_blank" rel="noopener">Awtrix</a>，在<a href="https://awtrixdocs.blueforcer.de/#/en-en/README" target="_blank" rel="noopener">这里</a>中可以找到需要的电路元件，主要有以下：</p>
-<p>基本元件：</p>
-<ul>
-<li>Wemos D1 mini（也可以用 NodeMCU 等 Esp8266 模块，免焊接）</li>
-<li>8x32 WS2812B 全彩软像素屏</li>
-<li>杜邦线若干（建议公对母、公对公、母对母都备一些，方便延长线）</li>
-<li>MicroUSB 数据线</li>
-</ul>
-<p>可选配件：</p>
-<ul>
-<li>DC 直流电源插头</li>
-<li>5v 4A电源</li>
-<li>1000uF 10V 电容</li>
-<li>LDR GL5528 光敏电阻</li>
-<li>1000Ω 电阻</li>
-<li>APDS-9960 手势模块</li>
-<li>MicroSD 卡模块</li>
-</ul>
-<p>（以上元件都可以在淘宝买到，直接搜索关键词即可，若选择 Wemos D1 mini，可能还需要一个电烙铁进行焊接）。</p>
-<p>其他配件：<br>1.3D 打印光栅<br>默认像素灯是圆形，加入光栅可以将圆形变成方形，显示效果更好，建议打印。打印文件可以在 <a href="https://www.thingiverse.com/thing:2791276" target="_blank" rel="noopener">Thingiverse</a> 下载，小弟是在<a href="http://www.mohou.com/" target="_blank" rel="noopener">魔猴网</a>打印的，加运费大概 60-70 元。</p>
-<p>2.外壳（可选）<br>可选外壳，非必选，打印成本较高，另外作者推出了 Awtrix Pro，外壳和之前的不一样。</p>
-<p>3.亚克力蒙版<br>可以增强显示效果，淘宝搜索「亚克力定制」即可，颜色选「黑茶色」，尺寸可以选 95×340×2mm。</p>
-<p>4.A3 纸<br>起到增强显示效果的作用，A4 纸不够长。</p>
-<h2 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h2><p>Awtrix 分服务器端与控制端，其中服务器端小弟选择用群晖 Docker 运行，也可以用树莓派（新的外壳可以直接放入树莓派），甚至是 Android 手机。</p>
-<p>下面是 Docker 的步骤，在注册表中搜索「whyet」，下载映像。映像下载好运行映像，小弟没搞清楚配置文件的路径，所以没有设置，另外 Awtrix 会占用 7000 端口号，可以根据自己实际情况调整。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_awtrix.png" alt="docker_awtrix"></p>
-<p>容器运行后，可以在日志后终端中看到安装情况，待 jar 文件下载完成，在浏览器中打开 <code>http(s)://群晖 IP:7000</code>，就可以进入 Awtrix 服务器端，因为还没有控制端，所以会有未连接的提示。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/awtrix_manager.png" alt="awtrix_manager"></p>
-<p>另外，服务端适配了移动端，可以手机端进行控制。由于是运行在群晖中，依旧可以通过配置端口映射实现外网访问。</p>
-<h2 id="控制端"><a href="#控制端" class="headerlink" title="控制端"></a>控制端</h2><h3 id="刷入固件"><a href="#刷入固件" class="headerlink" title="刷入固件"></a>刷入固件</h3><p>1.控制端刷入固件非常容易，首先要下载相应模块的驱动，若是 D1 mini，请前往<a href="https://wiki.wemos.cc/downloads" target="_blank" rel="noopener">这里</a>下载，若是 NodeMCU 请前往<a href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers" target="_blank" rel="noopener">这里</a> 下载。</p>
-<p>2.下载安装 <a href="https://github.com/marcelstoer/nodemcu-pyflasher/releases" target="_blank" rel="noopener">NodeMCU PyFlasher</a> 及控制端<a href="https://blueforcer.de/awtrix/beta/firmware.bin" target="_blank" rel="noopener">固件</a>，将模块用 MicroUSB 数据线连接至电脑 USB 口，选择好端口及固件路径，点击[刷入]。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/awtrix_flash.png" alt="awtrix_flash"></p>
-<p>刷入成功可以看到 Awtrix 的 AP，连入这个 WiFi（密码是 awtrixxx），之后填入 WiFi 信息（名称、密码）及服务端 IP （即群晖 IP）即可（无需端口号）。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/awtrix_wifi.png" alt="awtrix_wifi"></p>
-<h3 id="连接电路元件及组装"><a href="#连接电路元件及组装" class="headerlink" title="连接电路元件及组装"></a>连接电路元件及组装</h3><p>1.连接按照官方的<a href="https://awtrix.github.io/AWTRIX2.0-Docs_Beta/#/en-en/hardware?id=basis-variante" target="_blank" rel="noopener">电路图</a>连接即可，连接成功默认显示「时间」 App。</p>
-<p>注意：正负极不要接反。</p>
-<p>2.显示部分按照亚克力板、纸（裁成亚克力板大小）、光栅、像素灯从外到底的顺序，用双面胶粘住。若打印了外壳，可以将元件套入外壳中。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/awtrix_wire_mini.JPG" alt="awtrix_wire"></p>
-<p>3.连接好后，按几次 D1 mini 的[reset]键，待屏幕出现图像启动即可。</p>
-<h3 id="App-推荐"><a href="#App-推荐" class="headerlink" title="App 推荐"></a>App 推荐</h3><p>Awtrix 支持多个 App，以下是几个 App 介绍：</p>
-<p>Time：默认自带，可以在设置中调整时区，可以选择日期、时间 12/24 制、是否显示星期指示格式。</p>
-<p>OpenWeather：需到 <a href="https://home.openweathermap.org/" target="_blank" rel="noopener">OpenWeather</a> 注册填入 APIKey。填入之后位置 ID，可以在<a href="https://openweathermap.org/city" target="_blank" rel="noopener">这里</a>。 </p>
-<p>Animations：可以显示随机动画，很有趣，无需配置。</p>
-<p>Moon：可以显示当日月相，无需配置。</p>
-<p>PM：可以显示地区 PM2.5 值，需要填入位置监测点位置 ID。</p>
-<p>Matrix：显示矩阵动画。</p>
-<p>Spotify：登录 Spotify 账号即可，每次切换歌曲可以显示歌名（目前仅支持英文）。</p>
+                    <p>1999 年 4 月，亚洲东部一个国家北方的某个城市发生仅次于十年前的大规模民眾集體上坊事件，当局事情发生之后才知道那些民众是通过网络集合起来的。而早在 1998 年 9 月，公安就在酝酿开展类似网络管制的「金盾工程」，因为这次的事件这个工程进度大大加快，至 2000 年 5 月，代号 005 的工程开始实施。从此，古老的东方国家建立起天下第一、独步全球的超级防火长城。</p>
+<p>2011 年，知乎员工 clowwindy 将自己自用了一年多的小工具 Shadowsocks 贴在一个技术论坛上， Shadowsocks 部署简单，对服务器配置要求低，可以自动区分境内境外流量，不易被识别，很快成为最流行的破墙方式。多年滞销的 VPS 开始畅销，有些人开始学习 Linux 命令行，有些人开发出管理面板，嗅到商机的人购买服务器做起 「机场」的生意。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/gfw0.png" alt="gfw0"></p>
+<p>Shadowsocks 的繁荣引起当局注意，击破作者及各类衍生工具的作者后，Shadowsocks 渐渐停止了更新。</p>
+<p>「有一种鸟儿是永远也关不住的，因为它们的每片羽毛都闪着自由的光辉。」热爱自由的伟大程序员又开发了其他工具，如 V2ray、Brook、Trojan 等等，其中目前稳定且生态完整的是 <a href="https://www.v2ray.com" target="_blank" rel="noopener">V2ray</a>。</p>
+<p>这篇文章主要是搭建 V2ray 的过程，目前相对不会被封的方法是 Nginx+Websocket+tls 的方式，将流量伪装成访问某一个 IP 地址。</p>
+<h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><h3 id="建立-VM-实例"><a href="#建立-VM-实例" class="headerlink" title="建立 VM 实例"></a>建立 VM 实例</h3><p>首先申请好谷歌云，或者用其他 VPS，并建立好 VM 实例、建立防火墙入站规则。具体过程可以参见之前小弟的<a href="https://drunkfish.me/gcp" target="_blank" rel="noopener">这篇</a>。</p>
+<p>在建立实例前可以通过<a href="http://www.gcping.com/" target="_blank" rel="noopener">这个</a>或<a href="https://www.feitsui.com/zh-hans/cloud/gcp" target="_blank" rel="noopener">这个</a>网站初步测速选择国家。待建立 VM 实例后，可以用终端机 <code>ping 服务器 IP</code>，如果延时高可以重新建立。</p>
+<h3 id="申请域名"><a href="#申请域名" class="headerlink" title="申请域名"></a>申请域名</h3><p>搭建 V2ray 伪装流量需要绑定域名，付费、免费域名都可以，免费域名申请可以参见之前小弟的<a href="">这篇</a>。同时，域名的某个主机名（如 <a href="http://www.drunkfish.ml）解析到服务器的">www.drunkfish.ml）解析到服务器的</a> IP，比如可以添加一条 www 的 A 记录。</p>
+<h3 id="一键脚本安装"><a href="#一键脚本安装" class="headerlink" title="一键脚本安装"></a>一键脚本安装</h3><p>安装 V2ray 最简单的办法是使用一键脚本，比如<a href="https://github.com/hijkpw/scripts" target="_blank" rel="noopener">这个</a>。以 Desbian 系统安装带伪装 V2Ray为例：</p>
+<p>SSH 连接实例，获取 root 权限，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -i</span><br></pre></td></tr></table></figure>
+
+<p>之后输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -sL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;hijkpw&#x2F;scripts&#x2F;master&#x2F;ubuntu_install_v2ray2.sh)</span><br></pre></td></tr></table></figure>
+
+<p>待屏幕出现「确认满足按y，按其他退出脚本」，按<code>y</code>，回车，输入域名的主机名（如 <a href="http://www.drunkfish.ml）、伪装路径（不能是" target="_blank" rel="noopener">www.drunkfish.ml）、伪装路径（不能是</a> /，如/drunkfish），另外建议选择安装 BBR 加速。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/gfw1.png" alt="gfw1"></p>
+<p>安装成功会显示配置信息，复制保存，之后重启实例。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/gfw1.png" alt="gfw1"></p>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>在设备上安装 V2Ray 客户端，添加节点，填入相应信息就可以流畅地访问互联网。</p>
+<h2 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h2><p>iOS 上可用的 V2ray 客户端有 <a href="https://itunes.apple.com/us/app/id932747118" target="_blank" rel="noopener">Shadowrocket</a>、<a href="https://apps.apple.com/us/app/id1252015438" target="_blank" rel="noopener">Quantumult</a>。</p>
+<p>注意：这几款应用在中国区 App Store 已下架，请注册非中国区（如美区）Apple ID，美区 Apple ID 不支持中国信用卡付款，可以用苹果礼品卡充值（$10 起充，参见<a href="https://blog.shuziyimin.org/636" target="_blank" rel="noopener">这篇</a>），或者绑定美区 PayPal（推荐，美区 PayPal 可以绑定中国外币信用卡，参见<a href="https://blog.shuziyimin.org/171" target="_blank" rel="noopener">这篇</a>）。</p>
+<h2 id="macOS"><a href="#macOS" class="headerlink" title="macOS"></a>macOS</h2><p>macOS 推荐使用 <a href="https://github.com/yichengchen/clashX" target="_blank" rel="noopener">ClashX</a>、<a href="https://github.com/yanue/V2rayU" target="_blank" rel="noopener">V2rayU</a>。ClashX 需编辑配置文件，配置文件参见<a href="https://github.com/Hackl0us/SS-Rule-Snippet/blob/master/LAZY_RULES/clash.yaml" target="_blank" rel="noopener">这里</a>。</p>
+<h2 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h2><p>Android 可以使用 <a href="https://play.google.com/store/apps/details?id=fun.kitsunebi.kitsunebi4android" target="_blank" rel="noopener">Kitsunebi</a>。</p>
+<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>Windows 上可以使用 <a href="https://github.com/Cenmrev/V2RayW" target="_blank" rel="noopener">V2RayW</a>。</p>
+<h2 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h2><p>硬路由可以使用 V2ray 的固件有梅林改版、老毛子 Padavan、OpenWrt 等等，软路由可以使用 OpenWrt。</p>
 
                 </article>
                 <ul class="tags-postTags">
@@ -230,14 +208,14 @@
     
     <nav id="gobottom" class="pagination">
         
-        <a class="prev-post" title="Apple Watch" href="/watch/">
-            ← Apple Watch
+        <a class="prev-post" title="Home Assistant 系列——设备接入篇" href="/ha2/">
+            ← Home Assistant 系列——设备接入篇
         </a>
         
         <span class="prev-next-post">·</span>
         
-        <a class="next-post" title="群晖虚拟机安装软路由" href="/openwrt/">
-            群晖虚拟机安装软路由 →
+        <a class="next-post" title="iOS 应用推荐" href="/ios/">
+            iOS 应用推荐 →
         </a>
         
     </nav>
@@ -263,7 +241,7 @@
         </a>
     </div>
     <div class="toc-main">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#购买配件"><span class="toc-text">购买配件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器端"><span class="toc-text">服务器端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#控制端"><span class="toc-text">控制端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#刷入固件"><span class="toc-text">刷入固件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连接电路元件及组装"><span class="toc-text">连接电路元件及组装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#App-推荐"><span class="toc-text">App 推荐</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建"><span class="toc-text">搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#建立-VM-实例"><span class="toc-text">建立 VM 实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#申请域名"><span class="toc-text">申请域名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一键脚本安装"><span class="toc-text">一键脚本安装</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用"><span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#iOS"><span class="toc-text">iOS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#macOS"><span class="toc-text">macOS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android"><span class="toc-text">Android</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Windows"><span class="toc-text">Windows</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#路由器"><span class="toc-text">路由器</span></a></li></ol>
     </div>
 </div>
 
@@ -310,7 +288,7 @@
 			<a href="/" title="莊菲什">莊菲什 &copy; 2020</a>
 			
 				
-			        <span hidden="true" id="/awtrix/" class="leancloud-visitors" data-flag-title="DIY 超酷的像素钟">
+			        <span hidden="true" id="/gfw/" class="leancloud-visitors" data-flag-title="搭建 V2ray 连接互联网">
 			            <span>阅读量 </span>
 			            <span class="leancloud-visitors-count">0</span>
 			        </span>

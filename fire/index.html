@@ -20,7 +20,7 @@
 	<link rel="preconnect" href="//9qpuwspm.api.lncld.net">
 	<link rel="preconnect" href="//gravatar.loli.net">
 
-	<title>DIY 超酷的像素钟 | 莊菲什</title>
+	<title>平板也能充当音箱——Fire HD8 使用踩坑 | 莊菲什</title>
 
 	<meta name="HandheldFriendly" content="True" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
@@ -48,14 +48,14 @@
 
 	<meta property="og:site_name" content="莊菲什">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="DIY 超酷的像素钟 | 莊菲什">
+	<meta property="og:title" content="平板也能充当音箱——Fire HD8 使用踩坑 | 莊菲什">
 	<meta property="og:description" content="">
-	<meta property="og:url" content="http://yoursite.com/awtrix/">
+	<meta property="og:url" content="http://yoursite.com/fire/">
 
 	
-	<meta property="article:published_time" content="2020-01-21T00:01:00+08:00"/> 
+	<meta property="article:published_time" content="2020-03-21T00:03:00+08:00"/> 
 	<meta property="article:author" content="drunkfish">
-	<meta property="article:published_first" content="莊菲什, /awtrix/" />
+	<meta property="article:published_first" content="莊菲什, /fire/" />
 	
 
 	
@@ -155,69 +155,101 @@
     <div class="inner">
         <header class="post-full-header">
             <div class="post-full-meta">
-                <time  class="post-full-meta-date" datetime="2020-01-21T00:00:00.000Z">
-                    2020-01-21
+                <time  class="post-full-meta-date" datetime="2020-03-21T00:00:00.000Z">
+                    2020-03-21
                 </time>
                 
                 <span class="date-divider">/</span>
                 
                 
             </div>
-            <h1 class="post-full-title">DIY 超酷的像素钟</h1>
+            <h1 class="post-full-title">平板也能充当音箱——Fire HD8 使用踩坑</h1>
         </header>
         <div class="post-full no-image">
             
             <div class="post-full-content">
                 <article id="photoswipe" class="markdown-body">
-                    <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/awtrix_display.png" alt="awtrix_display"></p>
-<p>小弟以前听说过 <a href="https://lametric.com/" target="_blank" rel="noopener">LaMetric TIME</a>，觉得很酷，像桌面版的 Apple Watch，可以显示一些固定信息（如时间、天气等等），还可以显示通知，过滤信息。但是囊中羞涩，只能远观。直到发现这位大大的<a href="https://www.youtube.com/playlist?list=PLmxTR4AYd_9T3Lw7PR9u_UrtplM1Dqp77" target="_blank" rel="noopener">视频</a>，详细记录了替代品的完整制作过程，小弟根据步骤也做了一个，期间踩了一些坑，以下是过程：</p>
-<h2 id="购买配件"><a href="#购买配件" class="headerlink" title="购买配件"></a>购买配件</h2><p>像素钟的名字是 <a href="https://blueforcer.de/awtrix-2-0/" target="_blank" rel="noopener">Awtrix</a>，在<a href="https://awtrixdocs.blueforcer.de/#/en-en/README" target="_blank" rel="noopener">这里</a>中可以找到需要的电路元件，主要有以下：</p>
-<p>基本元件：</p>
-<ul>
-<li>Wemos D1 mini（也可以用 NodeMCU 等 Esp8266 模块，免焊接）</li>
-<li>8x32 WS2812B 全彩软像素屏</li>
-<li>杜邦线若干（建议公对母、公对公、母对母都备一些，方便延长线）</li>
-<li>MicroUSB 数据线</li>
-</ul>
-<p>可选配件：</p>
-<ul>
-<li>DC 直流电源插头</li>
-<li>5v 4A电源</li>
-<li>1000uF 10V 电容</li>
-<li>LDR GL5528 光敏电阻</li>
-<li>1000Ω 电阻</li>
-<li>APDS-9960 手势模块</li>
-<li>MicroSD 卡模块</li>
-</ul>
-<p>（以上元件都可以在淘宝买到，直接搜索关键词即可，若选择 Wemos D1 mini，可能还需要一个电烙铁进行焊接）。</p>
-<p>其他配件：<br>1.3D 打印光栅<br>默认像素灯是圆形，加入光栅可以将圆形变成方形，显示效果更好，建议打印。打印文件可以在 <a href="https://www.thingiverse.com/thing:2791276" target="_blank" rel="noopener">Thingiverse</a> 下载，小弟是在<a href="http://www.mohou.com/" target="_blank" rel="noopener">魔猴网</a>打印的，加运费大概 60-70 元。</p>
-<p>2.外壳（可选）<br>可选外壳，非必选，打印成本较高，另外作者推出了 Awtrix Pro，外壳和之前的不一样。</p>
-<p>3.亚克力蒙版<br>可以增强显示效果，淘宝搜索「亚克力定制」即可，颜色选「黑茶色」，尺寸可以选 95×340×2mm。</p>
-<p>4.A3 纸<br>起到增强显示效果的作用，A4 纸不够长。</p>
-<h2 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h2><p>Awtrix 分服务器端与控制端，其中服务器端小弟选择用群晖 Docker 运行，也可以用树莓派（新的外壳可以直接放入树莓派），甚至是 Android 手机。</p>
-<p>下面是 Docker 的步骤，在注册表中搜索「whyet」，下载映像。映像下载好运行映像，小弟没搞清楚配置文件的路径，所以没有设置，另外 Awtrix 会占用 7000 端口号，可以根据自己实际情况调整。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_awtrix.png" alt="docker_awtrix"></p>
-<p>容器运行后，可以在日志后终端中看到安装情况，待 jar 文件下载完成，在浏览器中打开 <code>http(s)://群晖 IP:7000</code>，就可以进入 Awtrix 服务器端，因为还没有控制端，所以会有未连接的提示。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/awtrix_manager.png" alt="awtrix_manager"></p>
-<p>另外，服务端适配了移动端，可以手机端进行控制。由于是运行在群晖中，依旧可以通过配置端口映射实现外网访问。</p>
-<h2 id="控制端"><a href="#控制端" class="headerlink" title="控制端"></a>控制端</h2><h3 id="刷入固件"><a href="#刷入固件" class="headerlink" title="刷入固件"></a>刷入固件</h3><p>1.控制端刷入固件非常容易，首先要下载相应模块的驱动，若是 D1 mini，请前往<a href="https://wiki.wemos.cc/downloads" target="_blank" rel="noopener">这里</a>下载，若是 NodeMCU 请前往<a href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers" target="_blank" rel="noopener">这里</a> 下载。</p>
-<p>2.下载安装 <a href="https://github.com/marcelstoer/nodemcu-pyflasher/releases" target="_blank" rel="noopener">NodeMCU PyFlasher</a> 及控制端<a href="https://blueforcer.de/awtrix/beta/firmware.bin" target="_blank" rel="noopener">固件</a>，将模块用 MicroUSB 数据线连接至电脑 USB 口，选择好端口及固件路径，点击[刷入]。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/awtrix_flash.png" alt="awtrix_flash"></p>
-<p>刷入成功可以看到 Awtrix 的 AP，连入这个 WiFi（密码是 awtrixxx），之后填入 WiFi 信息（名称、密码）及服务端 IP （即群晖 IP）即可（无需端口号）。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/awtrix_wifi.png" alt="awtrix_wifi"></p>
-<h3 id="连接电路元件及组装"><a href="#连接电路元件及组装" class="headerlink" title="连接电路元件及组装"></a>连接电路元件及组装</h3><p>1.连接按照官方的<a href="https://awtrix.github.io/AWTRIX2.0-Docs_Beta/#/en-en/hardware?id=basis-variante" target="_blank" rel="noopener">电路图</a>连接即可，连接成功默认显示「时间」 App。</p>
-<p>注意：正负极不要接反。</p>
-<p>2.显示部分按照亚克力板、纸（裁成亚克力板大小）、光栅、像素灯从外到底的顺序，用双面胶粘住。若打印了外壳，可以将元件套入外壳中。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/awtrix_wire_mini.JPG" alt="awtrix_wire"></p>
-<p>3.连接好后，按几次 D1 mini 的[reset]键，待屏幕出现图像启动即可。</p>
-<h3 id="App-推荐"><a href="#App-推荐" class="headerlink" title="App 推荐"></a>App 推荐</h3><p>Awtrix 支持多个 App，以下是几个 App 介绍：</p>
-<p>Time：默认自带，可以在设置中调整时区，可以选择日期、时间 12/24 制、是否显示星期指示格式。</p>
-<p>OpenWeather：需到 <a href="https://home.openweathermap.org/" target="_blank" rel="noopener">OpenWeather</a> 注册填入 APIKey。填入之后位置 ID，可以在<a href="https://openweathermap.org/city" target="_blank" rel="noopener">这里</a>。 </p>
-<p>Animations：可以显示随机动画，很有趣，无需配置。</p>
-<p>Moon：可以显示当日月相，无需配置。</p>
-<p>PM：可以显示地区 PM2.5 值，需要填入位置监测点位置 ID。</p>
-<p>Matrix：显示矩阵动画。</p>
-<p>Spotify：登录 Spotify 账号即可，每次切换歌曲可以显示歌名（目前仅支持英文）。</p>
+                    <p>小弟准备买一个带屏幕的 Nest Hub，过程中发现了 Fire HD8（2018） <a href="https://www.amazon.com/All-New-Fire-Tablet-Display-Black/dp/B0794RHPZD" target="_blank" rel="noopener">https://www.amazon.com/All-New-Fire-Tablet-Display-Black/dp/B0794RHPZD</a> 这款平板，支持 Alexa，可以当一个低配版 Echo Show，还能当一个平板用，感觉很值，于是入手。</p>
+<p>开机之后用美亚账号登录，若没有可以到亚马逊网站注册，注册时记得写「有效」的美国虚假地址。</p>
+<h2 id="低配版-Echo-Show"><a href="#低配版-Echo-Show" class="headerlink" title="低配版 Echo Show"></a>低配版 Echo Show</h2><p>下滑通知栏，选中「Alexa Hands-free」，打开「Show Mode」开关即可变成一个低配版 Echo Show。</p>
+<h3 id="支持功能"><a href="#支持功能" class="headerlink" title="支持功能"></a>支持功能</h3><p>Alexa Show Mode 支持大部分 Alexa 指令，比如：</p>
+<ol>
+<li><p>询问天气、时间等，如：“Alexa, what is the weather like?”   “Alexa, what’s the forcast for tomorrow?” “Alexa, what is the date?”   “Alexa, what day is it?”  “Alexa, what time is it?” </p>
+</li>
+<li><p>定时、提醒，如：“Alexa, set an alarm for [date/time].”  “Alexa, set a timer for [number of seconds/minutes/hours].” “Alexa, remind me [reminder] at [date/time].”</p>
+</li>
+<li><p>控制家电，如：“Alexa, turn [on/off] the lights.” “Alexa, turn [on/off] the [device name].”</p>
+</li>
+</ol>
+<p>关于控制家电，可以自己搭建一套对接 Alexa，详细可以参阅小弟其他文章。</p>
+<ol start="4">
+<li><p>询问其他问题，如：“Alexa, why the sky blue?”  “Alexa, how to spell fish?” </p>
+</li>
+<li><p>有趣问题，如：“Alexa, sing me a song.”  “Alexa, tell me a joke.”</p>
+</li>
+<li><p>打电话，仅限美国手机号，也可以和装有 Alexa App 的设备通话，或者找手机，如：“Alexa, call my phone.”</p>
+</li>
+<li><p>Alexa 支持 routine，即可以设置一条指令执行多条命令，可以在 Alexa App 中设置；</p>
+</li>
+<li><p>支持 Skills，可以使用第三方开发者开发的 Skill，可以在 Alexa App  中设置。注意：有些 Skill 需要付费，且是订阅制，可以直接用语音制定付款，小心使用，防止意外扣费（如果像小弟一样不小心开了订阅，可以到 Amazon.com 「订阅」中取消或联系客服取消）。</p>
+</li>
+</ol>
+<h3 id="不支持功能"><a href="#不支持功能" class="headerlink" title="不支持功能"></a>不支持功能</h3><p>Alexa Show Mode 像 Echo Show，甚至屏幕都是同样大小，但功能缩水不少：</p>
+<ol>
+<li><p>唤醒词只能使用「Alexa」、「Amazon」，无法像其他 Alexa 设备那样使用更直觉的「Echo」、「Computer」；</p>
+</li>
+<li><p>不支持连续对话，只能一条语音指令后重复「Alexa」；</p>
+</li>
+<li><p>不支持超酷的「Whisper Mode」；</p>
+</li>
+<li><p>不支持自定义主页面布局，无法像 Echo Show 调整主页面元素；</p>
+</li>
+<li><p>已阉割智能设备控制开关页面；</p>
+</li>
+<li><p>有些指令不是直接执行命令，而是打开 App，如「play Jazz music on Spotify」，不是直接播放歌曲，而是打开 Spotify，可用性大大减弱。</p>
+</li>
+<li><p>麦克风有时不够灵敏，扬声器音量不够大；</p>
+</li>
+<li><p>机器配置较低，有时会莫名卡死。</p>
+</li>
+</ol>
+<h2 id="低配版-Android-平板"><a href="#低配版-Android-平板" class="headerlink" title="低配版 Android 平板"></a>低配版 Android 平板</h2><p>这款平板配置较低，过时的配件、臃肿的亚马逊自家应用，使得这款机器运行卡顿，可以作为轻量 Android 平板。</p>
+<h3 id="安装-Google-框架"><a href="#安装-Google-框架" class="headerlink" title="安装 Google 框架"></a>安装 Google 框架</h3><p>机器自带的亚马逊应用市场应用少且很多应用已经很久没更新，Google Play 是根号的选择，且可以安装 YouTube 等应用，安装所需文件可以参考<a href="https://www.howtogeek.com/232726/how-to-install-the-google-play-store-on-your-amazon-fire-tablet/" target="_blank" rel="noopener">这篇</a>，总共要安装四个文件，apk 文件导入至平板有两种方法：1.使用 mircoSD 卡将文件导入；2.将文件在电脑端上传至 Amazon Docs，之后用平板自带 Docs 打开。</p>
+<h3 id="安装「绿色守护」"><a href="#安装「绿色守护」" class="headerlink" title="安装「绿色守护」"></a>安装「绿色守护」</h3><p>平板配置低，系统优化不好，用惯其他设备的可能会被这个小平板弄疯。这款平板可以 Root，删除一些系统自带应用，禁止应用自启动。或者安装一款叫「绿色守护」的应用，可以在锁屏时将非活动的进程杀死，高级版支持系统应用，可以对卡顿有一定缓解。</p>
+<h3 id="App-推荐"><a href="#App-推荐" class="headerlink" title="App 推荐"></a>App 推荐</h3><ol>
+<li>讯飞输入法</li>
+</ol>
+<p>讯飞输入法支持免如何切换直接手写，以及其他实用功能，比自带输入法好用很多。</p>
+<ol start="2">
+<li>Airdroid</li>
+</ol>
+<p>AirDroid 允许用户在同一 WiFi 网络内通过浏览器管理平板。在浏览器中输入 Fire 的 IP 地址及端口号，可以通过浏览器传输文件、、管理文件等等。</p>
+<ol start="2">
+<li>Google Keep</li>
+</ol>
+<p>可以通过 Google Keep 将一些文本信息传到平板上。</p>
+<ol start="3">
+<li>Google Files</li>
+</ol>
+<p>Google Files 可以方便管理文件、SD 卡文件，清除一些缓存文件等等。</p>
+<ol start="4">
+<li>Google Home</li>
+</ol>
+<p>可以把 Fire 平板画面或声音投屏至 Chromecast 设备，比如将画面投屏至电视变成一个巨大屏 Alexa，或者将声音投屏至 Google Home，在 Google Home 上使用 Alexa，很酷吧。</p>
+<ol start="7">
+<li>nPlayer</li>
+</ol>
+<p>好用的播放器，方便播放 NAS 或公用云的视频。</p>
+<h2 id="小问题"><a href="#小问题" class="headerlink" title="小问题"></a>小问题</h2><ol>
+<li><p>Alexa 智能打开 Amazon Appstore 的应用，如在 Google Play 装了而不是在  Amazon Appstore  装的Spotify，Alexa 会认为没有安装 Spotify；</p>
+</li>
+<li><p>若 Amazon Appstore 无法安装应用，请确保收货地址是一个「有效」的美国地址；</p>
+</li>
+<li><p>默认 Alexa 主页面中会显示收货地址的天气，请在系统内置的 Alexa 应用中修改；</p>
+</li>
+<li><p>有些 Kindle 电子书无法在这台机器上阅读（自家设备不支持自己内容，Amazon 天下第一），此问题无解，若书不想要，可以联系 Amazon 客服退款。</p>
+</li>
+</ol>
 
                 </article>
                 <ul class="tags-postTags">
@@ -230,14 +262,14 @@
     
     <nav id="gobottom" class="pagination">
         
-        <a class="prev-post" title="Apple Watch" href="/watch/">
-            ← Apple Watch
+        <a class="prev-post" title="Chrome 插件推荐" href="/chrome/">
+            ← Chrome 插件推荐
         </a>
         
         <span class="prev-next-post">·</span>
         
-        <a class="next-post" title="群晖虚拟机安装软路由" href="/openwrt/">
-            群晖虚拟机安装软路由 →
+        <a class="next-post" title="这样用 Kindle 有点不一样" href="/kindle/">
+            这样用 Kindle 有点不一样 →
         </a>
         
     </nav>
@@ -263,7 +295,7 @@
         </a>
     </div>
     <div class="toc-main">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#购买配件"><span class="toc-text">购买配件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器端"><span class="toc-text">服务器端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#控制端"><span class="toc-text">控制端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#刷入固件"><span class="toc-text">刷入固件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连接电路元件及组装"><span class="toc-text">连接电路元件及组装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#App-推荐"><span class="toc-text">App 推荐</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#低配版-Echo-Show"><span class="toc-text">低配版 Echo Show</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#支持功能"><span class="toc-text">支持功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不支持功能"><span class="toc-text">不支持功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#低配版-Android-平板"><span class="toc-text">低配版 Android 平板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-Google-框架"><span class="toc-text">安装 Google 框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装「绿色守护」"><span class="toc-text">安装「绿色守护」</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#App-推荐"><span class="toc-text">App 推荐</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小问题"><span class="toc-text">小问题</span></a></li></ol>
     </div>
 </div>
 
@@ -310,7 +342,7 @@
 			<a href="/" title="莊菲什">莊菲什 &copy; 2020</a>
 			
 				
-			        <span hidden="true" id="/awtrix/" class="leancloud-visitors" data-flag-title="DIY 超酷的像素钟">
+			        <span hidden="true" id="/fire/" class="leancloud-visitors" data-flag-title="平板也能充当音箱——Fire HD8 使用踩坑">
 			            <span>阅读量 </span>
 			            <span class="leancloud-visitors-count">0</span>
 			        </span>

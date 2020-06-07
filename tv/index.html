@@ -20,7 +20,7 @@
 	<link rel="preconnect" href="//9qpuwspm.api.lncld.net">
 	<link rel="preconnect" href="//gravatar.loli.net">
 
-	<title>DIY 超酷的像素钟 | 莊菲什</title>
+	<title>Android TV 应用推荐——以 Mibox 为例 | 莊菲什</title>
 
 	<meta name="HandheldFriendly" content="True" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
@@ -48,14 +48,14 @@
 
 	<meta property="og:site_name" content="莊菲什">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="DIY 超酷的像素钟 | 莊菲什">
+	<meta property="og:title" content="Android TV 应用推荐——以 Mibox 为例 | 莊菲什">
 	<meta property="og:description" content="">
-	<meta property="og:url" content="http://yoursite.com/awtrix/">
+	<meta property="og:url" content="http://yoursite.com/tv/">
 
 	
-	<meta property="article:published_time" content="2020-01-21T00:01:00+08:00"/> 
+	<meta property="article:published_time" content="2020-02-29T00:02:00+08:00"/> 
 	<meta property="article:author" content="drunkfish">
-	<meta property="article:published_first" content="莊菲什, /awtrix/" />
+	<meta property="article:published_first" content="莊菲什, /tv/" />
 	
 
 	
@@ -155,69 +155,65 @@
     <div class="inner">
         <header class="post-full-header">
             <div class="post-full-meta">
-                <time  class="post-full-meta-date" datetime="2020-01-21T00:00:00.000Z">
-                    2020-01-21
+                <time  class="post-full-meta-date" datetime="2020-02-29T00:00:00.000Z">
+                    2020-02-29
                 </time>
                 
                 <span class="date-divider">/</span>
                 
                 
             </div>
-            <h1 class="post-full-title">DIY 超酷的像素钟</h1>
+            <h1 class="post-full-title">Android TV 应用推荐——以 Mibox 为例</h1>
         </header>
         <div class="post-full no-image">
             
             <div class="post-full-content">
                 <article id="photoswipe" class="markdown-body">
-                    <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/awtrix_display.png" alt="awtrix_display"></p>
-<p>小弟以前听说过 <a href="https://lametric.com/" target="_blank" rel="noopener">LaMetric TIME</a>，觉得很酷，像桌面版的 Apple Watch，可以显示一些固定信息（如时间、天气等等），还可以显示通知，过滤信息。但是囊中羞涩，只能远观。直到发现这位大大的<a href="https://www.youtube.com/playlist?list=PLmxTR4AYd_9T3Lw7PR9u_UrtplM1Dqp77" target="_blank" rel="noopener">视频</a>，详细记录了替代品的完整制作过程，小弟根据步骤也做了一个，期间踩了一些坑，以下是过程：</p>
-<h2 id="购买配件"><a href="#购买配件" class="headerlink" title="购买配件"></a>购买配件</h2><p>像素钟的名字是 <a href="https://blueforcer.de/awtrix-2-0/" target="_blank" rel="noopener">Awtrix</a>，在<a href="https://awtrixdocs.blueforcer.de/#/en-en/README" target="_blank" rel="noopener">这里</a>中可以找到需要的电路元件，主要有以下：</p>
-<p>基本元件：</p>
-<ul>
-<li>Wemos D1 mini（也可以用 NodeMCU 等 Esp8266 模块，免焊接）</li>
-<li>8x32 WS2812B 全彩软像素屏</li>
-<li>杜邦线若干（建议公对母、公对公、母对母都备一些，方便延长线）</li>
-<li>MicroUSB 数据线</li>
-</ul>
-<p>可选配件：</p>
-<ul>
-<li>DC 直流电源插头</li>
-<li>5v 4A电源</li>
-<li>1000uF 10V 电容</li>
-<li>LDR GL5528 光敏电阻</li>
-<li>1000Ω 电阻</li>
-<li>APDS-9960 手势模块</li>
-<li>MicroSD 卡模块</li>
-</ul>
-<p>（以上元件都可以在淘宝买到，直接搜索关键词即可，若选择 Wemos D1 mini，可能还需要一个电烙铁进行焊接）。</p>
-<p>其他配件：<br>1.3D 打印光栅<br>默认像素灯是圆形，加入光栅可以将圆形变成方形，显示效果更好，建议打印。打印文件可以在 <a href="https://www.thingiverse.com/thing:2791276" target="_blank" rel="noopener">Thingiverse</a> 下载，小弟是在<a href="http://www.mohou.com/" target="_blank" rel="noopener">魔猴网</a>打印的，加运费大概 60-70 元。</p>
-<p>2.外壳（可选）<br>可选外壳，非必选，打印成本较高，另外作者推出了 Awtrix Pro，外壳和之前的不一样。</p>
-<p>3.亚克力蒙版<br>可以增强显示效果，淘宝搜索「亚克力定制」即可，颜色选「黑茶色」，尺寸可以选 95×340×2mm。</p>
-<p>4.A3 纸<br>起到增强显示效果的作用，A4 纸不够长。</p>
-<h2 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h2><p>Awtrix 分服务器端与控制端，其中服务器端小弟选择用群晖 Docker 运行，也可以用树莓派（新的外壳可以直接放入树莓派），甚至是 Android 手机。</p>
-<p>下面是 Docker 的步骤，在注册表中搜索「whyet」，下载映像。映像下载好运行映像，小弟没搞清楚配置文件的路径，所以没有设置，另外 Awtrix 会占用 7000 端口号，可以根据自己实际情况调整。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_awtrix.png" alt="docker_awtrix"></p>
-<p>容器运行后，可以在日志后终端中看到安装情况，待 jar 文件下载完成，在浏览器中打开 <code>http(s)://群晖 IP:7000</code>，就可以进入 Awtrix 服务器端，因为还没有控制端，所以会有未连接的提示。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/awtrix_manager.png" alt="awtrix_manager"></p>
-<p>另外，服务端适配了移动端，可以手机端进行控制。由于是运行在群晖中，依旧可以通过配置端口映射实现外网访问。</p>
-<h2 id="控制端"><a href="#控制端" class="headerlink" title="控制端"></a>控制端</h2><h3 id="刷入固件"><a href="#刷入固件" class="headerlink" title="刷入固件"></a>刷入固件</h3><p>1.控制端刷入固件非常容易，首先要下载相应模块的驱动，若是 D1 mini，请前往<a href="https://wiki.wemos.cc/downloads" target="_blank" rel="noopener">这里</a>下载，若是 NodeMCU 请前往<a href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers" target="_blank" rel="noopener">这里</a> 下载。</p>
-<p>2.下载安装 <a href="https://github.com/marcelstoer/nodemcu-pyflasher/releases" target="_blank" rel="noopener">NodeMCU PyFlasher</a> 及控制端<a href="https://blueforcer.de/awtrix/beta/firmware.bin" target="_blank" rel="noopener">固件</a>，将模块用 MicroUSB 数据线连接至电脑 USB 口，选择好端口及固件路径，点击[刷入]。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/awtrix_flash.png" alt="awtrix_flash"></p>
-<p>刷入成功可以看到 Awtrix 的 AP，连入这个 WiFi（密码是 awtrixxx），之后填入 WiFi 信息（名称、密码）及服务端 IP （即群晖 IP）即可（无需端口号）。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/awtrix_wifi.png" alt="awtrix_wifi"></p>
-<h3 id="连接电路元件及组装"><a href="#连接电路元件及组装" class="headerlink" title="连接电路元件及组装"></a>连接电路元件及组装</h3><p>1.连接按照官方的<a href="https://awtrix.github.io/AWTRIX2.0-Docs_Beta/#/en-en/hardware?id=basis-variante" target="_blank" rel="noopener">电路图</a>连接即可，连接成功默认显示「时间」 App。</p>
-<p>注意：正负极不要接反。</p>
-<p>2.显示部分按照亚克力板、纸（裁成亚克力板大小）、光栅、像素灯从外到底的顺序，用双面胶粘住。若打印了外壳，可以将元件套入外壳中。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/awtrix_wire_mini.JPG" alt="awtrix_wire"></p>
-<p>3.连接好后，按几次 D1 mini 的[reset]键，待屏幕出现图像启动即可。</p>
-<h3 id="App-推荐"><a href="#App-推荐" class="headerlink" title="App 推荐"></a>App 推荐</h3><p>Awtrix 支持多个 App，以下是几个 App 介绍：</p>
-<p>Time：默认自带，可以在设置中调整时区，可以选择日期、时间 12/24 制、是否显示星期指示格式。</p>
-<p>OpenWeather：需到 <a href="https://home.openweathermap.org/" target="_blank" rel="noopener">OpenWeather</a> 注册填入 APIKey。填入之后位置 ID，可以在<a href="https://openweathermap.org/city" target="_blank" rel="noopener">这里</a>。 </p>
-<p>Animations：可以显示随机动画，很有趣，无需配置。</p>
-<p>Moon：可以显示当日月相，无需配置。</p>
-<p>PM：可以显示地区 PM2.5 值，需要填入位置监测点位置 ID。</p>
-<p>Matrix：显示矩阵动画。</p>
-<p>Spotify：登录 Spotify 账号即可，每次切换歌曲可以显示歌名（目前仅支持英文）。</p>
+                    <p>小弟入手了一个小米盒子国际版 <a href="https://www.mi.com/global/mibox" target="_blank" rel="noopener">Mibox</a>，运行 Android TV 系统，预装 Google Play、Google Assistant，有 Netflix 授权，下面是一些使用建议（适用于 Mibox、Shield TV 等原生 Android TV 设备 ）：</p>
+<h2 id="小贴士"><a href="#小贴士" class="headerlink" title="小贴士"></a>小贴士</h2><h3 id="网络建议"><a href="#网络建议" class="headerlink" title="网络建议"></a>网络建议</h3><p>建议使用前将路由器连好外网，比如可以群晖虚拟机安装软路由，开机绑定 Google 账号及使用 Google 各类服务（如 Chromecast、YouTube 等等均需要连外网）。</p>
+<h3 id="如何安装应用"><a href="#如何安装应用" class="headerlink" title="如何安装应用"></a>如何安装应用</h3><p>最简单的是通过系统自带 Google Play 安装，另外还有以下方法：1、免 U 盘，在电脑或手机将 Android 安装 apk 安装文件上传至 Google Drive，在 Google Play 搜索安装 X-plore File Manage，挂载 Google Drive；2、准备一个 U 盘，在电脑将 Android 安装 apk 安装文件拷贝至 U 盘，在 Google Play 搜索安装 X-plore File，找到要安装的 apk 文件；3、安装「沙发管家」，打开「远程管理」，局域网浏览器打开 <code>http://Mibox IP 地址:8899</code>，上传 apk 安装文件。</p>
+<h3 id="Google-账号"><a href="#Google-账号" class="headerlink" title="Google 账号"></a>Google 账号</h3><p>建议 Google 账号改成美区或港区，Google 账号换区相对容易，修改 Google Pay 收费资料即可，参见<a href="https://love4taylor.me/easily-change-google-play-country/" target="_blank" rel="noopener">这篇</a> 。另外，Android 支持多账户登录。</p>
+<h3 id="Youtube"><a href="#Youtube" class="headerlink" title="Youtube"></a>Youtube</h3><p>Android TV 已内置 YouTube， Mibox 支持 4k。</p>
+<h3 id="Netflix"><a href="#Netflix" class="headerlink" title="Netflix"></a>Netflix</h3><p>已内置，有授权，支持 4k。</p>
+<h3 id="Chromecast"><a href="#Chromecast" class="headerlink" title="Chromecast"></a>Chromecast</h3><p>内置 <a href="https://store.google.com/product/chromecast_apps" target="_blank" rel="noopener">Chromecast</a>，可以将支持 Chromecast 的应用，投放视频、音频，或者游戏。</p>
+<h3 id="Google-Assistant"><a href="#Google-Assistant" class="headerlink" title="Google Assistant"></a>Google Assistant</h3><p>系统内置，按下遥控器按钮激活，用语音执行很多操作（打开应用、搜索影片、控制其他设备等等），像这个<a href="https://www.youtube.com/watch?v=hIHsgqID9Xc" target="_blank" rel="noopener">影片</a>。另外，如果有 Google Home，还可以用 Google Home 控制 Android TV。</p>
+<h2 id="推荐应用"><a href="#推荐应用" class="headerlink" title="推荐应用"></a>推荐应用</h2><h3 id="ATV-Launcher-Pro"><a href="#ATV-Launcher-Pro" class="headerlink" title="ATV Launcher Pro"></a>ATV Launcher Pro</h3><p>Android TV 自带启动器不能将所有 App 显示出来，还有各种推荐内容，ATV Launcher Pro是一个启动器选择，可以隐藏应用，还可以自定义应用图标。</p>
+<h2 id="沙发管家"><a href="#沙发管家" class="headerlink" title="沙发管家"></a>沙发管家</h2><p><a href="http://www.shafa.com" target="_blank" rel="noopener">沙发管家</a>是国人开发的 TV 端应用管理应用，方便安装、卸载应用。</p>
+<h2 id="乐播投屏"><a href="#乐播投屏" class="headerlink" title="乐播投屏"></a>乐播投屏</h2><p><a href="https://www.hpplay.com.cn" target="_blank" rel="noopener">乐播投屏</a>可以将 Android TV 模拟成 Apple TV，方便苹果设备投屏。</p>
+<h3 id="Kodi"><a href="#Kodi" class="headerlink" title="Kodi"></a>Kodi</h3><p>Kodi 以前是 Xbox 的 Media Center，之后开源，作为播放器很不错，可以直接在 Google Play 安装。</p>
+<h3 id="VLC"><a href="#VLC" class="headerlink" title="VLC"></a>VLC</h3><p>另一款媒体播放器，可以直接在 Google Play 安装。</p>
+<h3 id="Keep-国内版"><a href="#Keep-国内版" class="headerlink" title="Keep 国内版"></a>Keep 国内版</h3><p>Keep 有适配 TV 端，可以在「沙发管家」下载国内版。</p>
+<h3 id="Mouse-Toggle"><a href="#Mouse-Toggle" class="headerlink" title="Mouse Toggle"></a>Mouse Toggle</h3><p>Mouse Toggle 可以把遥控器模拟成鼠标，方便操作一些遥控器不方便进行的操作。</p>
+<h3 id="TiviMate-IPTV-Player"><a href="#TiviMate-IPTV-Player" class="headerlink" title="TiviMate IPTV Player"></a>TiviMate IPTV Player</h3><p>TiviMate IPTV Player 是一款为 TV 端适配的 IPTV 应用，需要自己填入直播源地址。</p>
+<p>港澳台直播源：<a href="https://homenet6.github.io/list.m3u" target="_blank" rel="noopener">https://homenet6.github.io/list.m3u</a></p>
+<p>英语直播源参考：<a href="https://fluxustv.blogspot.com/p/m3u-list.html" target="_blank" rel="noopener">https://fluxustv.blogspot.com/p/m3u-list.html</a></p>
+<h3 id="Plex"><a href="#Plex" class="headerlink" title="Plex"></a>Plex</h3><p>播放自己或别人搭建的 Plex 媒体服务器中的视频。</p>
+<h3 id="Emby"><a href="#Emby" class="headerlink" title="Emby"></a>Emby</h3><p>另一款媒体服务器播放器。</p>
+<h3 id="HBO-GO-Hong-Kong"><a href="#HBO-GO-Hong-Kong" class="headerlink" title="HBO GO Hong Kong"></a>HBO GO Hong Kong</h3><p>如果有订阅香港的 HBO Go，可以用 HBO GO Hong Kong，从 Google Play 下载需要 Google 港区账号，或直接在<a href="https://apkpure.com/hbo-go-hong-kong/hk.hbo.hbogo" target="_blank" rel="noopener">这里</a>下载。</p>
+<h3 id="Amazon-Prime-Video"><a href="#Amazon-Prime-Video" class="headerlink" title="Amazon Prime Video"></a>Amazon Prime Video</h3><p>有订阅 Amazon Prime Video，可以在<a href="https://androidpctv.com/amazon-prime-video-4-14-for-android-tv-compatible-with-xiaomi-mi-box/" target="_blank" rel="noopener">这里</a>下载安装。</p>
+<h2 id="盗版应用"><a href="#盗版应用" class="headerlink" title="盗版应用"></a>盗版应用</h2><p>除了道德意义上的「善」与「恶」，正版资源意味着省心、方便，不必折腾（你的时间非常值钱），支持正版也有助于内容提供者产出更棒的内容。得益于 Android 的开放，Android TV 有更多的可能性。</p>
+<h3 id="直播类"><a href="#直播类" class="headerlink" title="直播类"></a>直播类</h3><ol>
+<li>星火电视</li>
+</ol>
+<p>星火电视内置很多港台电视直播，频道很多。</p>
+<ol start="2">
+<li>超级 Live 清爽美化版</li>
+</ol>
+<p>这款应用有几个港台电视直播清晰度很高，并且很稳定。</p>
+<ol start="3">
+<li>TV TAP Firestick Pro</li>
+</ol>
+<p>使用 TV TAP 可以观看国外电视直播。</p>
+<h3 id="点播类"><a href="#点播类" class="headerlink" title="点播类"></a>点播类</h3><ol>
+<li>TV 影院</li>
+</ol>
+<p>国人开发的电影、剧集搜索工具，主要是将在线的盗版视频抓过来，清晰度不是很高。</p>
+<ol start="2">
+<li>CyberFlix</li>
+</ol>
+<p>可以搜索在线视频，可以选清晰度、下载中英文字幕。</p>
+<h2 id="手机应用推荐"><a href="#手机应用推荐" class="headerlink" title="手机应用推荐"></a>手机应用推荐</h2><h3 id="Android-TV"><a href="#Android-TV" class="headerlink" title="Android TV"></a>Android TV</h3><p>手机端 Android TV 可以用手机控制 Android TV。</p>
+<h3 id="nio-tvQ"><a href="#nio-tvQ" class="headerlink" title="nio tvQ"></a>nio tvQ</h3><p><a href="http://www.niotv.com/tvQ/" target="_blank" rel="noopener">nio tvQ</a> 可以看台湾第四台的节目预告。</p>
 
                 </article>
                 <ul class="tags-postTags">
@@ -230,14 +226,14 @@
     
     <nav id="gobottom" class="pagination">
         
-        <a class="prev-post" title="Apple Watch" href="/watch/">
-            ← Apple Watch
+        <a class="prev-post" title="这个甜甜圈很酷——Nest Mini——Google Home Mini 指南" href="/nest/">
+            ← 这个甜甜圈很酷——Nest Mini——Google Home Mini 指南
         </a>
         
         <span class="prev-next-post">·</span>
         
-        <a class="next-post" title="群晖虚拟机安装软路由" href="/openwrt/">
-            群晖虚拟机安装软路由 →
+        <a class="next-post" title="Sketch 使用小贴士" href="/sketch/">
+            Sketch 使用小贴士 →
         </a>
         
     </nav>
@@ -263,7 +259,7 @@
         </a>
     </div>
     <div class="toc-main">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#购买配件"><span class="toc-text">购买配件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器端"><span class="toc-text">服务器端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#控制端"><span class="toc-text">控制端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#刷入固件"><span class="toc-text">刷入固件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连接电路元件及组装"><span class="toc-text">连接电路元件及组装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#App-推荐"><span class="toc-text">App 推荐</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#小贴士"><span class="toc-text">小贴士</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#网络建议"><span class="toc-text">网络建议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何安装应用"><span class="toc-text">如何安装应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Google-账号"><span class="toc-text">Google 账号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Youtube"><span class="toc-text">Youtube</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Netflix"><span class="toc-text">Netflix</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Chromecast"><span class="toc-text">Chromecast</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Google-Assistant"><span class="toc-text">Google Assistant</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#推荐应用"><span class="toc-text">推荐应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ATV-Launcher-Pro"><span class="toc-text">ATV Launcher Pro</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#沙发管家"><span class="toc-text">沙发管家</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#乐播投屏"><span class="toc-text">乐播投屏</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Kodi"><span class="toc-text">Kodi</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VLC"><span class="toc-text">VLC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Keep-国内版"><span class="toc-text">Keep 国内版</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mouse-Toggle"><span class="toc-text">Mouse Toggle</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TiviMate-IPTV-Player"><span class="toc-text">TiviMate IPTV Player</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Plex"><span class="toc-text">Plex</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Emby"><span class="toc-text">Emby</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HBO-GO-Hong-Kong"><span class="toc-text">HBO GO Hong Kong</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Amazon-Prime-Video"><span class="toc-text">Amazon Prime Video</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#盗版应用"><span class="toc-text">盗版应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#直播类"><span class="toc-text">直播类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#点播类"><span class="toc-text">点播类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#手机应用推荐"><span class="toc-text">手机应用推荐</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Android-TV"><span class="toc-text">Android TV</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nio-tvQ"><span class="toc-text">nio tvQ</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -310,7 +306,7 @@
 			<a href="/" title="莊菲什">莊菲什 &copy; 2020</a>
 			
 				
-			        <span hidden="true" id="/awtrix/" class="leancloud-visitors" data-flag-title="DIY 超酷的像素钟">
+			        <span hidden="true" id="/tv/" class="leancloud-visitors" data-flag-title="Android TV 应用推荐——以 Mibox 为例">
 			            <span>阅读量 </span>
 			            <span class="leancloud-visitors-count">0</span>
 			        </span>

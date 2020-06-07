@@ -20,7 +20,7 @@
 	<link rel="preconnect" href="//9qpuwspm.api.lncld.net">
 	<link rel="preconnect" href="//gravatar.loli.net">
 
-	<title>DIY 超酷的像素钟 | 莊菲什</title>
+	<title>Home Assistant 系列——DIY 篇（上） | 莊菲什</title>
 
 	<meta name="HandheldFriendly" content="True" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
@@ -48,14 +48,14 @@
 
 	<meta property="og:site_name" content="莊菲什">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="DIY 超酷的像素钟 | 莊菲什">
+	<meta property="og:title" content="Home Assistant 系列——DIY 篇（上） | 莊菲什">
 	<meta property="og:description" content="">
-	<meta property="og:url" content="http://yoursite.com/awtrix/">
+	<meta property="og:url" content="http://yoursite.com/ha3/">
 
 	
-	<meta property="article:published_time" content="2020-01-21T00:01:00+08:00"/> 
+	<meta property="article:published_time" content="2020-02-15T00:02:00+08:00"/> 
 	<meta property="article:author" content="drunkfish">
-	<meta property="article:published_first" content="莊菲什, /awtrix/" />
+	<meta property="article:published_first" content="莊菲什, /ha3/" />
 	
 
 	
@@ -155,69 +155,59 @@
     <div class="inner">
         <header class="post-full-header">
             <div class="post-full-meta">
-                <time  class="post-full-meta-date" datetime="2020-01-21T00:00:00.000Z">
-                    2020-01-21
+                <time  class="post-full-meta-date" datetime="2020-02-15T00:00:00.000Z">
+                    2020-02-15
                 </time>
                 
                 <span class="date-divider">/</span>
                 
                 
             </div>
-            <h1 class="post-full-title">DIY 超酷的像素钟</h1>
+            <h1 class="post-full-title">Home Assistant 系列——DIY 篇（上）</h1>
         </header>
         <div class="post-full no-image">
             
             <div class="post-full-content">
                 <article id="photoswipe" class="markdown-body">
-                    <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/awtrix_display.png" alt="awtrix_display"></p>
-<p>小弟以前听说过 <a href="https://lametric.com/" target="_blank" rel="noopener">LaMetric TIME</a>，觉得很酷，像桌面版的 Apple Watch，可以显示一些固定信息（如时间、天气等等），还可以显示通知，过滤信息。但是囊中羞涩，只能远观。直到发现这位大大的<a href="https://www.youtube.com/playlist?list=PLmxTR4AYd_9T3Lw7PR9u_UrtplM1Dqp77" target="_blank" rel="noopener">视频</a>，详细记录了替代品的完整制作过程，小弟根据步骤也做了一个，期间踩了一些坑，以下是过程：</p>
-<h2 id="购买配件"><a href="#购买配件" class="headerlink" title="购买配件"></a>购买配件</h2><p>像素钟的名字是 <a href="https://blueforcer.de/awtrix-2-0/" target="_blank" rel="noopener">Awtrix</a>，在<a href="https://awtrixdocs.blueforcer.de/#/en-en/README" target="_blank" rel="noopener">这里</a>中可以找到需要的电路元件，主要有以下：</p>
-<p>基本元件：</p>
-<ul>
-<li>Wemos D1 mini（也可以用 NodeMCU 等 Esp8266 模块，免焊接）</li>
-<li>8x32 WS2812B 全彩软像素屏</li>
-<li>杜邦线若干（建议公对母、公对公、母对母都备一些，方便延长线）</li>
-<li>MicroUSB 数据线</li>
-</ul>
-<p>可选配件：</p>
-<ul>
-<li>DC 直流电源插头</li>
-<li>5v 4A电源</li>
-<li>1000uF 10V 电容</li>
-<li>LDR GL5528 光敏电阻</li>
-<li>1000Ω 电阻</li>
-<li>APDS-9960 手势模块</li>
-<li>MicroSD 卡模块</li>
-</ul>
-<p>（以上元件都可以在淘宝买到，直接搜索关键词即可，若选择 Wemos D1 mini，可能还需要一个电烙铁进行焊接）。</p>
-<p>其他配件：<br>1.3D 打印光栅<br>默认像素灯是圆形，加入光栅可以将圆形变成方形，显示效果更好，建议打印。打印文件可以在 <a href="https://www.thingiverse.com/thing:2791276" target="_blank" rel="noopener">Thingiverse</a> 下载，小弟是在<a href="http://www.mohou.com/" target="_blank" rel="noopener">魔猴网</a>打印的，加运费大概 60-70 元。</p>
-<p>2.外壳（可选）<br>可选外壳，非必选，打印成本较高，另外作者推出了 Awtrix Pro，外壳和之前的不一样。</p>
-<p>3.亚克力蒙版<br>可以增强显示效果，淘宝搜索「亚克力定制」即可，颜色选「黑茶色」，尺寸可以选 95×340×2mm。</p>
-<p>4.A3 纸<br>起到增强显示效果的作用，A4 纸不够长。</p>
-<h2 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h2><p>Awtrix 分服务器端与控制端，其中服务器端小弟选择用群晖 Docker 运行，也可以用树莓派（新的外壳可以直接放入树莓派），甚至是 Android 手机。</p>
-<p>下面是 Docker 的步骤，在注册表中搜索「whyet」，下载映像。映像下载好运行映像，小弟没搞清楚配置文件的路径，所以没有设置，另外 Awtrix 会占用 7000 端口号，可以根据自己实际情况调整。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_awtrix.png" alt="docker_awtrix"></p>
-<p>容器运行后，可以在日志后终端中看到安装情况，待 jar 文件下载完成，在浏览器中打开 <code>http(s)://群晖 IP:7000</code>，就可以进入 Awtrix 服务器端，因为还没有控制端，所以会有未连接的提示。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/awtrix_manager.png" alt="awtrix_manager"></p>
-<p>另外，服务端适配了移动端，可以手机端进行控制。由于是运行在群晖中，依旧可以通过配置端口映射实现外网访问。</p>
-<h2 id="控制端"><a href="#控制端" class="headerlink" title="控制端"></a>控制端</h2><h3 id="刷入固件"><a href="#刷入固件" class="headerlink" title="刷入固件"></a>刷入固件</h3><p>1.控制端刷入固件非常容易，首先要下载相应模块的驱动，若是 D1 mini，请前往<a href="https://wiki.wemos.cc/downloads" target="_blank" rel="noopener">这里</a>下载，若是 NodeMCU 请前往<a href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers" target="_blank" rel="noopener">这里</a> 下载。</p>
-<p>2.下载安装 <a href="https://github.com/marcelstoer/nodemcu-pyflasher/releases" target="_blank" rel="noopener">NodeMCU PyFlasher</a> 及控制端<a href="https://blueforcer.de/awtrix/beta/firmware.bin" target="_blank" rel="noopener">固件</a>，将模块用 MicroUSB 数据线连接至电脑 USB 口，选择好端口及固件路径，点击[刷入]。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/awtrix_flash.png" alt="awtrix_flash"></p>
-<p>刷入成功可以看到 Awtrix 的 AP，连入这个 WiFi（密码是 awtrixxx），之后填入 WiFi 信息（名称、密码）及服务端 IP （即群晖 IP）即可（无需端口号）。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/awtrix_wifi.png" alt="awtrix_wifi"></p>
-<h3 id="连接电路元件及组装"><a href="#连接电路元件及组装" class="headerlink" title="连接电路元件及组装"></a>连接电路元件及组装</h3><p>1.连接按照官方的<a href="https://awtrix.github.io/AWTRIX2.0-Docs_Beta/#/en-en/hardware?id=basis-variante" target="_blank" rel="noopener">电路图</a>连接即可，连接成功默认显示「时间」 App。</p>
-<p>注意：正负极不要接反。</p>
-<p>2.显示部分按照亚克力板、纸（裁成亚克力板大小）、光栅、像素灯从外到底的顺序，用双面胶粘住。若打印了外壳，可以将元件套入外壳中。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/awtrix_wire_mini.JPG" alt="awtrix_wire"></p>
-<p>3.连接好后，按几次 D1 mini 的[reset]键，待屏幕出现图像启动即可。</p>
-<h3 id="App-推荐"><a href="#App-推荐" class="headerlink" title="App 推荐"></a>App 推荐</h3><p>Awtrix 支持多个 App，以下是几个 App 介绍：</p>
-<p>Time：默认自带，可以在设置中调整时区，可以选择日期、时间 12/24 制、是否显示星期指示格式。</p>
-<p>OpenWeather：需到 <a href="https://home.openweathermap.org/" target="_blank" rel="noopener">OpenWeather</a> 注册填入 APIKey。填入之后位置 ID，可以在<a href="https://openweathermap.org/city" target="_blank" rel="noopener">这里</a>。 </p>
-<p>Animations：可以显示随机动画，很有趣，无需配置。</p>
-<p>Moon：可以显示当日月相，无需配置。</p>
-<p>PM：可以显示地区 PM2.5 值，需要填入位置监测点位置 ID。</p>
-<p>Matrix：显示矩阵动画。</p>
-<p>Spotify：登录 Spotify 账号即可，每次切换歌曲可以显示歌名（目前仅支持英文）。</p>
+                    <p>Home Assistant 有很多工具可以方便我们 DIY，其中一个是 <a href="https://esphome.io" target="_blank" rel="noopener">ESPHome</a>，以下是小弟的一些尝试：</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="安装-ESPHome"><a href="#安装-ESPHome" class="headerlink" title="安装 ESPHome"></a>安装 ESPHome</h3><p>方法一：在 macOS 安装</p>
+<p>首先安装 ESPHome，打开系统终端机，输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install esphome</span><br></pre></td></tr></table></figure>
+
+<p>之后安装 ESPHome 面板，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install tornado esptool</span><br><span class="line">esphome config&#x2F; dashboard</span><br></pre></td></tr></table></figure>
+
+<p>在浏览器访问地址 <code>localhost:6052</code></p>
+<p>方法二：在群晖 Docker 安装</p>
+<p>在群晖 Docker 安装 ESPHome，之后通过 <a href="https://github.com/marcelstoer/nodemcu-pyflasher/releases" target="_blank" rel="noopener">NodeMCU PyFlasher</a> 刷入固件。</p>
+<h3 id="搭建-MQTT-服务器"><a href="#搭建-MQTT-服务器" class="headerlink" title="搭建 MQTT 服务器"></a>搭建 MQTT 服务器</h3><p>打开群晖 Docker，在「注册表」标签中搜索「mqtt」，下载映像，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/ha3_mqtt1.png" alt="mqtt1"></p>
+<p>在「映像」标签中找到下载的映像，点击「启动」，在「卷」中添加以下路径 <code>/mosquito/log</code>、<code>/mosquito/data</code>、<code>/mosquito/config</code>，且在<code>/mosquito/config</code> 路径下建立<code>mosquitto.conf</code> 文件，内容可以为空，或参考<a href="https://blog.csdn.net/luckykapok918/article/details/84954017" target="_blank" rel="noopener">这里</a>配置。网络可以选择与宿主机一致或根据自己偏好调整。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/ha3_mqtt2.png" alt="mqtt2"></p>
+<p>之后启动 Docker。访问 <code>http://群晖 IP:6052</code> 即可管理 ESPHome，在 Home Home Assistant 的 configuration.yaml 文件，添加以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mqtt:</span><br><span class="line">  broker: 群晖 IP</span><br><span class="line">  port: 1883</span><br></pre></td></tr></table></figure>
+
+<h2 id="小米墨水屏温度计"><a href="#小米墨水屏温度计" class="headerlink" title="小米墨水屏温度计"></a>小米墨水屏温度计</h2><p><img src="https://esphome.io/_images/xiaomi_lywsd02-full.png" alt=""></p>
+<p><img src="https://esphome.io/_images/xiaomi_cgg1-full.jpg" alt=""></p>
+<p>小米有出两款墨水屏的温度计，墨水屏比 LCD 屏幕更加清晰，可以利用 ESP32 通过 ESPHome 接入 Home Assistant。</p>
+<h3 id="圆形温度计"><a href="#圆形温度计" class="headerlink" title="圆形温度计"></a>圆形温度计</h3><p>参考<a href="https://esphome.io/components/sensor/xiaomi_cgg1.html" target="_blank" rel="noopener">这里</a>接入，访问 <code>ESPHome IP:6052</code>，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/ha3_esphome1.png" alt="ha3_esphome1"></p>
+<p>点击「＋」，填入名称、类型选「NodeMCU-32S」、WiFi信息，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/ha3_esphome2.png" alt="ha3_esphome2"></p>
+<p>ESPHome 会帮我们增加一个设备，点击「编辑」，加入以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># Example configuration entry</span><br><span class="line">esp32_ble_tracker:</span><br><span class="line"></span><br><span class="line">sensor:</span><br><span class="line">  - platform: xiaomi_cgg1</span><br><span class="line">    mac_address: 7A:80:8E:19:36:BA</span><br><span class="line">    temperature:</span><br><span class="line">      name: &quot;Xiaomi CGG1 Temperature&quot;</span><br><span class="line">    humidity:</span><br><span class="line">      name: &quot;Xiaomi CGG1 Humidity&quot;</span><br><span class="line">    battery_level:</span><br><span class="line">      name: &quot;Xiaomi CGG1 Battery Level&quot;</span><br></pre></td></tr></table></figure>
+
+<p>MAC 地址可由米家 App 获得，之后点击保存、上传刷入固件，Home Assistant 可以自动发现。</p>
+<h3 id="长方形温度计"><a href="#长方形温度计" class="headerlink" title="长方形温度计"></a>长方形温度计</h3><p>参考<a href="https://esphome.io/components/sensor/xiaomi_lywsd02.html" target="_blank" rel="noopener">这里</a>接入，加入以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">esp32_ble_tracker:</span><br><span class="line"></span><br><span class="line">sensor:</span><br><span class="line">  - platform: xiaomi_lywsd02</span><br><span class="line">    mac_address: 3F:5B:7D:82:58:4E</span><br><span class="line">    temperature:</span><br><span class="line">      name: &quot;Xiaomi LYWSD02 Temperature&quot;</span><br><span class="line">    humidity:</span><br><span class="line">      name: &quot;Xiaomi LYWSD02 Humidity&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="门禁改造"><a href="#门禁改造" class="headerlink" title="门禁改造"></a>门禁改造</h2><p>参考这个大大的<a href="https://mp.weixin.qq.com/s/10tm0XzSvAlUTu-l8rDhSg" target="_blank" rel="noopener">文章</a>，小弟的门禁比大大的简单，不需要先摘机，可以直接按下开关，所以只需要引出一条线即可，接入继电器，继电器正负极分别接入 NodeMCU 的 3V、G，in 接入 D7，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/ha3_doorbell.png" alt="ha3_doorbell"></p>
+<p>在 ESPHome 中加入以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">switch:</span><br><span class="line">  - platform: gpio</span><br><span class="line">    pin: D7</span><br><span class="line">    id: relay</span><br><span class="line">  - platform: template</span><br><span class="line">    name: &quot;Doorbell&quot;</span><br><span class="line">    turn_on_action:</span><br><span class="line">    - switch.turn_on: relay</span><br><span class="line">    - delay: 500ms</span><br><span class="line">    - switch.turn_off: relay</span><br></pre></td></tr></table></figure>
+
+<p>这里设置了打开 500ms，自动关闭，模拟按下的弹簧弹起。</p>
+<h2 id="各种传感器"><a href="#各种传感器" class="headerlink" title="各种传感器"></a>各种传感器</h2><p>ESPHome 接入各种传感器很方便，如温度传感器、光照传感器、手势传感器等等。</p>
 
                 </article>
                 <ul class="tags-postTags">
@@ -230,14 +220,14 @@
     
     <nav id="gobottom" class="pagination">
         
-        <a class="prev-post" title="Apple Watch" href="/watch/">
-            ← Apple Watch
+        <a class="prev-post" title="Sketch 使用小贴士" href="/sketch/">
+            ← Sketch 使用小贴士
         </a>
         
         <span class="prev-next-post">·</span>
         
-        <a class="next-post" title="群晖虚拟机安装软路由" href="/openwrt/">
-            群晖虚拟机安装软路由 →
+        <a class="next-post" title="Home Assistant 系列——Docker 安装篇" href="/ha1/">
+            Home Assistant 系列——Docker 安装篇 →
         </a>
         
     </nav>
@@ -263,7 +253,7 @@
         </a>
     </div>
     <div class="toc-main">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#购买配件"><span class="toc-text">购买配件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器端"><span class="toc-text">服务器端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#控制端"><span class="toc-text">控制端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#刷入固件"><span class="toc-text">刷入固件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连接电路元件及组装"><span class="toc-text">连接电路元件及组装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#App-推荐"><span class="toc-text">App 推荐</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-text">准备工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-ESPHome"><span class="toc-text">安装 ESPHome</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#搭建-MQTT-服务器"><span class="toc-text">搭建 MQTT 服务器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小米墨水屏温度计"><span class="toc-text">小米墨水屏温度计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#圆形温度计"><span class="toc-text">圆形温度计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#长方形温度计"><span class="toc-text">长方形温度计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#门禁改造"><span class="toc-text">门禁改造</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#各种传感器"><span class="toc-text">各种传感器</span></a></li></ol>
     </div>
 </div>
 
@@ -310,7 +300,7 @@
 			<a href="/" title="莊菲什">莊菲什 &copy; 2020</a>
 			
 				
-			        <span hidden="true" id="/awtrix/" class="leancloud-visitors" data-flag-title="DIY 超酷的像素钟">
+			        <span hidden="true" id="/ha3/" class="leancloud-visitors" data-flag-title="Home Assistant 系列——DIY 篇（上）">
 			            <span>阅读量 </span>
 			            <span class="leancloud-visitors-count">0</span>
 			        </span>
