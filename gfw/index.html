@@ -165,7 +165,7 @@
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/gfw0.png" alt="gfw0" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/gfw0.png" data-index="1"></p>
 <p>Shadowsocks 的繁荣引起当局注意，击破作者及各类衍生工具的作者后，Shadowsocks 渐渐停止了更新。</p>
 <p>「有一种鸟儿是永远也关不住的，因为它们的每片羽毛都闪着自由的光辉。」热爱自由的伟大程序员又开发了其他工具，如 V2ray、Brook、Trojan 等等，其中目前稳定且生态完整的是 <a href="https://www.v2ray.com" target="_blank" rel="noopener">V2ray</a>。</p>
-<p>这篇文章主要是搭建 V2ray 的过程，目前相对不会被封的方法是 Nginx+Websocket+tls 的方式，将流量伪装成访问某一个 IP 地址。</p>
+<p>这篇文章主要是搭建 V2ray 的过程，目前相对不会被封的方法是 Nginx+Websocket+TLS     的方式，将流量伪装成访问某一个 IP 地址。</p>
 <h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><h3 id="建立-VM-实例"><a href="#建立-VM-实例" class="headerlink" title="建立 VM 实例"></a>建立 VM 实例</h3><p>首先申请好谷歌云，或者用其他 VPS，并建立好 VM 实例、建立防火墙入站规则。具体过程可以参见之前小弟的<a href="https://drunkfish.me/gcp" target="_blank" rel="noopener">这篇</a>。</p>
 <p>在建立实例前可以通过<a href="http://www.gcping.com/" target="_blank" rel="noopener">这个</a>或<a href="https://www.feitsui.com/zh-hans/cloud/gcp" target="_blank" rel="noopener">这个</a>网站初步测速选择国家。待建立 VM 实例后，可以用终端机输入命令 <code>ping 服务器 IP</code>，如果延时高可以重新选择。</p>
 <h3 id="申请域名"><a href="#申请域名" class="headerlink" title="申请域名"></a>申请域名</h3><p>搭建 V2ray 伪装流量需要绑定域名，付费、免费域名都可以，免费域名申请可以参见之前小弟的<a href="https://drunkfish.me/domain/" target="_blank" rel="noopener">这篇</a>。同时，域名的某个主机名（如 <a href="http://www.drunkfish.ml" target="_blank" rel="noopener">www.drunkfish.ml</a> 解析到服务器的 IP，比如可以添加一条 www 的 A 记录。</p>

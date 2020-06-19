@@ -171,7 +171,7 @@
 <p>注意：个人主页前缀要和 GitHub 用户名一致，只能有一个，若要建立多个，可建立项目主页，具体参见<a href="https://help.github.com/en/github/working-with-github-pages/about-github-pages" target="_blank" rel="noopener">官方文档</a>。</p>
 <h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><h3 id="Docker-安装-Hexo"><a href="#Docker-安装-Hexo" class="headerlink" title="Docker 安装 Hexo"></a>Docker 安装 Hexo</h3><p>之后安装 Hexo，打开群晖 Docker（未安装可在「套件中心」搜索 「docker」下载安装，图标是小鲸鱼顶集装箱）， 在「注册表」标签中搜索「spurin」，找到映像 「spurin/hexo」并下载。这个 Docker 已经集成 <a href="https://github.com/jaredly/hexo-admin" target="_blank" rel="noopener">Hexo Admin Plugin</a>（一个 Hexo 文章后台管理插件）和连接 Github Pages 服务，可以方便我们快速搭建 Hexo 。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_hexo_reg.png" alt="docker_hexo_reg" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_hexo_reg.png" data-index="3"></p>
-<p>待下载完成后在「映像」标签中双击刚刚下载的映像「spurin/hexo」，点击[高级设置]按钮，</p>
+<p>待下载完成后在「映像」标签中双击刚刚下载的映像「spurin/hexo」，点击「高级设置」按钮，</p>
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_hexo_image.png" alt="docker_hexo_image" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_hexo_image.png" data-index="4"></p>
 <p>在「高级设置」中可以选择是否自动启动、是否建立桌面快捷方式（随个人偏好）。在「卷」标签页中的路径中添加文件夹，此文件夹为放置 Hexo 文件的文件夹，路径为 <code>/app</code> 。在「网络」标签页中可以选「与宿主使用相同网络」，也可以到「端口设置」中自定义端口号。端口号随个人偏好，Hexo 会使用 4000 端口号。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_hexo_dir.png" alt="docker_hexo_dir" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_hexo_dir.png" data-index="5"></p>
