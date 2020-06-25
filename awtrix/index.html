@@ -179,6 +179,7 @@
 <li>1000Ω 电阻</li>
 <li>APDS-9960 手势模块</li>
 <li>MicroSD 卡模块</li>
+<li>扬声器</li>
 </ul>
 <p>（以上元件都可以在淘宝买到，直接搜索关键词即可，若选择 Wemos D1 mini，可能还需要一个电烙铁进行焊接）。</p>
 <p>其他配件：<br>1.3D 打印光栅<br>默认像素灯是圆形，加入光栅可以将圆形变成方形，显示效果更好，建议打印。打印文件可以在 <a href="https://www.thingiverse.com/thing:2791276" target="_blank" rel="noopener">Thingiverse</a> 下载，小弟是在<a href="http://www.mohou.com/" target="_blank" rel="noopener">魔猴网</a>打印的，加运费大概 60-70 元。</p>
@@ -190,7 +191,7 @@
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_awtrix.png" alt="docker_awtrix" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/docker_awtrix.png" data-index="2"></p>
 <p>容器运行后，可以在日志后终端中看到安装情况，待 jar 文件下载完成，在浏览器中打开 <code>http://群晖 IP:7000</code>，就可以进入 Awtrix 服务器端，因为还没有控制端，所以会有未连接的提示。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/awtrix_manager.png" alt="awtrix_manager" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/awtrix_manager.png" data-index="3"></p>
-<p>另外，服务端适配了移动端，可以手机端进行控制。由于是运行在群晖中，依旧可以通过配置端口映射实现外网访问。</p>
+<p>另外，服务端适配了移动端，可以手机端进行控制。由于是运行在群晖中，可以通过配置 DDNS 与端口映射实现外网访问。</p>
 <h2 id="控制端"><a href="#控制端" class="headerlink" title="控制端"></a>控制端</h2><h3 id="刷入固件"><a href="#刷入固件" class="headerlink" title="刷入固件"></a>刷入固件</h3><p>1.控制端刷入固件非常容易，首先要下载相应模块的驱动，若是 D1 mini，请前往<a href="https://wiki.wemos.cc/downloads" target="_blank" rel="noopener">这里</a>下载，若是 NodeMCU 请前往<a href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers" target="_blank" rel="noopener">这里</a> 下载。</p>
 <p>2.下载安装 <a href="https://github.com/marcelstoer/nodemcu-pyflasher/releases" target="_blank" rel="noopener">NodeMCU PyFlasher</a> 及控制端<a href="https://blueforcer.de/awtrix/beta/firmware.bin" target="_blank" rel="noopener">固件</a>，将模块用 MicroUSB 数据线连接至电脑 USB 口，选择好端口及固件路径，点击[刷入]。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/awtrix_flash.png" alt="awtrix_flash" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/awtrix_flash.png" data-index="4"></p>
