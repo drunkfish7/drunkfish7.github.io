@@ -170,12 +170,12 @@
 <p>之后会返回机器人的 token，记下备用。</p>
 <h3 id="配置-Telegram-机器人-1"><a href="#配置-Telegram-机器人-1" class="headerlink" title="配置 Telegram 机器人"></a>配置 Telegram 机器人</h3><p>接下来配置刚刚建立的 Telegram 机器人，</p>
 <p>发送 <code>/setprivacy</code> 至 @BotFather，选择刚刚建立的机器人，设置为 <code>Disable</code>，</p>
-<p>发送 <code>/setjoingroups</code> 至 @BotFather，选择刚刚建立的机器人，设置为 <code>Disable</code>，</p>
-<p>发送 <code>/setcommands</code> 至 @BotFather，选择刚刚建立的机器人，输入以下命令：</p>
+<p>发送 <code>/setjoingroups</code> 至 @BotFather，选择刚刚建立的机器人，设置为 <code>Enable</code>，</p>
+<p>发送 <code>/setcommands</code> 至 @BotFather，选择刚刚建立的机器人，回复以下内容：</p>
 <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">help - 显示命令清单</span><br><span class="line">link - 连接对话到 TG 群组</span><br><span class="line">unlink_all - 解除群组中所有对话的连接</span><br><span class="line">info - 显示当前对话的详细信息</span><br><span class="line">chat - 创建对话</span><br><span class="line">recog - 回复语音消息以进行识别</span><br><span class="line">extra - 获取更多功能</span><br><span class="line">update_info - 更新组群名字及头像</span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="获取-Telegram-ID"><a href="#获取-Telegram-ID" class="headerlink" title="获取 Telegram ID"></a>获取 Telegram ID</h3><p>之后需要获取自己的 Telegram ID，与 <a href="https://t.me/get_id_bot" target="_blank" rel="noopener">@get_id_bot</a> 对话，发送 <code>/start</code>，获得的一串数字即为自己的 ID，记下这串数字备用。</p>
-<h2 id="配置-Docker"><a href="#配置-Docker" class="headerlink" title="配置 Docker"></a>配置 Docker</h2><p>首先确保 VPS 或群晖可以连外网，Telegram 目前需要连外网才能用。另外，有些 VPS 可能触发微信的异地登录，导致登录 Web 端微信失败（小弟有尝试在谷歌云上搭建，最后禁止 Web 端登录微信），相对比较安全且稳定的是在连外网的群晖上搭建。</p>
+<h3 id="获取-Telegram-ID"><a href="#获取-Telegram-ID" class="headerlink" title="获取 Telegram ID"></a>获取 Telegram ID</h3><p>之后获取自己的 Telegram ID，与 <a href="https://t.me/get_id_bot" target="_blank" rel="noopener">@get_id_bot</a> 对话，发送 <code>/start</code>，获得的一串数字即为自己的 ID，记下这串数字备用。</p>
+<h2 id="配置-Docker"><a href="#配置-Docker" class="headerlink" title="配置 Docker"></a>配置 Docker</h2><p>首先确保 VPS 或群晖可以连外网，Telegram 目前需要连外网才能用。另外，有些 VPS 可能触发微信的异地登录，导致登录 Web 端微信失败（小弟有尝试在谷歌云上搭建，最后导致禁止 Web 端登录微信），相对比较安全且稳定的是在连外网的群晖上搭建。</p>
 <p>小弟使用的是<a href="https://hub.docker.com/r/jemyzhang/ehforwarderbot" target="_blank" rel="noopener">这个大大的 Docker</a>。首先新建存放这个 Docker 的文件夹，文件夹依照下面的层级结构建立好子文件目录：</p>
 <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">📂profiles</span><br><span class="line">└── 📂default</span><br><span class="line">    ├── 📂blueset.telegram</span><br><span class="line">    │   └── config.yaml</span><br><span class="line">    ├── 📂blueset.wechat</span><br><span class="line">    └── config.yaml</span><br></pre></td></tr></tbody></table></figure>
 
@@ -187,13 +187,13 @@
 
 <p>打开群晖 Docker ，在「注册表」标签卡中搜索「ehforwarderbot」，找到「jemyzhang/ehforwarderbot」下载映像，</p>
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/ehforwarderbot_reg.png" alt="ehforwarderbot_reg" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/ehforwarderbot_reg.png" data-index="2"></p>
-<p>待下载完成在「映像」标签卡中点击「启动」，选择「高级设置」，在「路径」选项卡中选择存放配置文件的路径，挂载路径填写 <code>/data</code>，</p>
+<p>待下载完成，在「映像」标签卡中点击「启动」，选择「高级设置」，在「路径」选项卡中选择存放配置文件的路径，挂载路径填写 <code>/data</code>，</p>
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/ehforwarderbot_dir.png" alt="ehforwarderbot_dir" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/ehforwarderbot_dir.png" data-index="3"></p>
-<p>之后启动容器，在「日志」或「终端机」中可以看到微信登录二维码，可以复制网址到浏览器，微信扫描二维码登录，登录成功日志会有显示。</p>
+<p>之后启动容器，在「日志」或「终端机」中可以看到微信登录二维码，可以复制网址到浏览器，微信扫描二维码登录，登录成功日志会有显示，Telegram 可以收到微信的消息。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/ehforwarderbot_qr.png" alt="ehforwarderbot_qr" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/ehforwarderbot_qr.png" data-index="4"></p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>Web 端支持的文字、语音、文件都可以转发至 Telegram，红包、定位、朋友圈等不支持。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>Web 端支持的文字、语音、文件都可以转发至 Telegram，红包、定位、朋友圈等 Web 端没有的功能不支持。</p>
 <h3 id="直接回复"><a href="#直接回复" class="headerlink" title="直接回复"></a>直接回复</h3><p>默认会将所有微信 Web 端的消息汇总至一个消息框中，想要回复可以直接发送命令<code>/chat</code>，选择要回复的联系人或群组，之后右滑返回的消息回复即可。另外还支持 <code>/chat 关键词</code> 快速定位要回复的联系人或群组。</p>
-<h3 id="分组对话"><a href="#分组对话" class="headerlink" title="分组对话"></a>分组对话</h3><p>如果某个联系人或群组，可以首先用两个 Telegram 账号新建一个空白群组，之后向机器人发送命令 <code>/link</code> 将某个联系人或群组连接至空白群组，也支持 <code>/link 关键词</code> 快速链接联系人或群组。</p>
+<h3 id="分组对话"><a href="#分组对话" class="headerlink" title="分组对话"></a>分组对话</h3><p>如果某个联系人或群组，可以首先用两个 Telegram 账号新建一个空白群组，之后向机器人发送命令 <code>/link</code> 将某个联系人或群组连接至空白群组，也支持 <code>/link 关键词</code> 快速链接联系人或群组，之后选择空白群组，链接好之后就可以实现消息分组。</p>
 
                 </article>
                 <ul class="tags-postTags">
