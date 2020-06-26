@@ -160,24 +160,24 @@
             <div class="post-full-content">
                 <article id="photoswipe" class="markdown-body">
                     <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/baiduyun_cover.png" alt="baiduyun_cover" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/baiduyun_cover.png" data-index="0"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/baiduyun_ui.png" alt="baiduyun_ui" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/baiduyun_ui.png" data-index="1"></p>
 <p>21 世纪的欧亚大陆，天下第一超级大国有一项领先全球的科技创举，这项独步世界的先进技术可以对处在水深火热地区传播落后、低级思想的网站或应用进行屏蔽封锁。事实证明，科技创新力量大，国内的同类应用在缺少害虫的情况下，逐渐成长成问鼎天下的巨无霸，其中不乏微信、百度这样的忧质、业界凉心应用。</p>
 <p>都说科技使人变懒退步，这种事情在神奇的超级大国不会发生，我们的聊天工具有内置不允许自有生态链以外、可能会随时打不开朋友发来的链接的超级浏览器，我们有下载速度几乎为零的优秀网盘工具。因为这些优质工具，我们需要「用浏览器打开」等操作，让人动手又动脑，一举解决世界性重大科学难题——人类科技使人变懒的魔咒。</p>
 <p>人人努力上进，偏偏有人退步，「大国特色奇异技巧系列」这个系列介绍国内忧秀应用的退化降级版，帮助大家识别辨认。</p>
 <p>百度网盘是闻名全球的网盘工具，创新性地突破重大技术难关、实现 100M、200M、300M 带宽下下载速度为零，网纷纷按赞业界良心，有些人还感受到了愤怒拍桌后手疼的酥麻感觉。</p>
 <p><a href="https://hub.docker.com/r/johnshine/baidunetdisk-crossover-vnc" target="_blank" rel="noopener">baidunetdisk-crossover-vnc</a> 是一位大大开发的百度网盘下载工具，将虚拟机系统和 VNC 客户端打包至一个 Docker 中，可以帮助高速、稳定下载百度网盘的文件。</p>
 <h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><p>baidunetdisk-crossover-vnc 比较适合装在群晖 Docker 中，首先打开群晖 Docker ，在「注册表」中搜索「baidunetdisk」，之后下载映像，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/baiduyun_reg.png" alt="baiduyun_reg" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/baiduyun_reg.png" data-index="2"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/baiduyun_reg.png" alt="baiduyun_reg" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/baiduyun_reg.png" data-index="1"></p>
 <p>待映像下载完映像后在「映像」中找到「baidunetdisk-crossover-vnc」，点击「启动」，选择「高级设置」，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/baiduyun_img.png" alt="baiduyun_img" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/baiduyun_img.png" data-index="3"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/baiduyun_img.png" alt="baiduyun_img" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/baiduyun_img.png" data-index="2"></p>
 <p>默认占用 5901 端口，可以在「端口设置」中根据需要修改，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/baiduyun_port.png" alt="baiduyun_port" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/baiduyun_port.png" data-index="4"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/baiduyun_port.png" alt="baiduyun_port" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/baiduyun_port.png" data-index="3"></p>
 <p>在路径中选择存放下载文件的路径，挂载路径填入<code>/home/baidu/baidunetdiskdownload/</code>，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/baiduyun_dir.png" alt="baiduyun_dir" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/baiduyun_dir.png" data-index="5"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/baiduyun_dir.png" alt="baiduyun_dir" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/baiduyun_dir.png" data-index="4"></p>
 <p>设置好之后启动容器。</p>
 <p>另：如果感觉 Docker 设置起来麻烦，也可以直接使用群晖套件安装，在<a href="https://github.com/john-shine/synology-baiduNetdisk-package/releases" target="_blank" rel="noopener">这里</a>下载后缀为 <code>spk</code> 的群晖套件文件，打开群晖套件中心，点击「手动安装」</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/baiduyun_spk.png" alt="baiduyun_spk" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/baiduyun_spk.png" data-index="6"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/baiduyun_spk.png" alt="baiduyun_spk" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/baiduyun_spk.png" data-index="5"></p>
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>可以事先先将待下载的文件转存至百度网盘账号内，访问网址 <code>http://群晖 IP:自定义的端口号</code>即可使用百度网盘客户端，首先登录，找到要下载的文件下载，文件会下载至预先设置的文件夹内。小弟使用中速度平均在 100K 左右，不算快，但较稳定。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/baiduyun_ui.png" alt="baiduyun_ui" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/baiduyun_ui.png" data-index="6"></p>
 
                 </article>
                 <ul class="tags-postTags">
