@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-26T07:24:25.000Z</updated>
+  <updated>2020-07-17T15:05:33.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>谈谈电子书 DRM</title>
+    <link href="http://yoursite.com/drm/"/>
+    <id>http://yoursite.com/drm/</id>
+    <published>2020-07-17T00:00:00.000Z</published>
+    <updated>2020-07-17T15:05:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/drm_cover.png" alt="drm_cover"></p><blockquote><p>藏天下於天下。</p></blockquote><p>2007 年，乔布斯希望唱片公司废除音乐的 DRM（數字版權管理），这样 iTunes 上销售的音乐可以就可以在所有设备上播放。这个倡议推动了音乐平台的 DRM 改革，几年过后，线上一首首卖歌逐渐被订阅制听歌取代。</p><p>电子书市场的 DRM 似乎和音乐市场不太一样，出版社众多，看到饱的订阅制无法覆盖每一本书，一本本购书是主流。一个问题是，DRM 是防盗版的好办法吗？DRM 好处会大于坏处吗？</p><p>有位大大曾有过 <a href="https://bookfere.com/post/380.html" target="_blank" rel="noopener">DRM-free 的实验</a>，其中的观点如下：1.有了盗版，书籍销售不降反升；2.去 DRM 对程序员并不费劲；3.盗版是一个宣传、评估内容受欢迎的一种方式。</p><p>已经购买了正版电子书，可以在不同平台、不同设备可以不受限阅读，小弟认为这没有不对的地方，以下是几种电子书平台去电子书的 DRM 的方法：</p><h2 id="Amazon-电子书"><a href="#Amazon-电子书" class="headerlink" title="Amazon 电子书"></a>Amazon 电子书</h2><p>中亚、美亚、日亚等电子书去 DRM 方法相同。Amazon 电子书在 Windows 下去 DRM 最方便，</p><p>1、下载安装 <a href="https://calibre-ebook.com/" target="_blank" rel="noopener">calibre</a>，</p><p>2、下载 <a href="https://github.com/apprenticeharper/DeDRM_tools/releases" target="_blank" rel="noopener">DeDRM_tools</a>，解压，</p><p>3、打开 calibre，在工具栏中找到「偏好设置」，</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/drm_win1.png" alt="drm_win1"></p><p>在偏好设置中找到「插件」，</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/drm_win2.png" alt="drm_win2"></p><p>选择「从文件导入」，选择文件 <code>DeDRM_Plugin.zip</code>，安装并重启 calibre，</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/drm_win3.png" alt="drm_win3"></p><p>4、下载安装旧版 <a href="https://www.epubsoft.com/soft/kindle-for-pc.html" target="_blank" rel="noopener">Kindle for Windows v1.17</a>，</p><p>5、登录亚马逊账号，下载要去 DRM 的电子书，</p><p>6、在路径 <code>C:/Users/user name/Documents/My Kindle Content</code> 下找到后缀名为 <code>azw</code> 的电子书文件，将文件拖入 calibre，此时已经去好 DRM 了，可以进一步转成 mobi 或 epub 格式。</p><h2 id="Kobo-电子书"><a href="#Kobo-电子书" class="headerlink" title="Kobo 电子书"></a>Kobo 电子书</h2><p>Kobo 电子书在 Windows 和 macOS 下均可去 DRM，</p><p>1、下载安装 <a href="https://calibre-ebook.com/" target="_blank" rel="noopener">calibre</a>，</p><p>2、下载 <a href="https://github.com/apprenticeharper/DeDRM_tools/releases" target="_blank" rel="noopener">DeDRM_tools</a>，解压，</p><p>3、打开 calibre，在工具栏中或菜单栏中的「文件」中找到「偏好设置」，在偏好设置中找到「插件」，</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/drm_mac1.png" alt="drm_mac1"></p><p>选择「从文件导入」，</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/drm_mac2.png" alt="drm_mac2"></p><p>选择文件 <code>DeDRM_Plugin.zip</code>，之后选择文件 <code>Obok_plugin.zip</code>，安装并重启 calibre，安装成功后工具栏会看到 Obok DeDRM 图标，</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/drm_mac3.png" alt="drm_mac3"></p><p>3、下载安装 <a href="https://www.kobo.com/us/en/p/desktop" target="_blank" rel="noopener">Kobo 桌面客户端</a>，</p><p>4、登录 Kobo 账号，下载要去 DRM 的电子书，</p><p>5、打开 calibre，在工具栏中点击「Obok DeDRM 图标」，可以看到 Kobo 中的电子书，点击「好」可以汇入，汇入之后即去 DRM，之后可以将电子书转成 mobi 或其他格式。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/drm_calendar_min.JPG" alt="drm_calendar_min"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/drm_cover.png&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>大国特色奇异技巧系列之二：Telegram 收发微信消息</title>
