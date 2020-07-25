@@ -205,10 +205,10 @@
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/eink_adb.png" alt="eink_adb" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/eink_adb.png" data-index="7"></p>
 <p>④ 手机 USB 连接电脑，并允许 USB 调试；</p>
 <p>⑤ 打开系统终端机，输入 <code>adb shell</code>，进入adb命令环境，</p>
-<p>卸载浏览器和自带应用市场可以输入：</p>
+<p>禁用浏览器和自带应用市场可以输入：</p>
 <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">浏览器 pm disable-user  --user 0 com.android.browser</span><br><span class="line">应用市场 pm disable-user  --user 0 com.hisense.hiphone.appstore</span><br></pre></td></tr></tbody></table></figure>
 
-<p>想停用浏览器和自带应用市场可以输入：</p>
+<p>想卸载浏览器和自带应用市场可以输入：</p>
 <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">浏览器 pm uninstall  --user 0 com.android.browser</span><br><span class="line">应用市场 pm uninstall  --user 0 com.hisense.hiphone.appstore</span><br></pre></td></tr></tbody></table></figure>
 
 <p>2、Alook</p>
