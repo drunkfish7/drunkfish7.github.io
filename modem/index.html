@@ -160,10 +160,10 @@
             <div class="post-full-content">
                 <article id="photoswipe" class="markdown-body">
                     <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_cover.png" alt="modem_cover" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_cover.png" data-index="0"></p>
-<p>如果想要外网访问群晖或其他自己搭建的 Docker 等服务，比较好的方法是利用 DDNS 和 端口映射，比其他方法稳定且快速，方法如下：</p>
+<p>如果想要外网访问群晖或其他自己搭建的 Docker 等服务，比较好的方法是利用 DDNS 和端口映射，比其他方法稳定且快速，方法如下：</p>
 <h2 id="光猫改桥接"><a href="#光猫改桥接" class="headerlink" title="光猫改桥接"></a>光猫改桥接</h2><p>光猫最好改成桥接模式，用路由器拨号，这样可以少一层 NAT，并且不受限于自带光猫羸弱的硬件配置和残缺的软件功能。不同光猫改桥接方法不尽相同，以小弟住的地方的光猫是中兴 F627V2，如果和小弟同款，可以参考以下步骤：</p>
 <h3 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h3><p>1、确保同型号、同地区</p>
-<p>小弟用的是北京联通，中兴 F627Za，外观如下：</p>
+<p>小弟用的是北京联通，中兴 F627V2，外观如下：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_hardware.png" alt="modem_hardware" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_hardware.png" data-index="1"></p>
 <p>另外可以连接光猫的 WiFi 登录光猫后台查看型号：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_series.png" alt="modem_series" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_series.png" data-index="2"></p>
@@ -175,6 +175,7 @@
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_admin.png" alt="modem_admin" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_admin.png" data-index="4"></p>
 <p>输入密码 <code>CUAdmin</code> 进入，选择「基本配置」，连接名称选择 <code>2_INTERNET_B_VID_0</code>，端口绑定勾选 <code>LAN1</code>，VLAN 模式选 <code>改写(tag)</code>，VLAN ID 填写 <code>3961</code>，点击「修改」。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_config.png" alt="modem_config" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_config.png" data-index="5"></p>
+<p>输完后再检查一遍，确保输入正确。</p>
 <h3 id="配置路由器拨号"><a href="#配置路由器拨号" class="headerlink" title="配置路由器拨号"></a>配置路由器拨号</h3><p>不同的路由器配置拨号不完全一样，以 OpenWrt 为例：</p>
 <p>在「网络」中选择「端口」，找到「WAN」口，点击「修改」，</p>
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_pppoe1.png" alt="modem_pppoe1" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_pppoe1.png" data-index="6"></p>
