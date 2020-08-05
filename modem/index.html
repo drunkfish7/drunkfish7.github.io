@@ -183,7 +183,7 @@
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_pppoe2.png" alt="modem_pppoe2" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_pppoe2.png" data-index="7"></p>
 <p>之后浏览器打开网址试试，正常打开说明配置成功。</p>
 <h2 id="确保有公网-IP"><a href="#确保有公网-IP" class="headerlink" title="确保有公网 IP"></a>确保有公网 IP</h2><p>外网访问 NAS 需要公网 IP，判断是否有公网 IP 可以参照<a href="https://hsk.oray.com/news/5928.html" target="_blank" rel="noopener">这篇</a>。</p>
-<p>由于 IPv4 是稀缺资源（现已耗尽，公网 IP 大部分默认没有开通。如果没有公网 IP，可以打电话给运营商的客服，一般情况会有装网师傅再联系，说明开通公网 IP 即可，注意不要说搭服务器之类的黑话（需要知道，在世界上最富裕、最发达、最文明、最开放的國家，网站是需要「备案」的）。话术可以参考以下：</p>
+<p>由于 IPv4 是稀缺资源（现已耗尽），公网 IP 大部分默认没有开通。如果没有公网 IP，可以打电话给运营商的客服，一般情况会有装网师傅再联系，说明开通公网 IP 即可，注意不要说搭服务器之类的黑话（需要知道，在世界上最富裕、最发达、最文明、最开放的國家，网站是需要「备案」的）。话术可以参考以下：</p>
 <blockquote>
 <p>话术参考 1：我想用光猫里的端口映射功能，请问是应该怎样操作。</p>
 </blockquote>
@@ -194,7 +194,7 @@
 <p>（不想拐弯抹角也可以直接问，有些师傅会说公网 IP 是企业用的，费用很高，这时候说是那种临时公网 IP）</p>
 <h2 id="设置-DDNS"><a href="#设置-DDNS" class="headerlink" title="设置 DDNS"></a>设置 DDNS</h2><p>DDNS 即动态 DNS，方便我们的公网 IP 更换时仍可以指向我们的主机。设置 DDNS 最简单的方法是利用群晖的 DDNS（OpenWrt 也支持，比群晖稍繁琐）。</p>
 <p>打开群晖控制面板，找到「外部访问」，之后添加 DDNS，最简单的是选择群晖自带的 DDNS。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_ddns.png" alt="modem_ddns" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_ddns.png" data-index="8"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_ddns2.png" alt="modem_ddns" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_ddns2.png" data-index="8"></p>
 <h2 id="配置端口映射"><a href="#配置端口映射" class="headerlink" title="配置端口映射"></a>配置端口映射</h2><p>设置好 DDNS 还需要配置端口映射，不同路由器配置方法不尽相同，大体相似，以 OpenWrt 为例：</p>
 <p>在「网络」中选择「防火墙」，找到「端口转发」，添加主机、内部端口、外部端口即可。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_port.png" alt="modem_port" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_port.png" data-index="9"></p>
