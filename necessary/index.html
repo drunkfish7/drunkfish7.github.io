@@ -11,7 +11,7 @@
 	<link rel="preconnect" href="//9qpuwspm.api.lncld.net">
 	<link rel="preconnect" href="//gravatar.loli.net">
 
-	<title>大国特色奇异技巧系列之三：联通光猫改桥接实现外网访问 | 庄菲什</title>
+	<title>租房小物推荐 | 庄菲什</title>
 
 	<meta name="HandheldFriendly" content="True">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -39,14 +39,14 @@
 
 	<meta property="og:site_name" content="庄菲什">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="大国特色奇异技巧系列之三：联通光猫改桥接实现外网访问 | 庄菲什">
+	<meta property="og:title" content="租房小物推荐 | 庄菲什">
 	<meta property="og:description" content>
-	<meta property="og:url" content="http://yoursite.com/modem/">
+	<meta property="og:url" content="http://yoursite.com/necessary/">
 
 	
-	<meta property="article:published_time" content="2020-08-08T00:08:00+08:00"> 
+	<meta property="article:published_time" content="2020-08-23T00:08:00+08:00"> 
 	<meta property="article:author" content="drunkfish">
-	<meta property="article:published_first" content="庄菲什, /modem/">
+	<meta property="article:published_first" content="庄菲什, /necessary/">
 	
 
 	
@@ -145,61 +145,68 @@
     <div class="inner">
         <header class="post-full-header">
             <div class="post-full-meta">
-                <time class="post-full-meta-date" datetime="2020-08-08T00:00:00.000Z">
-                    2020-08-8
+                <time class="post-full-meta-date" datetime="2020-08-23T00:00:00.000Z">
+                    2020-08-23
                 </time>
                 
                 <span class="date-divider">/</span>
                 
                 
             </div>
-            <h1 class="post-full-title">大国特色奇异技巧系列之三：联通光猫改桥接实现外网访问</h1>
+            <h1 class="post-full-title">租房小物推荐</h1>
         </header>
         <div class="post-full no-image">
             
             <div class="post-full-content">
                 <article id="photoswipe" class="markdown-body">
-                    <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_cover.png" alt="modem_cover" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_cover.png" data-index="0"></p>
-<p>如果想要外网访问群晖或其他自己搭建的 Docker 等服务，比较好的方法是利用 DDNS 和端口映射，比其他方法稳定且快速，方法如下：</p>
-<h2 id="光猫改桥接"><a href="#光猫改桥接" class="headerlink" title="光猫改桥接"></a>光猫改桥接</h2><p>光猫最好改成桥接模式，用路由器拨号，这样可以少一层 NAT，并且不受限于自带光猫羸弱的硬件配置和残缺的软件功能。不同光猫改桥接方法不尽相同，以小弟住的地方的光猫是中兴 F627V2，如果和小弟同款，可以参考以下步骤：</p>
-<h3 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h3><p>1、确保同型号、同地区</p>
-<p>小弟用的是北京联通，中兴 F627V2，外观如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_hardware1.png" alt="modem_hardware1" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_hardware1.png" data-index="1"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_hardware2.png" alt="modem_hardware2" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_hardware2.png" data-index="2"></p>
-<p>另外可以连接光猫的 WiFi 登录光猫后台查看型号：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_series.png" alt="modem_series" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_series.png" data-index="3"></p>
-<p>2、备份好拨号用户名和密码</p>
-<p>建议保存好拨号用户名和密码，路由器拨号时需要使用。</p>
-<p>连接光猫的 WiFi（名称与密码在光猫背面），浏览器访问 <a href="http://192.168.1.1/hidden_version_switch.gch" target="_blank" rel="noopener">http://192.168.1.1/hidden_version_switch.gch</a> ，选 <code>Default version</code>，输入密码 CUAdmin，保存修改，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_switch.png" alt="modem_switch" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_switch.png" data-index="4"></p>
-<p>浏览器访问 <a href="http://192.168.1.1/cu.html" target="_blank" rel="noopener">http://192.168.1.1/cu.html</a> ，选择「管理员账户」，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_admin.png" alt="modem_admin" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_admin.png" data-index="5"></p>
-<p>输入密码 <code>CUAdmin</code> 进入，选择「基本配置」，连接名称选择 <code>2_INTERNET_B_VID_0</code>，端口绑定勾选 <code>LAN1</code>，VLAN 模式选 <code>改写(tag)</code>，VLAN ID 填写 <code>3961</code>，点击「修改」。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_config.png" alt="modem_config" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_config.png" data-index="6"></p>
-<p>输完后再检查一遍，确保输入正确。</p>
-<h3 id="配置路由器拨号"><a href="#配置路由器拨号" class="headerlink" title="配置路由器拨号"></a>配置路由器拨号</h3><p>不同的路由器配置拨号不完全一样，以 OpenWrt 为例：</p>
-<p>在「网络」中选择「端口」，找到「WAN」口，点击「修改」，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_pppoe1.png" alt="modem_pppoe1" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_pppoe1.png" data-index="7"></p>
-<p>协议选择「PPPoE」，填入拨号用户名和密码，点击「保存并应用」。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_pppoe2.png" alt="modem_pppoe2" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_pppoe2.png" data-index="8"></p>
-<p>之后浏览器打开网址试试，正常打开说明配置成功。</p>
-<h2 id="确保有公网-IP"><a href="#确保有公网-IP" class="headerlink" title="确保有公网 IP"></a>确保有公网 IP</h2><p>外网访问 NAS 需要公网 IP，判断是否有公网 IP 可以参照<a href="https://hsk.oray.com/news/5928.html" target="_blank" rel="noopener">这篇</a>。</p>
-<p>由于 IPv4 是稀缺资源（现已耗尽），公网 IP 大部分默认没有开通。如果没有公网 IP，可以打电话给运营商的客服，一般情况会有装网师傅再联系，说明开通公网 IP 即可，注意不要说搭服务器之类的黑话（需要知道，在世界上最富裕、最发达、最文明、最开放的國家，网站是需要「备案」的）。话术可以参考以下：</p>
-<blockquote>
-<p>话术参考 1：我想用光猫里的端口映射功能，请问是应该怎样操作。</p>
-</blockquote>
-<p>（一般师傅会推荐使用光猫自带的 DMZ 功能，贴心会发一个 PDF 说明文件，之后如果没开公网 IP 师傅会帮开公网 IP ）</p>
-<blockquote>
-<p>话术参考 2：我想给家里的网开公网 IP。</p>
-</blockquote>
-<p>（不想拐弯抹角也可以直接问，有些师傅会说公网 IP 是企业用的，费用很高，这时候说是那种临时公网 IP）</p>
-<h2 id="设置-DDNS"><a href="#设置-DDNS" class="headerlink" title="设置 DDNS"></a>设置 DDNS</h2><p>DDNS 即动态 DNS，方便我们的公网 IP 更换时仍可以指向我们的主机。设置 DDNS 最简单的方法是利用群晖的 DDNS（OpenWrt 也支持，比群晖稍繁琐）。</p>
-<p>打开群晖控制面板，找到「外部访问」，之后添加 DDNS，最简单的是选择群晖自带的 DDNS。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_ddns2.png" alt="modem_ddns" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_ddns2.png" data-index="9"></p>
-<h2 id="配置端口映射"><a href="#配置端口映射" class="headerlink" title="配置端口映射"></a>配置端口映射</h2><p>设置好 DDNS 还需要配置端口映射，不同路由器配置方法不尽相同，大体相似，以 OpenWrt 为例：</p>
-<p>在「网络」中选择「防火墙」，找到「端口转发」，添加主机、内部端口、外部端口即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_port.png" alt="modem_port" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/modem_port.png" data-index="10"></p>
-<p>配置好之后可以用手机蜂窝网络访问 DDNS 域名:端口号，可正常访问说明配置成功。</p>
+                    <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_cover.png" alt="necessary_cover" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_cover.png" data-index="0"></p>
+<h2 id="小物推荐"><a href="#小物推荐" class="headerlink" title="小物推荐"></a>小物推荐</h2><p>俗话说，生活是租的，但房子可能是自己的。我们向上天租借了几十年的寿命，有 1/3 的时间要花在睡觉等日常活动。这些活动需要一个相对稳定的空间度过，在这个空间中，除了面对亲人、朋友、熟悉的陌生人，还要面对各种各样的物品（有个问题是，我们的东西会不会像《玩具总动员》里那样当我们离开的时候会苏醒起来动呢？）。下面是小弟觉得可能可以入手的一些小物（如果有好的推荐，恳请各位大大留言评论，小弟补充）：</p>
+<h3 id="快递开箱刀"><a href="#快递开箱刀" class="headerlink" title="快递开箱刀"></a>快递开箱刀</h3><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_knife2.png" alt="necessary_knife" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_knife2.png" data-index="1"></p>
+<p>参考价格：¥ 11/把</p>
+<p>现在大家很多在网上买东西，会收到很多快递箱子，这个小刀可以帮助拆快递。刀子体积很小，刀片可以伸缩，不用担心划到手，后面有磁铁，可以贴在铁的东西上，方便收纳。</p>
+<h3 id="抽绳垃圾袋"><a href="#抽绳垃圾袋" class="headerlink" title="抽绳垃圾袋"></a>抽绳垃圾袋</h3><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_bag.png" alt="necessary_bag" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_bag.png" data-index="2"></p>
+<p>参考价格：¥ 0.26/个</p>
+<p>资本主义社会提倡多多消费，还会设计花哨的包装吸引顾客，不知不觉就产生很多垃圾。这个垃圾袋带拉绳，可以方便收口。</p>
+<h3 id="静电纸拖把"><a href="#静电纸拖把" class="headerlink" title="静电纸拖把"></a>静电纸拖把</h3><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_mop.png" alt="necessary_mop" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_mop.png" data-index="3"></p>
+<p>参考价格：¥ 29/把</p>
+<p>这个拖把可以替换拖把上的「布」，擦完把纸丢掉，免清洗拖把。拖把可以搭配「静电纸」或「湿巾」使用，「静电纸」可以吸附一定毛发灰尘。另外，拖把可以方便拆卸，搬家的时候也很方便。</p>
+<h3 id="鞋盒纸盒子"><a href="#鞋盒纸盒子" class="headerlink" title="鞋盒纸盒子"></a>鞋盒纸盒子</h3><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_shoes_box.png" alt="necessary_shoes_box" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_shoes_box.png" data-index="4"></p>
+<p>参考价格：¥ 3.5/个</p>
+<p>网上有卖鞋盒纸盒，可以方便收纳鞋子，另外可以充当鞋架的功能。搬家的时候可以直接将盒子搬走。</p>
+<h3 id="一次性抹布"><a href="#一次性抹布" class="headerlink" title="一次性抹布"></a>一次性抹布</h3><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_rag.png" alt="necessary_rag" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_rag.png" data-index="5"></p>
+<p>参考价格：¥ 0.4/张</p>
+<p>抹布多潮湿，可能容易滋生细菌。一次性抹布可以用完即扔，不用再清洁抹布，适合懒人。另外，可以加水作为「湿巾」与上面提到的「静电纸拖把」搭配使用。</p>
+<h3 id="宜家房门挂衣钩"><a href="#宜家房门挂衣钩" class="headerlink" title="宜家房门挂衣钩"></a>宜家房门挂衣钩</h3><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_hanger_or_door.png" alt="necessary_hanger_or_door" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_hanger_or_door.png" data-index="6"></p>
+<p>参考价格：¥ 14.9/个</p>
+<p>宜家的这个<a href="https://www.ikea.cn/cn/zh/p/enudden-an-nu-deng-fang-men-shi-gua-yi-gou-bai-se-40251666/" target="_blank" rel="noopener">房门小挂钩</a>可以悬挂在门上，挂衣服、包等等，充分利用房间空间。</p>
+<h3 id="宜家带架洗衣袋"><a href="#宜家带架洗衣袋" class="headerlink" title="宜家带架洗衣袋"></a>宜家带架洗衣袋</h3><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_laundry_bag.png" alt="necessary_laundry_bag" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_laundry_bag.png" data-index="7"></p>
+<p>参考价格：¥ 15.9/个</p>
+<p>宜家的这个<a href="https://www.ikea.cn/cn/zh/p/jaell-jia-er-dai-jia-xi-yi-yong-dai-bai-se-10171826/" target="_blank" rel="noopener">洗衣袋</a>可以盛放脏衣服，避免「脏衣服」与「干净衣服」混在一起，不用的时候可以折叠，附把手，可以方拿取、移动。</p>
+<h3 id="宜家衣物储物单元"><a href="#宜家衣物储物单元" class="headerlink" title="宜家衣物储物单元"></a>宜家衣物储物单元</h3><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_storage_case.png" alt="necessary_storage_case" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_storage_case.png" data-index="8"></p>
+<p>参考价格：¥ 29.9~69</p>
+<p>宜家的<a href="https://www.ikea.cn/cn/zh/search/products/?q=%E6%80%9D%E5%BA%93%E5%B8%83" target="_blank" rel="noopener">思库布储物单元</a>可以帮助收纳衣服，上面有扣子可以悬挂，拓展空间，另外，可以按需灵活搭配单元格。不用或搬家时，可以折叠起来。</p>
+<h3 id="电源收纳盒"><a href="#电源收纳盒" class="headerlink" title="电源收纳盒"></a>电源收纳盒</h3><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_power_box.png" alt="necessary_power_box" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_power_box.png" data-index="9"></p>
+<p>参考价格：¥ 14.9/个</p>
+<p>现在大家的用电产品越来越多，各种充电线容易乱，这个电源收纳盒可以帮助收纳各种用电设备的电线，保持整洁的桌面。</p>
+<h3 id="黑绝缘胶带"><a href="#黑绝缘胶带" class="headerlink" title="黑绝缘胶带"></a>黑绝缘胶带</h3><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_black_tape.jpg" alt="necessary_black_tape" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_black_tape.jpg" data-index="10"></p>
+<p>参考价格：¥ 3.8/卷</p>
+<p>很多电子产品有指示灯，夜晚时分，灯光关闭，各种指示灯非常刺眼，黑绝缘胶带可以帮助遮住指示灯的强光。</p>
+<h3 id="米家洗手机"><a href="#米家洗手机" class="headerlink" title="米家洗手机"></a>米家洗手机</h3><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_dispenser.jpg" alt="necessary_dispenser" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_dispenser.jpg" data-index="11"></p>
+<p>参考价格：¥ 69/个</p>
+<p>依托强大的供应链整合能力，小米的<a href="https://www.mi.com/dispenser" target="_blank" rel="noopener">自动洗手机</a>物美价廉，可以自动感应出泡，方便洗手。另外，小米的洗手液不怎么样，可以用螺丝刀撬开瓶子的盖子填充自己喜欢的洗手液。</p>
+<h2 id="收纳建议"><a href="#收纳建议" class="headerlink" title="收纳建议"></a>收纳建议</h2><p>推荐近藤麻理惠的<a href="https://www.books.com.tw/products/0010521950" target="_blank" rel="noopener">《怦然心动的人生整理魔法》</a>和<a href="https://www.books.com.tw/products/0010582986" target="_blank" rel="noopener">《怦然心动的人生整理魔法2：实践篇．解惑篇》</a>，积极选择取捨，只留下让自己怦然心动的东西。以下是书中折衣服的方法：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_clothes1.jpeg" alt="necessary_clothes1" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_clothes1.jpeg" data-index="12"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_clothes2.jpeg" alt="necessary_clothes2" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_clothes2.jpeg" data-index="13"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_clothes3.jpeg" alt="necessary_clothes3" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_clothes3.jpeg" data-index="14"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_clothes4.jpeg" alt="necessary_clothes4" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_clothes4.jpeg" data-index="15"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_clothes5.jpeg" alt="necessary_clothes5" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_clothes5.jpeg" data-index="16"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_clothes6.jpeg" alt="necessary_clothes6" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_clothes6.jpeg" data-index="17"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_clothes7.jpeg" alt="necessary_clothes7" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_clothes7.jpeg" data-index="18"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_clothes8.jpeg" alt="necessary_clothes8" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_clothes8.jpeg" data-index="19"></p>
+<p>收纳空间实例：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_room1.jpeg" alt="necessary_room1" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_room1.jpeg" data-index="20"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_room2.jpeg" alt="necessary_room2" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_room2.jpeg" data-index="21"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_room3.jpeg" alt="necessary_room3" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/necessary_room3.jpeg" data-index="22"></p>
 
                 </article>
                 <ul class="tags-postTags">
@@ -212,14 +219,10 @@
     
     <nav id="gobottom" class="pagination">
         
-        <a class="prev-post" title="租房小物推荐" href="/necessary/">
-            ← 租房小物推荐
-        </a>
-        
         <span class="prev-next-post">·</span>
         
-        <a class="next-post" title="这个手机来自过去——掌阅 F1/海信 A5 使用" href="/eink/">
-            这个手机来自过去——掌阅 F1/海信 A5 使用 →
+        <a class="next-post" title="大国特色奇异技巧系列之三：联通光猫改桥接实现外网访问" href="/modem/">
+            大国特色奇异技巧系列之三：联通光猫改桥接实现外网访问 →
         </a>
         
     </nav>
@@ -245,7 +248,7 @@
         </a>
     </div>
     <div class="toc-main">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#光猫改桥接"><span class="toc-text">光猫改桥接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#前期准备"><span class="toc-text">前期准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置路由器拨号"><span class="toc-text">配置路由器拨号</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#确保有公网-IP"><span class="toc-text">确保有公网 IP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置-DDNS"><span class="toc-text">设置 DDNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置端口映射"><span class="toc-text">配置端口映射</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#小物推荐"><span class="toc-text">小物推荐</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#快递开箱刀"><span class="toc-text">快递开箱刀</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#抽绳垃圾袋"><span class="toc-text">抽绳垃圾袋</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#静电纸拖把"><span class="toc-text">静电纸拖把</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#鞋盒纸盒子"><span class="toc-text">鞋盒纸盒子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一次性抹布"><span class="toc-text">一次性抹布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#宜家房门挂衣钩"><span class="toc-text">宜家房门挂衣钩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#宜家带架洗衣袋"><span class="toc-text">宜家带架洗衣袋</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#宜家衣物储物单元"><span class="toc-text">宜家衣物储物单元</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#电源收纳盒"><span class="toc-text">电源收纳盒</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#黑绝缘胶带"><span class="toc-text">黑绝缘胶带</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#米家洗手机"><span class="toc-text">米家洗手机</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#收纳建议"><span class="toc-text">收纳建议</span></a></li></ol>
     </div>
 </div>
 
@@ -359,7 +362,7 @@
 			<a href="/" title="庄菲什">庄菲什 © 2020</a>
 			
 				
-			        <span hidden="true" id="/modem/" class="leancloud-visitors" data-flag-title="大国特色奇异技巧系列之三：联通光猫改桥接实现外网访问">
+			        <span hidden="true" id="/necessary/" class="leancloud-visitors" data-flag-title="租房小物推荐">
 			            <span>阅读量 </span>
 			            <span class="leancloud-visitors-count">0</span>
 			        </span>
