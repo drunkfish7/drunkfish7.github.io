@@ -163,8 +163,8 @@
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/ehforwarderbot_ui.png" alt="ehforwarderbot_ui" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/ehforwarderbot_ui.png" data-index="1"></p>
 <p>不鳥萬如一老师曾讨论过<a href="https://blog.yitianshijie.net/2018/02/27/2nd-anniversary-of-ditching-wechat/" target="_blank" rel="noopener">关于微信</a>，小弟很赞成其中的观点。微信可以成功，和防火长城关系密切。<a href="https://telegram.org/" target="_blank" rel="noopener">Telegram</a> 是一款在功能及体验上远超微信的即时聊天工具，关于 Telegram 的传奇故事可以参见<a href="https://www.tmtpost.com/1443098.html" target="_blank" rel="noopener">这篇</a>。</p>
 <p><a href="https://github.com/blueset/ehForwarderBot" target="_blank" rel="noopener">EH Forwarder Bot</a> 是一位大大开发的一个消息隧道聊天机器人框架，可将一个平台的消息转到另一个平台，其中包括将微信消息转发至 Telegram。</p>
-<p>这个小工具可以将 Web 端的微信消息转发至 Telegram，这样做有几个好处：1、使用更现代的 Telegram 聊天界面收发微信消息，Telegram 的部分贴纸也可以用；2、聊天记录在 Telegram 云备份一份；3、得益于 Telegram 优秀的跨平台特性，可以更方便多平台使用微信。</p>
-<p>使用 EH Forwarder Bot 微信消息转至 Telegram 需要准备：1、可以连外网的 VPS 或连外网的群晖（推荐）；2、两个 Telegram 账号；3、确保微信可以正常登录Web 端。</p>
+<p>这个小工具可以将 Web 端的微信消息转发至 Telegram，这样做有几个好处：1、使用更现代的 Telegram 聊天界面收发微信消息；2、聊天记录在 Telegram 云备份一份；3、得益于 Telegram 优秀的跨平台特性，可以更方便多平台使用微信；4、 Telegram 的某些功能，如超多的贴图、定时发信息等也可以使用。</p>
+<p>使用 EH Forwarder Bot 微信消息转至 Telegram 需要准备：1、可以连外网的 VPS 或连外网的群晖（推荐）；2、两个 Telegram 账号；3、确保微信可以正常登录 Web 端。</p>
 <h2 id="配置-Telegram-机器人"><a href="#配置-Telegram-机器人" class="headerlink" title="配置 Telegram 机器人"></a>配置 Telegram 机器人</h2><h3 id="创建-Telegram-机器人"><a href="#创建-Telegram-机器人" class="headerlink" title="创建 Telegram 机器人"></a>创建 Telegram 机器人</h3><p>首先创建一个新的 Telegram 机器人，打开 Telegram 应用，与 <a href="https://t.me/BotFather" target="_blank" rel="noopener">@BotFather</a> 开始对话，</p>
 <p>发送 <code>/start</code> ，可以看到各种指令及简要说明，</p>
 <p>发送 <code>/newbot</code> 创建一个新机器人，之后会询问机器人的名字及机器人的用户名，根据提示输入即可。</p>
@@ -195,6 +195,8 @@
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>Web 端支持的文字、语音、文件都可以转发至 Telegram，红包、定位、朋友圈等 Web 端没有的功能不支持。</p>
 <h3 id="直接回复"><a href="#直接回复" class="headerlink" title="直接回复"></a>直接回复</h3><p>默认会将所有微信 Web 端的消息汇总至一个消息框中，想要回复可以直接发送命令<code>/chat</code>，选择要回复的联系人或群组，之后右滑返回的消息回复即可。另外还支持 <code>/chat 关键词</code> 快速定位要回复的联系人或群组。</p>
 <h3 id="分组对话"><a href="#分组对话" class="headerlink" title="分组对话"></a>分组对话</h3><p>如果某个联系人或群组，可以首先用两个 Telegram 账号新建一个空白群组，之后向机器人发送命令 <code>/link</code> 将某个联系人或群组连接至空白群组，也支持 <code>/link 关键词</code> 快速链接联系人或群组，之后选择空白群组，链接好之后就可以实现消息分组。</p>
+<h3 id="酷功能"><a href="#酷功能" class="headerlink" title="酷功能"></a>酷功能</h3><h4 id="超酷贴图"><a href="#超酷贴图" class="headerlink" title="超酷贴图"></a>超酷贴图</h4><p>Telegram 有很多不错的贴图，还有很多从 Line 移植过来的贴图，比微信的贴图精致很多，其中静态贴图可以直接发送至微信，动态贴图可以借助 <a href="https://t.me/Stickerdownloadbot" target="_blank" rel="noopener">Sticker download</a> 这个机器人将动态贴图转成 GIF 发送。</p>
+<h4 id="定时发送"><a href="#定时发送" class="headerlink" title="定时发送"></a>定时发送</h4><p>Telegram 支持定时发送信息，这个也支持。</p>
 
                 </article>
                 <ul class="tags-postTags">
@@ -240,7 +242,7 @@
         </a>
     </div>
     <div class="toc-main">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#配置-Telegram-机器人"><span class="toc-text">配置 Telegram 机器人</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建-Telegram-机器人"><span class="toc-text">创建 Telegram 机器人</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置-Telegram-机器人-1"><span class="toc-text">配置 Telegram 机器人</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取-Telegram-ID"><span class="toc-text">获取 Telegram ID</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置-Docker"><span class="toc-text">配置 Docker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#直接回复"><span class="toc-text">直接回复</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分组对话"><span class="toc-text">分组对话</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#配置-Telegram-机器人"><span class="toc-text">配置 Telegram 机器人</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建-Telegram-机器人"><span class="toc-text">创建 Telegram 机器人</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置-Telegram-机器人-1"><span class="toc-text">配置 Telegram 机器人</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取-Telegram-ID"><span class="toc-text">获取 Telegram ID</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置-Docker"><span class="toc-text">配置 Docker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#直接回复"><span class="toc-text">直接回复</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分组对话"><span class="toc-text">分组对话</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#酷功能"><span class="toc-text">酷功能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#超酷贴图"><span class="toc-text">超酷贴图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#定时发送"><span class="toc-text">定时发送</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
 
