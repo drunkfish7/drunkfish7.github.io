@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-21T08:20:30.000Z</updated>
+  <updated>2020-10-13T15:22:08.521Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>自制超酷的 Zigbee 网关</title>
+    <link href="http://yoursite.com/z2m/"/>
+    <id>http://yoursite.com/z2m/</id>
+    <published>2020-10-16T00:00:00.000Z</published>
+    <updated>2020-10-13T15:22:08.521Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/z2m_cover.png" alt="z2m_cover"></p><p>小弟之前用的是小米的空调伴侣做 Zigbee 网关，说实话，很不优。小米网关除了在 Home Assistant 中频繁掉线，秉持了强封闭特性，还强塞了扬声器、听国内洗脑广播等鸡肋功能。</p><p>看到很多人用 <a href="https://www.zigbee2mqtt.io" target="_blank" rel="noopener">Zigbee2MQTT</a> 自制网关，可以支持市面上所有 Zigbee 设备。里面有介绍通过 CC2531 自制，小弟感觉这样还是不够好：</p><p>1、CC2531 需要插群晖或树莓派 USB 口使用；</p><p>2、刷机繁琐，需要 CC Debug，或者连 Esp 8266/树莓派刷机，CC2531 上面的线非常细，连线困难。</p><p>看到大大有<a href="https://bbs.iobroker.cn/t/topic/882" target="_blank" rel="noopener">完全自制 Zigbee 网关</a>，自己刷机电路板、外壳，这个网关可以直接连入 WiFi，随意放在房间任意位置，感觉很酷。</p><p>小弟动手能力弱，完全照做一个感觉很难，直到看到项目里有<a href="https://bbs.iobroker.cn/t/topic/3347" target="_blank" rel="noopener">定制固件</a>，里面提到固件有利用 <a href="https://tasmota.github.io/docs/" target="_blank" rel="noopener">Tasmota</a> 固件。研读 Tasmota 固件文档与大大的帖子，小弟觉得可以利用这个固件买模块自制一个，尝试过后小弟自制成功。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/z2m_hardware.png" alt="z2m_hardware"></p><h2 id="材料准备"><a href="#材料准备" class="headerlink" title="材料准备"></a>材料准备</h2><p>1、CC2530</p><p>2、D1 mini 或 ESP8266（推荐 D1 mini，体积小巧一点）</p><p>3、母对母杜邦线若干</p><h2 id="CC2530-刷入固件"><a href="#CC2530-刷入固件" class="headerlink" title="CC2530 刷入固件"></a>CC2530 刷入固件</h2><p>D1 mini 刷入固件、联网可以参照<a href="https://bbs.iobroker.cn/t/topic/3347" target="_blank" rel="noopener">大大写的帖子</a>，很详细，小弟不再赘述。刷好固件可以按照以下连接 CC2530 与 D1 mini：</p><table><thead><tr><th>D1 mini</th><th>CC2530</th></tr></thead><tbody><tr><td>D5</td><td>P21</td></tr><tr><td>D7</td><td>P22</td></tr><tr><td>D6</td><td>RST</td></tr><tr><td>3.3v</td><td>VCC</td></tr><tr><td>GND</td><td>GND</td></tr></tbody></table><p>在控制台界面，发送命令 <code>CCloaderUpdate cc2530_c.bin</code> 刷入协调器固件。</p><h2 id="CC2530-连接-D1-mini"><a href="#CC2530-连接-D1-mini" class="headerlink" title="CC2530 连接 D1 mini"></a>CC2530 连接 D1 mini</h2><p>刷好固件，之后按照以下连接 CC2530 与 D1 mini：</p><table><thead><tr><th>D1 mini</th><th>CC2530</th></tr></thead><tbody><tr><td>RX</td><td>P03</td></tr><tr><td>TX</td><td>P02</td></tr><tr><td>3.3v</td><td>VCC</td></tr><tr><td>GND</td><td>GND</td></tr></tbody></table><p>至此我们硬件配置就配好了。</p><h2 id="配置-MQTT"><a href="#配置-MQTT" class="headerlink" title="配置 MQTT"></a>配置 MQTT</h2><p>如果是 HASS，可以直接通过 Mosquitto broker 这个插件，在配置中可以设置用户名、密码。</p><p>或者可以通过 Docker 安装 MQTT，修改配置文件设置用户名和密码。</p><h2 id="配置-Zigbee2MQTT"><a href="#配置-Zigbee2MQTT" class="headerlink" title="配置 Zigbee2MQTT"></a>配置 Zigbee2MQTT</h2><p>如果是 HASS ，可以通过添加仓库地址安装 Zigbee2MQTT，参见 <a href="https://github.com/Koenkk/zigbee2mqtt" target="_blank" rel="noopener">Zigbee2MQTT 的 Github 页面</a>，或者通过Docker 安装。在配置中需要修改 MQTT 信息和串口地址。</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mqtt:</span></span><br><span class="line">  <span class="attr">base_topic:</span> <span class="string">zigbee2mqtt</span></span><br><span class="line">  <span class="attr">server:</span> <span class="string">'mqtt://MQTT 地址:1883'</span></span><br><span class="line">  <span class="attr">user:</span> <span class="string">MQTT</span> <span class="string">用户名</span></span><br><span class="line">  <span class="attr">password:</span> <span class="string">MQTT</span> <span class="string">密码</span></span><br><span class="line"><span class="attr">serial:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="string">'tcp://D1 mini 地址:8880'</span></span><br></pre></td></tr></table></figure><p>配置成功日志中会显示成功信息。</p><h2 id="接入-Zigbee-设备"><a href="#接入-Zigbee-设备" class="headerlink" title="接入 Zigbee 设备"></a>接入 Zigbee 设备</h2><p>按照 Zigbee 设备接入流程即可，如米家的 Zigbee 设备可以通过戳后面的 reset 键，接入成功会显示在页面中。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/z2m_hass.png" alt="z2m_hass"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/z2m_cover.png&quot; alt=&quot;z2m_cover&quot;&gt;&lt;/p&gt;
+&lt;p&gt;小弟之前用的是小米的空调伴侣做 Zigbee
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>租房小物推荐</title>
