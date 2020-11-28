@@ -11,7 +11,7 @@
 	<link rel="preconnect" href="//9qpuwspm.api.lncld.net">
 	<link rel="preconnect" href="//gravatar.loli.net">
 
-	<title>制作使用网址导航 | 庄菲什</title>
+	<title>Google Home 作报时钟 | 庄菲什</title>
 
 	<meta name="HandheldFriendly" content="True">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -39,14 +39,14 @@
 
 	<meta property="og:site_name" content="庄菲什">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="制作使用网址导航 | 庄菲什">
+	<meta property="og:title" content="Google Home 作报时钟 | 庄菲什">
 	<meta property="og:description" content>
-	<meta property="og:url" content="http://yoursite.com/nav/">
+	<meta property="og:url" content="http://yoursite.com/ha_clock/">
 
 	
-	<meta property="article:published_time" content="2020-10-25T00:10:00+08:00"> 
+	<meta property="article:published_time" content="2020-11-15T00:11:00+08:00"> 
 	<meta property="article:author" content="drunkfish">
-	<meta property="article:published_first" content="庄菲什, /nav/">
+	<meta property="article:published_first" content="庄菲什, /ha_clock/">
 	
 
 	
@@ -145,34 +145,29 @@
     <div class="inner">
         <header class="post-full-header">
             <div class="post-full-meta">
-                <time class="post-full-meta-date" datetime="2020-10-25T00:00:00.000Z">
-                    2020-10-25
+                <time class="post-full-meta-date" datetime="2020-11-15T00:00:00.000Z">
+                    2020-11-15
                 </time>
                 
                 <span class="date-divider">/</span>
                 
                 
             </div>
-            <h1 class="post-full-title">制作使用网址导航</h1>
+            <h1 class="post-full-title">Google Home 作报时钟</h1>
         </header>
         <div class="post-full no-image">
             
             <div class="post-full-content">
                 <article id="photoswipe" class="markdown-body">
-                    <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nav_cover.png" alt="nav_cover" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nav_cover.png" data-index="0"></p>
-<p>小弟在群晖上跑了不少服务，多了之后要记各个服务项的地址，想尝试做一个网址导航方便使用各项服务。一番搜索，发现<a href="https://github.com/WebStackPage/WebStackPage.github.io" target="_blank" rel="noopener">这个</a>好像不错，静态页面，简单直接。</p>
-<h2 id="修改源码"><a href="#修改源码" class="headerlink" title="修改源码"></a>修改源码</h2><p>首先修改静态页面的源码，将里面的网址换成自己的地址。<a href="https://github.com/WebStackPage/WebStackPage.github.io" target="_blank" rel="noopener">下载</a>好作者的源码解压，用文本编辑器打开其中的文件修改即可。有一个问题是，html 文件里的各种标签的括号容易搞混层级，这里可以一款前端编辑器 <a href="https://www.espressoapp.com/" target="_blank" rel="noopener">Espresso</a>，这个小工具可以方便折叠收起各种标签，找到对应位置替换地址即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nav_tool.png" alt="nav_tool" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nav_tool.png" data-index="1"></p>
-<p>图片资源放在 <code>/assets/images</code> 路径下，作者还放了一个 Sketch 的源文件，方便改图。</p>
-<p>改好好可以在浏览器中看下效果。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nav_preview.png" alt="nav_preview" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nav_preview.png" data-index="2"></p>
-<h2 id="设置外网访问"><a href="#设置外网访问" class="headerlink" title="设置外网访问"></a>设置外网访问</h2><p>比较简单从外网访问这个网页的方式是通过群晖的 Web 服务器。</p>
-<p>首先上传网页文件夹至群晖任意位置，在群晖套件中心安装「Web Station」，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nav_web1.png" alt="nav_web1" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nav_web1.png" data-index="3"></p>
-<p>打开 Web Station，新建一个网站，可以选择按端口号，之后填写端口号，后端服务器可任意选择，之后即可创建好网站。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nav_web2.png" alt="nav_web2" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nav_web2.png" data-index="4"></p>
-<p>若设置好了 DDNS 与端口映射，应该外网就可以访问了。</p>
-<p>需要注意的是，各类入口露在外网，记得设好密码，密码建议不要太简单。</p>
+                    <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_clock_cover.png" alt="ha_clock_cover" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_clock_cover.png" data-index="0"></p>
+<p>小弟一直很偏好报时钟，买过 <a href="https://www.muji.com/sg/products/cmdty/detail/4547315832491" target="_blank" rel="noopener">MUJI 的郭公报时钟</a>，还用宜家的表壳 DIY 过一个报时钟。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_clock_diy.png" alt="ha_clock_diy" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_clock_diy.png" data-index="1"></p>
+<p>这些都可以实现报时，但是程序都是写死的。MUJI 报时钟很有趣，还可以感应光线开关报时，小弟觉得这个条件不够完善，有时候很早天亮会被吵醒，晚上完睡觉会吵到别人。DIY 报时钟音乐但是固定的，每天的报时时间也是固定的。</p>
+<p>有 Home Assistant，Google Home 作为音频输出，才是最酷的报时钟。</p>
+<p>首先准备好音频文件，常用的报时铃声有<a href="https://www.youtube.com/watch?v=oTW01MlbBRM" target="_blank" rel="noopener">西敏寺钟声</a>、<a href="https://www.youtube.com/watch?v=0nc6lx2i4-Q" target="_blank" rel="noopener">孤挺花</a>、<a href="https://youtu.be/yDETNSA-u6M" target="_blank" rel="noopener">念故乡</a>等等，需要将音频文件设置成外链，小弟是借助 <a href="https://github.com/helloxz/zdir" target="_blank" rel="noopener">zdir</a> 这个工具。</p>
+<p>之后新建一个自动化，配置参考：</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">alias:</span> <span class="string">clock</span> <span class="string">hour</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">''</span></span><br><span class="line"><span class="attr">trigger:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">time</span></span><br><span class="line">    <span class="attr">at:</span> <span class="string">'8:00'</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">time</span></span><br><span class="line">    <span class="attr">at:</span> <span class="string">'9:00'</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">time</span></span><br><span class="line">    <span class="attr">at:</span> <span class="string">'10:00'</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">time</span></span><br><span class="line">    <span class="attr">at:</span> <span class="string">'11:00'</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">time</span></span><br><span class="line">    <span class="attr">at:</span> <span class="string">'12:00'</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">time</span></span><br><span class="line">    <span class="attr">at:</span> <span class="string">'13:00'</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">time</span></span><br><span class="line">    <span class="attr">at:</span> <span class="string">'14:00'</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">time</span></span><br><span class="line">    <span class="attr">at:</span> <span class="string">'15:00'</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">time</span></span><br><span class="line">    <span class="attr">at:</span> <span class="string">'16:00'</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">time</span></span><br><span class="line">    <span class="attr">at:</span> <span class="string">'17:00'</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">time</span></span><br><span class="line">    <span class="attr">at:</span> <span class="string">'18:00'</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">time</span></span><br><span class="line">    <span class="attr">at:</span> <span class="string">'19:00'</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">time</span></span><br><span class="line">    <span class="attr">at:</span> <span class="string">'20:00'</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">time</span></span><br><span class="line">    <span class="attr">at:</span> <span class="string">'21:00'</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">time</span></span><br><span class="line">    <span class="attr">at:</span> <span class="string">'22:00'</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">time</span></span><br><span class="line">    <span class="attr">at:</span> <span class="string">'23:00'</span></span><br><span class="line"><span class="attr">condition:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">action:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">service:</span> <span class="string">media_player.play_media</span></span><br><span class="line">    <span class="attr">data:</span></span><br><span class="line">      <span class="attr">entity_id:</span> <span class="string">media_player.bedroom_speaker</span></span><br><span class="line">      <span class="attr">media_content_id:</span> <span class="string">'http://drunkfish.i234.me:4444/var/clock.mp3'</span></span><br><span class="line">      <span class="attr">media_content_type:</span> <span class="string">music</span></span><br><span class="line"><span class="attr">mode:</span> <span class="string">single</span></span><br></pre></td></tr></tbody></table></figure>
+
 
                 </article>
                 <ul class="tags-postTags">
@@ -185,14 +180,14 @@
     
     <nav id="gobottom" class="pagination">
         
-        <a class="prev-post" title="Google Assistant 接入 HA" href="/ha_ga/">
-            ← Google Assistant 接入 HA
+        <a class="prev-post" title="小米温度计接入 HA" href="/ha_xiaomi_tem/">
+            ← 小米温度计接入 HA
         </a>
         
         <span class="prev-next-post">·</span>
         
-        <a class="next-post" title="自制超酷的 Zigbee 网关" href="/z2m/">
-            自制超酷的 Zigbee 网关 →
+        <a class="next-post" title="Chromecast 设备接入 HA" href="/ha_chromecast/">
+            Chromecast 设备接入 HA →
         </a>
         
     </nav>
@@ -218,7 +213,7 @@
         </a>
     </div>
     <div class="toc-main">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#修改源码"><span class="toc-text">修改源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置外网访问"><span class="toc-text">设置外网访问</span></a></li></ol>
+        
     </div>
 </div>
 
@@ -332,7 +327,7 @@
 			<a href="/" title="庄菲什">庄菲什 © 2020</a>
 			
 				
-			        <span hidden="true" id="/nav/" class="leancloud-visitors" data-flag-title="制作使用网址导航">
+			        <span hidden="true" id="/ha_clock/" class="leancloud-visitors" data-flag-title="Google Home 作报时钟">
 			            <span>阅读量 </span>
 			            <span class="leancloud-visitors-count">0</span>
 			        </span>

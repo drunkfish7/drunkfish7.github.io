@@ -11,7 +11,7 @@
 	<link rel="preconnect" href="//9qpuwspm.api.lncld.net">
 	<link rel="preconnect" href="//gravatar.loli.net">
 
-	<title>制作使用网址导航 | 庄菲什</title>
+	<title>小米温度计接入 HA | 庄菲什</title>
 
 	<meta name="HandheldFriendly" content="True">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -39,14 +39,14 @@
 
 	<meta property="og:site_name" content="庄菲什">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="制作使用网址导航 | 庄菲什">
+	<meta property="og:title" content="小米温度计接入 HA | 庄菲什">
 	<meta property="og:description" content>
-	<meta property="og:url" content="http://yoursite.com/nav/">
+	<meta property="og:url" content="http://yoursite.com/ha_xiaomi_tem/">
 
 	
-	<meta property="article:published_time" content="2020-10-25T00:10:00+08:00"> 
+	<meta property="article:published_time" content="2020-11-21T00:11:00+08:00"> 
 	<meta property="article:author" content="drunkfish">
-	<meta property="article:published_first" content="庄菲什, /nav/">
+	<meta property="article:published_first" content="庄菲什, /ha_xiaomi_tem/">
 	
 
 	
@@ -145,34 +145,145 @@
     <div class="inner">
         <header class="post-full-header">
             <div class="post-full-meta">
-                <time class="post-full-meta-date" datetime="2020-10-25T00:00:00.000Z">
-                    2020-10-25
+                <time class="post-full-meta-date" datetime="2020-11-21T00:00:00.000Z">
+                    2020-11-21
                 </time>
                 
                 <span class="date-divider">/</span>
                 
                 
             </div>
-            <h1 class="post-full-title">制作使用网址导航</h1>
+            <h1 class="post-full-title">小米温度计接入 HA</h1>
         </header>
         <div class="post-full no-image">
             
             <div class="post-full-content">
                 <article id="photoswipe" class="markdown-body">
-                    <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nav_cover.png" alt="nav_cover" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nav_cover.png" data-index="0"></p>
-<p>小弟在群晖上跑了不少服务，多了之后要记各个服务项的地址，想尝试做一个网址导航方便使用各项服务。一番搜索，发现<a href="https://github.com/WebStackPage/WebStackPage.github.io" target="_blank" rel="noopener">这个</a>好像不错，静态页面，简单直接。</p>
-<h2 id="修改源码"><a href="#修改源码" class="headerlink" title="修改源码"></a>修改源码</h2><p>首先修改静态页面的源码，将里面的网址换成自己的地址。<a href="https://github.com/WebStackPage/WebStackPage.github.io" target="_blank" rel="noopener">下载</a>好作者的源码解压，用文本编辑器打开其中的文件修改即可。有一个问题是，html 文件里的各种标签的括号容易搞混层级，这里可以一款前端编辑器 <a href="https://www.espressoapp.com/" target="_blank" rel="noopener">Espresso</a>，这个小工具可以方便折叠收起各种标签，找到对应位置替换地址即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nav_tool.png" alt="nav_tool" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nav_tool.png" data-index="1"></p>
-<p>图片资源放在 <code>/assets/images</code> 路径下，作者还放了一个 Sketch 的源文件，方便改图。</p>
-<p>改好好可以在浏览器中看下效果。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nav_preview.png" alt="nav_preview" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nav_preview.png" data-index="2"></p>
-<h2 id="设置外网访问"><a href="#设置外网访问" class="headerlink" title="设置外网访问"></a>设置外网访问</h2><p>比较简单从外网访问这个网页的方式是通过群晖的 Web 服务器。</p>
-<p>首先上传网页文件夹至群晖任意位置，在群晖套件中心安装「Web Station」，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nav_web1.png" alt="nav_web1" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nav_web1.png" data-index="3"></p>
-<p>打开 Web Station，新建一个网站，可以选择按端口号，之后填写端口号，后端服务器可任意选择，之后即可创建好网站。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nav_web2.png" alt="nav_web2" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nav_web2.png" data-index="4"></p>
-<p>若设置好了 DDNS 与端口映射，应该外网就可以访问了。</p>
-<p>需要注意的是，各类入口露在外网，记得设好密码，密码建议不要太简单。</p>
+                    <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_xiaomi_tem_cover.png" alt="ha_xiaomi_tem_cover" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_xiaomi_tem_cover.png" data-index="0"></p>
+<p>小米有出好几款温度计，借助 ESPHome 和 Zigbee2MQTT，可以将其接入 Home Assistant。</p>
+<h2 id="圆形-Zigbee-温度计"><a href="#圆形-Zigbee-温度计" class="headerlink" title="圆形 Zigbee 温度计"></a>圆形 Zigbee 温度计</h2><table>
+<thead>
+<tr>
+<th>外观</th>
+<th><img src="https://www.zigbee2mqtt.io/images/devices/WSDCGQ01LM.jpg" alt="../images/devices/WSDCGQ01LM.jpg" class="post-img" data-img="https://www.zigbee2mqtt.io/images/devices/WSDCGQ01LM.jpg" data-index="1"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>协议</td>
+<td>Zigbee</td>
+</tr>
+<tr>
+<td>型号</td>
+<td><a href="https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html" target="_blank" rel="noopener">WSDCGQ01LM</a></td>
+</tr>
+</tbody></table>
+<p>这个 Zigbee 圆形温度计好像是小米出的第一款温度计，可以通过 Zigbee2MQTT 快速接入，具体制作可参考小弟之前的文章。</p>
+<h2 id="方形-Zigbee-温度计"><a href="#方形-Zigbee-温度计" class="headerlink" title="方形 Zigbee 温度计"></a>方形 Zigbee 温度计</h2><table>
+<thead>
+<tr>
+<th>外观</th>
+<th><img src="https://www.zigbee2mqtt.io/images/devices/WSDCGQ11LM.jpg" alt="../images/devices/WSDCGQ11LM.jpg" class="post-img" data-img="https://www.zigbee2mqtt.io/images/devices/WSDCGQ11LM.jpg" data-index="2"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>协议</td>
+<td>Zigbee</td>
+</tr>
+<tr>
+<td>型号</td>
+<td><a href="https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html" target="_blank" rel="noopener">WSDCGQ11LM</a>、<a href="https://www.zigbee2mqtt.io/devices/WSDCGQ12LM.html" target="_blank" rel="noopener">WSDCGQ12LM</a></td>
+</tr>
+</tbody></table>
+<p>Zigbee 方形温度计可以通过 Zigbee2MQTT 接入。</p>
+<h2 id="圆形-LCD-蓝牙温度计"><a href="#圆形-LCD-蓝牙温度计" class="headerlink" title="圆形 LCD 蓝牙温度计"></a>圆形 LCD 蓝牙温度计</h2><table>
+<thead>
+<tr>
+<th>外观</th>
+<th><img src="https://esphome.io/_images/xiaomi_lywsdcgq.jpg" alt="../../_images/xiaomi_lywsdcgq.jpg" class="post-img" data-img="https://esphome.io/_images/xiaomi_lywsdcgq.jpg" data-index="3"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>协议</td>
+<td>蓝牙</td>
+</tr>
+<tr>
+<td>型号</td>
+<td>LYWSDCGQ</td>
+</tr>
+</tbody></table>
+<p>这款温度计是蓝牙协议，圓形，分段 LCD 显示，可廣播溫度、濕度和電池電量，可通过 ESPHome 接入（参考小弟之前的文章），</p>
+<p>配置示例：</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">sensor:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">xiaomi_lywsdcgq</span></span><br><span class="line">    <span class="attr">mac_address:</span> <span class="string">"7A:80:8E:19:36:BA"</span></span><br><span class="line">    <span class="attr">temperature:</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">"LYWSDCGQ Temperature"</span></span><br><span class="line">    <span class="attr">humidity:</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">"LYWSDCGQ Humidity"</span></span><br><span class="line">    <span class="attr">battery_level:</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">"LYWSDCGQ Battery Level"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="长方形-E-Ink-蓝牙温度计"><a href="#长方形-E-Ink-蓝牙温度计" class="headerlink" title="长方形 E-Ink 蓝牙温度计"></a>长方形 E-Ink 蓝牙温度计</h2><table>
+<thead>
+<tr>
+<th>外观</th>
+<th><img src="https://esphome.io/_images/xiaomi_lywsd02.jpg" alt="../../_images/xiaomi_lywsd02.jpg" class="post-img" data-img="https://esphome.io/_images/xiaomi_lywsd02.jpg" data-index="4"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>协议</td>
+<td>蓝牙</td>
+</tr>
+<tr>
+<td>型号</td>
+<td>LYWSD02</td>
+</tr>
+</tbody></table>
+<p>长方形 E-Ink 蓝牙温度计有電子墨水顯示屏，可廣播溫度和濕度值，無電池狀態。可通过 ESPHome 接入，</p>
+<p>配置示例：</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">sensor:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">xiaomi_lywsd02</span></span><br><span class="line">    <span class="attr">mac_address:</span> <span class="string">"3F:5B:7D:82:58:4E"</span></span><br><span class="line">    <span class="attr">temperature:</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">"LYWSD02 Temperature"</span></span><br><span class="line">    <span class="attr">humidity:</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">"LYWSD02 Humidity"</span></span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="圆形-E-Ink-蓝牙温度计"><a href="#圆形-E-Ink-蓝牙温度计" class="headerlink" title="圆形 E-Ink 蓝牙温度计"></a>圆形 E-Ink 蓝牙温度计</h2><table>
+<thead>
+<tr>
+<th>外观</th>
+<th><img src="https://esphome.io/_images/xiaomi_cgg1.jpg" alt="../../_images/xiaomi_cgg1.jpg" class="post-img" data-img="https://esphome.io/_images/xiaomi_cgg1.jpg" data-index="5"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>协议</td>
+<td>蓝牙</td>
+</tr>
+<tr>
+<td>型号</td>
+<td>CGG1</td>
+</tr>
+</tbody></table>
+<p>圆形 E-Ink 蓝牙温度计带電子墨水顯示屏，可通过 ESPHome 接入，</p>
+<p>配置示例：</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">sensor:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">xiaomi_cgg1</span></span><br><span class="line">    <span class="attr">mac_address:</span> <span class="string">"7A:80:8E:19:36:BA"</span></span><br><span class="line">    <span class="attr">temperature:</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">"CGG1 Temperature"</span></span><br><span class="line">    <span class="attr">humidity:</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">"CGG1 Humidity"</span></span><br><span class="line">    <span class="attr">battery_level:</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">"CGG1 Battery Level"</span></span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="方形-LCD-蓝牙小温度计"><a href="#方形-LCD-蓝牙小温度计" class="headerlink" title="方形 LCD 蓝牙小温度计"></a>方形 LCD 蓝牙小温度计</h2><table>
+<thead>
+<tr>
+<th>外观</th>
+<th><img src="https://esphome.io/_images/xiaomi_lywsd03mmc.jpg" alt="../../_images/xiaomi_lywsd03mmc.jpg" class="post-img" data-img="https://esphome.io/_images/xiaomi_lywsd03mmc.jpg" data-index="6"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>协议</td>
+<td>蓝牙</td>
+</tr>
+<tr>
+<td>型号</td>
+<td>LYWSD03MMC</td>
+</tr>
+</tbody></table>
+<p>这款温度计体积很小，方形，分段 LCD 显示，蓝牙协议（已加密），可廣播溫度、濕度和電池電量，需要先可获取 bindkey 再通过 ESPHome 接入。</p>
+<p>有大大写了<a href="https://github.com/atc1441/ATC_MiThermometer" target="_blank" rel="noopener">很赞的网页版程序</a>可以快速获取到 bindkey，步骤如下：</p>
+<p>在浏览器（推荐电脑版 Chrome）打开网页 <a href="https://atc1441.github.io/TelinkFlasher.html，点击「connect」可以看到蓝牙设备列表，选中名称叫做「LYWSD03MMC」的设备并配对，若有多个，建议关闭其他，一个一个获取，" target="_blank" rel="noopener">https://atc1441.github.io/TelinkFlasher.html，点击「connect」可以看到蓝牙设备列表，选中名称叫做「LYWSD03MMC」的设备并配对，若有多个，建议关闭其他，一个一个获取，</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_xiaomi_tem1.png" alt="ha_xiaomi_tem1" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_xiaomi_tem1.png" data-index="7"></p>
+<p>配对后即可获取到 bindkey，记下备用。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_xiaomi_tem2.png" alt="ha_xiaomi_tem2" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_xiaomi_tem2.png" data-index="8"></p>
+<p>在电脑连接的蓝牙设备中可以获取到温度计的 MAC 地址。</p>
+<p>之后通过 ESPHome 可接入 Home Assistant，配置示例：</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">sensor:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">xiaomi_lywsd03mmc</span></span><br><span class="line">    <span class="attr">mac_address:</span> <span class="string">"A4:C1:38:B1:CD:7F"</span></span><br><span class="line">    <span class="attr">bindkey:</span> <span class="string">"eef418daf699a0c188f3bfd17e4565d9"</span></span><br><span class="line">    <span class="attr">temperature:</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">"LYWSD03MMC Temperature"</span></span><br><span class="line">    <span class="attr">humidity:</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">"LYWSD03MMC Humidity"</span></span><br><span class="line">    <span class="attr">battery_level:</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">"LYWSD03MMC Battery Level"</span></span><br></pre></td></tr></tbody></table></figure>
 
                 </article>
                 <ul class="tags-postTags">
@@ -185,14 +296,14 @@
     
     <nav id="gobottom" class="pagination">
         
-        <a class="prev-post" title="Google Assistant 接入 HA" href="/ha_ga/">
-            ← Google Assistant 接入 HA
+        <a class="prev-post" title="窗帘快速接入 HA——免去换轨 超快接入" href="/ha_curtain/">
+            ← 窗帘快速接入 HA——免去换轨 超快接入
         </a>
         
         <span class="prev-next-post">·</span>
         
-        <a class="next-post" title="自制超酷的 Zigbee 网关" href="/z2m/">
-            自制超酷的 Zigbee 网关 →
+        <a class="next-post" title="Google Home 作报时钟" href="/ha_clock/">
+            Google Home 作报时钟 →
         </a>
         
     </nav>
@@ -218,7 +329,7 @@
         </a>
     </div>
     <div class="toc-main">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#修改源码"><span class="toc-text">修改源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置外网访问"><span class="toc-text">设置外网访问</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#圆形-Zigbee-温度计"><span class="toc-text">圆形 Zigbee 温度计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方形-Zigbee-温度计"><span class="toc-text">方形 Zigbee 温度计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#圆形-LCD-蓝牙温度计"><span class="toc-text">圆形 LCD 蓝牙温度计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#长方形-E-Ink-蓝牙温度计"><span class="toc-text">长方形 E-Ink 蓝牙温度计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#圆形-E-Ink-蓝牙温度计"><span class="toc-text">圆形 E-Ink 蓝牙温度计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方形-LCD-蓝牙小温度计"><span class="toc-text">方形 LCD 蓝牙小温度计</span></a></li></ol>
     </div>
 </div>
 
@@ -332,7 +443,7 @@
 			<a href="/" title="庄菲什">庄菲什 © 2020</a>
 			
 				
-			        <span hidden="true" id="/nav/" class="leancloud-visitors" data-flag-title="制作使用网址导航">
+			        <span hidden="true" id="/ha_xiaomi_tem/" class="leancloud-visitors" data-flag-title="小米温度计接入 HA">
 			            <span>阅读量 </span>
 			            <span class="leancloud-visitors-count">0</span>
 			        </span>

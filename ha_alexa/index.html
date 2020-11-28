@@ -1,0 +1,536 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="preconnect" href="//www.googletagmanager.com">
+	<link rel="preconnect" href="//zz.bdstatic.com">
+	<link rel="preconnect" href="//sp0.baidu.com">
+	<link rel="preconnect" href="//www.google-analytics.com">
+	<link rel="preconnect" href="//cdn1.lncld.net">
+	<link rel="preconnect" href="//unpkg.com">
+	<link rel="preconnect" href="//app-router.leancloud.cn">
+	<link rel="preconnect" href="//9qpuwspm.api.lncld.net">
+	<link rel="preconnect" href="//gravatar.loli.net">
+
+	<title>Alexa 接入 HA | 庄菲什</title>
+
+	<meta name="HandheldFriendly" content="True">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+	<meta name="generator" content="hexo">
+	<meta name="author" content="drunkfish">
+	<meta name="description" content>
+
+	
+
+	
+	<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/favicon_256px.ico">
+	<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/favicon_256px.ico">
+	
+
+	
+	<meta name="theme-color" content="#3c484e">
+	<meta name="msapplication-TileColor" content="#3c484e">
+	
+
+	
+
+	
+	<link rel="alternate" href="/atom.xml" title="庄菲什">
+	
+
+	<meta property="og:site_name" content="庄菲什">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Alexa 接入 HA | 庄菲什">
+	<meta property="og:description" content>
+	<meta property="og:url" content="http://yoursite.com/ha_alexa/">
+
+	
+	<meta property="article:published_time" content="2020-11-02T00:11:00+08:00"> 
+	<meta property="article:author" content="drunkfish">
+	<meta property="article:published_first" content="庄菲什, /ha_alexa/">
+	
+
+	
+	
+	
+<link rel="stylesheet" href="/css/allinonecss.min.css">
+
+
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156013706-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-156013706-1');
+	</script>
+	
+	
+	
+<link rel="alternate" href="/atom.xml" title="庄菲什" type="application/atom+xml">
+</head>
+<body class="post-template">
+	<div class="site-wrapper">
+		
+
+
+
+
+<header class="site-header post-site-header outer">
+    <div class="inner">
+        
+<nav class="site-nav"> 
+    <div class="site-nav-left">
+        <ul class="nav">
+            <li>
+                
+                <a href="/" title="Home">HOME</a>
+                
+            </li>
+            
+            
+            <li>
+                <a href="/about" title="ABOUT">ABOUT</a>
+            </li>
+            
+            
+        </ul> 
+    </div>
+    
+    <div class="search-button-area">
+        <a href="#search" class="search-button">Search ...</a>
+    </div>
+     
+    <div class="site-nav-right">
+        
+        <a href="#search" class="search-button">Search ...</a>
+         
+        
+<div class="social-links">
+    
+    <a class="social-link" title="weibo" href="https://weibo.com/drunkfish9" target="_blank" rel="noopener">
+        <svg viewBox="0 0 1141 1024" xmlns="http://www.w3.org/2000/svg"><path d="M916.48 518.144q27.648 21.504 38.912 51.712t9.216 62.976-14.336 65.536-31.744 59.392q-34.816 48.128-78.848 81.92t-91.136 56.32-94.72 35.328-89.6 18.944-75.264 7.68-51.712 1.536-49.152-2.56-68.096-10.24-78.336-21.504-79.872-36.352-74.24-55.296-59.904-78.848q-16.384-29.696-22.016-63.488t-5.632-86.016q0-22.528 7.68-51.2t27.136-63.488 53.248-75.776 86.016-90.112q51.2-48.128 105.984-85.504t117.248-57.856q28.672-10.24 63.488-11.264t57.344 11.264q10.24 11.264 19.456 23.04t12.288 29.184q3.072 14.336 0.512 27.648t-5.632 26.624-5.12 25.6 2.048 22.528q17.408 2.048 33.792-1.536t31.744-9.216 31.232-11.776 33.28-9.216q27.648-5.12 54.784-4.608t49.152 7.68 36.352 22.016 17.408 38.4q2.048 14.336-2.048 26.624t-8.704 23.04-7.168 22.016 1.536 23.552q3.072 7.168 14.848 13.312t27.136 12.288 32.256 13.312 29.184 16.384zM658.432 836.608q26.624-16.384 53.76-45.056t44.032-64 18.944-75.776-20.48-81.408q-19.456-33.792-47.616-57.344t-62.976-37.376-74.24-19.968-80.384-6.144q-78.848 0-139.776 16.384t-105.472 43.008-72.192 60.416-38.912 68.608q-11.264 33.792-6.656 67.072t20.992 62.976 42.496 53.248 57.856 37.888q58.368 25.6 119.296 32.256t116.224 0.512 100.864-21.504 74.24-33.792zM524.288 513.024q20.48 8.192 38.912 18.432t32.768 27.648q10.24 12.288 17.92 30.72t10.752 39.424 1.536 42.496-9.728 38.912q-8.192 18.432-19.968 37.376t-28.672 35.328-40.448 29.184-57.344 18.944q-61.44 11.264-117.76-11.264t-88.064-74.752q-12.288-39.936-13.312-70.656t16.384-66.56q13.312-27.648 40.448-51.712t62.464-38.912 75.264-17.408 78.848 12.8zM361.472 764.928q37.888 3.072 57.856-18.432t21.504-48.128-15.36-47.616-52.736-16.896q-27.648 3.072-43.008 23.552t-17.408 43.52 9.728 42.496 39.424 21.504zM780.288 6.144q74.752 0 139.776 19.968t113.664 57.856 76.288 92.16 27.648 122.88q0 33.792-16.384 50.688t-35.328 17.408-35.328-14.336-16.384-45.568q0-40.96-22.528-77.824t-59.392-64.512-84.48-43.52-96.768-15.872q-31.744 0-47.104-15.36t-14.336-34.304 18.944-34.304 51.712-15.36zM780.288 169.984q95.232 0 144.384 48.64t49.152 146.944q0 30.72-10.24 43.52t-22.528 11.264-22.528-14.848-10.24-35.84q0-60.416-34.816-96.256t-93.184-35.84q-19.456 0-28.672-10.752t-9.216-23.04 9.728-23.04 28.16-10.752z"/></svg>
+    </a>
+    
+    
+    <a class="social-link" title="github" href="https://drunkfish.me/atom.xml" target="_blank" rel="noopener">
+        <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 24.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="RSSicon" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 256 256" style="enable-background:new 0 0 256 256;" space="preserve">
+<title>RSS feed icon</title>
+<circle cx="64" cy="192" r="32"/>
+<path d="M32,128c53,0,96,43,96,96h32c0-70.7-57.3-128-128-128V128z"/>
+<path d="M32,64c88.4,0,160,71.6,160,160h32c0-106-86-192-192-192V64z"/>
+</svg>
+
+    </a>
+    
+    
+    
+    <a class="social-link" title="twitter" href="https://twitter.com/drunkfish999" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+    </a>
+    
+    
+    
+    
+</div>
+    </div>
+</nav>
+    </div>
+</header>
+
+
+<div id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+        <header class="post-full-header">
+            <div class="post-full-meta">
+                <time class="post-full-meta-date" datetime="2020-11-02T00:00:00.000Z">
+                    2020-11-2
+                </time>
+                
+                <span class="date-divider">/</span>
+                
+                
+            </div>
+            <h1 class="post-full-title">Alexa 接入 HA</h1>
+        </header>
+        <div class="post-full no-image">
+            
+            <div class="post-full-content">
+                <article id="photoswipe" class="markdown-body">
+                    <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa_covwe.png" alt="ha_alexa_cove" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa_covwe.png" data-index="0"></p>
+<p>和 Google Assistant 一样，通过 <a href="https://www.home-assistant.io/cloud/" target="_blank" rel="noopener">Home Assistant Cloud</a> 服务可以快速接入 Home Assistant，每月 ＄5。有大大写了<a href="https://github.com/mike-grant/haaska" target="_blank" rel="noopener">一个程序</a>可以帮助接入 Home Assistant，并且写了<a href="https://github.com/mike-grant/haaska/wiki" target="_blank" rel="noopener">详细的 wiki</a>，小弟走了一遍流程，下面是步骤：</p>
+<h2 id="设置好外网访问"><a href="#设置好外网访问" class="headerlink" title="设置好外网访问"></a>设置好外网访问</h2><p>和 Google Assistant 一样需要设置好 https 外网访问。</p>
+<h2 id="下载-haaska"><a href="#下载-haaska" class="headerlink" title="下载 haaska"></a>下载 haaska</h2><p>下载 <a href="https://github.com/mike-grant/haaska/releases/latest" target="_blank" rel="noopener">haaska 最新版本</a>，将其命名为like <code>haaska_1.1.0.zip</code>。</p>
+<p>将以下内容添加到您的<code>configuration.yaml</code>文件中：</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">api:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">alexa:</span></span><br><span class="line">  <span class="attr">smart_home:</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>之后在 Home Assistant 中创建一个获取一个长期令牌。登录 Home Assistant，单击头像或头像蓝色圆圈内的字母，向下滚动到「长期访问令牌」。点击 <code>CREATE TOKEN</code>，对于 <code>Name? 输入</code> haaska，之后点击 <code>OK</code>。令牌将出现，複製到安全的地方备用。</p>
+<h2 id="设置-haaska"><a href="#设置-haaska" class="headerlink" title="设置 haaska"></a>设置 haaska</h2><h3 id="设置与亚马逊的登录"><a href="#设置与亚马逊的登录" class="headerlink" title="设置与亚马逊的登录"></a>设置与亚马逊的登录</h3><p>登录 <a href="https://developer.amazon.com/home.html" target="_blank" rel="noopener">Amazon Developer Console</a> （建议美亚账号），</p>
+<p>点击顶部导航栏中的<a href="https://developer.amazon.com/loginwithamazon/console/site/lwa/overview.html" target="_blank" rel="noopener">「使用 Amazon 登录」</a>链接，</p>
+<p>点击「创建新的安全配置文件」的金色按钮，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa1.png" alt="ha_alexa1" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa1.png" data-index="1"></p>
+<p>输入以下内容：</p>
+<ul>
+<li>输入您想要的任何安全配置文件名称，例如  haaska</li>
+<li>写一个简短的描述，例如 haaska for my Home Assistant</li>
+<li>添加您想要的隐私声明网址，随意填</li>
+</ul>
+<p>点击保存继续，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa2.png" alt="ha_alexa2" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa2.png" data-index="2"></p>
+<p>在新的安全配置文件上，点击齿轮按钮，选择网络设置，记下客户端 ID 和客户端密钥，将此窗口保持打开状态以供参考。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa3.png" alt="ha_alexa3" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa3.png" data-index="3"></p>
+<h3 id="设置-Alexa-技能套件"><a href="#设置-Alexa-技能套件" class="headerlink" title="设置 Alexa 技能套件"></a>设置 Alexa 技能套件</h3><p>打开一个<strong>新的浏览器窗口</strong>，使先前的<strong>窗口</strong>保持打开状态，以供以后使用。</p>
+<p>点击页面右上方的<a href="https://developer.amazon.com/home.html" target="_blank" rel="noopener">开发者控制台</a>链接，</p>
+<p>在导航栏中查找 Alexa，选择 <a href="https://developer.amazon.com/alexa/console/ask" target="_blank" rel="noopener">Alexa Skills Kit</a> ，点击<a href="https://developer.amazon.com/alexa/console/ask/create-new-skill" target="_blank" rel="noopener">创建技能</a>按钮，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa4.png" alt="ha_alexa4" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa4.png" data-index="4"></p>
+<p>在这个新页面上，输入以下内容：</p>
+<ul>
+<li>技能名称-可以是您想要的任何名称，例如 haaska，</li>
+<li>语言-选择您要使用的正确语言，例如英语，</li>
+<li>点击「智能家居」图块，</li>
+</ul>
+<p>点击右上角的蓝色「创建技能」按钮，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa5.png" alt="ha_alexa5" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa5.png" data-index="5"></p>
+<p>记下列出的技能ID（例如<code>amzn1.ask.skill.ed66dfa4-1185-492e-bf6e-1f70e90fb018</code>）。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa6.png" alt="ha_alexa6" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa6.png" data-index="6"></p>
+<h3 id="准备-AWS-Lambda-访问"><a href="#准备-AWS-Lambda-访问" class="headerlink" title="准备 AWS Lambda 访问"></a>准备 AWS Lambda 访问</h3><p>打开一个<strong>新的浏览器窗口</strong>。请保持先前的窗口打开，以便以后使用。注册登录到 <a href="https://console.aws.amazon.com/console/home" target="_blank" rel="noopener">AWS 控制台</a>（注意：注册 AWZ 需要外币信用卡验证），选择 <a href="https://console.aws.amazon.com/iam/home" target="_blank" rel="noopener">IAM</a> ，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa7.png" alt="ha_alexa7" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa7.png" data-index="7"></p>
+<p>在左侧栏上，点击<a href="https://console.aws.amazon.com/iam/home#/roles" target="_blank" rel="noopener">角色</a>。之后点击蓝色的<a href="https://console.aws.amazon.com/iam/home#/roles%24new?step=type" target="_blank" rel="noopener">创建角色</a>按钮，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa8.png" alt="ha_alexa8" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa8.png" data-index="8"></p>
+<p>勾选「AWS服务」图块，点击选中 Lambda，之后点击右下角「下一步：权限」按钮，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa9.png" alt="ha_alexa9" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa9.png" data-index="9"></p>
+<p>在搜索框中输入「basic」，之后选中 AWSLambdaBasicExecutionRole，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa10.png" alt="ha_alexa10" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa10.png" data-index="10"></p>
+<p>点击右下角的「下一步：标籤」按钮，无需输入任何标籤。，之后点击「下一步：查看」继续。</p>
+<p>在「角色名称」框中，输入 lambda_basic_execution，点击右下角「创建角色」</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa11.png" alt="ha_alexa11" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa11.png" data-index="11"></p>
+<p>单击左上方的AWS按钮，返回到<a href="https://console.aws.amazon.com/console/home" target="_blank" rel="noopener">主控制台</a>。</p>
+<h3 id="地区选择"><a href="#地区选择" class="headerlink" title="地区选择"></a>地区选择</h3><p>在屏幕的右上角用户名旁边，根据语言选中相应的地区，英语选择「美国东部（弗吉尼亚北部）」。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa12.png" alt="ha_alexa12" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa12.png" data-index="12"></p>
+<h3 id="设置-AWS-Lambda-第-1-部分"><a href="#设置-AWS-Lambda-第-1-部分" class="headerlink" title="设置 AWS Lambda-第 1 部分"></a>设置 AWS Lambda-第 1 部分</h3><p>点击左上方的服务按钮，在列表中，找到「计算」部分，之后单击 <a href="https://console.aws.amazon.com/lambda/home" target="_blank" rel="noopener">Lambda</a> ，点击橙色的<a href="https://console.aws.amazon.com/lambda/home?#/create" target="_blank" rel="noopener">创建功能</a>按钮，选中「从头开始创建作者」图块，设置以下选项：</p>
+<ul>
+<li>名称 - haaska</li>
+<li>运行 - <code>Python 3.6</code></li>
+<li>角色 - 选择现有角色</li>
+<li>现有角色 - lambda_basic_execution</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa13.png" alt="ha_alexa13" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa13.png" data-index="13"></p>
+<h3 id="设置-AWS-Lambda-第-2-部分"><a href="#设置-AWS-Lambda-第-2-部分" class="headerlink" title="设置 AWS Lambda-第 2 部分"></a>设置 AWS Lambda-第 2 部分</h3><p>在新功能的「设计器」部分中，点击 Alexa Smart Home。如果没有看到此信息，说明尚未设置<a href="https://github.com/mike-grant/haaska/wiki/Setting-up-haaska#Region-Select" target="_blank" rel="noopener">正确的区域</a>。</p>
+<p>在「应用程序 ID」框中，从 Alexa 开发人员控制台窗口（例如<code>amzn1.ask.skill.ed66dfa4-1185-492e-bf6e-1f70e90fb018</code>）複製并粘贴「技能ID」，</p>
+<p>确保选中「启用触发器」，点击右下角的「添加」，在「设计器」部分中，点击功能名称（例如 haaska），在「功能代码」部分中，查找「代码输入类型」，点击此菜单，选择「上传.zip文件」，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa14.png" alt="ha_alexa14" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa14.png" data-index="14"></p>
+<p>点击「上传」按钮，选择之前下载的zip文件（例如<code>haaska_1.1.0.zip</code>）。</p>
+<p>在「处理程序」框中，将现有内容替换为 haaska.event_handler，等待其加载。</p>
+<h2 id="配置-haaska-功能"><a href="#配置-haaska-功能" class="headerlink" title="配置 haaska 功能"></a>配置 haaska 功能</h2><p>在「功能代码」部分，将看到文件列表，双击 config.json，</p>
+<p>在 URL 部分中，添加远程 Home Assistant URL（例 如<code>https://my-hass.example.com:8123</code>）</p>
+<p>在「承载令牌」部分中，添加先前保存的长期令牌（例如 amcb3i2248yfm …）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa15.png" alt="ha_alexa15" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa15.png" data-index="15"></p>
+<h2 id="将-AWS-Lambda-链接到-Alexa-技能套件"><a href="#将-AWS-Lambda-链接到-Alexa-技能套件" class="headerlink" title="将 AWS Lambda 链接到 Alexa 技能套件"></a>将 AWS Lambda 链接到 Alexa 技能套件</h2><p>在Lambda窗口的右上方，有一个 ARN（例如 arn：aws：lambda：us-east-1：111234567890：function：haaska），複製此文本并保存。</p>
+<p>返回您的 Alexa 开发人员控制台窗口，将ARN粘贴到标有「默认端点」的框中，</p>
+<p>从可用的複选框中，点击与之前的技能语言/ Lambda 功能区域匹配的「端点区域」，将 ARN 粘贴到区域框中，点击右上角的「保存」按钮。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa16.png" alt="ha_alexa16" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa16.png" data-index="16"></p>
+<h2 id="链接-Alexa-技能套件以登录-Amazon"><a href="#链接-Alexa-技能套件以登录-Amazon" class="headerlink" title="链接 Alexa 技能套件以登录 Amazon"></a>链接 Alexa 技能套件以登录 Amazon</h2><p>点击「设置帐户链接」按钮，输入以下内容：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Authorization URI</td>
+<td><code>https://www.amazon.com/ap/oa</code></td>
+</tr>
+<tr>
+<td>Access Token URI</td>
+<td><code>https://api.amazon.com/auth/o2/token</code></td>
+</tr>
+<tr>
+<td>Client ID</td>
+<td>「使用Amazon登录」窗口中的客户端 ID</td>
+</tr>
+<tr>
+<td>Client Secret</td>
+<td>「使用亚马逊登录」窗口中的客户端秘钥</td>
+</tr>
+<tr>
+<td>Client Authentication Scheme</td>
+<td>HTTP 脚本 (推荐)</td>
+</tr>
+<tr>
+<td>Scope</td>
+<td>点击 <code>+ Add Scope</code> 并输入 <code>profile</code></td>
+</tr>
+<tr>
+<td>Domain List</td>
+<td><em>Not used</em></td>
+</tr>
+<tr>
+<td>Default Access Token Expiration Time</td>
+<td><em>Not used</em></td>
+</tr>
+</tbody></table>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa17.png" alt="ha_alexa17" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa17.png" data-index="17"></p>
+<p>之后将看到重定向URI的列表，把这些复制备用，点击右上角的保存。</p>
+<p>返回到 Amazon 开发人员控制台/使用 Amazon 登录窗口，点击右下角的编辑，在「允许的返回URL」部分中，点击「添加另一个」，直到三行为止。</p>
+<p>在每一行上，从  Alexa Developer Console 窗口中添加一个重定向 URI，点击保存。</p>
+<h3 id="测试-haaska"><a href="#测试-haaska" class="headerlink" title="测试 haaska"></a>测试 haaska</h3><p>登录到 <a href="https://console.aws.amazon.com/lambda/home" target="_blank" rel="noopener">Lambda 控制台</a>，点击 haaska，之后点击页面右上方的「测试」按钮，</p>
+<p>在「事件名称」字段中为测试指定一个自定义名称。将以下 JSON 複製到测试控制台：</p>
+<figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">  <span class="attr">"directive"</span>: {</span><br><span class="line">    <span class="attr">"header"</span>: {</span><br><span class="line">      <span class="attr">"namespace"</span>: <span class="string">"Alexa.Discovery"</span>,</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"Discover"</span>,</span><br><span class="line">      <span class="attr">"payloadVersion"</span>: <span class="string">"3"</span>,</span><br><span class="line">      <span class="attr">"messageId"</span>: <span class="string">"1bd5d003-31b9-476f-ad03-71d471922820"</span></span><br><span class="line">    },</span><br><span class="line">    <span class="attr">"payload"</span>: {</span><br><span class="line">      <span class="attr">"scope"</span>: {</span><br><span class="line">        <span class="attr">"type"</span>: <span class="string">"BearerToken"</span>,</span><br><span class="line">        <span class="attr">"token"</span>: <span class="string">"access-token-from-skill"</span></span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>单击「创建」，测试应该在「测试」按钮旁边的下拉框中列出，单击「测试」按钮，如果测试成功，将出现一个绿色的选中标记。恭喜！haaska 可以与 Home Assistant 进行通信。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa18.png" alt="ha_alexa18" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa18.png" data-index="18"></p>
+<p>如果有问题，并且测试失败，可以展开「详细信息」部分查看。</p>
+<h2 id="Alexa-App-中设定"><a href="#Alexa-App-中设定" class="headerlink" title="Alexa App 中设定"></a>Alexa App 中设定</h2><p>打开 Alexa App，在「更多」tab 中选择「Skill & Games」，之后就可以在「Your Skills」的「Dev」中可以看到建立的技能，连接即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa19.png" alt="ha_alexa19" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa19.png" data-index="19"></p>
+
+                </article>
+                <ul class="tags-postTags">
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+    <nav id="gobottom" class="pagination">
+        
+        <a class="prev-post" title="到家附近 自动开灯" href="/ha_tracker/">
+            ← 到家附近 自动开灯
+        </a>
+        
+        <span class="prev-next-post">·</span>
+        
+        <a class="next-post" title="Google Assistant 接入 HA" href="/ha_ga/">
+            Google Assistant 接入 HA →
+        </a>
+        
+    </nav>
+
+    
+    <div class="inner">
+        <div id="comment"></div>
+    </div>
+    
+</div>
+
+<div class="toc-bar">
+    <div class="toc-btn-bar">
+        <a href="#site-main" class="toc-btn">
+            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M793.024 710.272a32 32 0 1 0 45.952-44.544l-310.304-320a32 32 0 0 0-46.4 0.48l-297.696 320a32 32 0 0 0 46.848 43.584l274.752-295.328 286.848 295.808z"/></svg>
+        </a>
+        <div class="toc-btn toc-switch">
+            <svg class="toc-open" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M779.776 480h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M779.776 672h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M256 288a32 32 0 1 0 0 64 32 32 0 0 0 0-64M392.576 352h387.2a32 32 0 0 0 0-64h-387.2a32 32 0 0 0 0 64M256 480a32 32 0 1 0 0 64 32 32 0 0 0 0-64M256 672a32 32 0 1 0 0 64 32 32 0 0 0 0-64"/></svg>
+            <svg class="toc-close hide" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M512 960c-247.039484 0-448-200.960516-448-448S264.960516 64 512 64 960 264.960516 960 512 759.039484 960 512 960zM512 128.287273c-211.584464 0-383.712727 172.128262-383.712727 383.712727 0 211.551781 172.128262 383.712727 383.712727 383.712727 211.551781 0 383.712727-172.159226 383.712727-383.712727C895.712727 300.415536 723.551781 128.287273 512 128.287273z"/><path d="M557.05545 513.376159l138.367639-136.864185c12.576374-12.416396 12.672705-32.671738 0.25631-45.248112s-32.704421-12.672705-45.248112-0.25631l-138.560301 137.024163-136.447897-136.864185c-12.512727-12.512727-32.735385-12.576374-45.248112-0.063647-12.512727 12.480043-12.54369 32.735385-0.063647 45.248112l136.255235 136.671523-137.376804 135.904314c-12.576374 12.447359-12.672705 32.671738-0.25631 45.248112 6.271845 6.335493 14.496116 9.504099 22.751351 9.504099 8.12794 0 16.25588-3.103239 22.496761-9.247789l137.567746-136.064292 138.687596 139.136568c6.240882 6.271845 14.432469 9.407768 22.65674 9.407768 8.191587 0 16.352211-3.135923 22.591372-9.34412 12.512727-12.480043 12.54369-32.704421 0.063647-45.248112L557.05545 513.376159z"/></svg>
+        </div>
+        <a href="#gobottom" class="toc-btn">
+            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M231.424 346.208a32 32 0 0 0-46.848 43.584l297.696 320a32 32 0 0 0 46.4 0.48l310.304-320a32 32 0 1 0-45.952-44.544l-286.848 295.808-274.752-295.36z"/></svg>
+        </a>
+    </div>
+    <div class="toc-main">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#设置好外网访问"><span class="toc-text">设置好外网访问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载-haaska"><span class="toc-text">下载 haaska</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置-haaska"><span class="toc-text">设置 haaska</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#设置与亚马逊的登录"><span class="toc-text">设置与亚马逊的登录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置-Alexa-技能套件"><span class="toc-text">设置 Alexa 技能套件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#准备-AWS-Lambda-访问"><span class="toc-text">准备 AWS Lambda 访问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#地区选择"><span class="toc-text">地区选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置-AWS-Lambda-第-1-部分"><span class="toc-text">设置 AWS Lambda-第 1 部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置-AWS-Lambda-第-2-部分"><span class="toc-text">设置 AWS Lambda-第 2 部分</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置-haaska-功能"><span class="toc-text">配置 haaska 功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将-AWS-Lambda-链接到-Alexa-技能套件"><span class="toc-text">将 AWS Lambda 链接到 Alexa 技能套件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链接-Alexa-技能套件以登录-Amazon"><span class="toc-text">链接 Alexa 技能套件以登录 Amazon</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#测试-haaska"><span class="toc-text">测试 haaska</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Alexa-App-中设定"><span class="toc-text">Alexa App 中设定</span></a></li></ol>
+    </div>
+</div>
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+	</div>
+	
+
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+            
+            
+        </div>
+    </div>
+</aside>
+
+	
+
+
+
+
+<div id="search" class="search-overlay">
+    <div class="search-form">
+        
+        <div class="search-overlay-logo">
+        	<img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/favicon_256px.ico" alt="庄菲什">
+        </div>
+        
+        <input id="local-search-input" class="search-input" type="text" name="search" placeholder="搜索 ...">
+        <a class="search-overlay-close" href="#"></a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+<footer class="site-footer outer">
+	<div class="site-footer-content inner">
+		<div class="copyright">
+			<a href="/" title="庄菲什">庄菲什 © 2020</a>
+			
+				
+			        <span hidden="true" id="/ha_alexa/" class="leancloud-visitors" data-flag-title="Alexa 接入 HA">
+			            <span>阅读量 </span>
+			            <span class="leancloud-visitors-count">0</span>
+			        </span>
+	    		
+    		
+		</div>
+		<nav class="site-footer-nav">
+			
+			<a href="https://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+			<a href="https://github.com/xzhih/hexo-theme-casper" title="Casper" target="_blank" rel="noopener">Casper</a>
+		</nav>
+	</div>
+</footer>
+	
+
+
+<script>
+    if(window.navigator && navigator.serviceWorker) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            for(let registration of registrations) {
+                registration.unregister()
+            }
+        })
+    }
+</script>
+
+
+<script id="scriptLoad" src="/js/allinone.min.js" async></script>
+
+
+<script>
+    document.getElementById('scriptLoad').addEventListener('load', function () {
+        
+        
+
+        
+        
+
+        
+        
+        
+            searchFunc("/");
+        
+        
+    })
+</script>
+
+
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+
+
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+
+
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+
+
+
+<script id="valineScript" src="//unpkg.com/valine/dist/Valine.min.js" async></script>
+<script>
+    document.getElementById('valineScript').addEventListener("load", function() {
+        new Valine({
+            el: '#comment' ,
+            verify: false,
+            notify: true,
+            appId: 'KaLeKV30O7K4JhSXpYQpglJ7-MdYXbMMI',
+            appKey: 'z7kF0mNJaUFYzbjJWdzwPDq8',
+            placeholder: '留下您的评论',
+            pageSize: 10,
+            avatar: 'hide',
+            visitor: true
+        })
+    });
+</script>
+
+
+
+
+
+
+
+</body></html>
