@@ -203,8 +203,8 @@
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa9.png" alt="ha_alexa9" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa9.png" data-index="9"></p>
 <p>在搜索框中输入「basic」，之后选中 AWSLambdaBasicExecutionRole，</p>
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa10.png" alt="ha_alexa10" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa10.png" data-index="10"></p>
-<p>点击右下角的「下一步：标籤」按钮，无需输入任何标籤。，之后点击「下一步：查看」继续。</p>
-<p>在「角色名称」框中，输入 lambda_basic_execution，点击右下角「创建角色」</p>
+<p>点击右下角的「下一步：标签」按钮，无需输入任何标签，之后点击「下一步：查看」继续。</p>
+<p>在「角色名称」框中，输入 lambda_basic_execution，点击右下角「创建角色」，</p>
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa11.png" alt="ha_alexa11" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa11.png" data-index="11"></p>
 <p>单击左上方的AWS按钮，返回到<a href="https://console.aws.amazon.com/console/home" target="_blank" rel="noopener">主控制台</a>。</p>
 <h3 id="地区选择"><a href="#地区选择" class="headerlink" title="地区选择"></a>地区选择</h3><p>在屏幕的右上角用户名旁边，根据语言选中相应的地区，英语选择「美国东部（弗吉尼亚北部）」。</p>
@@ -221,15 +221,15 @@
 <p>在「应用程序 ID」框中，从 Alexa 开发人员控制台窗口（例如<code>amzn1.ask.skill.ed66dfa4-1185-492e-bf6e-1f70e90fb018</code>）複製并粘贴「技能ID」，</p>
 <p>确保选中「启用触发器」，点击右下角的「添加」，在「设计器」部分中，点击功能名称（例如 haaska），在「功能代码」部分中，查找「代码输入类型」，点击此菜单，选择「上传.zip文件」，</p>
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa14.png" alt="ha_alexa14" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa14.png" data-index="14"></p>
-<p>点击「上传」按钮，选择之前下载的zip文件（例如<code>haaska_1.1.0.zip</code>）。</p>
+<p>点击「上传」按钮，选择之前下载的 zip 文件（例如<code>haaska_1.1.0.zip</code>）。</p>
 <p>在「处理程序」框中，将现有内容替换为 haaska.event_handler，等待其加载。</p>
-<h2 id="配置-haaska-功能"><a href="#配置-haaska-功能" class="headerlink" title="配置 haaska 功能"></a>配置 haaska 功能</h2><p>在「功能代码」部分，将看到文件列表，双击 config.json，</p>
-<p>在 URL 部分中，添加远程 Home Assistant URL（例 如<code>https://my-hass.example.com:8123</code>）</p>
+<h2 id="配置-haaska-功能"><a href="#配置-haaska-功能" class="headerlink" title="配置 haaska 功能"></a>配置 haaska 功能</h2><p>在「功能代码」部分，将看到文件列表，双击 <code>config.json</code>，</p>
+<p>在 URL 部分中，添加远程 Home Assistant URL（例如 <code>https://my-hass.example.com:8123</code>）</p>
 <p>在「承载令牌」部分中，添加先前保存的长期令牌（例如 amcb3i2248yfm …）</p>
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa15.png" alt="ha_alexa15" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa15.png" data-index="15"></p>
-<h2 id="将-AWS-Lambda-链接到-Alexa-技能套件"><a href="#将-AWS-Lambda-链接到-Alexa-技能套件" class="headerlink" title="将 AWS Lambda 链接到 Alexa 技能套件"></a>将 AWS Lambda 链接到 Alexa 技能套件</h2><p>在Lambda窗口的右上方，有一个 ARN（例如 arn：aws：lambda：us-east-1：111234567890：function：haaska），複製此文本并保存。</p>
+<h2 id="将-AWS-Lambda-链接到-Alexa-技能套件"><a href="#将-AWS-Lambda-链接到-Alexa-技能套件" class="headerlink" title="将 AWS Lambda 链接到 Alexa 技能套件"></a>将 AWS Lambda 链接到 Alexa 技能套件</h2><p>在Lambda窗口的右上方，有一个 ARN（例如 arn:aws:lambda:us-east-1:111234567890:function:haaska），复制此文本并保存。</p>
 <p>返回您的 Alexa 开发人员控制台窗口，将ARN粘贴到标有「默认端点」的框中，</p>
-<p>从可用的複选框中，点击与之前的技能语言/ Lambda 功能区域匹配的「端点区域」，将 ARN 粘贴到区域框中，点击右上角的「保存」按钮。</p>
+<p>从可用的复选框中，点击与之前的技能语言/Lambda 功能区域匹配的「端点区域」，将 ARN 粘贴到区域框中，点击右上角的「保存」按钮。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa16.png" alt="ha_alexa16" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa16.png" data-index="16"></p>
 <h2 id="链接-Alexa-技能套件以登录-Amazon"><a href="#链接-Alexa-技能套件以登录-Amazon" class="headerlink" title="链接 Alexa 技能套件以登录 Amazon"></a>链接 Alexa 技能套件以登录 Amazon</h2><p>点击「设置帐户链接」按钮，输入以下内容：</p>
 <table>
@@ -274,13 +274,13 @@
 </tbody></table>
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa17.png" alt="ha_alexa17" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa17.png" data-index="17"></p>
 <p>之后将看到重定向URI的列表，把这些复制备用，点击右上角的保存。</p>
-<p>返回到 Amazon 开发人员控制台/使用 Amazon 登录窗口，点击右下角的编辑，在「允许的返回URL」部分中，点击「添加另一个」，直到三行为止。</p>
-<p>在每一行上，从  Alexa Developer Console 窗口中添加一个重定向 URI，点击保存。</p>
+<p>返回到 Amazon 开发人员控制台/使用 Amazon 登录窗口，点击右下角的编辑，在「允许的返回 URL」部分中，点击「添加另一个」，直到三行为止。</p>
+<p>在每一行上，从  Alexa Developer Console 窗口中添加一个重定向 URL，点击保存。</p>
 <h3 id="测试-haaska"><a href="#测试-haaska" class="headerlink" title="测试 haaska"></a>测试 haaska</h3><p>登录到 <a href="https://console.aws.amazon.com/lambda/home" target="_blank" rel="noopener">Lambda 控制台</a>，点击 haaska，之后点击页面右上方的「测试」按钮，</p>
-<p>在「事件名称」字段中为测试指定一个自定义名称。将以下 JSON 複製到测试控制台：</p>
+<p>在「事件名称」字段中为测试指定一个自定义名称。将以下 JSON 复制到测试控制台：</p>
 <figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">  <span class="attr">"directive"</span>: {</span><br><span class="line">    <span class="attr">"header"</span>: {</span><br><span class="line">      <span class="attr">"namespace"</span>: <span class="string">"Alexa.Discovery"</span>,</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"Discover"</span>,</span><br><span class="line">      <span class="attr">"payloadVersion"</span>: <span class="string">"3"</span>,</span><br><span class="line">      <span class="attr">"messageId"</span>: <span class="string">"1bd5d003-31b9-476f-ad03-71d471922820"</span></span><br><span class="line">    },</span><br><span class="line">    <span class="attr">"payload"</span>: {</span><br><span class="line">      <span class="attr">"scope"</span>: {</span><br><span class="line">        <span class="attr">"type"</span>: <span class="string">"BearerToken"</span>,</span><br><span class="line">        <span class="attr">"token"</span>: <span class="string">"access-token-from-skill"</span></span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<p>单击「创建」，测试应该在「测试」按钮旁边的下拉框中列出，单击「测试」按钮，如果测试成功，将出现一个绿色的选中标记。恭喜！haaska 可以与 Home Assistant 进行通信。</p>
+<p>单击「创建」，测试应该在「测试」按钮旁边的下拉框中列出，单击「测试」按钮，如果测试成功，将出现一个绿色的选中标记。恭喜，haaska 可以与 Home Assistant 进行通信。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa18.png" alt="ha_alexa18" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_alexa18.png" data-index="18"></p>
 <p>如果有问题，并且测试失败，可以展开「详细信息」部分查看。</p>
 <h2 id="Alexa-App-中设定"><a href="#Alexa-App-中设定" class="headerlink" title="Alexa App 中设定"></a>Alexa App 中设定</h2><p>打开 Alexa App，在「更多」tab 中选择「Skill & Games」，之后就可以在「Your Skills」的「Dev」中可以看到建立的技能，连接即可。</p>
