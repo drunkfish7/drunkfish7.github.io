@@ -11,7 +11,7 @@
 	<link rel="preconnect" href="//9qpuwspm.api.lncld.net">
 	<link rel="preconnect" href="//gravatar.loli.net">
 
-	<title>使用 Bitwarden 搭建密码管理 | 庄菲什</title>
+	<title>电子版单向历使用 | 庄菲什</title>
 
 	<meta name="HandheldFriendly" content="True">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -39,14 +39,14 @@
 
 	<meta property="og:site_name" content="庄菲什">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="使用 Bitwarden 搭建密码管理 | 庄菲什">
+	<meta property="og:title" content="电子版单向历使用 | 庄菲什">
 	<meta property="og:description" content>
-	<meta property="og:url" content="http://yoursite.com/bitwarden/">
+	<meta property="og:url" content="http://yoursite.com/oneway/">
 
 	
-	<meta property="article:published_time" content="2020-12-14T00:12:00+08:00"> 
+	<meta property="article:published_time" content="2020-12-20T00:12:00+08:00"> 
 	<meta property="article:author" content="drunkfish">
-	<meta property="article:published_first" content="庄菲什, /bitwarden/">
+	<meta property="article:published_first" content="庄菲什, /oneway/">
 	
 
 	
@@ -145,44 +145,51 @@
     <div class="inner">
         <header class="post-full-header">
             <div class="post-full-meta">
-                <time class="post-full-meta-date" datetime="2020-12-14T00:00:00.000Z">
-                    2020-12-14
+                <time class="post-full-meta-date" datetime="2020-12-20T00:00:00.000Z">
+                    2020-12-20
                 </time>
                 
                 <span class="date-divider">/</span>
                 
                 
             </div>
-            <h1 class="post-full-title">使用 Bitwarden 搭建密码管理</h1>
+            <h1 class="post-full-title">电子版单向历使用</h1>
         </header>
         <div class="post-full no-image">
             
             <div class="post-full-content">
                 <article id="photoswipe" class="markdown-body">
-                    <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/bitwarden_cover.png" alt="bitwarden_cover" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/bitwarden_cover.png" data-index="0"></p>
-<p>使用密码管理工具管理密码理由很多，最主要的是方便、安全。Bitwarden 是一个开源的密码管理服务，全平台支持，介面简洁，前后端均开源（Telegram 仅客户端开源）功能全面，支持两步验证（Lastpass 付费版都不支持的功能）、团队共享密码库，另外，支持将服务端部署在自己的服务器上。</p>
-<p>小弟尝试在群晖搭建 Bitwarden 服务端，期间踩了一些坑，主要参考了<a href="https://www.chiphell.com/thread-2006498-1-1.html" target="_blank" rel="noopener">这位大大的帖子</a>。</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>首先需要配置好域名和 SSL 证书，最简单的是利用群晖自带功能申请一个二级域名，并为这个二级域名申请 SSL 证书。在群晖「控制面板」→「安全」中导出证书，导出得到一个压缩包备用，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/bitwarden_export_ssl.png" alt="bitwarden_export_ssl" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/bitwarden_export_ssl.png" data-index="1"></p>
-<p>新建一个文件夹存放密码数据库，一个文件夹存放 SSL 证书，并将导出的证书压缩包解压至这个文件夹。</p>
-<h2 id="Docker-安装"><a href="#Docker-安装" class="headerlink" title="Docker 安装"></a>Docker 安装</h2><p>打开群晖 Docker，在「注册表」 中搜索 <code>bitwardenr</code>，找到 <code>bitwardenrs/server</code> 并选择 latest 下载。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/bitwarden_docker1.png" alt="bitwarden_docker1" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/bitwarden_docker1.png" data-index="2"></p>
-<p>待镜像下载完成（有群晖系统通知），到「映像」中找到并双击打开下载好的镜像，点击「高级设置」，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/bitwarden_docker2.png" alt="bitwarden_docker2" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/bitwarden_docker2.png" data-index="3"></p>
-<p>在「卷」 中添加路径存放密码数据库的文件夹，装载路径为<code>/data</code>，添加存放 SSL 证书的文件夹，装载路径为 <code>/ssl</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/bitwarden_docker3.png" alt="bitwarden_docker3" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/bitwarden_docker3.png" data-index="4"></p>
-<p>在 「端口设置」中自定义容器端口 <code>80</code> 所对应的本地端口，删去自带的 <code>3021</code> 的容器端口，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/bitwarden_docker4.png" alt="bitwarden_docker4" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/bitwarden_docker4.png" data-index="5"></p>
-<p>在环境变量中添加 <code>ROCKET_TLS</code>，值为 <code>{certs="/ssl/cert.pem",key="/ssl/privkey.pem"}</code>（值里面的文件名改为自己的证书的文件名），点击应用保存。</p>
-<h2 id="设置端口映射"><a href="#设置端口映射" class="headerlink" title="设置端口映射"></a>设置端口映射</h2><p>在路由器中设置好端口转发（确保有有公网 IP），OpenWrt 系统可以在「网络」→「防火墙」→「端口转发」中找到。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt23_new.png" alt="bitwarden_port" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt23_new.png" data-index="6"></p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>在浏览器中输入 <code>https:// <DDNS 域名>:<端口号></code> 即可访问刚刚搭建的 Bitwarden 服务，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/bitwarden_web.png" alt="bitwarden_web" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/bitwarden_web.png" data-index="7"></p>
-<p>之后注册一个账号即可使用，注意千万牢记主密码。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/bitwarden_web2.png" alt="bitwarden_web2" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/bitwarden_web2.png" data-index="8"></p>
-<p>各端客户端可以到官方下载专区 <a href="https://bitwarden.com/download/" target="_blank" rel="noopener">https://bitwarden.com/download/</a> 下载，使用方法大致相同，在设置中填写服务器地址即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/bitwarden_url.png" alt="bitwarden_url" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/bitwarden_url.png" data-index="9"></p>
-<h2 id="维护"><a href="#维护" class="headerlink" title="维护"></a>维护</h2><p>如果用的是群晖申请的 Let’s Encrypt 证书，3 个月证书会过期，过期之后重新导出证书文件覆盖即可。</p>
+                    <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/oneway_cover.png" alt="oneway_cover" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/oneway_cover.png" data-index="0"></p>
+<p>单向历是单向书店出的日历，开始是线上版，印成纸质版之后迅速流行，还带动了一波日历风潮。小弟觉得这个日历很酷，这个日历传递了小弟不具备但想拥有的品质：朴实、可爱、有趣、平和。上面的文字默默引导小弟以灵魂人的视角面对生活，醒目的日期提醒小弟生命有限，勇敢争取自己想要的。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/oneway_paper.jpeg" alt="oneway_pape" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/oneway_paper.jpeg" data-index="1"></p>
+<p>有些人买纸质日历追求生活的「仪式感」，小弟是个内心脆弱、将就过日子的粗糙人，觉得「仪式感」可有可无，偏好电子版日历。下面是使用电子版单向历的几种方法：</p>
+<h2 id="单向历-App"><a href="#单向历-App" class="headerlink" title="单向历 App"></a>单向历 App</h2><p>最简单的方法是安装「单向历」App，手机应用商店搜索下载即可。注意，App 中的文字内容和纸质版不一样。</p>
+<h2 id="秒秒测日历"><a href="#秒秒测日历" class="headerlink" title="秒秒测日历"></a>秒秒测日历</h2><p>小米下的<a href="http://www.miaomiaoce.com/product.html" target="_blank" rel="noopener">秒秒测</a>公司有出一款 <a href="https://shop41517656.m.youzan.com/wscgoods/detail/1y6m3h8gmm8qo" target="_blank" rel="noopener">Eink 日历</a>，其中有包含单向历。售价约 ￥200（物料成本大约 ￥100），Eink 屏幕、乐鑫 ESP32 芯片、微信 airkiss 联网方案，拆机图片详见这个<a href="https://www.mydigit.cn/forum.php?mod=viewthread&tid=133256" target="_blank" rel="noopener">大大的帖子</a>。另外，这个日历的文字内容与纸质版一致。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/oneway_miaomiaoce.jpg" alt="oneway_miaomiaoce" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/oneway_miaomiaoce.jpg" data-index="2"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/oneway_miaomiaoce2.png" alt="oneway_miaomiaoce2" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/oneway_miaomiaoce2.png" data-index="3"></p>
+<h2 id="DIY"><a href="#DIY" class="headerlink" title="DIY"></a>DIY</h2><h3 id="获取单向历图片"><a href="#获取单向历图片" class="headerlink" title="获取单向历图片"></a>获取单向历图片</h3><p>首先手机安装好抓包工具 <a href="https://apps.apple.com/cn/app/id1210562295" target="_blank" rel="noopener">Thor</a> 和单向历 App，启动抓包，打开单向历 App，可以得到某一天如 2020 年 10 月 29 日的线上版单向历的图片地址是 <code>https://img.owspace.com/Public/uploads/Download/2020/1029.jpg</code> 。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/oneway_thor.png" alt="oneway_thor" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/oneway_thor.png" data-index="4"></p>
+<p>获取当天的线上版单向历图片，只要将相应的日期替换成当天之后下载即可。实现这个功能比较简单的办法是利用计划任务，以群晖为例：</p>
+<h4 id="建立外链文件夹"><a href="#建立外链文件夹" class="headerlink" title="建立外链文件夹"></a>建立外链文件夹</h4><p>借助 <a href="https://github.com/helloxz/zdir" target="_blank" rel="noopener">Zdir</a> 这个小工具可以建立外链文件夹。首先新建一个文件夹用来存放日历图片文件，打开群晖 Docker，在「注册表」中搜索「zdir」，选择「baiyuetribe/zdir」并下载，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/oneway_docker1.png" alt="oneway_docker1" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/oneway_docker1.png" data-index="5"></p>
+<p>待映像下载完成，映射路径到 <code>/var/www/html/var</code> ，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/oneway_docker1.png" alt="oneway_docker1" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/oneway_docker1.png" data-index="6"></p>
+<p>映射 80 端口，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/oneway_docker2.png" alt="oneway_docker2" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/oneway_docker2.png" data-index="7"></p>
+<p>之后在路由器中设置好端口映射。</p>
+<h4 id="添加计划任务"><a href="#添加计划任务" class="headerlink" title="添加计划任务"></a>添加计划任务</h4><p>打开群晖「控制面板」中的「计划任务」，创建一条用户自定义脚本，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/oneway_task1.png" alt="oneway_task1" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/oneway_task1.png" data-index="8"></p>
+<p>在脚本中设置以下：</p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">cd /volume1/8t/share/oneway # 完整路径</span><br><span class="line">a=$(date +"%Y/%m%d") </span><br><span class="line">curl -o calendar.jpg http://img.owspace.com/Public/uploads/Download/$a.jpg</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/oneway_task2.png" alt="oneway_task2" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/oneway_task2.png" data-index="9"></p>
+<p>之后运行一次测试是否正常，之后设置每天 0 点运行。到此可以得到一个图片的地址，类似 <code>http://<群晖地址>:<端口号>/var/oneway/calendar.jpg</code></p>
+<h3 id="屏幕显示"><a href="#屏幕显示" class="headerlink" title="屏幕显示"></a>屏幕显示</h3><h4 id="通过-ESP8266-Eink-屏幕"><a href="#通过-ESP8266-Eink-屏幕" class="headerlink" title="通过 ESP8266 + Eink 屏幕"></a>通过 ESP8266 + Eink 屏幕</h4><p>ESP8266 作为控制，Eink 屏幕输出日历图片，可以实现秒秒测日历的近似效果。比较简单的搭建方法是利用 <a href="https://esphome.io" target="_blank" rel="noopener">ESPHome</a>，需要准备的材料：ESP8266 开发版、Eink 屏幕、Eink 屏幕确定版，参考 <a href="https://esphome.io/components/display/waveshare_epaper.html" target="_blank" rel="noopener">Eink 屏幕输出</a>连线、定义输出设备，参考 <a href="https://esphome.io/components/display/index.html" target="_blank" rel="noopener">ESPHome 显示</a>配置图片显示。</p>
+<p>这种方法小弟没有具体尝试，使用时可能要挑选合适大小的屏幕（图片尺寸 691*1006 px）。这个方法比较酷的地方是显示什么完全自由，不仅可以显示图片，显示内容可以完全自定义。</p>
+<h4 id="通过-Kindle（未越狱）"><a href="#通过-Kindle（未越狱）" class="headerlink" title="通过 Kindle（未越狱）"></a>通过 Kindle（未越狱）</h4><p>首先点击 Kindle 首页右上角的「搜索」图标，输入 <code>~ds</code>，按回车键，调用隐藏的 <code>Disable Screensaver</code> 命令。这样 Kindle 可以禁用休眠不锁屏。（注意重启 Kindle 失效）。</p>
+<p>在浏览器输入图片地址 <code>http://<群晖地址>:<端口号>/var/oneway/calendar.jpg</code>，之后双击图片即可居中放大显示。注意，这个「日历」不会自动刷新，需要明天点击「刷新」按钮手动刷新（意外地拥有精致上流人士才有的「仪式感」）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/kindle_calendar.jpeg" alt="oneway_kindle" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic2@master/uPic/kindle_calendar.jpeg" data-index="10"></p>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>因为我们最终得到的是一个固定的链接，所以能用的地方很多，如用在 iOS 上的 Widget 上、Home Assistant 的图片组件等等。</p>
 
                 </article>
                 <ul class="tags-postTags">
@@ -195,14 +202,10 @@
     
     <nav id="gobottom" class="pagination">
         
-        <a class="prev-post" title="电子版单向历使用" href="/oneway/">
-            ← 电子版单向历使用
-        </a>
-        
         <span class="prev-next-post">·</span>
         
-        <a class="next-post" title="租房小物推荐（二）" href="/necessary2/">
-            租房小物推荐（二） →
+        <a class="next-post" title="使用 Bitwarden 搭建密码管理" href="/bitwarden/">
+            使用 Bitwarden 搭建密码管理 →
         </a>
         
     </nav>
@@ -228,7 +231,7 @@
         </a>
     </div>
     <div class="toc-main">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker-安装"><span class="toc-text">Docker 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置端口映射"><span class="toc-text">设置端口映射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-text">使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#维护"><span class="toc-text">维护</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#单向历-App"><span class="toc-text">单向历 App</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#秒秒测日历"><span class="toc-text">秒秒测日历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DIY"><span class="toc-text">DIY</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取单向历图片"><span class="toc-text">获取单向历图片</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#建立外链文件夹"><span class="toc-text">建立外链文件夹</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#添加计划任务"><span class="toc-text">添加计划任务</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#屏幕显示"><span class="toc-text">屏幕显示</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#通过-ESP8266-Eink-屏幕"><span class="toc-text">通过 ESP8266 + Eink 屏幕</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#通过-Kindle（未越狱）"><span class="toc-text">通过 Kindle（未越狱）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
 
@@ -342,7 +345,7 @@
 			<a href="/" title="庄菲什">庄菲什 © 2020</a>
 			
 				
-			        <span hidden="true" id="/bitwarden/" class="leancloud-visitors" data-flag-title="使用 Bitwarden 搭建密码管理">
+			        <span hidden="true" id="/oneway/" class="leancloud-visitors" data-flag-title="电子版单向历使用">
 			            <span>阅读量 </span>
 			            <span class="leancloud-visitors-count">0</span>
 			        </span>
