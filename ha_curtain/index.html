@@ -176,9 +176,9 @@
 <p>插上  WiFi USB 转换器，在 Tuya Smart App 中配对就可以接入 WiFi 了。如果 App 上开光与实际不一致，可通过反挂马达同步。</p>
 <p>另外这个窗帘也支持「touch and go」的功能，稍用力反方向手动拉窗帘可以自动开合窗帘。</p>
 <p>尾部还有一个鸡肋的光敏电阻，可以感知光线强弱，当光线较弱时认定为「夜间模式」，会省一点电。</p>
-<h2 id="接入-Home-Assistant-及其他"><a href="#接入-Home-Assistant-及其他" class="headerlink" title="接入 Home  Assistant 及其他"></a>接入 Home  Assistant 及其他</h2><p>Home Assistant 支持涂鸦固件，直接在 Configuration 中点击右下角的添加按钮，搜索 <code>tuya</code>，之后填入用户名、密码、国家代码即可。</p>
+<h2 id="接入-Home-Assistant-及其他"><a href="#接入-Home-Assistant-及其他" class="headerlink" title="接入 Home  Assistant 及其他"></a>接入 Home  Assistant 及其他</h2><h3 id="利用-Tuya-组件"><a href="#利用-Tuya-组件" class="headerlink" title="利用 Tuya 组件"></a>利用 Tuya 组件</h3><p>Home Assistant 支持涂鸦固件，直接在 Configuration 中点击右下角的添加按钮，搜索 <code>tuya</code>，之后填入用户名、密码、国家代码即可。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_curtain_ha.png" alt="ha_curtain_ha" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_curtain_ha.png" data-index="2"></p>
-<p>另外，还可以通过 <a href="https://docs.openmqttgateway.com" target="_blank" rel="noopener">OpenMQTTGateway</a> 自制 RF 网关本地控制。</p>
+<h3 id="利用-localTuya-组件"><a href="#利用-localTuya-组件" class="headerlink" title="利用 localTuya 组件"></a>利用 localTuya 组件</h3><h3 id="OpenMQTTGateway-自制-RF-网关"><a href="#OpenMQTTGateway-自制-RF-网关" class="headerlink" title="OpenMQTTGateway 自制 RF 网关"></a>OpenMQTTGateway 自制 RF 网关</h3><p>另外，还可以通过 <a href="https://docs.openmqttgateway.com" target="_blank" rel="noopener">OpenMQTTGateway</a> 自制 RF 网关本地控制。</p>
 <p>Google Assistant 和 Alexa 可以通过 Home Assistant，也可以通过涂鸦账号接入。</p>
 <p>Homekit 可以通过 Home Assistant 接入。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_curtain_app2.png" alt="ha_curtain_app" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/ha_curtain_app2.png" data-index="3"></p>
@@ -194,6 +194,10 @@
 
                 </article>
                 <ul class="tags-postTags">
+                    
+                    <li>
+                        <a href="/tags/Home-Assistant/" rel="tag"># Home Assistant</a>
+                    </li>
                     
                 </ul>
             </div>
@@ -236,7 +240,7 @@
         </a>
     </div>
     <div class="toc-main">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#与-Switchbot-Curtain-对比"><span class="toc-text">与 Switchbot Curtain 对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接入-Home-Assistant-及其他"><span class="toc-text">接入 Home  Assistant 及其他</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动化"><span class="toc-text">自动化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缺点"><span class="toc-text">缺点</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#与-Switchbot-Curtain-对比"><span class="toc-text">与 Switchbot Curtain 对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接入-Home-Assistant-及其他"><span class="toc-text">接入 Home  Assistant 及其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#利用-Tuya-组件"><span class="toc-text">利用 Tuya 组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#利用-localTuya-组件"><span class="toc-text">利用 localTuya 组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OpenMQTTGateway-自制-RF-网关"><span class="toc-text">OpenMQTTGateway 自制 RF 网关</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动化"><span class="toc-text">自动化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缺点"><span class="toc-text">缺点</span></a></li></ol>
     </div>
 </div>
 
@@ -347,7 +351,7 @@
 <footer class="site-footer outer">
 	<div class="site-footer-content inner">
 		<div class="copyright">
-			<a href="/" title="庄菲什">庄菲什 © 2020</a>
+			<a href="/" title="庄菲什">庄菲什 © 2021</a>
 			
 				
 			        <span hidden="true" id="/ha_curtain/" class="leancloud-visitors" data-flag-title="窗帘快速接入 HA——免去换轨 超快接入">
