@@ -11,7 +11,7 @@
 	<link rel="preconnect" href="//9qpuwspm.api.lncld.net">
 	<link rel="preconnect" href="//gravatar.loli.net">
 
-	<title>使用 Adguard Home 过滤国内广告 | 庄菲什</title>
+	<title>HA 联动像素钟 | 庄菲什</title>
 
 	<meta name="HandheldFriendly" content="True">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -39,14 +39,14 @@
 
 	<meta property="og:site_name" content="庄菲什">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="使用 Adguard Home 过滤国内广告 | 庄菲什">
+	<meta property="og:title" content="HA 联动像素钟 | 庄菲什">
 	<meta property="og:description" content>
-	<meta property="og:url" content="http://yoursite.com/dns/">
+	<meta property="og:url" content="http://yoursite.com/awtrix_api/">
 
 	
-	<meta property="article:published_time" content="2021-02-28T00:02:00+08:00"> 
+	<meta property="article:published_time" content="2021-03-28T00:03:00+08:00"> 
 	<meta property="article:author" content="drunkfish">
-	<meta property="article:published_first" content="庄菲什, /dns/">
+	<meta property="article:published_first" content="庄菲什, /awtrix_api/">
 	
 
 	
@@ -145,46 +145,45 @@
     <div class="inner">
         <header class="post-full-header">
             <div class="post-full-meta">
-                <time class="post-full-meta-date" datetime="2021-02-28T00:00:00.000Z">
-                    2021-02-28
+                <time class="post-full-meta-date" datetime="2021-03-28T00:00:00.000Z">
+                    2021-03-28
                 </time>
                 
                 <span class="date-divider">/</span>
                 
                 
             </div>
-            <h1 class="post-full-title">使用 Adguard Home 过滤国内广告</h1>
+            <h1 class="post-full-title">HA 联动像素钟</h1>
         </header>
         <div class="post-full no-image">
             
             <div class="post-full-content">
                 <article id="photoswipe" class="markdown-body">
-                    <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/dns_cover.png" alt="dns_cover" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/dns_cover.png" data-index="0"></p>
-<p>新世纪，我们的生活似乎充满了广告。一方面，适当、相对精准的广告推送可以连接供给与需求，有些需付费的媒体内容因为广告可以免费看。另一方面，频繁、打断式的广告令人生厌，掌握用户行为数据的广告商还利用我们的弱点诱导购买很多不必要的东西。</p>
-<p>在天下第一经济大国先进熊猫国，没有外来害虫侵入的沃土，国民享有更多干扰性强、不体面的广告，各类侵入性强的广告数量与比例比低端国家领先一大截，是驰名海外的中国之光。</p>
-<p><a href="https://adguard.com/en/adguard-home/overview.html" target="_blank" rel="noopener">Adguard Home</a> 是一个开源的 DNS 服务，可以通过拦截 DNS 的方式阻挡广告及追踪，并且可以方便地安装在各类设备中。这篇文章主要是 Adguard Home 在 OpenWrt 下的使用。</p>
-<h2 id="设定"><a href="#设定" class="headerlink" title="设定"></a>设定</h2><p>大多数 OpenWrt 固件有内置 Adguard Home 插件，进入 OpenWrt 管理界面，打开「服务」→「Adguard Home」，重定向选中「dnsmasq 的上游服务器」，勾选启用并「保存并启用」。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/dns_1.png" alt="dns1" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/dns_1.png" data-index="1"></p>
-<p>如果使用 Hello World 这类科学上网类插件，可以设置DNS解析方式为「使用 PDNSD TCP 查询并缓存」。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/dns_2.png" alt="dns2" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/dns_2.png" data-index="2"></p>
-<p>建议关闭 Turbo ACC 网络加速设置中的「DNS 缓存」。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/dns_3.png" alt="dns3" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/dns_3.png" data-index="3"></p>
-<p>设定好之后打开地址 <code>AdGuard Home 地址:端口号</code>可以进一步设置 AdGuard Home，在「设置」→「DNS 设置」中可以添加上游 DNS 服务器与 Bootstrap DNS 服务器（有些固件已经添加好了），另外建议无需添加过多，过多添加可能会消耗更多系统资源，且有点让自己访问的域名「让全天下的人都知道」的感觉，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/dns_4.png" alt="dns4" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/dns_4.png" data-index="4"></p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">上游 DNS 服务器</span><br><span class="line">tls://1dot1dot1dot1.cloudflare-dns.com</span><br><span class="line">tls://dns.google</span><br><span class="line">tcp://8.8.4.4</span><br><span class="line">223.5.5.5</span><br><span class="line">223.6.6.6</span><br><span class="line">119.29.29.29</span><br><span class="line">114.114.114.114</span><br><span class="line"></span><br><span class="line">Bootstrap DNS 服务器</span><br><span class="line">119.29.29.29</span><br><span class="line">223.5.5.5</span><br><span class="line">114.114.114.114</span><br><span class="line">2620:fe::10</span><br><span class="line">2620:fe::fe:10</span><br></pre></td></tr></tbody></table></figure>
+                    <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/awtrix_api_cover.png" alt="awtrix_api_cover" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/awtrix_api_cover.png" data-index="0"></p>
+<p>小弟曾做过一个像素钟 <a href="https://lametric.com/en-US" target="_blank" rel="noopener">LaMetric Time</a> 的 DIY 替代品 AWTRIX，有 8*32 个像素，可以显示像素动画、文字信息的等等。比较酷的是， AWTRIX 支持外部控制，这样就可以与其他设备联动。</p>
+<p>AWTRIX 可以通过 HTTP 和 MQTT 两种方式从外部控制，控制的元素很多，从显示图标、显示特定文字等都可以，详见 AWTRIX 文档 <a href="https://awtrixdocs.blueforcer.de/#/en-en/api" target="_blank" rel="noopener">API 部分</a>。以下实例介绍 AWTRIX 与 Home Assistant 的联动：</p>
+<h2 id="利用-HTTP"><a href="#利用-HTTP" class="headerlink" title="利用 HTTP"></a>利用 HTTP</h2><p>实例：通过 HTTP 定时控制像素灯泡开关</p>
+<p>AWTRIX 某种意义算是一个灯泡组合的信息版，可惜这个灯泡组合不能方便地打开/关闭显示屏幕，有大大利用 HTTP <a href="https://bbs.iobroker.cn/t/topic/3509" target="_blank" rel="noopener">将 AWTRIX 虚拟成一个灯光开关接入</a>，将以下代码复制粘贴至 configuration.yaml 文件即可（记得将 AWTRIX-SERVER_IP 替换成实际 IP ）：</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">light:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">template</span></span><br><span class="line">    <span class="attr">lights:</span></span><br><span class="line">      <span class="attr">theater_volume:</span></span><br><span class="line">        <span class="attr">friendly_name:</span> <span class="string">Steam</span></span><br><span class="line">        <span class="attr">turn_on:</span></span><br><span class="line">          <span class="attr">service:</span> <span class="string">shell_command.turn_on_123</span></span><br><span class="line">        <span class="attr">turn_off:</span></span><br><span class="line">          <span class="attr">service:</span> <span class="string">shell_command.turn_off_541</span></span><br><span class="line"></span><br><span class="line"><span class="attr">shell_command:</span></span><br><span class="line">  <span class="attr">turn_off_541:</span> <span class="string">'curl --header "Content-Type: application/json" --request POST --data {"power":false} http://[AWTRIX-SERVER_IP]/api/v3/basics'</span></span><br><span class="line">  <span class="attr">turn_on_123:</span> <span class="string">'curl --header "Content-Type: application/json" --request POST --data {"power":true} http://[AWTRIX-SERVER_IP]:7000/api/v3/basics'</span></span><br></pre></td></tr></tbody></table></figure>
 
-<p>去广告效果和拦截清单有关，一个精准且更新及时的清单可以达到更好的效果，在「过滤器」→「DNS 封锁清单」中可以添加过滤清单（有些固件已经添加好了），以下是几个比较好用的列表：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/dns_5.png" alt="dns5" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/dns_5.png" data-index="5"></p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">NEO DEV HOST</span><br><span class="line">https://raw.githubusercontent.com/neodevpro/neodevhost/master/adblocker</span><br><span class="line"></span><br><span class="line">adgk 手机去广告规则</span><br><span class="line">https://banbendalao.coding.net/p/adgk/d/ADgk/git/raw/master/ADgk.txt</span><br><span class="line"></span><br><span class="line">anti-AD 命中率最高列表</span><br><span class="line">https://cdn.jsdelivr.net/gh/privacy-protection-tools/anti-AD@master/anti-ad-easylist.txt</span><br></pre></td></tr></tbody></table></figure>
+<p>加入虚拟开关后，就可以通过自动化控制像素时钟的显示与关闭，如可以设置定时开关屏幕，每天 7 点自动打开屏幕， 晚上 11 点关闭屏幕，自动化配置参考：</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">id:</span> <span class="string">'xxxxx'</span></span><br><span class="line">  <span class="attr">alias:</span> <span class="string">awtrix</span> <span class="string">on</span></span><br><span class="line">  <span class="attr">description:</span> <span class="string">''</span></span><br><span class="line">  <span class="attr">trigger:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">time</span></span><br><span class="line">    <span class="attr">at:</span> <span class="string">'7:00'</span></span><br><span class="line">  <span class="attr">condition:</span> <span class="string">[]</span></span><br><span class="line">  <span class="attr">action:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">service:</span> <span class="string">switch.turn_on</span></span><br><span class="line">    <span class="attr">data:</span> <span class="string">{}</span></span><br><span class="line">    <span class="attr">entity_id:</span> <span class="string">switch.original_xiaomi_mi_smart_wifi_socket</span></span><br><span class="line">  <span class="attr">mode:</span> <span class="string">single</span></span><br></pre></td></tr></tbody></table></figure>
 
-<p>另外，Adguard Home 的配置都存在一个 yaml 文件，也可以通过修改 yaml 文件修改配置。    </p>
-<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/dns_6.png" alt="dns6" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/dns_6.png" data-index="6"></p>
-<p>配置好之后可以在 Adguard Home 仪表盘看到 DNS 查询数与拦截数，查询日志中也可以看到域名查询日志。局域网中的终端无需配置即可使用，被拦截的广告会显示空白。</p>
-<p>Adguard Home 是利用 DNS 去广告，这种方式去广告方式效果有限，Adguard Home 曾<a href="https://adguard.com/en/blog/adguard-vs-adaway-dns66.html" target="_blank" rel="noopener">撰文</a>比较 DNS 过滤与其他广告拦截工具对比，若广告域名与主要内容是同一个域名，这种方式就无能为力了。但是总体来说，还是去广告有效果的，对防止追踪也有一定效果。</p>
-<p>另外，这种方式对外网去广告无效，科学上网是 VPS 请求域名解析，不会将域名到本地解析。</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">id:</span> <span class="string">'xxxxx'</span></span><br><span class="line">  <span class="attr">alias:</span> <span class="string">awtrix</span> <span class="string">off</span></span><br><span class="line">  <span class="attr">description:</span> <span class="string">''</span></span><br><span class="line">  <span class="attr">trigger:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">time</span></span><br><span class="line">    <span class="attr">at:</span> <span class="string">'23:00'</span></span><br><span class="line">  <span class="attr">condition:</span> <span class="string">[]</span></span><br><span class="line">  <span class="attr">action:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">service:</span> <span class="string">shell_command.turn_off_541</span></span><br><span class="line">    <span class="attr">data:</span> <span class="string">{}</span></span><br><span class="line">  <span class="attr">mode:</span> <span class="string">single</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="利用-MQTT"><a href="#利用-MQTT" class="headerlink" title="利用 MQTT"></a>利用 MQTT</h2><p>实例：通过 MQTT 实现扫描特定 NFC 标签（或其他条件）显示「降落文字」（falling test）</p>
+<p>首先可以在 AWTRIX 设置好 MQTT 服务器，设置成功在 MQTT 服务器中可以看到 awtrix 相关的主题，AWTRIX 基本主题是<code>awtrix</code>。</p>
+<p>这里示例扫描特定 NFC 标签（或其他条件）显示「降落文字」，自动化配置参考：</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">id:</span> <span class="string">'xxxxx'</span></span><br><span class="line">  <span class="attr">alias:</span> <span class="string">Tag</span> <span class="string">blue</span> <span class="string">is</span> <span class="string">scanned</span></span><br><span class="line">  <span class="attr">description:</span> <span class="string">''</span></span><br><span class="line">  <span class="attr">trigger:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">tag</span></span><br><span class="line">    <span class="attr">tag_id:</span> <span class="string">xx-xx-xx-xx</span></span><br><span class="line">  <span class="attr">condition:</span> <span class="string">[]</span></span><br><span class="line">  <span class="attr">action:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">service:</span> <span class="string">mqtt.publish</span></span><br><span class="line">    <span class="attr">data:</span></span><br><span class="line">      <span class="attr">topic:</span> <span class="string">awtrix/notify</span></span><br><span class="line">      <span class="attr">payload:</span> <span class="string">'{"name":"TestNotification", "force":true, "repeat":10,"fallingText":"keep cool", "color":[0, 255, 0]}'</span></span><br><span class="line">  <span class="attr">mode:</span> <span class="string">single</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>扫描 NFC 标签后， AWTRIX 先绿色字体显示「keep」，之后掉落显示「cool」。</p>
 
                 </article>
                 <ul class="tags-postTags">
+                    
+                    <li>
+                        <a href="/tags/Home-Assistant/" rel="tag"># Home Assistant</a>
+                    </li>
                     
                 </ul>
             </div>
@@ -194,14 +193,14 @@
     
     <nav id="gobottom" class="pagination">
         
-        <a class="prev-post" title="使用笔记模板高效工作" href="/note_template/">
-            ← 使用笔记模板高效工作
+        <a class="prev-post" title="Google 艺文的使用" href="/google_art/">
+            ← Google 艺文的使用
         </a>
         
         <span class="prev-next-post">·</span>
         
-        <a class="next-post" title="免下载！在线媒体资源推荐" href="/media/">
-            免下载！在线媒体资源推荐 →
+        <a class="next-post" title="自制 NFC 读卡器接入 HA" href="/nfc_reader/">
+            自制 NFC 读卡器接入 HA →
         </a>
         
     </nav>
@@ -227,7 +226,7 @@
         </a>
     </div>
     <div class="toc-main">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#设定"><span class="toc-text">设定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#效果"><span class="toc-text">效果</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#利用-HTTP"><span class="toc-text">利用 HTTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#利用-MQTT"><span class="toc-text">利用 MQTT</span></a></li></ol>
     </div>
 </div>
 
@@ -341,7 +340,7 @@
 			<a href="/" title="庄菲什">庄菲什 © 2021</a>
 			
 				
-			        <span hidden="true" id="/dns/" class="leancloud-visitors" data-flag-title="使用 Adguard Home 过滤国内广告">
+			        <span hidden="true" id="/awtrix_api/" class="leancloud-visitors" data-flag-title="HA 联动像素钟">
 			            <span>阅读量 </span>
 			            <span class="leancloud-visitors-count">0</span>
 			        </span>

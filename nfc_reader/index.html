@@ -1,0 +1,465 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="preconnect" href="//www.googletagmanager.com">
+	<link rel="preconnect" href="//zz.bdstatic.com">
+	<link rel="preconnect" href="//sp0.baidu.com">
+	<link rel="preconnect" href="//www.google-analytics.com">
+	<link rel="preconnect" href="//cdn1.lncld.net">
+	<link rel="preconnect" href="//unpkg.com">
+	<link rel="preconnect" href="//app-router.leancloud.cn">
+	<link rel="preconnect" href="//9qpuwspm.api.lncld.net">
+	<link rel="preconnect" href="//gravatar.loli.net">
+
+	<title>自制 NFC 读卡器接入 HA | 庄菲什</title>
+
+	<meta name="HandheldFriendly" content="True">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+	<meta name="generator" content="hexo">
+	<meta name="author" content="drunkfish">
+	<meta name="description" content>
+
+	
+
+	
+	<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/favicon_256px.ico">
+	<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/favicon_256px.ico">
+	
+
+	
+	<meta name="theme-color" content="#3c484e">
+	<meta name="msapplication-TileColor" content="#3c484e">
+	
+
+	
+
+	
+	<link rel="alternate" href="/atom.xml" title="庄菲什">
+	
+
+	<meta property="og:site_name" content="庄菲什">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="自制 NFC 读卡器接入 HA | 庄菲什">
+	<meta property="og:description" content>
+	<meta property="og:url" content="http://yoursite.com/nfc_reader/">
+
+	
+	<meta property="article:published_time" content="2021-03-27T00:03:00+08:00"> 
+	<meta property="article:author" content="drunkfish">
+	<meta property="article:published_first" content="庄菲什, /nfc_reader/">
+	
+
+	
+	
+	
+<link rel="stylesheet" href="/css/allinonecss.min.css">
+
+
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156013706-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-156013706-1');
+	</script>
+	
+	
+	
+<link rel="alternate" href="/atom.xml" title="庄菲什" type="application/atom+xml">
+</head>
+<body class="post-template">
+	<div class="site-wrapper">
+		
+
+
+
+
+<header class="site-header post-site-header outer">
+    <div class="inner">
+        
+<nav class="site-nav"> 
+    <div class="site-nav-left">
+        <ul class="nav">
+            <li>
+                
+                <a href="/" title="Home">HOME</a>
+                
+            </li>
+            
+            
+            <li>
+                <a href="/about" title="ABOUT">ABOUT</a>
+            </li>
+            
+            
+        </ul> 
+    </div>
+    
+    <div class="search-button-area">
+        <a href="#search" class="search-button">Search ...</a>
+    </div>
+     
+    <div class="site-nav-right">
+        
+        <a href="#search" class="search-button">Search ...</a>
+         
+        
+<div class="social-links">
+    
+    <a class="social-link" title="weibo" href="https://weibo.com/drunkfish9" target="_blank" rel="noopener">
+        <svg viewBox="0 0 1141 1024" xmlns="http://www.w3.org/2000/svg"><path d="M916.48 518.144q27.648 21.504 38.912 51.712t9.216 62.976-14.336 65.536-31.744 59.392q-34.816 48.128-78.848 81.92t-91.136 56.32-94.72 35.328-89.6 18.944-75.264 7.68-51.712 1.536-49.152-2.56-68.096-10.24-78.336-21.504-79.872-36.352-74.24-55.296-59.904-78.848q-16.384-29.696-22.016-63.488t-5.632-86.016q0-22.528 7.68-51.2t27.136-63.488 53.248-75.776 86.016-90.112q51.2-48.128 105.984-85.504t117.248-57.856q28.672-10.24 63.488-11.264t57.344 11.264q10.24 11.264 19.456 23.04t12.288 29.184q3.072 14.336 0.512 27.648t-5.632 26.624-5.12 25.6 2.048 22.528q17.408 2.048 33.792-1.536t31.744-9.216 31.232-11.776 33.28-9.216q27.648-5.12 54.784-4.608t49.152 7.68 36.352 22.016 17.408 38.4q2.048 14.336-2.048 26.624t-8.704 23.04-7.168 22.016 1.536 23.552q3.072 7.168 14.848 13.312t27.136 12.288 32.256 13.312 29.184 16.384zM658.432 836.608q26.624-16.384 53.76-45.056t44.032-64 18.944-75.776-20.48-81.408q-19.456-33.792-47.616-57.344t-62.976-37.376-74.24-19.968-80.384-6.144q-78.848 0-139.776 16.384t-105.472 43.008-72.192 60.416-38.912 68.608q-11.264 33.792-6.656 67.072t20.992 62.976 42.496 53.248 57.856 37.888q58.368 25.6 119.296 32.256t116.224 0.512 100.864-21.504 74.24-33.792zM524.288 513.024q20.48 8.192 38.912 18.432t32.768 27.648q10.24 12.288 17.92 30.72t10.752 39.424 1.536 42.496-9.728 38.912q-8.192 18.432-19.968 37.376t-28.672 35.328-40.448 29.184-57.344 18.944q-61.44 11.264-117.76-11.264t-88.064-74.752q-12.288-39.936-13.312-70.656t16.384-66.56q13.312-27.648 40.448-51.712t62.464-38.912 75.264-17.408 78.848 12.8zM361.472 764.928q37.888 3.072 57.856-18.432t21.504-48.128-15.36-47.616-52.736-16.896q-27.648 3.072-43.008 23.552t-17.408 43.52 9.728 42.496 39.424 21.504zM780.288 6.144q74.752 0 139.776 19.968t113.664 57.856 76.288 92.16 27.648 122.88q0 33.792-16.384 50.688t-35.328 17.408-35.328-14.336-16.384-45.568q0-40.96-22.528-77.824t-59.392-64.512-84.48-43.52-96.768-15.872q-31.744 0-47.104-15.36t-14.336-34.304 18.944-34.304 51.712-15.36zM780.288 169.984q95.232 0 144.384 48.64t49.152 146.944q0 30.72-10.24 43.52t-22.528 11.264-22.528-14.848-10.24-35.84q0-60.416-34.816-96.256t-93.184-35.84q-19.456 0-28.672-10.752t-9.216-23.04 9.728-23.04 28.16-10.752z"/></svg>
+    </a>
+    
+    
+    <a class="social-link" title="github" href="https://drunkfish.me/atom.xml" target="_blank" rel="noopener">
+        <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 24.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="RSSicon" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 256 256" style="enable-background:new 0 0 256 256;" space="preserve">
+<title>RSS feed icon</title>
+<circle cx="64" cy="192" r="32"/>
+<path d="M32,128c53,0,96,43,96,96h32c0-70.7-57.3-128-128-128V128z"/>
+<path d="M32,64c88.4,0,160,71.6,160,160h32c0-106-86-192-192-192V64z"/>
+</svg>
+
+    </a>
+    
+    
+    
+    <a class="social-link" title="twitter" href="https://twitter.com/drunkfish999" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+    </a>
+    
+    
+    
+    
+</div>
+    </div>
+</nav>
+    </div>
+</header>
+
+
+<div id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+        <header class="post-full-header">
+            <div class="post-full-meta">
+                <time class="post-full-meta-date" datetime="2021-03-27T00:00:00.000Z">
+                    2021-03-27
+                </time>
+                
+                <span class="date-divider">/</span>
+                
+                
+            </div>
+            <h1 class="post-full-title">自制 NFC 读卡器接入 HA</h1>
+        </header>
+        <div class="post-full no-image">
+            
+            <div class="post-full-content">
+                <article id="photoswipe" class="markdown-body">
+                    <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nfc_reader_cover.png" alt="nfc_reader_cover" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nfc_reader_cover.png" data-index="0"></p>
+<p>NFC（Near-field communication，近距离无线通讯）可以作为一种很好的验证方式，以一种方便的形式实现一些自动化，比如：</p>
+<ul>
+<li>扫描 NFC 卡之后播放特定的音乐列表清单</li>
+<li>利用 NFC 标籤激活房间中的场景</li>
+<li>通过 NFC 卡开锁</li>
+<li>读取后 NFC 标签打开设备详情页</li>
+<li>等等</li>
+</ul>
+<p>现在人人随身携带手机，手机也自带 NFC 功能，NFC 使用场景更加充满实用性和想象力。Home Assistant 在 App 中已为标籤编写特殊的 Home Assistant URL扫描 NFC 标籤后，可以触發 Home Assistant 应用并将标识符發送到 Home Assistant 实例处理。</p>
+<p>不过不是所有手机都支持 NFC（如 iPhone 需要 iPhone XS、XR、iPhone 11 及以上可以后台读取 NFC 卡片）。有大大利用 ESPHome <a href="https://github.com/adonno/tagreader" target="_blank" rel="noopener">自制了一个 NFC 读卡器</a>，小弟跟着步骤踩了一遍坑，以下是步骤：</p>
+<h2 id="所需材料"><a href="#所需材料" class="headerlink" title="所需材料"></a>所需材料</h2><p>1、ESP8266（或 D1 Mini，D1 mini 体积更小）<br>2、PN532 NFC 读卡器（PN532 可能是最好的 NFC 读写模块）<br>3、WS2812（非必须，用作读卡后的 LED 灯泡反馈）<br>4、蜂鸣器（非必须，作为读卡后的声音反馈）<br>5、3D 打印外（非必须），地址在<a href="https://github.com/adonno/tagreader/blob/master/STLs" target="_blank" rel="noopener">这里</a><br>6、杜邦线若干</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>如果使用 D1 Mini，可能需要焊接。</p>
+<p>另外，确保将 PN532 上的开关设置为以下开关状态：<br>开关1：打开（向上）<br>开关2：关闭（向下）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nfc_reader_pn532.png" alt="nfc_reader_pn532" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nfc_reader_pn532.png" data-index="1"></p>
+<h2 id="刷机"><a href="#刷机" class="headerlink" title="刷机"></a>刷机</h2><p>确保 ESPHome 版本在 1.16.0 及以上，在 ESPHome 中新增一个 ESP8266 设备，在配置中加入以下代码（若无 WS2812 和蜂鸣器可以删去相应代码）：</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">substitutions:</span></span><br><span class="line">  <span class="attr">devicename:</span> <span class="string">tagreader</span></span><br><span class="line">  <span class="attr">friendly_name:</span> <span class="string">TagReader</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果有蜂鸣器，连接成功后在 api 中通知</span></span><br><span class="line">  <span class="attr">on_boot:</span></span><br><span class="line">    <span class="attr">priority:</span> <span class="number">-10</span></span><br><span class="line">    <span class="attr">then:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">wait_until:</span></span><br><span class="line">        <span class="attr">api.connected:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">logger.log:</span> <span class="string">API</span> <span class="string">is</span> <span class="string">connected!</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">rtttl.play:</span> <span class="string">"success:d=24,o=5,b=100:c,g,b"</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">light.turn_on:</span></span><br><span class="line">        <span class="attr">id:</span> <span class="string">activity_led</span></span><br><span class="line">        <span class="attr">brightness:</span> <span class="number">100</span><span class="string">%</span></span><br><span class="line">        <span class="attr">red:</span> <span class="number">0</span><span class="string">%</span></span><br><span class="line">        <span class="attr">green:</span> <span class="number">0</span><span class="string">%</span></span><br><span class="line">        <span class="attr">blue:</span> <span class="number">100</span><span class="string">%</span></span><br><span class="line">        <span class="attr">flash_length:</span> <span class="string">500ms</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在 HA 中虚拟一个可以控制 LED 灯和蜂鸣器的开关</span></span><br><span class="line"><span class="attr">switch:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">template</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">"${friendly_name} Buzzer Enabled"</span></span><br><span class="line">  <span class="attr">id:</span> <span class="string">buzzer_enabled</span></span><br><span class="line">  <span class="attr">icon:</span> <span class="string">mdi:volume-high</span></span><br><span class="line">  <span class="attr">optimistic:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">restore_state:</span> <span class="literal">true</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">template</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">"${friendly_name} LED enabled"</span></span><br><span class="line">  <span class="attr">id:</span> <span class="string">led_enabled</span></span><br><span class="line">  <span class="attr">icon:</span> <span class="string">mdi:alarm-light-outline</span></span><br><span class="line">  <span class="attr">optimistic:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">restore_state:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启用 Home Assistant API</span></span><br><span class="line"><span class="attr">api:</span></span><br><span class="line">  <span class="attr">services:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">service:</span> <span class="string">rfidreader_tag_ok</span></span><br><span class="line">    <span class="attr">then:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">rtttl.play:</span> <span class="string">"beep:d=16,o=5,b=100:b"</span></span><br><span class="line"></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">service:</span> <span class="string">rfidreader_tag_ko</span></span><br><span class="line">    <span class="attr">then:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">rtttl.play:</span> <span class="string">"beep:d=8,o=5,b=100:b"</span></span><br><span class="line"></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">service:</span> <span class="string">play_rtttl</span></span><br><span class="line">    <span class="attr">variables:</span></span><br><span class="line">      <span class="attr">song_str:</span> <span class="string">string</span></span><br><span class="line">    <span class="attr">then:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">rtttl.play:</span> <span class="type">!lambda</span> <span class="string">'return song_str;'</span></span><br><span class="line"></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">service:</span> <span class="string">write_tag_random</span></span><br><span class="line">    <span class="attr">then:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">lambda:</span> <span class="string">|-</span></span><br><span class="line">        <span class="string">static</span> <span class="string">const</span> <span class="string">char</span> <span class="string">alphanum[]</span> <span class="string">=</span> <span class="string">"0123456789abcdef"</span><span class="string">;</span></span><br><span class="line">        <span class="string">std::string</span> <span class="string">uri</span> <span class="string">=</span> <span class="string">"https://www.home-assistant.io/tag/"</span><span class="string">;</span></span><br><span class="line">        <span class="string">for</span> <span class="string">(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i</span> <span class="string"><</span> <span class="number">8</span><span class="string">;</span> <span class="string">i++)</span></span><br><span class="line">          <span class="string">uri</span> <span class="string">+=</span> <span class="string">alphanum[random_uint32()</span> <span class="string">%</span> <span class="string">(sizeof(alphanum)</span> <span class="bullet">-</span> <span class="number">1</span><span class="string">)];</span></span><br><span class="line">        <span class="string">uri</span> <span class="string">+=</span> <span class="string">"-"</span><span class="string">;</span></span><br><span class="line">        <span class="string">for</span> <span class="string">(int</span> <span class="string">j</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">j</span> <span class="string"><</span> <span class="number">3</span><span class="string">;</span> <span class="string">j++)</span> <span class="string">{</span></span><br><span class="line">          <span class="string">for</span> <span class="string">(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i</span> <span class="string"><</span> <span class="number">4</span><span class="string">;</span> <span class="string">i++)</span></span><br><span class="line">            <span class="string">uri</span> <span class="string">+=</span> <span class="string">alphanum[random_uint32()</span> <span class="string">%</span> <span class="string">(sizeof(alphanum)</span> <span class="bullet">-</span> <span class="number">1</span><span class="string">)];</span></span><br><span class="line">          <span class="string">uri</span> <span class="string">+=</span> <span class="string">"-"</span><span class="string">;</span></span><br><span class="line">        <span class="string">}</span></span><br><span class="line">        <span class="string">for</span> <span class="string">(int</span> <span class="string">i</span> <span class="string">=</span> <span class="number">0</span><span class="string">;</span> <span class="string">i</span> <span class="string"><</span> <span class="number">12</span><span class="string">;</span> <span class="string">i++)</span></span><br><span class="line">          <span class="string">uri</span> <span class="string">+=</span> <span class="string">alphanum[random_uint32()</span> <span class="string">%</span> <span class="string">(sizeof(alphanum)</span> <span class="bullet">-</span> <span class="number">1</span><span class="string">)];</span></span><br><span class="line">        <span class="string">auto</span> <span class="string">message</span> <span class="string">=</span> <span class="string">new</span> <span class="string">nfc::NdefMessage();</span></span><br><span class="line">        <span class="string">message->add_uri_record(uri);</span></span><br><span class="line">        <span class="string">ESP_LOGD("tagreader",</span> <span class="string">"Writing payload: %s"</span><span class="string">,</span> <span class="string">uri.c_str());</span></span><br><span class="line">        <span class="string">id(pn532_board).write_mode(message);</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">service:</span> <span class="string">write_tag_id</span></span><br><span class="line">    <span class="attr">variables:</span></span><br><span class="line">      <span class="attr">tag_id:</span> <span class="string">string</span></span><br><span class="line">    <span class="attr">then:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">lambda:</span> <span class="string">|-</span></span><br><span class="line">        <span class="string">auto</span> <span class="string">message</span> <span class="string">=</span> <span class="string">new</span> <span class="string">nfc::NdefMessage();</span></span><br><span class="line">        <span class="string">std::string</span> <span class="string">uri</span> <span class="string">=</span> <span class="string">"https://www.home-assistant.io/tag/"</span><span class="string">;</span></span><br><span class="line">        <span class="string">uri</span> <span class="string">+=</span> <span class="string">tag_id;</span></span><br><span class="line">        <span class="string">message->add_uri_record(uri);</span></span><br><span class="line">        <span class="string">id(pn532_board).write_mode(message);</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">service:</span> <span class="string">clean_tag</span></span><br><span class="line">    <span class="attr">then:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">lambda:</span> <span class="string">'id(pn532_board).clean_mode();'</span></span><br><span class="line"></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">service:</span> <span class="string">cancel_writing</span></span><br><span class="line">    <span class="attr">then:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">lambda:</span> <span class="string">'id(pn532_board).read_mode();'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">i2c:</span></span><br><span class="line">  <span class="attr">scan:</span> <span class="literal">False</span></span><br><span class="line">  <span class="attr">frequency:</span> <span class="string">400kHz</span></span><br><span class="line"></span><br><span class="line"><span class="attr">pn532_i2c:</span></span><br><span class="line">  <span class="attr">id:</span> <span class="string">pn532_board</span></span><br><span class="line">  <span class="attr">on_tag:</span></span><br><span class="line">    <span class="attr">then:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">homeassistant.tag_scanned:</span> <span class="type">!lambda</span> <span class="string">|</span></span><br><span class="line">        <span class="string">if</span> <span class="string">(!tag.has_ndef_message())</span> <span class="string">{</span></span><br><span class="line">          <span class="string">ESP_LOGD("tagreader",</span> <span class="string">"No NDEF"</span><span class="string">);</span></span><br><span class="line">          <span class="string">return</span> <span class="string">x;</span></span><br><span class="line">        <span class="string">}</span></span><br><span class="line">        <span class="string">auto</span> <span class="string">message</span> <span class="string">=</span> <span class="string">tag.get_ndef_message();</span></span><br><span class="line">        <span class="string">auto</span> <span class="string">records</span> <span class="string">=</span> <span class="string">message->get_records();</span></span><br><span class="line">        <span class="string">for</span> <span class="string">(auto</span> <span class="string">&record</span> <span class="string">:</span> <span class="string">records)</span> <span class="string">{</span></span><br><span class="line">          <span class="string">std::string</span> <span class="string">payload</span> <span class="string">=</span> <span class="string">record->get_payload();</span></span><br><span class="line">          <span class="string">size_t</span> <span class="string">pos</span> <span class="string">=</span> <span class="string">payload.find("https://www.home-assistant.io/tag/");</span></span><br><span class="line">          <span class="string">if</span> <span class="string">(pos</span> <span class="string">!=</span> <span class="string">std::string::npos)</span> <span class="string">{</span></span><br><span class="line">            <span class="string">return</span> <span class="string">payload.substr(pos</span> <span class="string">+</span> <span class="number">34</span><span class="string">);</span></span><br><span class="line">          <span class="string">}</span></span><br><span class="line">        <span class="string">}</span></span><br><span class="line">        <span class="string">ESP_LOGD("tagreader",</span> <span class="string">"Bad NDEF, fallback to uid"</span><span class="string">);</span></span><br><span class="line">        <span class="string">return</span> <span class="string">x;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">if:</span></span><br><span class="line">        <span class="attr">condition:</span></span><br><span class="line">          <span class="attr">switch.is_on:</span> <span class="string">buzzer_enabled</span></span><br><span class="line">        <span class="attr">then:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">rtttl.play:</span> <span class="string">"success:d=24,o=5,b=100:c,g,b"</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">if:</span></span><br><span class="line">        <span class="attr">condition:</span></span><br><span class="line">          <span class="attr">switch.is_on:</span> <span class="string">led_enabled</span></span><br><span class="line">        <span class="attr">then:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">light.turn_on:</span></span><br><span class="line">            <span class="attr">id:</span> <span class="string">activity_led</span></span><br><span class="line">            <span class="attr">brightness:</span> <span class="number">100</span><span class="string">%</span></span><br><span class="line">            <span class="attr">red:</span> <span class="number">0</span><span class="string">%</span></span><br><span class="line">            <span class="attr">green:</span> <span class="number">100</span><span class="string">%</span></span><br><span class="line">            <span class="attr">blue:</span> <span class="number">0</span><span class="string">%</span></span><br><span class="line">            <span class="attr">flash_length:</span> <span class="string">500ms</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义蜂鸣器输出所在端口</span></span><br><span class="line"><span class="attr">output:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">esp8266_pwm</span></span><br><span class="line">  <span class="attr">pin:</span> <span class="string">D7</span></span><br><span class="line">  <span class="attr">id:</span> <span class="string">buzzer</span></span><br><span class="line"></span><br><span class="line"><span class="attr">binary_sensor:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">status</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">"${friendly_name} Status"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义蜂鸣器作为 RTTTL 输出</span></span><br><span class="line"><span class="attr">rtttl:</span></span><br><span class="line">  <span class="attr">output:</span> <span class="string">buzzer</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># LED 配置</span></span><br><span class="line"><span class="attr">light:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">platform:</span> <span class="string">fastled_clockless</span></span><br><span class="line">  <span class="attr">chipset:</span> <span class="string">WS2812</span></span><br><span class="line">  <span class="attr">pin:</span> <span class="string">D8</span></span><br><span class="line">  <span class="attr">default_transition_length:</span> <span class="string">10ms</span></span><br><span class="line">  <span class="attr">num_leds:</span> <span class="number">1</span></span><br><span class="line">  <span class="attr">rgb_order:</span> <span class="string">GRB</span></span><br><span class="line">  <span class="attr">id:</span> <span class="string">activity_led</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">"${friendly_name} LED"</span></span><br><span class="line">  <span class="attr">restore_mode:</span> <span class="string">ALWAYS_OFF</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>之后编译并下载固件，使用 <a href="https://github.com/marcelstoer/nodemcu-pyflasher" target="_blank" rel="noopener">NodeMCU PyFlasher</a> 将固件刷入 ESP8266/D1 Mini。</p>
+<h2 id="连线"><a href="#连线" class="headerlink" title="连线"></a>连线</h2><p>按照以下将 ESP8266 与 PN532 连线：</p>
+<table>
+<thead>
+<tr>
+<th>PN532</th>
+<th>ESP8266</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GND</td>
+<td>G</td>
+</tr>
+<tr>
+<td>VCC</td>
+<td>VIN</td>
+</tr>
+<tr>
+<td>SDA</td>
+<td>D2</td>
+</tr>
+<tr>
+<td>SCL</td>
+<td>D1</td>
+</tr>
+</tbody></table>
+<p>LED 等与蜂鸣器可以按照以下连线：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nfc_reader_schematics.png" alt="nfc_reader_schematics" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nfc_reader_schematics.png" data-index="2"></p>
+<p>最终效果如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nfc_reader_inside.jpg" alt="nfc_reader_inside" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nfc_reader_inside.jpg" data-index="3"></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>确保 Home Assistant版本在 0.115 及以上，待 NFC 读取器连接到与 HA 同一网络，Home Assistant 会自动發现 NFC 读取器。</p>
+<p>之后从 Home Assistant 中的标籤界面中可以管理扫描的标籤（在 config->tag 下可以找到。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nfc_reader_ui.gif" alt="nfc_reader_ui" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic3@master/uPic/nfc_reader_ui.gif" data-index="4"></p>
+
+                </article>
+                <ul class="tags-postTags">
+                    
+                    <li>
+                        <a href="/tags/Home-Assistant/" rel="tag"># Home Assistant</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+    <nav id="gobottom" class="pagination">
+        
+        <a class="prev-post" title="HA 联动像素钟" href="/awtrix_api/">
+            ← HA 联动像素钟
+        </a>
+        
+        <span class="prev-next-post">·</span>
+        
+        <a class="next-post" title="使用笔记模板高效工作" href="/note_template/">
+            使用笔记模板高效工作 →
+        </a>
+        
+    </nav>
+
+    
+    <div class="inner">
+        <div id="comment"></div>
+    </div>
+    
+</div>
+
+<div class="toc-bar">
+    <div class="toc-btn-bar">
+        <a href="#site-main" class="toc-btn">
+            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M793.024 710.272a32 32 0 1 0 45.952-44.544l-310.304-320a32 32 0 0 0-46.4 0.48l-297.696 320a32 32 0 0 0 46.848 43.584l274.752-295.328 286.848 295.808z"/></svg>
+        </a>
+        <div class="toc-btn toc-switch">
+            <svg class="toc-open" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M779.776 480h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M779.776 672h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M256 288a32 32 0 1 0 0 64 32 32 0 0 0 0-64M392.576 352h387.2a32 32 0 0 0 0-64h-387.2a32 32 0 0 0 0 64M256 480a32 32 0 1 0 0 64 32 32 0 0 0 0-64M256 672a32 32 0 1 0 0 64 32 32 0 0 0 0-64"/></svg>
+            <svg class="toc-close hide" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M512 960c-247.039484 0-448-200.960516-448-448S264.960516 64 512 64 960 264.960516 960 512 759.039484 960 512 960zM512 128.287273c-211.584464 0-383.712727 172.128262-383.712727 383.712727 0 211.551781 172.128262 383.712727 383.712727 383.712727 211.551781 0 383.712727-172.159226 383.712727-383.712727C895.712727 300.415536 723.551781 128.287273 512 128.287273z"/><path d="M557.05545 513.376159l138.367639-136.864185c12.576374-12.416396 12.672705-32.671738 0.25631-45.248112s-32.704421-12.672705-45.248112-0.25631l-138.560301 137.024163-136.447897-136.864185c-12.512727-12.512727-32.735385-12.576374-45.248112-0.063647-12.512727 12.480043-12.54369 32.735385-0.063647 45.248112l136.255235 136.671523-137.376804 135.904314c-12.576374 12.447359-12.672705 32.671738-0.25631 45.248112 6.271845 6.335493 14.496116 9.504099 22.751351 9.504099 8.12794 0 16.25588-3.103239 22.496761-9.247789l137.567746-136.064292 138.687596 139.136568c6.240882 6.271845 14.432469 9.407768 22.65674 9.407768 8.191587 0 16.352211-3.135923 22.591372-9.34412 12.512727-12.480043 12.54369-32.704421 0.063647-45.248112L557.05545 513.376159z"/></svg>
+        </div>
+        <a href="#gobottom" class="toc-btn">
+            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M231.424 346.208a32 32 0 0 0-46.848 43.584l297.696 320a32 32 0 0 0 46.4 0.48l310.304-320a32 32 0 1 0-45.952-44.544l-286.848 295.808-274.752-295.36z"/></svg>
+        </a>
+    </div>
+    <div class="toc-main">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#所需材料"><span class="toc-text">所需材料</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#刷机"><span class="toc-text">刷机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#连线"><span class="toc-text">连线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-text">使用</span></a></li></ol>
+    </div>
+</div>
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+	</div>
+	
+
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+            
+            
+        </div>
+    </div>
+</aside>
+
+	
+
+
+
+
+<div id="search" class="search-overlay">
+    <div class="search-form">
+        
+        <div class="search-overlay-logo">
+        	<img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/favicon_256px.ico" alt="庄菲什">
+        </div>
+        
+        <input id="local-search-input" class="search-input" type="text" name="search" placeholder="搜索 ...">
+        <a class="search-overlay-close" href="#"></a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+<footer class="site-footer outer">
+	<div class="site-footer-content inner">
+		<div class="copyright">
+			<a href="/" title="庄菲什">庄菲什 © 2021</a>
+			
+				
+			        <span hidden="true" id="/nfc_reader/" class="leancloud-visitors" data-flag-title="自制 NFC 读卡器接入 HA">
+			            <span>阅读量 </span>
+			            <span class="leancloud-visitors-count">0</span>
+			        </span>
+	    		
+    		
+		</div>
+		<nav class="site-footer-nav">
+			
+			<a href="https://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+			<a href="https://github.com/xzhih/hexo-theme-casper" title="Casper" target="_blank" rel="noopener">Casper</a>
+		</nav>
+	</div>
+</footer>
+	
+
+
+<script>
+    if(window.navigator && navigator.serviceWorker) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            for(let registration of registrations) {
+                registration.unregister()
+            }
+        })
+    }
+</script>
+
+
+<script id="scriptLoad" src="/js/allinone.min.js" async></script>
+
+
+<script>
+    document.getElementById('scriptLoad').addEventListener('load', function () {
+        
+        
+
+        
+        
+
+        
+        
+        
+            searchFunc("/");
+        
+        
+    })
+</script>
+
+
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+
+
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+
+
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+
+
+
+<script id="valineScript" src="//unpkg.com/valine/dist/Valine.min.js" async></script>
+<script>
+    document.getElementById('valineScript').addEventListener("load", function() {
+        new Valine({
+            el: '#comment' ,
+            verify: false,
+            notify: true,
+            appId: 'KaLeKV30O7K4JhSXpYQpglJ7-MdYXbMMI',
+            appKey: 'z7kF0mNJaUFYzbjJWdzwPDq8',
+            placeholder: '留下您的评论',
+            pageSize: 10,
+            avatar: 'hide',
+            visitor: true
+        })
+    });
+</script>
+
+
+
+
+
+
+
+</body></html>
