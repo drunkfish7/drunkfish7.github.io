@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-06-15T05:06:10.387Z</updated>
+  <updated>2021-09-11T15:19:56.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一分钟给卷珠帘加「魔法」</title>
+    <link href="http://yoursite.com/roller_blind/"/>
+    <id>http://yoursite.com/roller_blind/</id>
+    <published>2021-09-30T00:00:00.000Z</published>
+    <updated>2021-09-11T15:19:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic4@master/uPic/roller_blind_cover.png" alt="roller_blind_cover"></p><blockquote><p>我在冰封的深海，找寻希望的缺口。却在午夜惊醒时，蓦然瞥见绝美的月光。——幾米《我的心中每天开出一朵花》</p></blockquote><p>几千年以来，窗帘与人类的生存空间共存，从最简单的兽皮、草席到现在风格与款式的千变万化。窗帘给我们提供遮光、隔熱、保护隱私的功能，在一定程度可以抑制噪音，在白天帮助唤醒，晚上幫助我们睡眠。</p><p>众多窗帘中，可以更加精细化调整光线的窗帘是卷珠帘、百叶帘。相较于卷珠帘可以通过上下调整透光量、百叶帘还可以通过调整窗叶的角度精细调整光线，以上两种窗帘都可以通过卷帘的机械装置向下拉动卷珠调整窗帘透光大小。</p><p>如果卷珠帘接入家庭自动化，就可以根据不同时间调整进入房间的光线，提升每天的生活品质。坊间有不少厂商有出电动窗帘（如<a href="https://www.ikea.cn/cn/zh/cat/dian-dong-juan-lian-44531/" target="_blank" rel="noopener">宜家的电动卷帘</a>），大多数需要整体换窗帘。</p><p>小弟最近有用 <a href="https://detail.tmall.com/item.htm?id=646026082368" target="_blank" rel="noopener">Zemismart 的卷珠帘外挂</a>，可以免去窗帘轨道等一系列繁琐步骤，快速将卷珠帘接入家居自动化平台，赋予卷珠帘「魔法」。</p><h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><p>Zemismart 的卷珠帘外挂由电机、遥控器、发射器、转轴齿轮配件组成。电机转动卷珠（可通过转轴齿轮配件适配不同卷珠），发射器与遥控器可发送转动指令，发射器可将窗帘接入到各语音平台。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic4@master/uPic/roller_blind_pic.png" alt="roller_blind_pic"></p><p>基于巧妙的设计，Zemismart 的这个外挂适配市面上几乎所有用卷珠帘滚轮机械的各种 blind，如百叶帘（Venetian blind）、垂直帘（Vertical blind）、蜂窝帘（Honeycomb blind）等，以及各种 shade，如三色帘（Triple shade）、卷帘（Roller shade）、斑马帘（Zebra shade）等。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic4@master/uPic/roller_blind_type.png" alt="roller_blind_type"></p><p>另外比较酷的是，这款产品已内置电池，无需考虑插座布线供电。</p><h2 id="安装与接入-OEM"><a href="#安装与接入-OEM" class="headerlink" title="安装与接入 OEM"></a>安装与接入 OEM</h2><h3 id="版本差异"><a href="#版本差异" class="headerlink" title="版本差异"></a>版本差异</h3><p>产品有分涂鸦版与米家版：涂鸦版使用的是 915mHz 射频，发射器是涂鸦固件，可通过涂鸦固件对接天猫、Amazon Alexa、Google Assistant等语音平台。米家版使用的是蓝牙协议，可直接接入米家 App，与米家生态的各种设备联动。两版本均无法直接接入 Apple HomeKit，但可以通过 Shortcuts 使用 Siri 语音命令控制。两版本除协议及固件有差异，其余无显著差异。</p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>相较于其他的窗帘需要换轨道的复杂繁琐操作，这款产品安装很简单。首先使用卡针长按电机的「set」键（这个键确切地说是 power 键）待蓝色灯闪烁一下即开机。此时按动电机上的按钮齿轮即转动，按动遥控器按钮齿轮也可转动。</p><p>将将电机头部的外壳取出，卷珠帘的卷珠套入电机齿轮，看齿轮可否带动卷珠转动，带不动可更换转轴配件。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic4@master/uPic/roller_blind_roller.png" alt="roller_blind_roller"></p><p>套好卷珠后可将电机用胶或者用附送的螺丝将电机固定在墙上，注意将卷珠及电机在同一平面，即窗帘与卷珠尽量保持垂直，电机后的背板的后盖底部轻向上掀可以分离，另外，产品有附盖板贴纸帮助确定打孔或粘贴位置。背板固定好之后，将电机挂好珠子，电机卡进背板，完成即完成，</p><h3 id="接入米家-App"><a href="#接入米家-App" class="headerlink" title="接入米家 App"></a>接入米家 App</h3><p>米家版接入米家 App 很简单，首先将发射器通电，用卡针长按上面的「set」键约 5 秒，待蓝灯闪烁。</p><p>打开米家 App ，点击右上角「+」选择「扫描」中可以扫描到（请确保系统蓝牙已打开且授权米家 App 使用蓝牙），</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic4@master/uPic/roller_blind_mijia1.png" alt="roller_blind_mijia1"></p><p>之后按步骤填入 WiFi 名称及密码即可，注意 WiFi 确保是 2.5Ghz。</p><p>接入之后可以设定上下滚动距离，在窗帘页面右上角点击「…」，进入设置页面选择「设置距离」，进入「距离设置」页面，可以先清除距离设置，将窗帘手拉至最低或最高，之后按动电机或遥控器将窗帘升或降至最高或最低，按下遥控器的「暂停」键，并在 App 中点击「最低」或「最高」，设置好最高后依法配置最低点。另外，「设置」页面还有一个翻转选项，可以按实际是否打开，使最终 App 中的「打开窗帘」与实际的「打开窗帘」一致。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic4@master/uPic/roller_blind_mijia2.png" alt="roller_blind_mijia2"></p><h3 id="接入涂鸦-App"><a href="#接入涂鸦-App" class="headerlink" title="接入涂鸦 App"></a>接入涂鸦 App</h3><p>若使用天猫等语音助理，可以通过先接入涂鸦 App 再对接语音平台，首先将发射器插入 USB 充电器，用卡针长按「set」键约 5 秒，看到蓝灯闪烁。</p><p>下载安装 Tuya Smart 应用，点击右上角「+」按钮，选择「小型家庭装置」中的「窗帘 Wifi」，之后按步骤填入 WiFi 名称及密码，注意 WiFi 确保是 2.5Ghz。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic4@master/uPic/roller_blind_tuya1.png" alt="roller_blind_tuya·"></p><p>接入之后可以设定上下滚动距离，在窗帘页面右上角点击「更多」，进入设置页面选择「设置距离→「上限设置」，可以先清除距离设置，将窗帘手拉至最低或最高，之后按动电机或遥控器将窗帘升或降至最高或最低，按下遥控器的「暂停」键，并在 App 中点击「最低」或「最高」，设置好最高后依法配置最低点。另外，「设置」页面还有一个翻转选项，可以按实际是否打开，使最终 App 中的「打开窗帘」与实际的「打开窗帘」一致。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic4@master/uPic/roller_blind_tuya2.png" alt="roller_blind_tuya2"></p><h2 id="小贴士"><a href="#小贴士" class="headerlink" title="小贴士"></a>小贴士</h2><p>1、电机转速有两档</p><p>这款产品转速有两档，默认按下「上升」键是慢速，转速慢且噪音小，再次按下「上升」键是快速，转速快且噪音稍大。快速、慢速上升下降在电机按钮、遥控器及 App 中均适用。</p><p>2、米家版联动示例</p><p>如果之前有买过米家生态的产品，米家版的可以与之前购买的产品一起使用，产生最大收益，联动示例：</p><ul><li>定时开关窗帘</li><li>使用米家无线开关、米家魔方控制窗帘开关</li><li>当气温超过 35℃ 时自动关闭窗帘</li><li>当打开空调时自动关闭窗帘</li><li>设置「晚安」模式关闭窗帘</li></ul><p>3、遥控器背板有附磁铁</p><p>遥控器背板有附磁铁，可吸附在含铁的背板上（如冰箱上）防止找不到。</p><h2 id="使用-Siri-控制窗帘"><a href="#使用-Siri-控制窗帘" class="headerlink" title="使用 Siri 控制窗帘"></a>使用 Siri 控制窗帘</h2><p>窗帘外挂无法直接接入 Apple HomeKit，但可以通过 Shortcuts 使用 Siri 语音命令控制。</p><h3 id="米家使用-Siri"><a href="#米家使用-Siri" class="headerlink" title="米家使用 Siri"></a>米家使用 Siri</h3><p>米家版使用 Siri 控制主要有两个步骤：</p><p>首先新建一个「手动执行窗帘打开/关闭」的自动化，在米家 App 首页点击「自动化」标签，之后点击右上角「+」按钮，在条件中选择「手动执行」，行动中选择「Zemismart 窗帘」，之后选择动作并保存。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic4@master/uPic/roller_blind_mijia3.png" alt="roller_blind_mijia3"></p><p>之后在「自动化」标签中可以看到新建的自动化，点击右上角的「添加至 Siri」入口，输入语音命令如「帮我打开窗帘」之后保存。保存好之后可以试试用 Siri 是否可以正常启动命令。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic4@master/uPic/roller_blind_mijia4.png" alt="roller_blind_mijia4"></p><h3 id="涂鸦使用-Siri"><a href="#涂鸦使用-Siri" class="headerlink" title="涂鸦使用 Siri"></a>涂鸦使用 Siri</h3><p>涂鸦版使用 Siri 控制与米家版相似，也是新建一个「手动执行窗帘打开/关闭」的自动化，再将这个命令添加至 Siri。</p><h2 id="接入-Home-Assistant"><a href="#接入-Home-Assistant" class="headerlink" title="接入 Home Assistant"></a>接入 Home Assistant</h2><p>米家固件、涂鸦固件都支持接入 Home Assistant。</p><h3 id="使用涂鸦组件接入"><a href="#使用涂鸦组件接入" class="headerlink" title="使用涂鸦组件接入"></a>使用涂鸦组件接入</h3><p>目前涂鸦组件接入有三种方式，旧涂鸦组件、涂鸦组件 v2 及 <a href="https://github.com/rospogrigio/localtuya" target="_blank" rel="noopener">localtuya</a>。最简单的是旧涂鸦组件，直接在 integration 中搜索「tuya」，带组件安装完成后输入国家编号、涂鸦用户名邮箱、涂鸦密码即可。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic4@master/uPic/roller_blind_ha1.png" alt="roller_blind_ha1"></p><p>添加后可以看到添加的窗帘设备，不过似乎不能百分比控制。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic4@master/uPic/roller_blind_ha2.png" alt="roller_blind_ha2"></p><p>涂鸦组件 v2 是涂鸦官方与 Home Assistant 出的组件，需要先在 HACS 或手动安装。</p><p>localtuya 是本地获取涂鸦设备 token，免连涂鸦服务器，相应更迅速，隐私性更好，需要先在 HACS 或手动安装，之后获取设备 token，由此接入窗帘支持百分比控制。</p><h3 id="使用-Miiot-组件接入"><a href="#使用-Miiot-组件接入" class="headerlink" title="使用 Miiot 组件接入"></a>使用 Miiot 组件接入</h3><p>米家设备接入 Home Assistant 方式很多，比较简单的是利用 <a href="https://github.com/al-one/hass-xiaomi-miot" target="_blank" rel="noopener">Xiaomi Miot Auto</a>，可以手动或在 HACS 安装，</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic4@master/uPic/roller_blind_ha3.png" alt="roller_blind_ha3"></p><p>重启后在在 integration 中搜索「xiaomi」，选择「Xiaomi Miot Auto」，填写小米账号及密码，国家选择「中国」即可将米家设备接入 Home Assistant。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic4@master/uPic/roller_blind_ha4.png" alt="roller_blind_ha4"></p><p>接入后可以看到窗帘设备，暂时不支持百分比控制。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic4@master/uPic/roller_blind_ha5.png" alt="roller_blind_ha5"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/drunkfish7/pic4@master/uPic/roller_blind_cover.png&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Home Assistant" scheme="http://yoursite.com/tags/Home-Assistant/"/>
+    
+  </entry>
   
   <entry>
     <title>电视增加超酷的 Ambilight</title>
