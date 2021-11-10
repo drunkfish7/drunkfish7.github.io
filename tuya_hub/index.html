@@ -172,18 +172,20 @@
 <h2 id="外观"><a href="#外观" class="headerlink" title="外观"></a>外观</h2><p>就像路由器的性能比外观重要，网关的外观与功能相比也很次要，但是好的外观还是可以吸引到人。这款网关很小巧，整体是一个扁平的圆柱体，透露着简洁，全白的外观，整体非常有质感，侧边有一圈指示灯，总体看上去觉有点像压扁的 <a href="https://store.google.com/us/product/google_wifi_2nd_gen?hl=en-US" target="_blank" rel="noopener">Google Wifi</a>，接口方面有一个 microUSB 电源口和一个以太网口。除了网关本体，另有附赠一个底座、一条 microUSB 充电线、一根网线与三颗螺丝。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic4@master/uPic/tuya_hub_package.jpg" alt="tuya_hub_package" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic4@master/uPic/tuya_hub_package.jpg" data-index="1"></p>
 <h2 id="入网"><a href="#入网" class="headerlink" title="入网"></a>入网</h2><p>这个网关入网流程很简单。首先将网关通电，网关未附电源，可以用手机的 5V 1A 豆腐头充电器，通电同时用网线将网关与路由器连接（附的网线较短，可能需要另找一根网线），之后长按以太网口旁边的「重置」按钮，网关进入配对状态，指示灯同时变成绿色。</p>
-<p>HomeKit 认证设备通过贴纸（二维码或 NFC 贴纸）配对入网，这个网关在贴在网关底部、包装盒、说明书都有贴二维码贴纸，打开使用 iOS 或 iPadOS 设备的「家庭」应用，选择右上角的「＋」，选择「添加配件」，扫描或输入配对码进入配对流程，整个过程按步骤操作即可将网关接入。</p>
+<p>HomeKit 认证设备通过贴纸（二维码或 NFC 贴纸）配对入网，这个网关在网关底部、包装盒、说明书都有贴二维码贴纸，打开使用 iOS 或 iPadOS 设备的「家庭」应用，选择右上角的「＋」，选择「添加配件」，扫描或输入配对码进入配对流程，整个过程按步骤操作即可将网关接入。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic4@master/uPic/tuya_hub_pair.png" alt="tuya_hub_pair" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic4@master/uPic/tuya_hub_pair.png" data-index="2"></p>
-<h2 id="添加子设备"><a href="#添加子设备" class="headerlink" title="添加子设备"></a>添加子设备</h2><h3 id="可配对的子设备"><a href="#可配对的子设备" class="headerlink" title="可配对的子设备"></a>可配对的子设备</h3><p>这个网关可以将涂鸦 Zigbee 设备接入，涂鸦 Zigbee 设备特点是品类覆盖广、价格亲民，选择很多，涂鸦固件较开放，只要商品名称中有关键词「涂鸦 Zigbee」的设备理论上就可以接入，不需要是同一个品牌。涂鸦 Zigbee 设备品类很多，在涂鸦 App 中列出的 Zigbee 设备就有 56 种之多，覆盖了开关、传感器、窗帘等除电表箱、洗衣机大家电之外的几乎所有品类。</p>
+<h2 id="添加子设备"><a href="#添加子设备" class="headerlink" title="添加子设备"></a>添加子设备</h2><h3 id="可配对的子设备"><a href="#可配对的子设备" class="headerlink" title="可配对的子设备"></a>可配对的子设备</h3><p>网关目前只要是涂鸦标准方案的 Zigbee 设备理论上就可以接入，不需要是同一个品牌。涂鸦 Zigbee 设备的一个特点是品类覆盖广，在涂鸦 App 中列出的 Zigbee 设备就有 56 种之多，覆盖了开关、传感器、窗帘等除电冰箱、洗衣机大家电之外的几乎所有品类。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic4@master/uPic/tuya_hub_child.png" alt="tuya_hub_child" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic4@master/uPic/tuya_hub_child.png" data-index="3"></p>
-<p>除了品类丰富，涂鸦固件的设备价格都很亲民，性价比普遍较高。</p>
-<h3 id="配对流程"><a href="#配对流程" class="headerlink" title="配对流程"></a>配对流程</h3><p>子设备进入配对模式后可以配对网关，不同品类进入配对模式不尽相同，如传感器大多是装好电池长按复位键 5 秒就可以进入配对状态（具体可查阅设备附的说明书）。推荐使用涂鸦 App 接入，通过 HomeKit 入网后打开涂鸦 App 可以直接发现设备，点击「添加」即可将网关绑定至涂鸦账号，之后按照说明可添加各个子设备。</p>
+<p>需要注意的是，涂鸦厂商采用自定义固件或厂商固件，这些「非标准」固件由开发者或厂商维护，其中可能与这个网关连不上。即便如此，可选的设备还是有很多。</p>
+<p>除了品类丰富，涂鸦固件的设备另外一个特点是价格亲民，性价比普遍较高。</p>
+<h3 id="配对流程"><a href="#配对流程" class="headerlink" title="配对流程"></a>配对流程</h3><p>子设备进入配对模式后可以配对网关，不同品类进入配对模式不尽相同，如传感器大多是装好电池长按复位键 5 秒就可以进入配对状态（具体可查阅设备附的说明书或设备标识）。</p>
+<p>推荐使用涂鸦 App 配对子设备，通过 HomeKit 入网后打开涂鸦 App 可以直接发现设备，点击「添加」即可将网关绑定至涂鸦账号，之后按照说明可添加各个子设备。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic4@master/uPic/tuya_hub_child_pair.png" alt="tuya_hub_child_pair" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic4@master/uPic/tuya_hub_child_pair.png" data-index="4"></p>
 <p>在涂鸦添加的子设备也会同步显示在 HomeKit 中。小弟有尝试涂鸦的温湿度传感器与门磁传感器，均可顺利接入。</p>
-<h2 id="自动化与外网控制"><a href="#自动化与外网控制" class="headerlink" title="自动化与外网控制"></a>自动化与外网控制</h2><p>子设备接入 Homekit 后就可以使用 Siri 或 「家庭」应用控制和查看状态了，由于 HomeKit 生态的特殊性，自动化需要另外配置。</p>
-<h3 id="通过苹果「家庭中枢」"><a href="#通过苹果「家庭中枢」" class="headerlink" title="通过苹果「家庭中枢」"></a>通过苹果「家庭中枢」</h3><p>如果想完整体验 HomeKit 生态，可以利用苹果定义的「家庭中枢」实现自动化，这样做的前提是要有 HomePod、iPad 或 Apple TV  其中一个设备放在家里作为中枢，中枢在本地实现自动化和外网访问。</p>
+<h2 id="自动化与外网控制"><a href="#自动化与外网控制" class="headerlink" title="自动化与外网控制"></a>自动化与外网控制</h2><p>子设备接入 Homekit 后就可以使用 Siri 或 「家庭」应用控制和查看状态了，由于 HomeKit 生态的特殊性，自动化及场景设置有两种方式：</p>
+<h3 id="通过苹果「家庭中枢」"><a href="#通过苹果「家庭中枢」" class="headerlink" title="通过苹果「家庭中枢」"></a>通过苹果「家庭中枢」</h3><p>如果想完整体验 HomeKit 生态，可以利用苹果定义的「家庭中枢」实现自动化，这样做的前提是要有 HomePod、iPad 或 Apple TV  其中一个设备放在家里作为家庭中枢，家庭中枢在本地网络实现自动化和外网访问。</p>
 <h3 id="通过涂鸦-App"><a href="#通过涂鸦-App" class="headerlink" title="通过涂鸦 App"></a>通过涂鸦 App</h3><p>如果没有苹果的家庭中枢设备，可以使用涂鸦 App 的自动化功能。无需额外设备，在涂鸦 App 就可以设置各种自动化。</p>
-<p>两种方式的区别在于家庭中枢的自动化是本地控制，涂鸦 App 的自动化是连接到涂鸦的服务器。就执行效率来说，苹果家庭中枢会更快，且由于本地控制，即使断网，家庭中枢的自动化仍可正常运行</p>
+<p>两种方式的区别在于家庭中枢的自动化是本地控制，涂鸦 App 的自动化是连接到涂鸦的服务器。就执行效率来说，苹果家庭中枢会更快，且由于本地控制，即使断网，家庭中枢的自动化仍可正常运行。</p>
 
                 </article>
                 <ul class="tags-postTags">
