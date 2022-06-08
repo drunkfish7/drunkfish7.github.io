@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-
-
-
-
-
-
-
-<head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!DOCTYPE html><html lang="zh-CN"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="preconnect" href="//www.googletagmanager.com">
 	<link rel="preconnect" href="//zz.bdstatic.com">
 	<link rel="preconnect" href="//sp0.baidu.com">
@@ -22,32 +13,40 @@
 
 	<title>群晖虚拟机安装软路由 | 庄菲什</title>
 
-	<meta name="HandheldFriendly" content="True" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+	<meta name="HandheldFriendly" content="True">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 	<meta name="generator" content="hexo">
 	<meta name="author" content="drunkfish">
-	<meta name="description" content="">
+	<meta name="description" content>
 
+	
+
+	
+	<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/favicon_256px.ico">
+	<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/favicon_256px.ico">
+	
+
+	
+	<meta name="theme-color" content="#3c484e">
+	<meta name="msapplication-TileColor" content="#3c484e">
 	
 
 	
 
 	
-
-	
-
+	<link rel="alternate" href="/atom.xml" title="庄菲什">
 	
 
 	<meta property="og:site_name" content="庄菲什">
 	<meta property="og:type" content="article">
 	<meta property="og:title" content="群晖虚拟机安装软路由 | 庄菲什">
-	<meta property="og:description" content="">
+	<meta property="og:description" content>
 	<meta property="og:url" content="http://yoursite.com/openwrt/">
 
 	
-	<meta property="article:published_time" content="2020-02-01T00:02:00+08:00"/> 
+	<meta property="article:published_time" content="2020-02-01T00:02:00+08:00"> 
 	<meta property="article:author" content="drunkfish">
-	<meta property="article:published_first" content="庄菲什, /openwrt/" />
+	<meta property="article:published_first" content="庄菲什, /openwrt/">
 	
 
 	
@@ -56,6 +55,14 @@
 <link rel="stylesheet" href="/css/allinonecss.min.css">
 
 
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156013706-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-156013706-1');
+	</script>
 	
 	
 	
@@ -80,16 +87,49 @@
                 
             </li>
             
+            
+            <li>
+                <a href="/about" title="ABOUT">ABOUT</a>
+            </li>
+            
+            
         </ul> 
+    </div>
+    
+    <div class="search-button-area">
+        <a href="#search" class="search-button">Search ...</a>
     </div>
      
     <div class="site-nav-right">
+        
+        <a href="#search" class="search-button">Search ...</a>
          
         
-<div class="social-links" >
+<div class="social-links">
+    
+    <a class="social-link" title="weibo" href="https://weibo.com/drunkfish9" target="_blank" rel="noopener">
+        <svg viewBox="0 0 1141 1024" xmlns="http://www.w3.org/2000/svg"><path d="M916.48 518.144q27.648 21.504 38.912 51.712t9.216 62.976-14.336 65.536-31.744 59.392q-34.816 48.128-78.848 81.92t-91.136 56.32-94.72 35.328-89.6 18.944-75.264 7.68-51.712 1.536-49.152-2.56-68.096-10.24-78.336-21.504-79.872-36.352-74.24-55.296-59.904-78.848q-16.384-29.696-22.016-63.488t-5.632-86.016q0-22.528 7.68-51.2t27.136-63.488 53.248-75.776 86.016-90.112q51.2-48.128 105.984-85.504t117.248-57.856q28.672-10.24 63.488-11.264t57.344 11.264q10.24 11.264 19.456 23.04t12.288 29.184q3.072 14.336 0.512 27.648t-5.632 26.624-5.12 25.6 2.048 22.528q17.408 2.048 33.792-1.536t31.744-9.216 31.232-11.776 33.28-9.216q27.648-5.12 54.784-4.608t49.152 7.68 36.352 22.016 17.408 38.4q2.048 14.336-2.048 26.624t-8.704 23.04-7.168 22.016 1.536 23.552q3.072 7.168 14.848 13.312t27.136 12.288 32.256 13.312 29.184 16.384zM658.432 836.608q26.624-16.384 53.76-45.056t44.032-64 18.944-75.776-20.48-81.408q-19.456-33.792-47.616-57.344t-62.976-37.376-74.24-19.968-80.384-6.144q-78.848 0-139.776 16.384t-105.472 43.008-72.192 60.416-38.912 68.608q-11.264 33.792-6.656 67.072t20.992 62.976 42.496 53.248 57.856 37.888q58.368 25.6 119.296 32.256t116.224 0.512 100.864-21.504 74.24-33.792zM524.288 513.024q20.48 8.192 38.912 18.432t32.768 27.648q10.24 12.288 17.92 30.72t10.752 39.424 1.536 42.496-9.728 38.912q-8.192 18.432-19.968 37.376t-28.672 35.328-40.448 29.184-57.344 18.944q-61.44 11.264-117.76-11.264t-88.064-74.752q-12.288-39.936-13.312-70.656t16.384-66.56q13.312-27.648 40.448-51.712t62.464-38.912 75.264-17.408 78.848 12.8zM361.472 764.928q37.888 3.072 57.856-18.432t21.504-48.128-15.36-47.616-52.736-16.896q-27.648 3.072-43.008 23.552t-17.408 43.52 9.728 42.496 39.424 21.504zM780.288 6.144q74.752 0 139.776 19.968t113.664 57.856 76.288 92.16 27.648 122.88q0 33.792-16.384 50.688t-35.328 17.408-35.328-14.336-16.384-45.568q0-40.96-22.528-77.824t-59.392-64.512-84.48-43.52-96.768-15.872q-31.744 0-47.104-15.36t-14.336-34.304 18.944-34.304 51.712-15.36zM780.288 169.984q95.232 0 144.384 48.64t49.152 146.944q0 30.72-10.24 43.52t-22.528 11.264-22.528-14.848-10.24-35.84q0-60.416-34.816-96.256t-93.184-35.84q-19.456 0-28.672-10.752t-9.216-23.04 9.728-23.04 28.16-10.752z"/></svg>
+    </a>
+    
+    
+    <a class="social-link" title="github" href="https://drunkfish.me/atom.xml" target="_blank" rel="noopener">
+        <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 24.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="RSSicon" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 256 256" style="enable-background:new 0 0 256 256;" space="preserve">
+<title>RSS feed icon</title>
+<circle cx="64" cy="192" r="32"/>
+<path d="M32,128c53,0,96,43,96,96h32c0-70.7-57.3-128-128-128V128z"/>
+<path d="M32,64c88.4,0,160,71.6,160,160h32c0-106-86-192-192-192V64z"/>
+</svg>
+
+    </a>
     
     
     
+    <a class="social-link" title="twitter" href="https://twitter.com/drunkfish999" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+    </a>
     
     
     
@@ -105,7 +145,7 @@
     <div class="inner">
         <header class="post-full-header">
             <div class="post-full-meta">
-                <time  class="post-full-meta-date" datetime="2020-02-01T00:00:00.000Z">
+                <time class="post-full-meta-date" datetime="2020-02-01T00:00:00.000Z">
                     2020-02-1
                 </time>
                 
@@ -119,7 +159,7 @@
             
             <div class="post-full-content">
                 <article id="photoswipe" class="markdown-body">
-                    <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt_cover.png" alt="openwrt_cover"></p>
+                    <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt_cover.png" alt="openwrt_cover" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt_cover.png" data-index="0"></p>
 <blockquote>
 <p>我外表是胖，但内在的我是瘦的。你有没有想到过每个胖人的内部都有个瘦人，就像有人所说，每块石头里都有座雕像？</p>
 </blockquote>
@@ -129,63 +169,63 @@
 <p>这篇文章是群晖虚拟机运行 OpenWrt 作为主路由的步骤，这样做的好处是免去另外增添额外硬件。如果群晖只有一个网口，OpenWrt 只能以「旁路由」的方式运行，想以主路由的方式运行，建议群晖有两个物理网口。</p>
 <h2 id="网络连接建议"><a href="#网络连接建议" class="headerlink" title="网络连接建议"></a>网络连接建议</h2><p>大多数光猫默认负责拨号，小弟建议改成桥接模式，不同光猫设置方法不尽相同，可以自行搜索方法，如果搞不定，可以像小弟一样到淘宝寻求办法。</p>
 <p>建议软路由做主路由，硬理由以无线 AP 的模式运行，这样的好处是少了一层 NAT ，减少网络损耗，具体网络连接方式如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt1.png" alt="openwrt1"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt1.png" alt="openwrt1" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt1.png" data-index="1"></p>
 <h2 id="建立虚拟机"><a href="#建立虚拟机" class="headerlink" title="建立虚拟机"></a>建立虚拟机</h2><p>首先准备好软路由固件，固件可以自己编译（推荐用 Github Actions 编译），也可以使用别人编译好的固件。编译好的固件可以到<a href="https://www.right.com.cn/forum/forum-169-1.html" target="_blank" rel="noopener">恩山论坛 x86 系统区</a>去找，有很多大大编译好的，比如小弟使用的<a href="https://www.right.com.cn/forum/thread-3708606-1-1.html" target="_blank" rel="noopener">这个</a>。</p>
 <p>注意：固件文件一般会有 combined 和 uefi-gpt 两种，前者支持 MBR 的分区表和 BIOS 系统，后者支持 GPT 分区表和 EFI 系统。我们这里选用 uefi-gpt 即可，下载的固件后缀名为「.gz」，需要解压成「.img」文件。</p>
 <p>打开群晖「套件中心」，搜索「Virtual Machine Manager」，下载并安装，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt2.png" alt="openwrt2"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt2.png" alt="openwrt2" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt2.png" data-index="2"></p>
 <p>打开 Virtual Machine Manager，在「网络」中添加两个网口，一个作为软路由 LAN 口（作为 DHCP 的网口），一个作为 WAN 口（连外网的网口），</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt3.png" alt="openwrt3"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt3.png" alt="openwrt3" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt3.png" data-index="3"></p>
 <p>最终添加两个网口，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt4.png" alt="openwrt4"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt4.png" alt="openwrt4" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt4.png" data-index="4"></p>
 <p>在「映像」中选择「创建」，选择「从电脑上传」，上传后缀为「.img」的固件文件，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt5.png" alt="openwrt5"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt5.png" alt="openwrt5" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt5.png" data-index="5"></p>
 <p>在「虚拟机」中选择「新建」→「导入」，选择刚刚的映像，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt7.png" alt="openwrt7"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt7.png" alt="openwrt7" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt7.png" data-index="6"></p>
 <p>填入虚拟机名称，名字任意，如 openwrt，选择 CPU、内存（建议 1G 或以上）配置，点击「下一步」，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt8.png" alt="openwrt8"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt8.png" alt="openwrt8" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt8.png" data-index="7"></p>
 <p>选择硬盘容量，最小是 10G，点击「下一步」，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt9.png" alt="openwrt9"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt9.png" alt="openwrt9" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt9.png" data-index="8"></p>
 <p>点击「+」新增网口，注意 LAN（作为 DHCP 的网口）在上， WAN（连外网的网口）在下，点击「下一步」，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt10.png" alt="openwrt10"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt10.png" alt="openwrt10" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt10.png" data-index="9"></p>
 <p>建议勾选「开机自启动」，点击「下一步」，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt11.png" alt="openwrt11"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt11.png" alt="openwrt11" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt11.png" data-index="10"></p>
 <p>权限可以全部勾选，点击「下一步」，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt12.png" alt="openwrt12"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt12.png" alt="openwrt12" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt12.png" data-index="11"></p>
 <p>确认配置，点击「完成」。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt13.png" alt="openwrt13"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt13.png" alt="openwrt13" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt13.png" data-index="12"></p>
 <h2 id="联网设置"><a href="#联网设置" class="headerlink" title="联网设置"></a>联网设置</h2><h3 id="配置网口"><a href="#配置网口" class="headerlink" title="配置网口"></a>配置网口</h3><p>OpenWrt 模拟了一个管理地址 192.168.1.1 ，可能与我们的路由器或光猫冲突，我们需要先调整管理界面地址。</p>
 <p>在「虚拟机」标签卡中找到刚刚建立的虚拟机，若未开机可以先开机，点击「连接」，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt14.png" alt="openwrt14"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt14.png" alt="openwrt14" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt14.png" data-index="13"></p>
 <p>在新浏览器标签页可以看到 OpenWrt 运行的命令行，点击回车，看到 OpenWrt 的标志，之后输入<code>vi /etc/config/network</code>，点击回车，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt15.png" alt="openwrt15"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt15.png" alt="openwrt15" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt15.png" data-index="14"></p>
 <p>之后输入<code>i</code>，进入编辑模式，找到「lan」，将地址改为其他未占用的 IP，如<code>192.168.77.1</code>，之后按 esc 键退出编辑模式，之后重启虚拟机。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt16.png" alt="openwrt16"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt16.png" alt="openwrt16" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt16.png" data-index="15"></p>
 <p>下一步将硬路由设置为 AP 模式，不同路由器设置方法不一样，若是华硕路由器可以下载 <a href="https://www.asus.com/asus-router-app/" target="_blank" rel="noopener">ASUS Router</a> 这个 App 将路由器改为 AP 模式，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt17_new.png" alt="openwrt17"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt17_new.png" alt="openwrt17" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt17_new.png" data-index="16"></p>
 <p>先将群晖关机，将一根网线一端插入  LAN 口（作为 DHCP 的网口），另一端插入路由器，之后将群晖开机，</p>
 <p>电脑连接路由器的 WiFi，访问刚刚设定的 OpenWrt 的管理地址，如<code>192.168.77.1</code>，输入密码（可以在固件介绍页找到），找到「网络」→「接口」，在 WAN 口点击「修改」，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt18_new.png" alt="openwrt18"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt18_new.png" alt="openwrt18" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt18_new.png" data-index="17"></p>
 <p>设置连外网方式，如选择「PPPoE」，填入宽带账号、密码，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt19_new.png" alt="openwrt19"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt19_new.png" alt="openwrt19" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt19_new.png" data-index="18"></p>
 <p>稍等片刻，应该可以联网了。</p>
 <h3 id="科学上网设置"><a href="#科学上网设置" class="headerlink" title="科学上网设置"></a>科学上网设置</h3><p>OpenWrt 固件一般会内置不止一个科学上网工具，如 ShadowSocksR Plus+、PassWall、Hello World、OpenClash，填入节点信息即可，或者填入订阅地址。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt20_new.png" alt="openwrt20"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt20_new.png" alt="openwrt20" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt20_new.png" data-index="19"></p>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>若群晖无法联网，可以这样修改，在「控制面板」中找到「网络」，在「常规」选项卡中修改网关地址，将 OpenWrt 的管理地址移到上面。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt21_new.png" alt="openwrt21"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt21_new.png" alt="openwrt21" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt21_new.png" data-index="20"></p>
 <h2 id="软路由设置"><a href="#软路由设置" class="headerlink" title="软路由设置"></a>软路由设置</h2><p>OpenWrt 功能很多，以下是几个常用功能的位置：</p>
 <h3 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h3><p>在「系统」→「管理权」中可以修改登录密码。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt22.png" alt="openwrt22"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt22.png" alt="openwrt22" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt22.png" data-index="21"></p>
 <h3 id="端口转发"><a href="#端口转发" class="headerlink" title="端口转发"></a>端口转发</h3><p>我们想在外网访问内网的服务或设备，可以使用「端口转发」功能，可以在「网络」→「防火墙」→「端口转发」中找到。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt23_new.png" alt="openwrt23"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt23_new.png" alt="openwrt23" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt23_new.png" data-index="22"></p>
 <h3 id="DNS-劫持"><a href="#DNS-劫持" class="headerlink" title="DNS 劫持"></a>DNS 劫持</h3><p>需要将特定域名跳转至特定地址，可以使用「DNS 劫持」，可以在「网络」→「主机名」找到。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt24_new.png" alt="openwrt24"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt24_new.png" alt="openwrt24" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt24_new.png" data-index="23"></p>
 <h2 id="管理-Openwrt"><a href="#管理-Openwrt" class="headerlink" title="管理 Openwrt"></a>管理 Openwrt</h2><h3 id="SSH-连接"><a href="#SSH-连接" class="headerlink" title="SSH 连接"></a>SSH 连接</h3><p>OpenWrt 有内置终端机，在「系统」→「TTYD」可以找到。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt25.png" alt="openwrt25"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt25.png" alt="openwrt25" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt25.png" data-index="24"></p>
 <h3 id="STP-管理文件"><a href="#STP-管理文件" class="headerlink" title="STP 管理文件"></a>STP 管理文件</h3><p>在 STP 客户端，如 Transmit 中选择「STP」，填入 OpenWrt IP地址，用户名填「root」，之后就可以管理 OpenWrt 文件。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt27.png" alt="openwrt27"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt27.png" alt="openwrt27" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt27.png" data-index="25"></p>
 <h3 id="固件升级"><a href="#固件升级" class="headerlink" title="固件升级"></a>固件升级</h3><p>OpenWrt 支持固件升级，若使用同一个作者编译的，可以保留配置，Web 页面升级 *.gz 文件无需解压，在「系统」→「备份/升级」中上传固件即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt26_new.png" alt="openwrt26"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt26_new.png" alt="openwrt26" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/openwrt26_new.png" data-index="26"></p>
 
                 </article>
                 <ul class="tags-postTags">
@@ -211,9 +251,98 @@
     </nav>
 
     
+    <div class="inner">
+        <div id="comment"></div>
+    </div>
+    
+</div>
+
+<div class="toc-bar">
+    <div class="toc-btn-bar">
+        <a href="#site-main" class="toc-btn">
+            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M793.024 710.272a32 32 0 1 0 45.952-44.544l-310.304-320a32 32 0 0 0-46.4 0.48l-297.696 320a32 32 0 0 0 46.848 43.584l274.752-295.328 286.848 295.808z"/></svg>
+        </a>
+        <div class="toc-btn toc-switch">
+            <svg class="toc-open" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M779.776 480h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M779.776 672h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M256 288a32 32 0 1 0 0 64 32 32 0 0 0 0-64M392.576 352h387.2a32 32 0 0 0 0-64h-387.2a32 32 0 0 0 0 64M256 480a32 32 0 1 0 0 64 32 32 0 0 0 0-64M256 672a32 32 0 1 0 0 64 32 32 0 0 0 0-64"/></svg>
+            <svg class="toc-close hide" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M512 960c-247.039484 0-448-200.960516-448-448S264.960516 64 512 64 960 264.960516 960 512 759.039484 960 512 960zM512 128.287273c-211.584464 0-383.712727 172.128262-383.712727 383.712727 0 211.551781 172.128262 383.712727 383.712727 383.712727 211.551781 0 383.712727-172.159226 383.712727-383.712727C895.712727 300.415536 723.551781 128.287273 512 128.287273z"/><path d="M557.05545 513.376159l138.367639-136.864185c12.576374-12.416396 12.672705-32.671738 0.25631-45.248112s-32.704421-12.672705-45.248112-0.25631l-138.560301 137.024163-136.447897-136.864185c-12.512727-12.512727-32.735385-12.576374-45.248112-0.063647-12.512727 12.480043-12.54369 32.735385-0.063647 45.248112l136.255235 136.671523-137.376804 135.904314c-12.576374 12.447359-12.672705 32.671738-0.25631 45.248112 6.271845 6.335493 14.496116 9.504099 22.751351 9.504099 8.12794 0 16.25588-3.103239 22.496761-9.247789l137.567746-136.064292 138.687596 139.136568c6.240882 6.271845 14.432469 9.407768 22.65674 9.407768 8.191587 0 16.352211-3.135923 22.591372-9.34412 12.512727-12.480043 12.54369-32.704421 0.063647-45.248112L557.05545 513.376159z"/></svg>
+        </div>
+        <a href="#gobottom" class="toc-btn">
+            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M231.424 346.208a32 32 0 0 0-46.848 43.584l297.696 320a32 32 0 0 0 46.4 0.48l310.304-320a32 32 0 1 0-45.952-44.544l-286.848 295.808-274.752-295.36z"/></svg>
+        </a>
+    </div>
+    <div class="toc-main">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#网络连接建议"><span class="toc-text">网络连接建议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#建立虚拟机"><span class="toc-text">建立虚拟机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#联网设置"><span class="toc-text">联网设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置网口"><span class="toc-text">配置网口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#科学上网设置"><span class="toc-text">科学上网设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软路由设置"><span class="toc-text">软路由设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#设置密码"><span class="toc-text">设置密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#端口转发"><span class="toc-text">端口转发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS-劫持"><span class="toc-text">DNS 劫持</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#管理-Openwrt"><span class="toc-text">管理 Openwrt</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SSH-连接"><span class="toc-text">SSH 连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#STP-管理文件"><span class="toc-text">STP 管理文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#固件升级"><span class="toc-text">固件升级</span></a></li></ol></li></ol>
+    </div>
 </div>
 
 
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 
 
@@ -222,17 +351,45 @@
 	
 
 
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+            
+            
+        </div>
+    </div>
+</aside>
+
 	
 
 
 
 
+<div id="search" class="search-overlay">
+    <div class="search-form">
+        
+        <div class="search-overlay-logo">
+        	<img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/favicon_256px.ico" alt="庄菲什">
+        </div>
+        
+        <input id="local-search-input" class="search-input" type="text" name="search" placeholder="搜索 ...">
+        <a class="search-overlay-close" href="#"></a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
 <footer class="site-footer outer">
 	<div class="site-footer-content inner">
 		<div class="copyright">
-			<a href="/" title="庄菲什">庄菲什 &copy; 2022</a>
+			<a href="/" title="庄菲什">庄菲什 © 2022</a>
 			
 				
+			        <span hidden="true" id="/openwrt/" class="leancloud-visitors" data-flag-title="群晖虚拟机安装软路由">
+			            <span>阅读量 </span>
+			            <span class="leancloud-visitors-count">0</span>
+			        </span>
+	    		
     		
 		</div>
 		<nav class="site-footer-nav">
@@ -269,7 +426,46 @@
 
         
         
+        
+            searchFunc("/");
+        
+        
     })
+</script>
+
+
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+
+
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+
+
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+
+
+
+<script id="valineScript" src="//code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js" async></script>
+<script>
+    document.getElementById('valineScript').addEventListener("load", function() {
+        new Valine({
+            el: '#comment' ,
+            verify: false,
+            notify: true,
+            appId: 'KaLeKV30O7K4JhSXpYQpglJ7-MdYXbMMI',
+            appKey: 'z7kF0mNJaUFYzbjJWdzwPDq8',
+            placeholder: '留下您的评论',
+            pageSize: 10,
+            avatar: 'hide',
+            visitor: true
+        })
+    });
 </script>
 
 
@@ -278,8 +474,4 @@
 
 
 
-
-
-
-</body>
-</html>
+</body></html>
