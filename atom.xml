@@ -149,6 +149,31 @@
   </entry>
   
   <entry>
+    <title>人生苦短 我用 NAS——NAS 用法介绍</title>
+    <link href="http://yoursite.com/nas/"/>
+    <id>http://yoursite.com/nas/</id>
+    <published>2022-11-20T00:00:00.000Z</published>
+    <updated>2023-02-07T04:27:36.510Z</updated>
+    
+    <content type="html"><![CDATA[<p>2022 年，人类进入 21 世纪已经快 1/4，20 年前还在用传统的调制解调器上网，现在可以在线观看 4K 影片。技术的进步也带来问题的增多，我们的各种数据集中在几个大公司手里，照片、影片、应用、其他文件占的存储空间越来越大。</p><p>难以想象，1998、1999 年还在讨论因为节约内存和存储空间的「<a href="https://zh.m.wikipedia.org/zh-tw/2000%E5%B9%B4%E9%97%AE%E9%A2%98" target="_blank" rel="noopener">千年虫问题</a>」，2022 年有 1T 存储容量的手机，手机存储容量比之前都要大，却比以往更容易容量不足。</p><p>新世纪解决村存储空间不足的一个方法是使用 NAS （Network Attached Storage 网路附加储存），NAS 是一台电脑，可以集中储存照片、影片、音乐、文件等。由于本身是一台电脑，所以 NAS 的功能不限于存储，还有很多其他功能。</p><p>NAS 有很多品牌，群晖、威联通、华芸等等，其中市占率较高的是群晖，以下以群晖为例说明：</p><h2 id="跨平台共享存储文件"><a href="#跨平台共享存储文件" class="headerlink" title="跨平台共享存储文件"></a>跨平台共享存储文件</h2><p>NAS 默认有装好 NFS、SMB、FTP、WebDAV 等文件共享服务，可以很方便地在局域网及外网跨平台、跨设备大容量共享存储文件。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/nas_share_file.png" alt="nas_share_file"></p><h2 id="多设备同步文件"><a href="#多设备同步文件" class="headerlink" title="多设备同步文件"></a>多设备同步文件</h2><p>NAS 设备多提供可以自动同步的应用，如群晖的 <a href="https://www.synology.com/zh-tw/dsm/feature/drive" target="_blank" rel="noopener">Synology Drive</a> 在需要同步的设备装好应用或在浏览器打开应用页面后，就可以将文件同步至最新，同时还有随需同步、协作、版本回溯等功能。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/nas_drive.png" alt="nas_drive"></p><h2 id="备份手机照片、影片"><a href="#备份手机照片、影片" class="headerlink" title="备份手机照片、影片"></a>备份手机照片、影片</h2><p>手机存储一部分是照片、影片占用，NAS 设备都有提供辈分手机照片、影片的功能，可以安全备份手机照片、影片，释放手机存储空间。群晖照片备份工具有 <a href="https://www.synology.com/zh-tw/dsm/feature/photos" target="_blank" rel="noopener">Synology Photos</a> ，手机安装应用备份照片后可以在应用内查看备份的照片，还可以依人脸辨识、地理位置、标籤自动产生相簿。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/nas_photos.webp" alt="nas_photos"></p><p>不过 iOS 端的 Synology Photos 并不好用，iOS 开启 iCloud 备份后会将不使用且已备份到 iCloud 的照片、影片在本机删除，Synology Photos 备份这些照片需要先从 iCloud 下载照片到本地。这样有太多问题，手机备份照片前，可能存储空间已经不够，从 iCloud 下载照片到本地会加剧手机存储空间不够，手机存储空间不够一定程度会导致手机运行卡顿，如果照片很多，卡顿过程会持续很久。解决这个问题的一个办法是使用 <a href="https://hub.docker.com/r/boredazfcuk/icloudpd" target="_blank" rel="noopener">boredazfcuk/icloudpd</a> 这个 Docker，可以直接将 iCloud 中的照片、影片备份至群晖。</p><h2 id="备份整个电脑"><a href="#备份整个电脑" class="headerlink" title="备份整个电脑"></a>备份整个电脑</h2><p>除了备份文件、照片、视频等，NAS 还提供整个电脑备份功能，与 macOS 的 <a href="https://support.apple.com/zh-tw/HT201250" target="_blank" rel="noopener">Time Machine</a> 功能类似，但是功能更加强大。群晖的 <a href="https://www.synology.com/zh-tw/dsm/feature/active-backup-business/pc" target="_blank" rel="noopener">Active Backup for Business</a> 可以对 Windows、macOS、Linux 系统进行整机备份，还可以排程备份任务，或登出或装置开机等触发备份，备份的电脑无法开机时，通过 U 盘进行整机復原。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/nas_active_backup.webp" alt="nas_active_backup"></p><h2 id="PT-下载"><a href="#PT-下载" class="headerlink" title="PT 下载"></a>PT 下载</h2><p>PT 下载是流媒体资源的补充，NAS 可 24 小时下载、做种，有足够的存储空间，是 PT|下载最佳伴侣，NAS 可以方便地安装主流的 PT 下载工具，如 qBittorrent、Transmission 等等。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/nas_qb.png" alt="nas_qb"></p><h2 id="媒体服务器"><a href="#媒体服务器" class="headerlink" title="媒体服务器"></a>媒体服务器</h2><p>下载好的媒体文件最好有一处集中管理，并提供多媒体串流服务，方便在各设备上观看。媒体服务器即是提供以上功能的产品，常用的有 Jellyfin、Emby、Plex，NAS 可方便地安装以上媒体服务器。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/nas_jellyfin.png" alt="nas_jellyfin"></p><h2 id="图书管理"><a href="#图书管理" class="headerlink" title="图书管理"></a>图书管理</h2><p>除了管理影音内容，NAS 也可以管理电子书内容，<a href="https://hub.docker.com/r/johngong/calibre-web" target="_blank" rel="noopener">Calibre Web</a> 是一个好用的电子书管理工具，有干净的介面，可以搜刮电子书信息，转换电子书格式、提供 OPDS （ Open Publication Distribution System，开放式出版发布系统）服务等，方便在各端查看电子书。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/nas_calibre.png" alt="nas_calibre"></p><h2 id="管理网路摄像头"><a href="#管理网路摄像头" class="headerlink" title="管理网路摄像头"></a>管理网路摄像头</h2><p><a href="https://www.synology.com/zh-tw/surveillance" target="_blank" rel="noopener">Surveillance Station</a> 是群晖的网路摄像头管理工具，可以观看、录製即时影像、设定排程录影，透过网页、手机播放录好的事件，以及在重要事件发生时发送通知。NAS 存储空间很大，不用担心录制的影像无处存放。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/nas_surveillance_station.png" alt="nas_surveillance_station"></p><h2 id="运行-Home-Assistant"><a href="#运行-Home-Assistant" class="headerlink" title="运行 Home Assistant"></a>运行 Home Assistant</h2><p><a href="https://www.home-assistant.io/" target="_blank" rel="noopener">Home Assistant</a> 是开源的智能家居自动化平台，可以接入市面上几乎所有智能家居设备。群晖是运行 Home Assistant 好设备，最简单的方法是通过虚拟机安装 Home Assistant。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/nas_home_assistant.png" alt="nas_home_assistant"></p><h2 id="运行-OpenWrt"><a href="#运行-OpenWrt" class="headerlink" title="运行 OpenWrt"></a>运行 OpenWrt</h2><p><a href="https://openwrt.org/" target="_blank" rel="noopener">OpenWrt</a> 是一个开源的路由器系统，可以安装很多拓展，且稳定性很好。OpenWrt 可以很好地解决各种网络问题，如多设备使用代理、域名分流、隐私保护等等。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/nas_openwrt.png" alt="nas_openwrt"></p><h2 id="托管静态页面"><a href="#托管静态页面" class="headerlink" title="托管静态页面"></a>托管静态页面</h2><p>NAS 可以架设、发佈网站，小弟最常用的用来托管静态网页，群晖有附带 Web Station 套件，只需要几个简单步骤就可以快速部署静态网页。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/nas_web_station.png" alt="nas_web_station"></p><p>一个示例是若群晖运行了上面提到的很多服务，可以通过 Web Station 快速部署一个导航页。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/nas_nav_page.png" alt="nas_nav_page"></p><h2 id="运行-Docker"><a href="#运行-Docker" class="headerlink" title="运行 Docker"></a>运行 Docker</h2><p>Docker 是一款轻量级虚拟化应用程序，可以快速部署各种打包的容器应用。群晖的 Docker 套件有提供 Docker 图形介面，使用者可免除使用文字指令，快速完成Docker下的应用程式部署与操作，对初学者非常友好。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/nas_web_station.png" alt="nas_web_station"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;2022 年，人类进入 21 世纪已经快 1/4，20 年前还在用传统的调制解调器上网，现在可以在线观看 4K
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>ESP32 实现在家离家判断</title>
     <link href="http://yoursite.com/espresense/"/>
     <id>http://yoursite.com/espresense/</id>
