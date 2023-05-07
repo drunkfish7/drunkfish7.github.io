@@ -160,37 +160,44 @@
             <div class="post-full-content">
                 <article id="photoswipe" class="markdown-body">
                     <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/gpt_cover.png" alt="gpt_cover" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/gpt_cover.png" data-index="0"></p>
-<blockquote>
-<p>熟读唐诗三百首，不会吟诗也会吟。——蘅塘退士</p>
-</blockquote>
-<p>2022 年末，GPT 成为热门讨论词汇。在 GPT 出现之前，人类已经在生活很多方面使用 AI（artificial intelligence），比如辨识车牌、语音识别文字等等。大多数 AI 技术集中在辨识方面，鲜少有生成功能的 AI，或有生成功能但并不好用。</p>
-<p>GPT (Generative Pre-trained Transformer) 全称是生成型预训练变换模型，由 <a href="https://openai.com/" target="_blank" rel="noopener">OpenAI</a> 提出的自然语言处理技术，可以通过使用深度学习生成人类可以理解的自然语言。</p>
-<p>ChatGPT 是 GPT 在聊天中的应用，从 22 年 11 月开放大众使用，不到两个月时间已经有一亿用户。ChatGPT 的厉害之处在于学习了大量文本，可以生成自然、流畅的文本回复。在我们的工作、学习、生活中，很大一部分是「生成」方面的工作，所以 ChatGPT 是工作、学习、生活的好帮手。</p>
-<p>OpenAI 有开放 API，可以在不同工具使用 GPT，以下是小弟整理的几个小工具（不断整理中）：</p>
-<h2 id="New-Bing"><a href="#New-Bing" class="headerlink" title="New Bing"></a>New Bing</h2><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/gpt_bing.png" alt="gpt_bing" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/gpt_bing.png" data-index="1"></p>
-<p>作为 OpenAI 主要投资方，微软有 GPT 独家授权，自家的 New Bing 已经结合 GPT。New Bing 基于 GPT-4（ChatGPT 的 GPT-4 暂时仅限付费用户使用），且有最新数据（ChatGPT 数据学习到 2021 年）。</p>
-<p>使用很简单，电脑端使用 <a href="https://www.microsoft.com/zh-tw/edge?form=MA13FJ" target="_blank" rel="noopener">Microsoft Edge 浏览器</a> 到 <a href="https://www.bing.com/new" target="_blank" rel="noopener">https://www.bing.com/new</a> 登录即可使用，手机端可以使用 Bing App。</p>
-<p>若想在 Chrome 上使用 New Bing，可以通过修改浏览器 UA（User Agent） 实现，实现在 Chrome 安装 <a href="https://github.com/FirefoxBar/HeaderEditor" target="_blank" rel="noopener">HeaderEditor</a> 插件，添加规则 </p>
-<p>Match Rule：<br><code>^http(s?)://(.*).bing\.com/(.*)</code></p>
-<p>Header Value：<br><code>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36 Edg/110.0.1587.41</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/gpt_header_editor.png" alt="gpt_header_editor" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/gpt_header_editor.png" data-index="2"></p>
-<h2 id="Glarity"><a href="#Glarity" class="headerlink" title="Glarity"></a>Glarity</h2><p><a href="https://glarity.app/" target="_blank" rel="noopener">Glarity</a> 是一个浏览器插件，目前功能有二：1、在 Google 搜索结果右侧显示 ChatGPT 结果；2、在 YouTube 视频右侧显示 ChatGPT 对视频的总结。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/gpt_glarity.png" alt="gpt_glarity" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/gpt_glarity.png" data-index="3"></p>
-<p>首先到 <a href="https://platform.openai.com/account/api-keys" target="_blank" rel="noopener">OpenAI</a> 获取 API Key，在 Glarity 设置页面填入 API Key 后即可使用。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/gpt_glarity_setting.png" alt="gpt_glarity_setting" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/gpt_glarity_setting.png" data-index="4"></p>
-<h2 id="ChatGPT-Telegram-Bot"><a href="#ChatGPT-Telegram-Bot" class="headerlink" title="ChatGPT Telegram Bot"></a>ChatGPT Telegram Bot</h2><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/gpt_telegram_example.jpg" alt="gpt_telegram_example" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/gpt_telegram_example.jpg" data-index="5"></p>
-<p><a href="https://github.com/RainEggplant/chatgpt-telegram-bot" target="_blank" rel="noopener">chatgpt-telegram-bot</a> 可以连接 Telegram 和 ChatGPT，在 Telegram 的精美聊天 UI 中使用 ChatGPT。以群晖为例的安装步骤：</p>
-<p>在 Telegram 与 <a href="https://t.me/botfather" target="_blank" rel="noopener">@BotFather</a> 对话创建机器人，记下机器人 token。到<a href="https://github.com/RainEggplant/chatgpt-telegram-bot/blob/master/config/default.json" target="_blank" rel="noopener">这里</a>下载 <code>default.json</code> 文件，填入机器人 token 及 OpenAI 的 API。</p>
-<p>在群晖新建文件夹保存 <code>default.json</code> 文件，打开群晖 Docker，在注册表搜索「raineggplant/chatgpt-telegram-bot」，下载完成后部署，将保存<code>default.json</code> 文件的文件夹映射为 <code>default.json</code> 文件，启动容器。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/gpt_telegram_config.png" alt="gpt_telegram_config" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/gpt_telegram_config.png" data-index="6"></p>
-<p>等待容器启动，向机器人发送 <code>/chat</code>命令即可开始对话，另外还支持以下命令：</p>
-<ul>
-<li><code>/help</code>：显示帮助。</li>
-<li><code>/reset</code>：重置当前聊天线程并开始新线程。</li>
-</ul>
-<h2 id="PopClip-插件"><a href="#PopClip-插件" class="headerlink" title="PopClip 插件"></a>PopClip 插件</h2><p><a href="https://pilotmoon.com/popclip/" target="_blank" rel="noopener">PopClip</a> 是一个 macOS 平台的辅助工具，在 Mac 上用鼠标**选择文本时，可以出现快捷命令，如復制粘贴、访问搜索、拼写、字典等操作。PopClip 目前也有了 ChatGPT 插件，可以将所选文本发送到 ChatGPT，回复会附加到文本后面，按住 Shift 键可以仅複製回复。下载扩展后填入 <a href="ttps://platform.openai.com/account/api-keys">OpenAI API Key</a> 即可使用。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/gpt_bing_popclip.gif" alt="gptpopclip" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/gpt_bing_popclip.gif" data-index="7"></p>
-<h2 id="Siri-快捷指令"><a href="#Siri-快捷指令" class="headerlink" title="Siri 快捷指令"></a>Siri 快捷指令</h2><p>有大大写了 Apple Shotcuts，可以在 Siri 中使用 ChatGPT，实现到<a href="https://shivam.sh/2023/siri-gpt" target="_blank" rel="noopener">这里</a>下载捷径，填入 OpenAI API Key。使用时需要先说出捷径名称运行捷径，之后就可以与 ChatGPT 对话。</p>
+<p>2022 年末，ChatGPT 的东西开放大众使用，不到两个月时间已经有一亿用户，一时之间人人皆讨论。GPT (Generative Pre-trained Transformer) 全称是生成型预训练变换模型，由 <a href="https://openai.com/" target="_blank" rel="noopener">OpenAI</a> 公司开发，可以通过深度学习生成人类理解的自然语言。</p>
+<p>一分耕耘，没有收获，或者百分收获。活在地球的有意思的点之一是难以预料未来的事情。通过数以亿计的文本数据进行训练，标注者进行数据标注、反馈，GPT 超出了之前设计的预期，学习到了人类语言的规律和诀窍，推理和生成人类语言很自然。</p>
+<p>《<a href="https://www.books.com.tw/products/0010938851" target="_blank" rel="noopener">人类大历史</a>》作者曾指出，语言是人类文明的重要基石，我们文明的要素，包括宗教、法律、国家等等，皆建立在语言之上，语言某种程度是人类文明的操作系统。现在机器已经掌握了人类文明操作系统——语言的一些诀窍，未来可能对人类产生重要影响。 </p>
+<p>对个人而言，我们的工作中，很大一部分是「生成」方面的工作，程序员需要输出代码、设计师需要输出视觉图，善用机器相当于增加了一个分身，可以大幅提升生产效率。</p>
+<p>ChatGPT 出现后，基于它的工具雨后春笋般出现，这些工具可以帮我们更好地使用 GPT，以下是小弟试用后留下的几个小工具（不断整理中）：</p>
+<h2 id="ChatGPT-网页版"><a href="#ChatGPT-网页版" class="headerlink" title="ChatGPT 网页版"></a>ChatGPT 网页版</h2><p>ChatGPT 可以直接在浏览器使用<a href="https://chat.openai.com/" target="_blank" rel="noopener">网页版</a>，电脑、手机浏览器都可以使用。免费可以使用 GPT-3.5，付费可以使用 GPT-4。</p>
+<h2 id="New-Bing"><a href="#New-Bing" class="headerlink" title="New Bing"></a>New Bing</h2><p>作为 OpenAI 主要投资方，微软有 GPT 独家授权，自家的 Bing 搜索已经结合 GPT。</p>
+<h3 id="电脑端"><a href="#电脑端" class="headerlink" title="电脑端"></a>电脑端</h3><p>电脑端推荐使用 <a href="https://www.microsoft.com/zh-tw/edge?form=MA13FJ" target="_blank" rel="noopener">Microsoft Edge 浏览器</a>，Edge 浏览器有紧密结合 New Bing：</p>
+<p>1、右上角有 New Bing 的侧边栏按钮，可以输入文字问问题聊天，也可以对当前页面进行总结等等</p>
+<p>2、New Bing 的侧边栏有「创作」功能，可以使用 GPT 技术进行文本生成</p>
+<p>3、当选中文字后文字会自动到侧边栏中，可以一键发送</p>
+<p>4、未来 New Bing 将结合更多 Edge 浏览器功能</p>
+<p>如果不想使用 Edge 浏览器，可以通过以下方法：</p>
+<p>1、修改浏览器 UA（User Agent） 使用 New Bing，Chrome 安装插件实现</p>
+<p>2、使用第三方 Bing 桌面程序 <a href="https://github.com/dice2o/BingGPT" target="_blank" rel="noopener">BingGPT</a></p>
+<h3 id="手机端"><a href="#手机端" class="headerlink" title="手机端"></a>手机端</h3><p>手机端使用 New Bing 方法有二： </p>
+<p>1、使用 Bing App 或手机端 Edge 浏览器</p>
+<p>2、修改手机浏览器 UA（User Agent）</p>
+<h2 id="Poe"><a href="#Poe" class="headerlink" title="Poe"></a>Poe</h2><p><a href="https://poe.com/" target="_blank" rel="noopener">Poe</a> 是 Quora 的 AI 应用，有内置 ChatGPT，免费可以使用 GPT-3.5，付费可以使用 GPT-4。Poe 有网页版和手机端，登录后即可使用</p>
+<h2 id="ChatGPT-Box"><a href="#ChatGPT-Box" class="headerlink" title="ChatGPT Box"></a>ChatGPT Box</h2><p><strong><a href="https://github.com/josStorer/chatGPTBox" target="_blank" rel="noopener">ChatGPT Box</a></strong> 是一个功能非常多的浏览器插件，列一下小弟最喜欢的：</p>
+<p>1、 最全的 API 支持 (网页版 ChatGPT、API、 Azure API、New Bing、Poe等)</p>
+<p>2、在 Google 搜索结果右侧显示 ChatGPT 结果；</p>
+<p>3、在 YouTube 视频右侧显示 ChatGPT 对视频的总结；</p>
+<p>4、右键菜单总结页面</p>
+<h2 id="Raycast-AI"><a href="#Raycast-AI" class="headerlink" title="Raycast AI"></a>Raycast AI</h2><p><a href="https://www.raycast.com" target="_blank" rel="noopener">Raycast</a> 是 macOS 快速启动应用，Raycast 已经加入基于 ChatGPT 的 AI 功能，可以随时按下输入框问问题，按下 Tab 键后即可显示 AI 结果Raycast 对结果还做了适配，如结果中有代码可以一键复制代码。</p>
+<p>Raycast AI 功能目前是内测，开放后会收费，如果不想付费，可以使用<a href="https://www.raycast.com/abielzulio/chatgpt" target="_blank" rel="noopener">第三方 ChatGPT 插件</a>，插件可以使用 OpenAI API。</p>
+<h2 id="Bob"><a href="#Bob" class="headerlink" title="Bob"></a>Bob</h2><p>Bob 是一款 macOS 平台的翻译和 OCR 软件，已经支持使用 ChatGPT 翻译。免费版可以使用 <a href="https://github.com/yetone/bob-plugin-openai-translator" target="_blank" rel="noopener">OpenAI Translator Bob Plugin</a>，商店版已经内置。</p>
+<p>Bob 支持使用 PopClip 调用，选中需要翻译的文本之后，点击 <a href="https://pilotmoon.com/popclip" target="_blank" rel="noopener">PopClip</a> 插件图标就可以翻译</p>
+<h2 id="Chatbox"><a href="#Chatbox" class="headerlink" title="Chatbox"></a>Chatbox</h2><p><a href="https://github.com/Bin-Huang/chatbox/" target="_blank" rel="noopener">Chatbox</a> 是开源的 ChatGPT 跨平台桌面客户端，可以使用 OpenAI API。</p>
+<h2 id="MenubarX"><a href="#MenubarX" class="headerlink" title="MenubarX"></a>MenubarX</h2><p><a href="https://menubarx.app/" target="_blank" rel="noopener">MenubarX</a> 可以在 macOS 的菜单栏打开浏览器网页，将 <a href="https://chat.openai.com/" target="_blank" rel="noopener">ChatGPT 网页版</a> 地址输入就可以在菜单栏使用 ChatGPT。</p>
+<h2 id="Unite-或-Coherence-X"><a href="#Unite-或-Coherence-X" class="headerlink" title="Unite 或 Coherence X"></a>Unite 或 Coherence X</h2><p><a href="https://www.bzgapps.com/unite" target="_blank" rel="noopener">Unite</a> 和 <a href="https://www.bzgapps.com/coherence" target="_blank" rel="noopener">Coherence X</a> 是 macOS 平台上的两款工具，可以把网站变成原生应用。将 <a href="https://chat.openai.com/" target="_blank" rel="noopener">ChatGPT 网页版</a> 地址输入可以生成 ChatGPT 应用程序。</p>
+<h2 id="ChatGPT-Exporter"><a href="#ChatGPT-Exporter" class="headerlink" title="ChatGPT Exporter"></a>ChatGPT Exporter</h2><p><a href="https://greasyfork.org/zh-TW/scripts/456055-chatgpt-exporter" target="_blank" rel="noopener">ChatGPT Exporter</a> 是一个基于 <a href="https://www.tampermonkey.net" target="_blank" rel="noopener">Tampermonkey</a> 的脚本，可以方便汇出 ChatGPT 聊天纪录，支持纯文本、截图、Markdown、HTML、JSON。</p>
+<h2 id="ChatGPT-语音版"><a href="#ChatGPT-语音版" class="headerlink" title="ChatGPT 语音版"></a>ChatGPT 语音版</h2><p><a href="https://github.com/SheikhAminul/ChatGPT-voice-control" target="_blank" rel="noopener">VoiceWave</a> 是一个浏览器插件，可以实现与 ChatGPT 语音对话，基于 ChatGPT 网页版，通过语音辨识向 ChatGPT 提问，再通过语音合成 ChatGPT 的回答。</p>
+<p>推荐使用 Edge 浏览器使用此插件，Edge 浏览器可以使用微软的 TTS，合成语音更加自然。</p>
+<h2 id="Siri-快捷指令"><a href="#Siri-快捷指令" class="headerlink" title="Siri 快捷指令"></a>Siri 快捷指令</h2><p>有大大写了 Apple Shotcuts，可以在 Siri 中使用 ChatGPT，实现到<a href="https://shivam.sh/2023/siri-gpt" target="_blank" rel="noopener">这里</a>下载捷径，填入 OpenAI API。使用时需要先说出捷径名称运行捷径，之后就可以与 ChatGPT 对话。</p>
+<h2 id="ChatGPT-Telegram-机器人"><a href="#ChatGPT-Telegram-机器人" class="headerlink" title="ChatGPT Telegram 机器人"></a>ChatGPT Telegram 机器人</h2><p>得益于 OpenAI API，可以在任何地方使用 ChatGPT。Telegram 的 UI 做得很漂亮，各端适配优异，是使用 ChatGPT 的好平台。<a href="https://github.com/RainEggplant/chatgpt-telegram-bot" target="_blank" rel="noopener">Chatgpt Telegram Bot</a> 可以连接 Telegram 和 ChatGPT，基于 Node.js，支持 OpenAI API，可以在 Docker 中运行。</p>
+<h2 id="ChatGPT-Next-Web"><a href="#ChatGPT-Next-Web" class="headerlink" title="ChatGPT Next Web"></a>ChatGPT Next Web</h2><p><a href="https://github.com/Yidadaa/ChatGPT-Next-Web" target="_blank" rel="noopener">ChatGPT Next Web</a> 是一个 ChatGPT 前端页面，支持 OpenAI API，可以部署在 Docker，方便不方便使用 ChatGPT 的朋友使用 ChatGPT。</p>
+<h2 id="ChatGPT-指令大全"><a href="#ChatGPT-指令大全" class="headerlink" title="ChatGPT 指令大全"></a>ChatGPT 指令大全</h2><p><a href="https://www.explainthis.io/zh-hant/chatgpt" target="_blank" rel="noopener">ChatGPT 指令大全</a> 是一个汇总 ChatGPT 指令的网站，支持中英文。</p>
 
                 </article>
                 <ul class="tags-postTags">
@@ -232,7 +239,7 @@
         </a>
     </div>
     <div class="toc-main">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#New-Bing"><span class="toc-text">New Bing</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Glarity"><span class="toc-text">Glarity</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ChatGPT-Telegram-Bot"><span class="toc-text">ChatGPT Telegram Bot</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PopClip-插件"><span class="toc-text">PopClip 插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Siri-快捷指令"><span class="toc-text">Siri 快捷指令</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ChatGPT-网页版"><span class="toc-text">ChatGPT 网页版</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#New-Bing"><span class="toc-text">New Bing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#电脑端"><span class="toc-text">电脑端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#手机端"><span class="toc-text">手机端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Poe"><span class="toc-text">Poe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ChatGPT-Box"><span class="toc-text">ChatGPT Box</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Raycast-AI"><span class="toc-text">Raycast AI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bob"><span class="toc-text">Bob</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chatbox"><span class="toc-text">Chatbox</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MenubarX"><span class="toc-text">MenubarX</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unite-或-Coherence-X"><span class="toc-text">Unite 或 Coherence X</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ChatGPT-Exporter"><span class="toc-text">ChatGPT Exporter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ChatGPT-语音版"><span class="toc-text">ChatGPT 语音版</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Siri-快捷指令"><span class="toc-text">Siri 快捷指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ChatGPT-Telegram-机器人"><span class="toc-text">ChatGPT Telegram 机器人</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ChatGPT-Next-Web"><span class="toc-text">ChatGPT Next Web</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ChatGPT-指令大全"><span class="toc-text">ChatGPT 指令大全</span></a></li></ol>
     </div>
 </div>
 
