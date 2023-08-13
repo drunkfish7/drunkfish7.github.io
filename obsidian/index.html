@@ -1,0 +1,487 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="preconnect" href="//www.googletagmanager.com">
+	<link rel="preconnect" href="//zz.bdstatic.com">
+	<link rel="preconnect" href="//sp0.baidu.com">
+	<link rel="preconnect" href="//www.google-analytics.com">
+	<link rel="preconnect" href="//cdn1.lncld.net">
+	<link rel="preconnect" href="//unpkg.com">
+	<link rel="preconnect" href="//app-router.leancloud.cn">
+	<link rel="preconnect" href="//9qpuwspm.api.lncld.net">
+	<link rel="preconnect" href="//gravatar.loli.net">
+
+	<title>使用 Obsidian 做笔记 | 庄菲什</title>
+
+	<meta name="HandheldFriendly" content="True">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+	<meta name="generator" content="hexo">
+	<meta name="author" content="drunkfish">
+	<meta name="description" content>
+
+	
+
+	
+	<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/favicon_256px.ico">
+	<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/favicon_256px.ico">
+	
+
+	
+	<meta name="theme-color" content="#3c484e">
+	<meta name="msapplication-TileColor" content="#3c484e">
+	
+
+	
+
+	
+	<link rel="alternate" href="/atom.xml" title="庄菲什">
+	
+
+	<meta property="og:site_name" content="庄菲什">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="使用 Obsidian 做笔记 | 庄菲什">
+	<meta property="og:description" content>
+	<meta property="og:url" content="http://yoursite.com/obsidian/">
+
+	
+	<meta property="article:published_time" content="2023-08-16T00:08:00+08:00"> 
+	<meta property="article:author" content="drunkfish">
+	<meta property="article:published_first" content="庄菲什, /obsidian/">
+	
+
+	
+	
+	
+<link rel="stylesheet" href="/css/allinonecss.min.css">
+
+
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156013706-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-156013706-1');
+	</script>
+	
+	
+	
+<link rel="alternate" href="/atom.xml" title="庄菲什" type="application/atom+xml">
+</head>
+<body class="post-template">
+	<div class="site-wrapper">
+		
+
+
+
+
+<header class="site-header post-site-header outer">
+    <div class="inner">
+        
+<nav class="site-nav"> 
+    <div class="site-nav-left">
+        <ul class="nav">
+            <li>
+                
+                <a href="/" title="Home">HOME</a>
+                
+            </li>
+            
+            
+            <li>
+                <a href="/about" title="ABOUT">ABOUT</a>
+            </li>
+            
+            
+        </ul> 
+    </div>
+    
+    <div class="search-button-area">
+        <a href="#search" class="search-button">Search ...</a>
+    </div>
+     
+    <div class="site-nav-right">
+        
+        <a href="#search" class="search-button">Search ...</a>
+         
+        
+<div class="social-links">
+    
+    <a class="social-link" title="weibo" href="https://weibo.com/drunkfish9" target="_blank" rel="noopener">
+        <svg viewBox="0 0 1141 1024" xmlns="http://www.w3.org/2000/svg"><path d="M916.48 518.144q27.648 21.504 38.912 51.712t9.216 62.976-14.336 65.536-31.744 59.392q-34.816 48.128-78.848 81.92t-91.136 56.32-94.72 35.328-89.6 18.944-75.264 7.68-51.712 1.536-49.152-2.56-68.096-10.24-78.336-21.504-79.872-36.352-74.24-55.296-59.904-78.848q-16.384-29.696-22.016-63.488t-5.632-86.016q0-22.528 7.68-51.2t27.136-63.488 53.248-75.776 86.016-90.112q51.2-48.128 105.984-85.504t117.248-57.856q28.672-10.24 63.488-11.264t57.344 11.264q10.24 11.264 19.456 23.04t12.288 29.184q3.072 14.336 0.512 27.648t-5.632 26.624-5.12 25.6 2.048 22.528q17.408 2.048 33.792-1.536t31.744-9.216 31.232-11.776 33.28-9.216q27.648-5.12 54.784-4.608t49.152 7.68 36.352 22.016 17.408 38.4q2.048 14.336-2.048 26.624t-8.704 23.04-7.168 22.016 1.536 23.552q3.072 7.168 14.848 13.312t27.136 12.288 32.256 13.312 29.184 16.384zM658.432 836.608q26.624-16.384 53.76-45.056t44.032-64 18.944-75.776-20.48-81.408q-19.456-33.792-47.616-57.344t-62.976-37.376-74.24-19.968-80.384-6.144q-78.848 0-139.776 16.384t-105.472 43.008-72.192 60.416-38.912 68.608q-11.264 33.792-6.656 67.072t20.992 62.976 42.496 53.248 57.856 37.888q58.368 25.6 119.296 32.256t116.224 0.512 100.864-21.504 74.24-33.792zM524.288 513.024q20.48 8.192 38.912 18.432t32.768 27.648q10.24 12.288 17.92 30.72t10.752 39.424 1.536 42.496-9.728 38.912q-8.192 18.432-19.968 37.376t-28.672 35.328-40.448 29.184-57.344 18.944q-61.44 11.264-117.76-11.264t-88.064-74.752q-12.288-39.936-13.312-70.656t16.384-66.56q13.312-27.648 40.448-51.712t62.464-38.912 75.264-17.408 78.848 12.8zM361.472 764.928q37.888 3.072 57.856-18.432t21.504-48.128-15.36-47.616-52.736-16.896q-27.648 3.072-43.008 23.552t-17.408 43.52 9.728 42.496 39.424 21.504zM780.288 6.144q74.752 0 139.776 19.968t113.664 57.856 76.288 92.16 27.648 122.88q0 33.792-16.384 50.688t-35.328 17.408-35.328-14.336-16.384-45.568q0-40.96-22.528-77.824t-59.392-64.512-84.48-43.52-96.768-15.872q-31.744 0-47.104-15.36t-14.336-34.304 18.944-34.304 51.712-15.36zM780.288 169.984q95.232 0 144.384 48.64t49.152 146.944q0 30.72-10.24 43.52t-22.528 11.264-22.528-14.848-10.24-35.84q0-60.416-34.816-96.256t-93.184-35.84q-19.456 0-28.672-10.752t-9.216-23.04 9.728-23.04 28.16-10.752z"/></svg>
+    </a>
+    
+    
+    <a class="social-link" title="github" href="https://drunkfish.me/atom.xml" target="_blank" rel="noopener">
+        <!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 24.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="RSSicon" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 256 256" style="enable-background:new 0 0 256 256;" space="preserve">
+<title>RSS feed icon</title>
+<circle cx="64" cy="192" r="32"/>
+<path d="M32,128c53,0,96,43,96,96h32c0-70.7-57.3-128-128-128V128z"/>
+<path d="M32,64c88.4,0,160,71.6,160,160h32c0-106-86-192-192-192V64z"/>
+</svg>
+
+    </a>
+    
+    
+    
+    <a class="social-link" title="twitter" href="https://twitter.com/drunkfish999" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+    </a>
+    
+    
+    
+    
+</div>
+    </div>
+</nav>
+    </div>
+</header>
+
+
+<div id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+        <header class="post-full-header">
+            <div class="post-full-meta">
+                <time class="post-full-meta-date" datetime="2023-08-16T00:00:00.000Z">
+                    2023-08-16
+                </time>
+                
+                <span class="date-divider">/</span>
+                
+                
+            </div>
+            <h1 class="post-full-title">使用 Obsidian 做笔记</h1>
+        </header>
+        <div class="post-full no-image">
+            
+            <div class="post-full-content">
+                <article id="photoswipe" class="markdown-body">
+                    <p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_cover.png" alt="obsidian_cover" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_cover.png" data-index="0"></p>
+<h2 id="笔记之必要性"><a href="#笔记之必要性" class="headerlink" title="笔记之必要性"></a>笔记之必要性</h2><blockquote>
+<p>大脑不是用来记事情，而是想事情的地方。<br>——《搞定》（Getting Things Done）一书作者大卫．艾伦（David Allen）</p>
+</blockquote>
+<p>诺兰导演电影《<a href="https://www.netflix.com/watch/60020435" target="_blank" rel="noopener">记忆拼图</a>》（Memento）中男主角蓝纳无法有新的记忆，他透过各种笔记、拍立得照片、身体刺青，来让自己持续掌握情报。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_memento.png" alt="obsidian_memento" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_memento.png" data-index="1"></p>
+<p>现实生活中，早在文字还没有发明出来前，人类就在洞穴的岩壁上用符号、图案等记录信息。总览历史，很多名人也都以记笔记高手而闻名，其中包括达·芬奇（Leonardo da Vinci）、马克·吐温（Mark Twain）、本杰明·富兰克林（Benjamin Franklin）等等，综合来说，笔记受到如此广泛使用，是因为笔记提供了以下作用：</p>
+<ul>
+<li>收集汇总资讯：笔记可以将资讯收集、汇总至一处，避免资讯分散在各个地方；</li>
+<li>拆解任务：记笔记的过程即是对任务的思考、拆解过程，笔记中的待办是完成任务的一个个行动；</li>
+<li>减轻大脑认知负担：笔记可以比大脑记住更多信息，有了笔记可以有更多脑力花在思考上；</li>
+<li>预演任务的小型实验室：笔记可以看成预演任务的小型实验室，拆解出的行动、步骤可以看成实际执行任务的预演；</li>
+<li>创意发想的基础：创意产生的条件之一是汇总信息，重新组合，产生新的想法。</li>
+</ul>
+<h2 id="记笔记的理论"><a href="#记笔记的理论" class="headerlink" title="记笔记的理论"></a>记笔记的理论</h2><p>《记忆拼图》是艺术作品，当代也有人遇到和男主角类似的问题。Youtuber Tiago Forte 曾经因为药物副作用造成短期失忆问题，通过记笔记，他练成一套名为「第二大脑」的知识管理系统（参见作者书籍 《<a href="https://www.buildingasecondbrain.com/book" target="_blank" rel="noopener">Building a Second Brain</a>》或中文版《<a href="https://www.books.com.tw/products/0010948656" target="_blank" rel="noopener">打造第二大脑：多一个数位大脑，资讯超载时代的高效能知识管理术</a>》）。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_book.png" alt="obsidian_book" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_book.png" data-index="2"></p>
+<p>书中作者有提出两个关键理论，其一为做笔记的 CODE 步骤：</p>
+<ul>
+<li>获取（Capture）：只获取未来有所启发、用得上、有关连性、引发共鸣的资讯</li>
+<li>组织（Organize）：着眼于可操作性，将资讯有序分类，</li>
+<li>萃取（Distill）：做笔记的同时摘要重点、去芜存菁，找出精髓</li>
+<li>表达（Express）：把先前储存的内容重新组合成自己的新作品</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_code.png" alt="obsidian_code" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_code.png" data-index="3"></p>
+<p>以及 PARA 分类法，储存的所有资讯可归入四大类别：</p>
+<ul>
+<li>P 专案：职涯或人生中正努力进行的短期任务</li>
+<li>A 领域：想要逐步掌理的长期任务</li>
+<li>R 资源：未来可能有用途的题材或旨趣</li>
+<li>A 档案库：来自其他三大类别的备而不用的事项</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_para.png" alt="obsidian_para" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_para.png" data-index="4"></p>
+<h2 id="笔记工具"><a href="#笔记工具" class="headerlink" title="笔记工具"></a>笔记工具</h2><h3 id="曾经的-Evernote"><a href="#曾经的-Evernote" class="headerlink" title="曾经的 Evernote"></a>曾经的 Evernote</h3><p>坊间有很多记笔记的应用，小弟之前用的是 Evernote，通过低价区解锁付费功能。对小弟来说，Evernote 功能很全面，虽然有小缺点，但是总体体验不错。今年 <a href="https://evernote.com/blog/evernote-pricing-upcoming-features-update/" target="_blank" rel="noopener">Evernote 价格调涨</a>后，感觉付费用到的只有多设备同步一个功能，CP 值不高。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_invoice.png" alt="obsidian_invoice" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_invoice.png" data-index="5"></p>
+<h3 id="不一样的-Obsidian"><a href="#不一样的-Obsidian" class="headerlink" title="不一样的 Obsidian"></a>不一样的 Obsidian</h3><p>各式各样的笔记工具中，一个叫做 <a href="https://obsidian.md/" target="_blank" rel="noopener">Obsidian</a> 的应用出现在小弟的眼帘。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_ui.png" alt="obsidian_ui" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_ui.png" data-index="6"></p>
+<p>Obsidian 本身的意思是「黑曜岩」，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_dic.png" alt="obsidian_dic" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_dic.png" data-index="7"></p>
+<p>不仅名字和其他笔记应用不一样，Obsidian 功能方面和其他笔记应用也不一样：</p>
+<p>1.以 Markdown 文件管理的架构</p>
+<p>不同于其他笔记应用，Obsidian 直接以 Markdown 文件存储笔记，每一则笔记即是一个 Markdown 文件，附带 Markdown 文件关联的图片等附件，比起其他笔记应用，Obsidian 更像 VS Code，因此也可以将 Obsidian 看做是 Markdown 文件的管理工具。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_feature1.png" alt="obsidian_feature1" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_feature1.png" data-index="8"></p>
+<p>这样的好处是数据掌握在自己手中，最大程度保证隐私，同时 Markdown 是纯文本格式，即便以后 Obsidian 不再维护，还可以用各种编辑器打开笔记。 </p>
+<p>2.原生支持双向链接</p>
+<p>优质笔记的必要条件是笔记间可以建立连结。Obsidian 可以很方便得插入笔记链接，只需要输入 <code>[[</code> 就可以快速插入笔记，也支持双向链接，关联后笔记可以双向跳转。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_feature2.png" alt="obsidian_feature2" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_feature2.png" data-index="9"></p>
+<p>3.众多插件扩展功能</p>
+<p>Obsidian 是闭源应用，但支持插件扩展，可以通过插件扩展功能，目前已有超过 1000 个插件，功能复盖各个范围。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_feature3.png" alt="obsidian_feature3" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_feature3.png" data-index="10"></p>
+<p>Obsidian 并非完美，缺点也不少：</p>
+<p>1.无 Web 端</p>
+<p>Obsidian 目前支持电脑端、手机端，但不支持 Web 端。有大大尝试<a href="https://github.com/sytone/obsidian-remote" target="_blank" rel="noopener">将 Obsidian   和 VNC 放在 Docker 运行</a>，体验不优。</p>
+<p>2.功能依赖插件</p>
+<p>Obsidian 的优点之一是有众多插件，这也是缺点之一，插件可以一定程度弥补 Obsidian 功能缺失，但是插件品质良莠不齐，过一段时间不再维护的插件也不乏少数。</p>
+<p>3.介面待打磨</p>
+<p>Obsidian 介面打磨程度不高，尤其手机端，很多是照搬电脑端，没有专门针对移动端适配。</p>
+<p>除此之外，Obsidian 基于本地 Markdown 文件，没有协作功能。</p>
+<h3 id="从-Evernote-迁移笔记"><a href="#从-Evernote-迁移笔记" class="headerlink" title="从 Evernote 迁移笔记"></a>从 Evernote 迁移笔记</h3><p>从 Evernote 迁移笔记到 Obsidian 的简单方法是借助 <a href="https://joplinapp.org/" target="_blank" rel="noopener">Joplin</a> 这个笔记应用，首先在 Evernote 中将笔记导出，导入到 Joplin，再从 Joplin 导出 Markdown 文件。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_inport.png" alt="obsidian_inport" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_inport.png" data-index="11"></p>
+<h2 id="Obsidian-功能大补贴"><a href="#Obsidian-功能大补贴" class="headerlink" title="Obsidian 功能大补贴"></a>Obsidian 功能大补贴</h2><p>Obsidian 有非常多的插件，以下插件以实现 Evernote 功能为主：</p>
+<h3 id="同步相关"><a href="#同步相关" class="headerlink" title="同步相关"></a>同步相关</h3><p>Obsidian 有官方同步功能，但需付费。<a href="https://github.com/remotely-save/remotely-save" target="_blank" rel="noopener">Remotely Save</a> 是 Obsidian 的另一个非官方同步插件，可以使用 Amazon S3、Dropbox、OneDrive 或 WebDAV 在不同设备同步（推荐使用 <a href="https://zh.wikipedia.org/wiki/%E5%9F%BA%E4%BA%8EWeb%E7%9A%84%E5%88%86%E5%B8%83%E5%BC%8F%E7%BC%96%E5%86%99%E5%92%8C%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6" target="_blank" rel="noopener">WebDAV</a>）。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_remotely_save.png" alt="obsidian_remotely_save" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_remotely_save.png" data-index="12"></p>
+<p>除了使用插件，也可以使用带同步功能的网络存储进行同步，如 iCloud Drive、Synology Drive 等等。</p>
+<h3 id="剪藏相关"><a href="#剪藏相关" class="headerlink" title="剪藏相关"></a>剪藏相关</h3><p>Evernote 有一个很厉害的独家功能是可以将网页内容<a href="https://evernote.com/intl/zh-tw/features/webclipper" target="_blank" rel="noopener">剪藏</a>（Web Clipper）至笔记。对于 Obsidian，理论上只要将网页文章内容转换成 Markdown 格式就可以保存网页，这方面做的好的是一个叫做<a href="http://ksria.com/simpread/" target="_blank" rel="noopener">简悦</a>的浏览器插件，可以较准确地辨识出网页中的文章内容，还可以以 <code>md + assets</code> 的格式保存网页内容至本地。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_simpread.png" alt="obsidian_simpread" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_simpread.png" data-index="13"></p>
+<h3 id="Tag-相关"><a href="#Tag-相关" class="headerlink" title="Tag 相关"></a>Tag 相关</h3><p>Evernote 中的 Tag 是一个很好用的功能，可以将笔记分离、归纳到具体的专案或用途，同时一条笔记可以归纳到不同 Tag。Obsidian 本身有 Tag 功能，但是非常难用，只能借助插件拓展 Tag 功能。</p>
+<h4 id="1-TagFolder"><a href="#1-TagFolder" class="headerlink" title="1.TagFolder"></a>1.TagFolder</h4><p><a href="https://github.com/vrtmrz/obsidian-tagfolder" target="_blank" rel="noopener">TagFolder</a> 可以实现树状结构展示 Tag。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_tagfolder.png" alt="obsidian_tagfolder" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_tagfolder.png" data-index="14"></p>
+<h4 id="2-Tag-Wrangler"><a href="#2-Tag-Wrangler" class="headerlink" title="2.Tag Wrangler"></a>2.Tag Wrangler</h4><p><a href="https://github.com/pjeby/tag-wrangler" target="_blank" rel="noopener">Tag Wrangler</a> 可以该 Obsidian 的 Tag 窗格增加右键菜单，快速执行 Tag 的重命名、删除等操作。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_tag_wrangler.png" alt="obsidian_tag_wrangler" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_tag_wrangler.png" data-index="15"></p>
+<h4 id="3-Templater"><a href="#3-Templater" class="headerlink" title="3.Templater"></a>3.Templater</h4><p>Obsidian 有两种在笔记种加入 Tag 的方法：其一为输入 <code>#</code> 后接标签内容，其二是在通过 YAML 在 Front Matter 中加入标签内容。第一种方法在有些 Markdown 编辑器中会将 <code>#</code> 认为是一级标题，因此比较长治久安的方法是在Front Matter 中加入标签信息。</p>
+<p>为此，小弟安装了 <a href="https://github.com/SilentVoid13/Templater" target="_blank" rel="noopener">Templater</a> 插件，这是一个模版类型的插件，插件本身定义了一种模版语言，可将变量和函数结果插入到笔记中（详见插件<a href="https://silentvoid13.github.io/Templater/" target="_blank" rel="noopener">文档</a>）。小弟定义了两个模版并指定了快捷键，其一是快速加入 Front Matter：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Blog_使用 Obsidian 做笔记</span><br><span class="line">date: 2023-08-10 16:31:29</span><br><span class="line">modify: 2023-08-12 14:33:41</span><br><span class="line">tags: </span><br><span class="line">---</span><br></pre></td></tr></tbody></table></figure>
+
+<p>其二是更新 Front Matter：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: Blog_使用 Obsidian 做笔记</span><br><span class="line">date: 2023-08-10 16:31:29</span><br><span class="line">modify: 2023-08-12 14:33:41</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="4-Fuzzytag"><a href="#4-Fuzzytag" class="headerlink" title="4.Fuzzytag"></a>4.Fuzzytag</h4><p>如前所述，小弟偏好在 Front Matter 中加入 Tag 信息，这样做的问题是在 Front Matter 输入 <code>#</code> 字符后 Tag 不能自动补全。<a href="https://github.com/adriandersen/obsidian-fuzzytag" target="_blank" rel="noopener">Fuzzytag</a> 是解决这一问题的插件，安装好此插件后，在 Front Matter 区域输入 <code>#</code> 字符后会自动补全 Tag。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_feature_fuzzy_tag.png" alt="obsidian_feature_fuzzy_tag" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_feature_fuzzy_tag.png" data-index="16"></p>
+<h3 id="提醒相关"><a href="#提醒相关" class="headerlink" title="提醒相关"></a>提醒相关</h3><p>Evernote 中有一个实用功能，可以设定笔记提醒，当到达提醒时间时会显示系统通知。<a href="https://github.com/uphy/obsidian-reminder" target="_blank" rel="noopener">Reminder</a> 是 Obsidian 的一个提醒插件可以指定时间提醒通知，打开相应笔记。注意移动端（Android/iOS）系统通知不可用，Obsidian 在移动端无通知功能。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_reminder.gif" alt="obsidian_reminder" class="post-img" data-img="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/obsidian_reminder.gif" data-index="17"></p>
+
+                </article>
+                <ul class="tags-postTags">
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+    <nav id="gobottom" class="pagination">
+        
+        <span class="prev-next-post">·</span>
+        
+        <a class="next-post" title="ChatGPT 的几个小工具" href="/gpt/">
+            ChatGPT 的几个小工具 →
+        </a>
+        
+    </nav>
+
+    
+    <div class="inner">
+        <div id="comment"></div>
+    </div>
+    
+</div>
+
+<div class="toc-bar">
+    <div class="toc-btn-bar">
+        <a href="#site-main" class="toc-btn">
+            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M793.024 710.272a32 32 0 1 0 45.952-44.544l-310.304-320a32 32 0 0 0-46.4 0.48l-297.696 320a32 32 0 0 0 46.848 43.584l274.752-295.328 286.848 295.808z"/></svg>
+        </a>
+        <div class="toc-btn toc-switch">
+            <svg class="toc-open" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M779.776 480h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M779.776 672h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M256 288a32 32 0 1 0 0 64 32 32 0 0 0 0-64M392.576 352h387.2a32 32 0 0 0 0-64h-387.2a32 32 0 0 0 0 64M256 480a32 32 0 1 0 0 64 32 32 0 0 0 0-64M256 672a32 32 0 1 0 0 64 32 32 0 0 0 0-64"/></svg>
+            <svg class="toc-close hide" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M512 960c-247.039484 0-448-200.960516-448-448S264.960516 64 512 64 960 264.960516 960 512 759.039484 960 512 960zM512 128.287273c-211.584464 0-383.712727 172.128262-383.712727 383.712727 0 211.551781 172.128262 383.712727 383.712727 383.712727 211.551781 0 383.712727-172.159226 383.712727-383.712727C895.712727 300.415536 723.551781 128.287273 512 128.287273z"/><path d="M557.05545 513.376159l138.367639-136.864185c12.576374-12.416396 12.672705-32.671738 0.25631-45.248112s-32.704421-12.672705-45.248112-0.25631l-138.560301 137.024163-136.447897-136.864185c-12.512727-12.512727-32.735385-12.576374-45.248112-0.063647-12.512727 12.480043-12.54369 32.735385-0.063647 45.248112l136.255235 136.671523-137.376804 135.904314c-12.576374 12.447359-12.672705 32.671738-0.25631 45.248112 6.271845 6.335493 14.496116 9.504099 22.751351 9.504099 8.12794 0 16.25588-3.103239 22.496761-9.247789l137.567746-136.064292 138.687596 139.136568c6.240882 6.271845 14.432469 9.407768 22.65674 9.407768 8.191587 0 16.352211-3.135923 22.591372-9.34412 12.512727-12.480043 12.54369-32.704421 0.063647-45.248112L557.05545 513.376159z"/></svg>
+        </div>
+        <a href="#gobottom" class="toc-btn">
+            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M231.424 346.208a32 32 0 0 0-46.848 43.584l297.696 320a32 32 0 0 0 46.4 0.48l310.304-320a32 32 0 1 0-45.952-44.544l-286.848 295.808-274.752-295.36z"/></svg>
+        </a>
+    </div>
+    <div class="toc-main">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#笔记之必要性"><span class="toc-text">笔记之必要性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#记笔记的理论"><span class="toc-text">记笔记的理论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#笔记工具"><span class="toc-text">笔记工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#曾经的-Evernote"><span class="toc-text">曾经的 Evernote</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不一样的-Obsidian"><span class="toc-text">不一样的 Obsidian</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从-Evernote-迁移笔记"><span class="toc-text">从 Evernote 迁移笔记</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Obsidian-功能大补贴"><span class="toc-text">Obsidian 功能大补贴</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#同步相关"><span class="toc-text">同步相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#剪藏相关"><span class="toc-text">剪藏相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tag-相关"><span class="toc-text">Tag 相关</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-TagFolder"><span class="toc-text">1.TagFolder</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Tag-Wrangler"><span class="toc-text">2.Tag Wrangler</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Templater"><span class="toc-text">3.Templater</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Fuzzytag"><span class="toc-text">4.Fuzzytag</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提醒相关"><span class="toc-text">提醒相关</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+	</div>
+	
+
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+            
+            
+        </div>
+    </div>
+</aside>
+
+	
+
+
+
+
+<div id="search" class="search-overlay">
+    <div class="search-form">
+        
+        <div class="search-overlay-logo">
+        	<img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic@master/uPic/favicon_256px.ico" alt="庄菲什">
+        </div>
+        
+        <input id="local-search-input" class="search-input" type="text" name="search" placeholder="搜索 ...">
+        <a class="search-overlay-close" href="#"></a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+<footer class="site-footer outer">
+	<div class="site-footer-content inner">
+		<div class="copyright">
+			<a href="/" title="庄菲什">庄菲什 © 2023</a>
+			
+				
+			        <span hidden="true" id="/obsidian/" class="leancloud-visitors" data-flag-title="使用 Obsidian 做笔记">
+			            <span>阅读量 </span>
+			            <span class="leancloud-visitors-count">0</span>
+			        </span>
+	    		
+    		
+		</div>
+		<nav class="site-footer-nav">
+			
+			<a href="https://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+			<a href="https://github.com/xzhih/hexo-theme-casper" title="Casper" target="_blank" rel="noopener">Casper</a>
+		</nav>
+	</div>
+</footer>
+	
+
+
+<script>
+    if(window.navigator && navigator.serviceWorker) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            for(let registration of registrations) {
+                registration.unregister()
+            }
+        })
+    }
+</script>
+
+
+<script id="scriptLoad" src="/js/allinone.min.js" async></script>
+
+
+<script>
+    document.getElementById('scriptLoad').addEventListener('load', function () {
+        
+        
+
+        
+        
+
+        
+        
+        
+            searchFunc("/");
+        
+        
+    })
+</script>
+
+
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+
+
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+
+
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+
+
+
+<script id="valineScript" src="//code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js" async></script>
+<script>
+    document.getElementById('valineScript').addEventListener("load", function() {
+        new Valine({
+            el: '#comment' ,
+            verify: false,
+            notify: true,
+            appId: 'KaLeKV30O7K4JhSXpYQpglJ7-MdYXbMMI',
+            appKey: 'z7kF0mNJaUFYzbjJWdzwPDq8',
+            placeholder: '留下您的评论',
+            pageSize: 10,
+            avatar: 'hide',
+            visitor: true
+        })
+    });
+</script>
+
+
+
+
+
+
+
+</body></html>
