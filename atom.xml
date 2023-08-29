@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2023-08-13T01:11:05.846Z</updated>
+  <updated>2023-08-29T05:25:36.546Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用 Google Colab 玩 AI</title>
+    <link href="http://yoursite.com/colab/"/>
+    <id>http://yoursite.com/colab/</id>
+    <published>2023-09-01T00:00:00.000Z</published>
+    <updated>2023-08-29T05:25:36.546Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/colab_cover.png" alt="colab_cover"></p><p>2023 年，AI 热潮延烧，而想要学习和使用 AI，一个基础条件是需要有较好 GPU 的电脑提供算力。其中原因之一是，与 「通才型」处理器 CPU ，理论上能完成任何运算任务不同，GPU 硬件架构中有专门为深度学习中常见执行数值计算任务设计（如矩阵乘法、卷积等）。另外重要的是，GPU 支持大规模并行运算，可以同时处理大量神经元和参数训练任务，加速训练和推断。</p><p>新世纪，电脑可以在本地，也可以在云端。Google Colab（全名为「Colaboratory」）是一个由 Google 提供的云端 Jupyter 笔记本环境，可以在浏览器使用 云端的 GPU，执行 AI 任务。以下以时下最热门的 Whisper 和 Stable Diffusion 为例：</p><h2 id="免费付费"><a href="#免费付费" class="headerlink" title="免费付费"></a>免费付费</h2><p>Google Colab 最初设计是学习、教学演示用，可以免费使用。但由于 Google Colab 使用简单、配置较高，随着 AI 热度持续增加，高峰时期往往需要排队，如果需要较稳定使用 Google Colab，可以考虑购买运算单元。运算单元以量计价，不用的时候不计价（注意，未使用的运算单元会在 90 天后失效）。Colab 运算单元便宜的购买渠道是在土耳其区购买。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/colab1.png" alt="colab1"></p><p>另外，Colab 使用 Google Drive 存储，免费 15 GB，有些 AI 项目如 Stable Diffusion 需要下载模型，15 GB 可能不够，此时可以订阅 Google One 提升存储空间。Google One 便宜的购买渠道是通过 Google Drive 的土耳其区 iOS 内购。 </p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/colab2.png" alt="colab2"></p><h2 id="Whisper"><a href="#Whisper" class="headerlink" title="Whisper"></a>Whisper</h2><h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p><a href="https://github.com/openai/whisper" target="_blank" rel="noopener">Whisper</a> 是 <a href="https://openai.com/" target="_blank" rel="noopener">OpenAI</a> 的开源语音转文字模型，支持多语言，准确率很高。在 Colab 中使用非常简单，已经有很大大大写好笔记，下面以 <a href="https://github.com/lewangdev/autotranslate" target="_blank" rel="noopener">autotranslate</a> 这个笔记为例：</p><p>打开 <a href="https://colab.research.google.com/github/lewangdev/autotranslate/blob/main/autotranslate.ipynb" target="_blank" rel="noopener">autotranslate</a>笔记本，按照顺序点击各标题左侧的三角形按钮，运行各个单元，</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/colab3.png" alt="colab3"></p><p>当下载好模型后，就可以选择需要转文字的音频文件，可以是 Youtube 链接，也可以是 Google Drive 中的文件。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/colab4.png" alt="colab4"></p><p>填写好音频文件路径后就可以进行转录，可以看到转录后的文字，</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/colab5.png" alt="colab5"></p><p>转录完成后可以合成 .SRT 文件储存在 Google Drive 中。再次转录可以再次运行这个笔记本，故可以将这个笔记本储存副本方便使用。</p><h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><p>人接受信息很大一部分来自视觉，字幕虽为无障碍设计，但有文字可以更好、更快地理解音视频内容。以下是几个应用场景：</p><p>1、将会议语音转成逐字稿</p><p>在会议中录音，将会议音频通过 Whisper 转成文字档，再利用  ChatGFT 将录音逐字稿转成规范文章段落及会议内容摘要。</p><p>2、为学习类视频添加字幕</p><p>有些学习类视频缺少字幕，可以通过 Whisper 添加字幕，加快学习进度。</p><h2 id="Stable-Diffusion"><a href="#Stable-Diffusion" class="headerlink" title="Stable Diffusion"></a>Stable Diffusion</h2><p><a href="https://github.com/Stability-AI/stablediffusion" target="_blank" rel="noopener">Stable Diffusion</a> 是开源的文字到图像生成模型，相较于 <a href="https://www.midjourney.com" target="_blank" rel="noopener">Midjourney</a>，Stable Diffusion 可以本地部署，自己训练模型，更灵活调节各种参数，以及无限制生成图片。</p><h3 id="准备-1"><a href="#准备-1" class="headerlink" title="准备"></a>准备</h3><p>Google Colab 是运行 Stable Diffusion 的好方式，由于 Stable Diffusion 太多人使用，目前 Google Colab 只有付费后才可以运行 Stable Diffusion。</p><p>首先打开<a href="https://github.com/camenduru/stable-diffusion-webui-colab/tree/drive" target="_blank" rel="noopener">这个网页</a>，首次运行需要先运行第一个笔记本中的命令，会下载安装各种依赖，期间需要 Google Drive 授权。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/colab6.png" alt="colab6"></p><p>第一个笔记本运行结束后再运行第二个笔记本，第一次运行可能时间会比较长，等到输出单元格中显示链接，</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/colab7.png" alt="colab7"></p><p>后打开链接即可看到 Stable Diffusion WebUI。</p><p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/colab8.png" alt="colab8"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/colab_cover.png&quot; alt=&quot;colab_cover&quot;&gt;&lt;/p&gt;
+&lt;p&gt;2023 年，AI 热潮延烧，而想要学习和使用
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>使用 Obsidian 做笔记</title>
