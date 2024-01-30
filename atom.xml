@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2023-08-29T05:25:36.546Z</updated>
+  <updated>2024-01-30T09:13:07.260Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,82 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Gemini 的使用</title>
+    <link href="http://yoursite.com/gemini/"/>
+    <id>http://yoursite.com/gemini/</id>
+    <published>2024-01-01T00:00:00.000Z</published>
+    <updated>2024-01-30T09:13:07.260Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/gemini_cover.png" alt="gemini_cover"></p><p><a href="https://deepmind.google/technologies/gemini/" target="_blank" rel="noopener">Gemini</a> 是 Google 在 2023 年 12 月发布的 AI 模型，与 ChatGPT 相比，有以下特点：</p><ul><li><p>可以联网获取最新数据；</p></li><li><p>与 ChatGPT 结果不相上下的水准；</p></li><li><p>可以辨识图片（ChatGPT 需订阅才可使用）；</p></li><li><p>比 ChatGPT 生成更快；</p></li><li><p>频率限制宽松，每分钟 <a href="https://ai.google.dev/models/gemini?hl=zh-tw" target="_blank" rel="noopener">60 次要求</a>（ChatGPT 未订阅每分钟不超过 3 次请求）</p></li></ul><p>综上，Gemini 可以作为 ChatGPT 付费版的另一种选择。以下是使用 Gemini 的几种方法： </p><h2 id="Bard-网页"><a href="#Bard-网页" class="headerlink" title="Bard 网页"></a>Bard 网页</h2><p>使用 Gemini 最简单的方式是在 Bard 中使用，直接打开 <a href="https://bard.google.com/" target="_blank" rel="noopener">https://bard.google.com/</a> 登录 Google 账号就可以使用，除了发送文本，还可以发送图片。</p><h2 id="沉浸式翻译"><a href="#沉浸式翻译" class="headerlink" title="沉浸式翻译"></a>沉浸式翻译</h2><p><a href="https://immersivetranslate.com/" target="_blank" rel="noopener">沉浸式翻译</a>是一款非常好用双语对照网页翻译浏览器插件，可以通过调用 api 方式进行翻译网页、PDF文档，ePub 电子书，字幕档。除了可以翻译网页，沉浸式翻译还支持在线影片字幕实时翻译、鼠标经过翻译、输入框翻译。</p><p>ChatGPT 未订阅每分钟不超过 3 次请求，无法在沉浸式翻译中使用，而 Gemini 每分钟可 60 此要求，生成速度快，与 ChatGPT 不相上下的翻译品质，可顺畅在沉浸式翻译中使用。</p><p>使用时先在 <a href="https://makersuite.google.com/app/apikey" target="_blank" rel="noopener">https://makersuite.google.com/app/apikey</a> 生成 API key，之后再填入沉浸式翻译中就可以使用。</p><h2 id="Bob-翻译"><a href="#Bob-翻译" class="headerlink" title="Bob 翻译"></a>Bob 翻译</h2><p><a href="https://bobtranslate.com/" target="_blank" rel="noopener">Bob</a> 是一款 macOS 平台的全局划词翻译、OCR 应用。可以通过<a href="https://github.com/Brain777777/bob-plugin-gemini" target="_blank" rel="noopener">此插件</a>，填入 API key 使用 Gemini 翻译。</p><p>类似的应用还有 <a href="https://github.com/pot-app/pot-desktop" target="_blank" rel="noopener">Pot</a>、<a href="https://github.com/tisfeng/Easydict" target="_blank" rel="noopener">Easydict</a>。</p><h2 id="chatGPTBox"><a href="#chatGPTBox" class="headerlink" title="chatGPTBox"></a>chatGPTBox</h2><p><a href="https://github.com/josStorer/chatGPTBox" target="_blank" rel="noopener">chatGPTBox</a> 是一款将各类深度集成到浏览器中的插件, 使用时只需要打开 <a href="https://bard.google.com/" target="_blank" rel="noopener">https://bard.google.com/</a> 就可以在 chatGPTBox 中使用。</p><p>chatGPTBox 有几个非常实用的功能：</p><ul><li>在搜索引擎右侧显示 Gemini 对话及相关内容；</li><li>摘要 Youtube 视频内容；</li><li>通过右键菜单通过 Gemini 总结任意页面内容</li></ul><h2 id="tg-gemini-bot"><a href="#tg-gemini-bot" class="headerlink" title="tg-gemini-bot"></a>tg-gemini-bot</h2><p><a href="https://github.com/winniesi/tg-gemini-bot" target="_blank" rel="noopener">tg-gemini-bot</a> 可以将 Gemini 连接 Telegram，在 Telegram 介面中使用 Gemini 。</p><p>tg-gemini-bot 可以通过 Vercel 部署，不需要额外服务器，另外，tg-gemini-bot 还支持发送图片。</p><h2 id="ChatGPT-Next-Web"><a href="#ChatGPT-Next-Web" class="headerlink" title="ChatGPT-Next-Web"></a>ChatGPT-Next-Web</h2><p><a href="https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web" target="_blank" rel="noopener">ChatGPT-Next-Web</a> 是一款 ChatGPT 前端，可以部署 Vercel，支持 GPT模型，同时也支持 Gemini，使用时可以绑定自己的域名。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/gemini_cover.png&quot; alt=&quot;gemini_cover&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>reMarkable 1 使用汇整</title>
+    <link href="http://yoursite.com/remarkable/"/>
+    <id>http://yoursite.com/remarkable/</id>
+    <published>2023-12-16T00:00:00.000Z</published>
+    <updated>2024-01-30T09:09:30.848Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/remarkable_cover.png" alt="remarkable_cover"></p><p>网络时代，看书这件事情依然重要。时移世易，物转星移，新技术、新事物不断出现，人们依旧会遇到相同或相似的问题，先人的观点依然可以给后人带来启发、增广见闻。<br>小弟最近购入了二手 E-Ink 设备一代 <a href="https://remarkable.com/" target="_blank" rel="noopener">reMarkable</a>，这是一款过时的小众产品，但作为一个看书设备是可以的。</p><h2 id="自带应用"><a href="#自带应用" class="headerlink" title="自带应用"></a>自带应用</h2><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p><a href="https://remarkable.com/" target="_blank" rel="noopener">reMarkable</a> 最新型号是 reMarkable 2，小弟手上的是一代。一代外观设计不错，正面是白色，10.3 英寸 E-Ink 屏幕，226 DPI，下方有三颗实体按键，背面是铝制，厚度 6.7mm，重 350 g。因为屏幕有 10.3 英寸，总体感觉是尺寸不小，拿在手里有一点重。<br>机子内部有 1 GHz A9 CPU、512 M 的 RAM 和 8 G 存储，以及 Micro USB 充电头、3000 mAh 电池，大概 2013 年 Android 手机的配置加上 10 寸墨水屏幕。机子性能不高（10 年前的配置），但是系统基于 Linux 且只用来看书，不会太影响体验。比较影响体验的是「古老」的<br>USB 充电头，充电需要确认正反，以及羸弱的 3000 mAh 电池，虽然屏幕耗电量较少，但是实际使用 3000 mAh 电池还是不耐用。</p><h3 id="手写"><a href="#手写" class="headerlink" title="手写"></a>手写</h3><p>机器本身定位是电子纸，把纸张数字化，在屏幕上模拟在纸上写画，因此这个机子的强项是手写。机子有附一支电磁笔，不用充电，可以直接使用。<br>笔的书写体验很赞，不似 Apple Pencil 在 iPad 上滑滑的感觉， reMarkable 的笔尖与屏幕写画时有摩擦力，过程中还会有沙沙声，延时感觉不到，总体接近真实纸张书写的感觉。</p><p>reMarkable 还有一个实用功能是可以将文档实时镜像到电脑客户端。</p><h3 id="阅读"><a href="#阅读" class="headerlink" title="阅读"></a>阅读</h3><p>reMarkable 也有阅读功能，但是体验不优。导入的电子书被转成 PDF 文档，可以对文档标注、写画。<br>除此阅读体验非常一般，默认中文显示为乱码（可通过 SFTP 将中文字体文件上传至路径 <code>/home/root/.local/share/fonts</code>，参考<a href="https://zhuanlan.zhihu.com/p/645101699" target="_blank" rel="noopener">这篇文章</a>），不支持换字体。<br>总体来说，reMarkable 自带应用书写体验高分，机器做工中规中矩，阅读功能不及格。</p><h3 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h3><p>reMarkable 有多种方式可以将文档导入或同步：<br>1、通过官方客户端或网页<br>注册绑定设备后可以直接使用官方客户端或网页 <a href="https://my.remarkable.com" target="_blank" rel="noopener">https://my.remarkable.com</a> 导入或同步文档，需要注意：</p><ul><li>默认只会同步过去 50 天的文档，客户端内只能查看，无法编辑，如果需要同步所有文档、多端编辑需要订阅 Connect 订阅服务（若在 2021 年 10 月 12 日之前购买了 reMarkable，可终身解锁此项订阅服务）</li><li>同步服务在北韩地区无法直接使用<br>2、通过 USB 连接电脑<br>可以直接使用 USB 数据线将文档导入至 reMarkable，参考<a href="https://support.remarkable.com/s/article/Transferring-files-using-a-USB-cable" target="_blank" rel="noopener">这里</a>。<br>3、通过网盘<br>可通过 Google Drive、Dropbox、OneDrive 这类网盘工具导入文档，参考<a href="https://support.remarkable.com/s/article/Integrating-with-Google-Drive-Dropbox-and-OneDrive" target="_blank" rel="noopener">这里</a>。<br>4、通过浏览器插件<br>如果浏览器中看到想深入阅读的文章，可以通过 reMarkable 插件将文章发送至 reMarkable，参考<a href="https://support.remarkable.com/s/article/Read-on-reMarkable-Google-Chrome-Extension" target="_blank" rel="noopener">这里</a>。</li></ul><h2 id="KOReader"><a href="#KOReader" class="headerlink" title="KOReader"></a>KOReader</h2><p>reMarkable 阅读功能很阳春，但是可以安装  <a href="https://koreader.rocks/" target="_blank" rel="noopener">KOReader</a>。KOReader 是一款专为墨水屏幕设备设计的优秀阅读应用，支持多种电子书格式，并且有 PDF 切边、重排等多种使用功能。</p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>安装 KOReader 推荐通过 <a href="https://toltec-dev.org/" target="_blank" rel="noopener">Toltec</a> （Toltec 是一个 reMarkable 软件库）安装。<br> 1、首先备份 reMarkable 中的文档，之后对 reMarkable 降级（Toltec 仅支持 2.6.1.71 到 2.15.1.1189 之间的系统版本）。降级的思路是电脑模拟升级服务器，通过修改 reMarkable 升级服务器地址，具体步骤参考<a href="https://github.com/ddvk/remarkable-update" target="_blank" rel="noopener">这里</a>。<br>2、执行命令 <code>opkg install koreader</code></p><p>3、执行命令 <code>opkg install remux</code> 安装启动器 remux，这样长按中间的实体按键就可以切换原生应用与 KOReader。</p><h3 id="配置-1"><a href="#配置-1" class="headerlink" title="配置"></a>配置</h3><p>1、配置字体<br>参考 <a href="https://github.com/koreader/koreader/wiki/Fonts" target="_blank" rel="noopener">https://github.com/koreader/koreader/wiki/Fonts</a> </p><p>2、配置词典<br> KOReader 支持 StarDict 字典格式，参考 <a href="https://github.com/koreader/koreader/wiki/Dictionary-support，中英词典下载可在[这里](https://github.com/zdict/dictionaries/tree/master)下载。" target="_blank" rel="noopener">https://github.com/koreader/koreader/wiki/Dictionary-support，中英词典下载可在[这里](https://github.com/zdict/dictionaries/tree/master)下载。</a></p><h3 id="导入书籍"><a href="#导入书籍" class="headerlink" title="导入书籍"></a>导入书籍</h3><p>KOReader 有非常多种方法导入书籍，以下是几个例子：</p><ul><li>直接通过 SFTP 将电子书文档传至 reMarkable</li><li>（推荐）如果有 NAS，可以通过 Webdav 传输，这种方法最简单、最直觉，参考 <a href="https://koreader.rocks/user_guide/#transferring" target="_blank" rel="noopener">https://koreader.rocks/user_guide/#transferring</a></li><li>通过 Calibre 应用，参考 <a href="https://github.com/koreader/koreader/wiki/Calibre-wireless-connection" target="_blank" rel="noopener">https://github.com/koreader/koreader/wiki/Calibre-wireless-connection</a></li><li>如果有部署 <a href="https://github.com/janeczku/calibre-web" target="_blank" rel="noopener">Calibre-Web</a>，可以通过 OPDS 传书 ，参考 <a href="https://github.com/koreader/koreader/wiki/OPDS-support" target="_blank" rel="noopener">https://github.com/koreader/koreader/wiki/OPDS-support</a></li></ul><h2 id="配件相关"><a href="#配件相关" class="headerlink" title="配件相关"></a>配件相关</h2><h3 id="保护套"><a href="#保护套" class="headerlink" title="保护套"></a>保护套</h3><p>墨水屏幕非常脆弱，保护套最好配一个。作为一款小众又过时的电子产品，配件很稀少，小弟最后找到了和 reMarkable 1 尺寸接近的平板 <a href="https://www.vivo.com.cn/vivo/param/vivopadair" target="_blank" rel="noopener">vivo Pad Air（2023）</a>，两者尺寸如下：</p><table><thead><tr><th>设备</th><th>长 mm</th><th>宽 mm</th><th>厚 mm</th></tr></thead><tbody><tr><td>reMarkable 1</td><td>177</td><td>256</td><td>6.7</td></tr><tr><td>vivo Pad Air</td><td>176.00</td><td>259.73</td><td>6.67</td></tr></tbody></table><p>两者尺寸非常接近，卖家众多，价格便宜，甚至充电口也是对的。</p><h2 id="笔芯"><a href="#笔芯" class="headerlink" title="笔芯"></a>笔芯</h2><p>reMarkable 耗材是笔芯，可以选用第三方毛毡笔芯。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/remarkable_cover.png&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>聚会好帮手——Nintendo Switch 的使用</title>
+    <link href="http://yoursite.com/switch/"/>
+    <id>http://yoursite.com/switch/</id>
+    <published>2023-12-02T00:00:00.000Z</published>
+    <updated>2024-01-30T09:15:19.086Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/swittch_cover.png" alt="switch_cover"></p><p>亲友聚会，玩游戏可以快速炒热气氛。所有游戏平台中，派对类游戏数量最多、品质最高的就属 Nintendo Switch 了。</p><h2 id="创新的设计"><a href="#创新的设计" class="headerlink" title="创新的设计"></a>创新的设计</h2><p>Nintendo Switch 初代于于 2017 年发布，在 2024 年新一代即将发布时，创新点仍然不过时。</p><h3 id="桌机、掌机二合一"><a href="#桌机、掌机二合一" class="headerlink" title="桌机、掌机二合一"></a>桌机、掌机二合一</h3><p>Nintendo Switch 一台主机有三种游玩方式：TV模式（游戏画面显示在  电视上游玩）、桌上模式（主机放置在桌上游玩）、掌机模式（手持主机游玩）。</p><h3 id="Joycon"><a href="#Joycon" class="headerlink" title="Joycon"></a>Joycon</h3><p>Joycon 是 Nintendo Switch 创新的控制手柄，集成了<br>NFC、HD震动（可体现细腻的震动）、动作感应器、陀螺仪感应器、动感IR照相机。一般游戏主机都是附一个游戏手柄，而 Joycon 可一人同时使用两支，也可以一人用一支玩双人，不用额外另外购买游戏手柄就可以两人游玩。</p><h2 id="Hack"><a href="#Hack" class="headerlink" title="Hack"></a>Hack</h2><p>对 Nintendo Switch 主机来说，游戏来源有两种：卡带、eShop。卡带是游戏实体化，可以即插即用，不想玩了卡带可以卖二手。eShop 是 Nintendo Switch 在线游戏商店，可以跨区更便宜买游戏。</p><p>如果不想购买 Nintendo Switch 主机，可以在电脑安装模拟器，目前主要有两款 Switch 模拟器：<a href="https://yuzu-emu.org/" target="_blank" rel="noopener">Yuzu</a>、<a href="https://ryujinx.org/" target="_blank" rel="noopener">Ryujinx</a>。模拟器可以搭配 Joycon 或其他游戏手柄游玩。</p><p>除了模拟器，Nintendo Switch 主机也可以 hack。如果是初代 Switch 主机在<a href="https://suchmememanyskill.github.io/guides/switchserials/" target="_blank" rel="noopener">这些序列号之内</a>可以使用注入器「软破」。其他型号的 Switch 主机需要拆机焊接芯片「硬破」。</p><p>Switch 主机 hack 后可以在 SD 卡中安装 <a href="https://github.com/Atmosphere-NX/Atmosphere" target="_blank" rel="noopener">Atmosphere</a> 的固件，通过此固件安装一个与原系统相同的「虚拟相同」，在虚拟系统中安装游戏，即用真实的硬件运行改版的系统。虚拟系统可以方便地安装游戏，在游戏中修改存档、使用金手指（游戏作弊工具）、使用插件。</p><p>模拟器和 hack 的主机不能进行联机玩，只能本地游玩。</p><h2 id="聚会游戏推荐"><a href="#聚会游戏推荐" class="headerlink" title="聚会游戏推荐"></a>聚会游戏推荐</h2><p>Nintendo Switch 可玩游戏非常之多，小弟只玩过寥寥几款，玩过的游戏中，任天堂本家游戏品质非常高，以下是几款适合聚会的游戏：</p><h3 id="Nintendo-Switch-Sports"><a href="#Nintendo-Switch-Sports" class="headerlink" title="Nintendo Switch Sports"></a>Nintendo Switch Sports</h3><p>说到 <a href="https://www.nintendo.com/us/store/products/nintendo-switch-sports-switch/" target="_blank" rel="noopener">Nintendo Switch 运动</a>，不得不说 Wii Sports，Wii Sports 是 Wii 平台（Nintendo Switch 的上上一代主机）最受欢迎的游戏之一，体感游戏的代名词。Nintendo Switch Sports 复刻了 Wii Sports 和 Wii Sports Resort 的很多玩法，画面更加精致。</p><h3 id="超级玛利欧兄弟惊奇"><a href="#超级玛利欧兄弟惊奇" class="headerlink" title="超级玛利欧兄弟惊奇"></a>超级玛利欧兄弟惊奇</h3><p><a href="https://www.nintendo.com/us/store/products/super-mario-bros-wonder-switch/" target="_blank" rel="noopener">超级玛利欧兄弟惊奇</a>是一款由任天堂在 2023 年 10 月发售的横轴过关游戏，有传统「超级玛利欧兄弟」经典玩法相似，但游戏也加入了一些新的元素，可以双人合作游玩，朋友一起合作完成关卡。</p><h3 id="玛利欧赛车-8-豪华版"><a href="#玛利欧赛车-8-豪华版" class="headerlink" title="玛利欧赛车 8 豪华版"></a>玛利欧赛车 8 豪华版</h3><p>玛利欧赛车一直是任天堂各代主机的热门游戏，玩法简单好上手、赛道设计精致、丰富。<a href="https://www.nintendo.com/us/store/products/mario-kart-8-deluxe-switch/" target="_blank" rel="noopener">玛利欧赛车 8 豪华版</a>，是 Wii U （任天堂上一代主机）游戏「玛利欧赛车 8」的加强版。</p><h3 id="玛利欧派对"><a href="#玛利欧派对" class="headerlink" title="玛利欧派对"></a>玛利欧派对</h3><p><a href="https://www.nintendo.com/us/store/products/super-mario-party-switch/" target="_blank" rel="noopener">玛利欧派对</a> 是体感小游戏集合，可以和朋友玩 80 款体感小游戏，游戏都很好上手。</p><h3 id="超级玛利欧-奥德赛"><a href="#超级玛利欧-奥德赛" class="headerlink" title="超级玛利欧 奥德赛"></a>超级玛利欧 奥德赛</h3><p><a href="https://www.nintendo.com/us/store/products/super-mario-odyssey-switch/" target="_blank" rel="noopener">超级玛利欧 奥德赛</a>是一款「3D箱庭探索」游戏，游戏中玛利欧可以将帽子附身在其他角色或敌人身上，操控他们进行冒险。游戏可以双人游玩探索，一人控制玛利欧，另一人控制帽子。</p><h3 id="超级玛利欧3D世界-狂怒世界"><a href="#超级玛利欧3D世界-狂怒世界" class="headerlink" title="超级玛利欧3D世界 + 狂怒世界"></a>超级玛利欧3D世界 + 狂怒世界</h3><p><a href="https://www.nintendo.com/us/store/products/super-mario-3d-world-plus-bowsers-fury-switch/" target="_blank" rel="noopener">超级玛利欧3D世界 + 狂怒世界</a> 是 Wii U 平台「超级玛利欧 3D世界」的移植，以及追加「狂怒世界」模式，可多人本地游玩。</p><h2 id="配件"><a href="#配件" class="headerlink" title="配件"></a>配件</h2><h3 id="Pixl-for-Amiibo"><a href="#Pixl-for-Amiibo" class="headerlink" title="Pixl for Amiibo"></a>Pixl for Amiibo</h3><p>Amiibo 是任天堂销售的游戏周边，呈现为卡片或一个游戏角色的模型，每个 Amiibo 都在模型底座或卡片有嵌入了 NFC 标签，NFC 标签记录了一些数据，玩家购买Amiibo 扫描 NFC 标签可以获得游戏中的道具等。</p><p><strong><a href="https://github.com/solosky/pixl.js" target="_blank" rel="noopener">Pixl for Amiibo</a></strong> 是一个基于原版 <a href="http://www.espruino.com/Pixl.js" target="_blank" rel="noopener">Pixl.js</a>的开源 Amiibo 模拟器，可存储所有 Amiibo 数据，通过旋钮上下选择特定的 Amiibo 使用。</p><h3 id="8BitDo-USB-无线接收器"><a href="#8BitDo-USB-无线接收器" class="headerlink" title="8BitDo USB 无线接收器"></a>8BitDo USB 无线接收器</h3><p>除了可以使用任天堂本家的 Joycon 和 Switch Pro Controller，借助<a href="https://www.8bitdo.com/wireless-usb-adapter/" target="_blank" rel="noopener">八位堂 USB 无线接收器</a> 其他手柄（PS 手柄，Xbox 手柄等）也可以用在 Switch 上。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/drunkfish7/pic5@master/uPic/swittch_cover.png&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>使用 Google Colab 玩 AI</title>
